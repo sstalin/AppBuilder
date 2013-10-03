@@ -1,0 +1,7 @@
+app('Orientation 4') { 
+
+  View(supportedOrientations: LandScape) { 
+	Label(id: lable, align: center, text: 'This Way Up', font: 36)
+  }
+
+}

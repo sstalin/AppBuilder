@@ -1,0 +1,21 @@
+
+/* Android Specific */
+
+app(name : 'Spinner App') { 
+
+  View(id: top) { 
+    Label(id: l1, width: '*', text: 'selection')
+    Spinner(id: s1,
+			prompt: 'Choose a planet',
+			options: [ 'Mercury', 
+					   'Venus', 
+					   'Earth', 
+					   'Mars', 
+					   'Jupiter', 
+					   'Saturn', 
+					   'Uranus', 
+					   'Neptune' ],
+			selection: { l1.text = 'Selection: ' + value })
+  }
+        
+}

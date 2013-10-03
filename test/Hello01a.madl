@@ -1,0 +1,9 @@
+app(name: 'Hello World 1a', icon: 'icon2') { 
+
+  View { 
+	Label(text: 'Hello World!',
+		  frame: [20, 187, 280, 85],
+		  color: Red)
+  }
+
+}

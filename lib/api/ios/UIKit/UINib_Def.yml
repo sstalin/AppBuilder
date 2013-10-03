@@ -1,0 +1,82 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    nibWithData: !java.util.LinkedHashMap
+        isInstance: &6 false
+        name: nibWithData
+        type: !java.util.LinkedHashMap
+            name: UINib
+            delegate: ~
+            isConst: *6
+            isRef: &8 true
+        isVarArgs: *6
+        args: 
+            - !java.util.LinkedHashMap
+                param: data
+                type: !java.util.LinkedHashMap
+                    name: NSData
+                    delegate: ~
+                    isConst: *6
+                    isRef: *8
+            - !java.util.LinkedHashMap
+                name: bundle
+                param: bundleOrNil
+                type: !java.util.LinkedHashMap
+                    name: NSBundle
+                    delegate: ~
+                    isConst: *6
+                    isRef: *8
+    nibWithNibName: !java.util.LinkedHashMap
+        isInstance: *6
+        name: nibWithNibName
+        type: !java.util.LinkedHashMap
+            name: UINib
+            delegate: ~
+            isConst: *6
+            isRef: *8
+        isVarArgs: *6
+        args: 
+            - !java.util.LinkedHashMap
+                param: name
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *6
+                    isRef: *8
+            - !java.util.LinkedHashMap
+                name: bundle
+                param: bundleOrNil
+                type: !java.util.LinkedHashMap
+                    name: NSBundle
+                    delegate: ~
+                    isConst: *6
+                    isRef: *8
+    instantiateWithOwner: !java.util.LinkedHashMap
+        isInstance: *8
+        name: instantiateWithOwner
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *6
+            isRef: *8
+        isVarArgs: *6
+        args: 
+            - !java.util.LinkedHashMap
+                param: ownerOrNil
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: ~
+                    isConst: *6
+                    isRef: *6
+            - !java.util.LinkedHashMap
+                name: options
+                param: optionsOrNil
+                type: !java.util.LinkedHashMap
+                    name: NSDictionary
+                    delegate: ~
+                    isConst: *6
+                    isRef: *8

@@ -1,0 +1,21 @@
+
+app('App State') { 
+  
+  View { 
+    Label(id: l1, text: 'Hello', width: '*') 
+    Text(id: t1, prompt: 'Line 1')
+    Text(id: t2, prompt: 'Line 2')
+    Button(id: b1, text: 'Done')
+
+    state(id: s1) { // init state
+      onEntry { b1.enabled = false }
+	  when  { t1.text && t2.text } next s2
+    } 
+    state(id: s2) { 
+      onEntry { b1.enabled = true }
+      when  { !t1.text || !t2.text } next s1
+    }
+
+  }
+
+}

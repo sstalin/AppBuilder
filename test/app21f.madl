@@ -1,0 +1,34 @@
+app('Orientation 7') { 
+
+  View { 
+	Label(id: label, align: center, text: 'Face Up', width: '*', font: 36)
+
+	onDeviceOrientationChange { orientation ->
+	  switch (orientation) {
+	  case FaceUp:
+		label.text = 'Face Up';        
+		break;
+	  case FaceDown:
+		label.text = 'Face Down';
+		break;
+	  case Portrait:
+		label.text = 'Standing Up';
+		break;
+	  case PortraitUpsideDown:
+		label.text = 'Upside Down';
+		break;
+	  case LandscapeLeft:
+		label.text = 'Left Side';
+		break;
+	  case LandscapeRight:
+		label.text = 'Right Side';
+		break;
+	  default:
+		label.text = 'Unknown';
+		break;
+	  }
+	}	
+
+  }
+
+}

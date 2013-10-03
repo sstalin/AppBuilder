@@ -1,0 +1,8 @@
+app(name: 'Test 05') { 
+
+  View(id: top, 
+       scroll: true) { 
+	Label 'Test scroll: line 00'
+  }
+
+}

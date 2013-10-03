@@ -1,0 +1,114 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    subtype: !java.util.LinkedHashMap
+        name: subtype
+        type: UIEventSubtype
+        ref: ""
+        explanation: Returns the subtype of the event. (read-only)
+        readonly: true
+    timestamp: !java.util.LinkedHashMap
+        name: timestamp
+        type: NSTimeInterval
+        ref: ""
+        explanation: The time when the event occurred. (read-only)
+        readonly: true
+    type: !java.util.LinkedHashMap
+        name: type
+        type: UIEventType
+        ref: ""
+        explanation: Returns the type of the event. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap
+    allTouches: !java.util.LinkedHashMap
+        isInstance: &9 true
+        name: allTouches
+        type: !java.util.LinkedHashMap
+            name: NSSet
+            delegate: ~
+            isConst: &11 false
+            isRef: *9
+        isVarArgs: *11
+        args: []
+    touchesForGestureRecognizer: !java.util.LinkedHashMap
+        isInstance: *9
+        name: touchesForGestureRecognizer
+        type: !java.util.LinkedHashMap
+            name: NSSet
+            delegate: ~
+            isConst: *11
+            isRef: *9
+        isVarArgs: *11
+        args: 
+            - !java.util.LinkedHashMap
+                param: gesture
+                type: !java.util.LinkedHashMap
+                    name: UIGestureRecognizer
+                    delegate: ~
+                    isConst: *11
+                    isRef: *9
+    touchesForView: !java.util.LinkedHashMap
+        isInstance: *9
+        name: touchesForView
+        type: !java.util.LinkedHashMap
+            name: NSSet
+            delegate: ~
+            isConst: *11
+            isRef: *9
+        isVarArgs: *11
+        args: 
+            - !java.util.LinkedHashMap
+                param: view
+                type: !java.util.LinkedHashMap
+                    name: UIView
+                    delegate: ~
+                    isConst: *11
+                    isRef: *9
+    touchesForWindow: !java.util.LinkedHashMap
+        isInstance: *9
+        name: touchesForWindow
+        type: !java.util.LinkedHashMap
+            name: NSSet
+            delegate: ~
+            isConst: *11
+            isRef: *9
+        isVarArgs: *11
+        args: 
+            - !java.util.LinkedHashMap
+                param: window
+                type: !java.util.LinkedHashMap
+                    name: UIWindow
+                    delegate: ~
+                    isConst: *11
+                    isRef: *9
+constants: !java.util.LinkedHashMap
+    UIEventType: !java.util.LinkedHashMap
+        name: UIEventType
+        isEnum: *9
+        isTypedef: *9
+        values: []
+        defValues: 
+            - UIEventTypeTouches
+            - UIEventTypeMotion
+            - UIEventTypeRemoteControl
+    UIEventSubtype: !java.util.LinkedHashMap
+        name: UIEventSubtype
+        isEnum: *9
+        isTypedef: *9
+        values: []
+        defValues: 
+            - UIEventSubtypeNone
+            - UIEventSubtypeMotionShake
+            - UIEventSubtypeRemoteControlPlay
+            - UIEventSubtypeRemoteControlPause
+            - UIEventSubtypeRemoteControlStop
+            - UIEventSubtypeRemoteControlTogglePlayPause
+            - UIEventSubtypeRemoteControlNextTrack
+            - UIEventSubtypeRemoteControlPreviousTrack
+            - UIEventSubtypeRemoteControlBeginSeekingBackward
+            - UIEventSubtypeRemoteControlEndSeekingBackward
+            - UIEventSubtypeRemoteControlBeginSeekingForward
+            - UIEventSubtypeRemoteControlEndSeekingForward

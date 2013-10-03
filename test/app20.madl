@@ -1,0 +1,14 @@
+app('Graphics 1') { 
+
+  Canvas { 
+	Rect(frame: [10, 10, 20, 20], color: red)
+	Rect(position: [40, 10], size: [20, 30], color: blue, fillColor: yellow)
+	Line(start: [10, 40], end: [100, 50], width: 3)
+	Ellipse(10, 60, 40, 30) 
+
+	ImageShape(frame: [10, 100, 200, 100], file: 'scene1.jpg')
+
+	TextShape(position: [100, 70], text: 'Drawing', font: [Serif, Bold, 24], color: blue)
+  }
+
+}

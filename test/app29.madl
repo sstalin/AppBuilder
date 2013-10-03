@@ -1,0 +1,14 @@
+app('Long Press Gesture') { 
+
+  View { 
+	Label(id: label1)
+
+	onLongPress(next: alert1)
+
+    Alert(id: alert1,
+		  title: 'Alert',
+		  message: 'Long Press') 
+
+  }
+
+}

@@ -1,0 +1,28 @@
+app(name : 'NavView3',
+	navigationBar: true) { 
+
+  View(id: v1, title: 'First View', 
+       shortTitle: 'First',
+       rightButton: Add) { 
+    
+    Button(id: b1, text: 'Push 1', 
+		   next: v2 )
+    Button(id: b2, text: 'Push 2', 
+		   next: v3 )
+    Button(id: b3, text: 'Push 3', 
+		   next: v4 )
+  }
+
+  View(id: v2, title: 'Second View') { 
+    Label(id: l1, text: 'Something ...')
+  }
+  
+  View(id: v3, title: 'Third View') { 
+    Label(id: l2, text: 'Something else ...')
+  }
+
+  View(id: v4, title: 'Fourth View') { 
+    
+  }
+
+}

@@ -1,0 +1,14 @@
+
+app(name : 'Picker 6') { 
+
+  View(id: top) { 
+    Label(id: l1, width: '*', text: 'selection')
+    TimePicker(id: p1, selection: { l1.text = time })
+  }
+
+}
+
+
+
+
+

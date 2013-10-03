@@ -1,0 +1,25 @@
+app(name : 'Tabs') { 
+
+  TabbedView(id: top) { 
+
+    View(id: first, 
+		 title: 'view 1', tabImage: 'all.png',
+		 background: yellow) { 
+      Label(id: l1, text: 'View 1')
+    }
+
+    View(id: second, 
+		 title: 'view 2', tabImage: 'faves.png',
+		 background: red) { 
+      Label(id: l2, text: 'View 2')
+    }
+
+    View(id: third, 
+		 title: 'view 3', tabImage: 'search.png',
+		 background: green) { 
+      Label(id: l3, text: 'View 3')
+    }
+    
+  }
+
+} 

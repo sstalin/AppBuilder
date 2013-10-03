@@ -1,0 +1,37 @@
+app('Tap Gesture 4') { 
+
+  View { 
+	Label(id: label1)
+	Label(id: label2)
+	Label(id: label3)
+	Label(id: label4)
+	Label(id: label5)
+	Label(id: label6)
+
+	onTap() { x, y -> 
+	  label1.text = "Single tap 1-finger @ (${x}, ${y})"
+	} doAfter delay: 2, { label1.text = '' }
+
+	onDoubleTap() { x, y -> 
+	  label2.text = "Double tap 1-finger tap @ (${x}, ${y})"	  
+	} doAfter delay: 2, { label2.text = '' }
+
+	onTap(touches: 2) { x, y -> 
+	  label3.text = "Single tap 2-finger @ (${x}, ${y})"
+	} doAfter delay: 2, { label3.text = '' }
+
+	onDoubleTap(touches: 2) { x, y -> 
+	  label4.text = "Double tap 2-finger tap @ (${x}, ${y})"	  
+	} doAfter delay: 2, { label4.text = '' }
+
+	onTap(touches: 3) { x, y -> 
+	  label5.text = "Single tap 3-finger @ (${x}, ${y})"
+	} doAfter delay: 2, { label5.text = '' }
+
+	onDoubleTap(touches: 3) { x, y -> 
+	  label6.text = "Double tap 3-finger tap @ (${x}, ${y})"	  
+	} doAfter delay: 2, { label6.text = '' }
+
+  }
+
+}

@@ -1,0 +1,13 @@
+app('Rotation Gesture 2') { 
+
+  View { 
+	Label(id: label1)
+	Image(file: 'image.png')
+
+	onRotate { 
+	  // rotate image 
+	}
+
+  }
+
+}

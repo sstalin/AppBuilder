@@ -1,0 +1,29 @@
+
+app('App State') { 
+  
+  View { 
+    Label(id: l1, text: 'Hello', width: '*') 
+    Text(id: t1, prompt: 'enter text')
+    Row { 
+      Button(id: b1, text: 'Enable', next: s1)
+      Button(id: b2, text: 'Disable', next: s2)
+    }
+
+    state(id: s1) { // init state
+      onEntry { 
+		t1.enabled = true
+		b1.enabled = false
+		b2.enabled = true 
+	  }
+    } 
+    state(id: s2) { 
+      onEntry { 
+		t1.enabled = false 
+		b1.enabled = true 
+		b2.enabled = false 
+	  }
+    }
+
+  }
+
+}

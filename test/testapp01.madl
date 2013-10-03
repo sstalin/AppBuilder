@@ -1,0 +1,11 @@
+app(name : 'Modal View') { 
+
+  View(id: v1, title: 'First') { 
+    Label(id: l1, text: 'First View')
+
+    Button(text: 'Press', action: { println 'Hello' })   
+
+  }
+  
+
+}

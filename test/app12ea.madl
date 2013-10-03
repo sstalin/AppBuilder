@@ -1,0 +1,41 @@
+
+app(name : 'Alerts 4a') { 
+
+  View(id: top) { 
+    Button(text: 'Alert 1',
+		   next: p1)
+    Button(text: 'Alert 2',
+		   next: p2)
+    Button(text: 'Alert 3',
+		   next: p3)
+    Button(text: 'Alert 4',
+		   next: p4)
+
+    Alert(id: p1,
+		  title: 'Simple alert',
+		  message: '<Message>',
+		  alertViewStyle: Default) 
+    
+    Alert(id: p2,
+		  title: 'OK-Cancel Alert',
+		  message: '<Message>',
+		  affirm: 'Ok',
+		  cancel: 'Cancel',
+		  alertViewStyle: SecureTextInput)
+
+    Alert(id: p3,
+		  title: 'OK-Cancel Alert',
+		  message: '<Message>',
+		  affirm: 'Ok',
+		  cancel: 'Cancel',
+		  alertViewStyle: PlainTextInput)
+
+    Alert(id: p4,
+		  title: 'OK-Cancel Alert',
+		  message: '<Message>',
+		  affirm: 'Ok',
+		  cancel: 'Cancel',
+		  alertViewStyle: LoginAndPasswordInput)
+    
+  }
+}

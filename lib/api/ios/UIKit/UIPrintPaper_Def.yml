@@ -1,0 +1,44 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    paperSize: !java.util.LinkedHashMap
+        name: paperSize
+        type: CGSize
+        ref: ""
+        explanation: The size of the sheet to be used for printing. (read-only)
+        readonly: true
+    printableRect: !java.util.LinkedHashMap
+        name: printableRect
+        type: CGRect
+        ref: ""
+        explanation: The rectangle that represents the portion of the paper that can be imaged upon. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap
+    bestPaperForPageSize: !java.util.LinkedHashMap
+        isInstance: &8 false
+        name: bestPaperForPageSize
+        type: !java.util.LinkedHashMap
+            name: UIPrintPaper
+            delegate: ~
+            isConst: *8
+            isRef: &10 true
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: pageSize
+                type: !java.util.LinkedHashMap
+                    name: CGSize
+                    delegate: ~
+                    isConst: *8
+                    isRef: *8
+            - !java.util.LinkedHashMap
+                name: withPapersFromArray
+                param: paperList
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *8
+                    isRef: *10

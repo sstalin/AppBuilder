@@ -1,0 +1,468 @@
+
+app(name:'Unit Converter') {
+
+	ListView(title: 'Unit Type') {
+		Item(text:'Weight', next:vwWeight)
+		Item(text:'Volume', next:vwVolume)
+		Item(text:'Length', next:vwLength)
+		Item(text:'Temperature', next:vwTemp)
+		Item(text:'Speed', next:vwSpeed)
+		Item(text:'Pressure', next:vwPressure)
+		Item(text:'Power', next:vwPower)
+	}
+
+	// Power
+
+	View(id: vwPower, title: 'Power', scroll:true) {
+		def convertFn = { String frmUnit, String toUnit, float frmValue ->
+			double result = 0;
+			double nval = 0;
+			if ("Watts".equals(frmUnit)) {
+				nval = frmValue;
+			} else if ("Kilowatts".equals(frmUnit)) {
+				nval = frmValue/0.001;
+			} else if ("Horsepower".equals(frmUnit)) {
+				nval = frmValue/0.00134;
+			}
+			if ("Watts".equals(toUnit)) {
+				result = nval;
+			} else if ("Kilowatts".equals(toUnit)) {
+				result = nval * 0.001;
+			} else if ("Horsepower".equals(toUnit)) {
+				result = nval * 0.00134;
+			}
+			return (float)result;
+		}
+
+		Label(id: lb7a, text:'result', font: [Bold, 14])
+
+		Label(text:'From:')
+		Text(id: t7a, type: decimal)
+		Button(id:bt7a, text:'Watts', menu:mnu7a)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t7a.text);
+			float toAmt = convertFn(bt7a.text, bt7b.text, frmAmt);
+			lb7a.text = "${frmAmt} ${bt7a.text} = ${toAmt} ${bt7b.text}"
+			t7b.text = toAmt;
+		})
+
+		Label(text:'To:')
+		Text(id: t7b, type: decimal)
+		Button(id:bt7b, text:'Kilowatts', menu:mnu7b)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t7b.text);
+			float toAmt = convertFn(bt7b.text, bt7a.text, frmAmt);
+			lb7a.text = "${frmAmt} ${bt7b.text} = ${toAmt} ${bt7a.text}"
+			t7a.text = toAmt;
+		})
+
+		Menu(id:mnu7a, title:'From Unit:') {
+			Item(text:'Watts', action: { bt7a.text = 'Watts'})
+			Item(text:'Kilowatts', action: { bt7a.text = 'Kilowatts'})
+			Item(text:'Horsepower', action: { bt7a.text = 'Horsepower'})
+		}
+
+		Menu(id:mnu7b, title:'To Unit:') {
+			Item(text:'Watts', action: { bt7b.text = 'Watts'})
+			Item(text:'Kilowatts', action: { bt7b.text = 'Kilowatts'})
+			Item(text:'Horsepower', action: { bt7b.text = 'Horsepower'})
+		}
+	}
+
+	// Pressure
+
+	View(id: vwPressure, title: 'Pressure', scroll:true) {
+		def convertFn = { String frmUnit, String toUnit, float frmValue ->
+			double result = 0;
+			double nval = 0;
+			if ("Atmospheres".equals(frmUnit)) {
+				nval = frmValue;
+			} else if ("Bars".equals(frmUnit)) {
+				nval = frmValue/1.01325;
+			} else if ("Pascals".equals(frmUnit)) {
+				nval = frmValue/101325;
+			} else if ("mm Hg".equals(frmUnit)) {
+				nval = frmValue/759.9983;
+			}
+			if ("Atmospheres".equals(toUnit)) {
+				result = nval;
+			} else if ("Bars".equals(toUnit)) {
+				result = nval * 1.01325;
+			} else if ("Pascals".equals(toUnit)) {
+				result = nval * 101325;
+			} else if ("mm Hg".equals(toUnit)) {
+				result = nval * 759.9983;
+			}
+			return (float)result;
+		}
+
+		Label(id: lb6a, text:'result', font: [Bold, 14])
+
+		Label(text:'From:')
+		Text(id: t6a, type: decimal)
+		Button(id:bt6a, text:'Atmospheres', menu:mnu6a)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t6a.text);
+			float toAmt = convertFn(bt6a.text, bt6b.text, frmAmt);
+			lb6a.text = "${frmAmt} ${bt6a.text} = ${toAmt} ${bt6b.text}"
+			t6b.text = toAmt;
+		})
+
+		Label(text:'To:')
+		Text(id: t6b, type: decimal)
+		Button(id:bt6b, text:'Bars', menu:mnu6b)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t6b.text);
+			float toAmt = convertFn(bt6b.text, bt6a.text, frmAmt);
+			lb6a.text = "${frmAmt} ${bt6b.text} = ${toAmt} ${bt6a.text}"
+			t6a.text = toAmt;
+		})
+
+		Menu(id:mnu6a, title:'From Unit:') {
+			Item(text:'Atmospheres', action: { bt6a.text = 'Atmospheres'})
+			Item(text:'Bars', action: { bt6a.text = 'Bars'})
+			Item(text:'Pascals', action: { bt6a.text = 'Pascals'})
+			Item(text:'mm Hg', action: { bt6a.text = 'mm Hg'})
+		}
+
+		Menu(id:mnu6b, title:'To Unit:') {
+			Item(text:'Atmospheres', action: { bt6b.text = 'Atmospheres'})
+			Item(text:'Bars', action: { bt6b.text = 'Bars'})
+			Item(text:'Pascals', action: { bt6b.text = 'Pascals'})
+			Item(text:'mm Hg', action: { bt6b.text = 'mm Hg'})
+		}
+	}
+
+	// Speed
+
+	View(id: vwSpeed, title: 'Speed', scroll:true) {
+		def convertFn = { String frmUnit, String toUnit, float frmValue ->
+			double result = 0;
+			double nval = 0;
+			if ("Miles/Hr".equals(frmUnit)) {
+				nval = frmValue;
+			} else if ("Km/Hr".equals(frmUnit)) {
+				nval = frmValue/1.60394;
+			} else if ("Feet/Second".equals(frmUnit)) {
+				nval = frmValue/1.46667;
+			} else if ("Knots".equals(frmUnit)) {
+				nval = frmValue/0.86898;
+			}
+			if ("Miles/Hr".equals(toUnit)) {
+				result = nval;
+			} else if ("Km/Hr".equals(toUnit)) {
+				result = nval * 1.60394;
+			} else if ("Feet/Second".equals(toUnit)) {
+				result = nval * 1.46667;
+			} else if ("Knots".equals(toUnit)) {
+				result = nval * 0.86898;
+			}
+			return (float)result;
+		}
+
+		Label(id: lb5a, text:'result', font: [Bold, 14])
+
+		Label(text:'From:')
+		Text(id: t5a, type: decimal)
+		Button(id:bt5a, text:'Miles/Hr', menu:mnu5a)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t5a.text);
+			float toAmt = convertFn(bt5a.text, bt5b.text, frmAmt);
+			lb5a.text = "${frmAmt} ${bt5a.text} = ${toAmt} ${bt5b.text}"
+			t5b.text = toAmt;
+		})
+
+		Label(text:'To:')
+		Text(id: t5b, type: decimal)
+		Button(id:bt5b, text:'Km/Hr', menu:mnu5b)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t5b.text);
+			float toAmt = convertFn(bt5b.text, bt5a.text, frmAmt);
+			lb5a.text = "${frmAmt} ${bt5b.text} = ${toAmt} ${bt5a.text}"
+			t5a.text = toAmt;
+		})
+
+		Menu(id:mnu5a, title:'From Unit:') {
+			Item(text:'Miles/Hr', action: { bt5a.text = 'Atmospheres'})
+			Item(text:'Km/Hr', action: { bt5a.text = 'Km/Hr'})
+			Item(text:'Feet/Second', action: { bt5a.text = 'Feet/Second'})
+			Item(text:'Knots', action: { bt5a.text = 'Knots'})
+		}
+
+		Menu(id:mnu5b, title:'To Unit:') {
+			Item(text:'Miles/Hr', action: { bt5b.text = 'Miles/Hr'})
+			Item(text:'Km/Hr', action: { bt5b.text = 'Km/Hr'})
+			Item(text:'Feet/Second', action: { bt5b.text = 'Feet/Second'})
+			Item(text:'Knots', action: { bt5b.text = 'Knots'})
+		}
+	}
+
+	// Temperature
+
+	View(id: vwTemp, title: 'Temperature', scroll:true) {
+		def convertFn = { String frmUnit, String toUnit, float frmValue ->
+			double result = 0;
+			double nval = 0;
+			if ("Fahrenheit".equals(frmUnit)) {
+				nval = frmValue;
+			} else if ("Celsius".equals(frmUnit)) {
+				nval = ((9f*frmValue)/5f) + 32f;
+			} else if ("Kelvin".equals(frmUnit)) {
+				nval = ((9f*(frmValue-273))/5f) + 32f;
+			}
+			if ("Fahrenheit".equals(toUnit)) {
+				result = nval;
+			} else if ("Celsius".equals(toUnit)) {
+				result = (5f * (nval-32f))/9f;
+			} else if ("Kelvin".equals(toUnit)) {
+				result = ((5f * (nval-32f))/9f) + 273f;
+			}
+			return (float)result;
+		}
+
+		Label(id: lb4a, text:'result', font: [Bold, 14])
+
+		Label(text:'From:')
+		Text(id: t4a, type: decimal)
+		Button(id:bt4a, text:'Fahrenheit', menu:mnu4a)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t4a.text);
+			float toAmt = convertFn(bt4a.text, bt4b.text, frmAmt);
+			lb4a.text = "${frmAmt} ${bt4a.text} = ${toAmt} ${bt4b.text}"
+			t4b.text = toAmt;
+		})
+
+		Label(text:'To:')
+		Text(id: t4b, type: decimal)
+		Button(id:bt4b, text:'Celsius', menu:mnu4b)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t4b.text);
+			float toAmt = convertFn(bt4b.text, bt4a.text, frmAmt);
+			lb4a.text = "${frmAmt} ${bt4b.text} = ${toAmt} ${bt4a.text}"
+			t4a.text = toAmt;
+		})
+
+		Menu(id:mnu4a, title:'From Unit:') {
+			Item(text:'Fahrenheit', action: { bt4a.text = 'Fahrenheit'})
+			Item(text:'Celsius', action: { bt4a.text = 'Celsius'})
+			Item(text:'Kelvin', action: { bt4a.text = 'Kelvin'})
+		}
+
+		Menu(id:mnu4b, title:'To Unit:') {
+			Item(text:'Fahrenheit', action: { bt4b.text = 'Fahrenheit'})
+			Item(text:'Celsius', action: { bt4b.text = 'Celsius'})
+			Item(text:'Kelvin', action: { bt4b.text = 'Kelvin'})
+		}
+	}
+
+	// Length
+
+	View(id: vwLength, title: 'Length', scroll:true) {
+		def convertFn = { String frmUnit, String toUnit, float frmValue ->
+			double result = 0;
+			double nval = 0;
+			if ("Miles".equals(frmUnit)) {
+				nval = frmValue;
+			} else if ("Km".equals(frmUnit)) {
+				nval = frmValue/1.60934f;
+			} else if ("Metres".equals(frmUnit)) {
+				nval = frmValue/1609.344f;
+			} else if ("Inches".equals(frmUnit)) {
+				nval = frmValue/63360f;
+			} else if ("Feet".equals(frmUnit)) {
+				nval = frmValue/5280f;
+			} else if ("Yard".equals(frmUnit)) {
+				nval = frmValue/1760f;
+			} else if ("Nautical Miles".equals(frmUnit)) {
+				nval = frmValue/0.86898f;
+			}
+			if ("Miles".equals(toUnit)) {
+				result = nval;
+			} else if ("Km".equals(toUnit)) {
+				result = nval * 1.60934f;
+			} else if ("Metres".equals(toUnit)) {
+				result = nval * 1609.344f;
+			} else if ("Inches".equals(toUnit)) {
+				result = nval * 63360f;
+			} else if ("Feet".equals(toUnit)) {
+				result = nval * 5280f;
+			} else if ("Yard".equals(toUnit)) {
+				result = nval * 1760f;
+			} else if ("Nautical Miles".equals(toUnit)) {
+				result = nval * 0.86898f;
+			}
+			return (float)result;
+		}
+
+		Label(id: lb3a, text:'result', font: [Bold, 14])
+
+		Label(text:'From:')
+		Text(id: t3a, type: decimal)
+		Button(id:bt3a, text:'Miles', menu:mnu3a)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t3a.text);
+			float toAmt = convertFn(bt3a.text, bt3b.text, frmAmt);
+			lb3a.text = "${frmAmt} ${bt3a.text} = ${toAmt} ${bt3b.text}"
+			t3b.text = toAmt;
+		})
+
+		Label(text:'To:')
+		Text(id: t3b, type: decimal)
+		Button(id:bt3b, text:'Km', menu:mnu3b)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t3b.text);
+			float toAmt = convertFn(bt3b.text, bt3a.text, frmAmt);
+			lb3a.text = "${frmAmt} ${bt3b.text} = ${toAmt} ${bt3a.text}"
+			t3a.text = toAmt;
+		})
+
+		Menu(id:mnu3a, title:'From Unit:') {
+			Item(text:'Miles', action: { bt3a.text = 'Miles'})
+			Item(text:'Km', action: { bt3a.text = 'Km'})
+			Item(text:'Metres', action: { bt3a.text = 'Metres'})
+			Item(text:'Inches', action: { bt3a.text = 'Inches'})
+			Item(text:'Feet', action: { bt3a.text = 'Feet'})
+			Item(text:'Yard', action: { bt3a.text = 'Yard'})
+			Item(text:'Nautical Miles', action: { bt3a.text = 'Nautical Miles'})
+		}
+
+		Menu(id:mnu3b, title:'To Unit:') {
+			Item(text:'Miles', action: { bt3b.text = 'Miles'})
+			Item(text:'Km', action: { bt3b.text = 'Km'})
+			Item(text:'Metres', action: { bt3b.text = 'Metres'})
+			Item(text:'Inches', action: { bt3b.text = 'Inches'})
+			Item(text:'Feet', action: { bt3b.text = 'Feet'})
+			Item(text:'Yard', action: { bt3b.text = 'Yard'})
+			Item(text:'Nautical Miles', action: { bt3b.text = 'Nautical Miles'})
+		}
+	}
+
+	// Volume
+
+	View(id: vwVolume, title: 'Volume', scroll:true) {
+		def convertFn = { String frmUnit, String toUnit, float frmValue ->
+			double result = 0;
+			double nval = 0;
+			if ("Gallon".equals(frmUnit)) {
+				nval = frmValue;
+			} else if ("Litre".equals(frmUnit)) {
+				nval = frmValue/3.785f;
+			} else if ("Pint".equals(frmUnit)) {
+				nval = frmValue/6.66f;
+			} else if ("Barrel".equals(frmUnit)) {
+				nval = frmValue/0.0238f;
+			}
+			if ("Gallon".equals(toUnit)) {
+				result = nval;
+			} else if ("Litre".equals(toUnit)) {
+				result = nval * 3.785f;
+			} else if ("Pint".equals(toUnit)) {
+				result = nval * 6.66f;
+			} else if ("Barrel".equals(toUnit)) {
+				result = nval * 0.0238f;
+			}
+			return (float)result;
+		}
+
+		Label(id: lb2a, text:'result', font: [Bold, 14])
+
+		Label(text:'From:')
+		Text(id: t2a, type: decimal)
+		Button(id:bt2a, text:'Gallon', menu:mnu2a)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t2a.text);
+			float toAmt = convertFn(bt2a.text, bt2b.text, frmAmt);
+			lb2a.text = "${frmAmt} ${bt2a.text} = ${toAmt} ${bt2b.text}"
+			t2b.text = toAmt;
+		})
+
+		Label(text:'To:')
+		Text(id: t2b, type: decimal)
+		Button(id:bt2b, text:'Litre', menu:mnu2b)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t2b.text);
+			float toAmt = convertFn(bt2b.text, bt2a.text, frmAmt);
+			lb2a.text = "${frmAmt} ${bt2b.text} = ${toAmt} ${bt2a.text}"
+			t2a.text = toAmt;
+		})
+
+		Menu(id:mnu2a, title:'From Unit:') {
+			Item(text:'Gallon', action: { bt2a.text = 'Gallon'})
+			Item(text:'Litre', action: { bt2a.text = 'Litre'})
+			Item(text:'Pint', action: { bt2a.text = 'Pint'})
+			Item(text:'Barrel', action: { bt2a.text = 'Barrel'})
+		}
+
+		Menu(id:mnu2b, title:'To Unit:') {
+			Item(text:'Gallon', action: { bt2b.text = 'Gallon'})
+			Item(text:'Litre', action: { bt2b.text = 'Litre'})
+			Item(text:'Pint', action: { bt2b.text = 'Pint'})
+			Item(text:'Barrel', action: { bt2b.text = 'Barrel'})
+		}
+	}
+
+	// Weight
+
+	View(id: vwWeight, title: 'Weight', scroll:true) {
+		def convertFn = { String frmUnit, String toUnit, float frmValue ->
+			double result = 0;
+			double nval = 0;
+			if ("Lb".equals(frmUnit)) {
+				nval = frmValue;
+			} else if ("Kg".equals(frmUnit)) {
+				nval = frmValue/0.45f;
+			} else if ("Ounce".equals(frmUnit)) {
+				nval = frmValue/16f;
+			} else if ("Stone".equals(frmUnit)) {
+				nval = frmValue/0.07f;
+			}
+			if ("Lb".equals(toUnit)) {
+				result = nval;
+			} else if ("Kg".equals(toUnit)) {
+				result = nval * 0.45f;
+			} else if ("Ounce".equals(toUnit)) {
+				result = nval * 16f;
+			} else if ("Stone".equals(toUnit)) {
+				result = nval * 0.07f;
+			}
+			return (float)result;
+		}
+
+		Label(id: lb1a, text:'result', font: [Bold, 14])
+
+		Label(text:'From:')
+		Text(id: t1a, type: decimal)
+		Button(id:bt1a, text:'Lb', menu:mnu1a)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t1a.text);
+			float toAmt = convertFn(bt1a.text, bt1b.text, frmAmt);
+			lb1a.text = "${frmAmt} ${bt1a.text} = ${toAmt} ${bt1b.text}"
+			t1b.text = toAmt;
+		})
+
+		Label(text:'To:')
+		Text(id: t1b, type: decimal)
+		Button(id:bt1b, text:'Kg', menu:mnu1b)
+		Button(text:'Convert!', action: {
+			float frmAmt = Float.parseFloat(t1b.text);
+			float toAmt = convertFn(bt1b.text, bt1a.text, frmAmt);
+			lb1a.text = "${frmAmt} ${bt1b.text} = ${toAmt} ${bt1a.text}"
+			t1a.text = toAmt;
+		})
+
+		Menu(id:mnu1a, title:'From Unit:') {
+			Item(text:'Lb', action: { bt1a.text = 'Lb'})
+			Item(text:'Kg', action: { bt1a.text = 'Kg'})
+			Item(text:'Ounce', action: { bt1a.text = 'Ounce'})
+			Item(text:'Stone', action: { bt1a.text = 'Stone'})
+		}
+
+		Menu(id:mnu1b, title:'To Unit:') {
+			Item(text:'Lb', action: { bt1b.text = 'Lb'})
+			Item(text:'Kg', action: { bt1b.text = 'Kg'})
+			Item(text:'Ounce', action: { bt1b.text = 'Ounce'})
+			Item(text:'Stone', action: { bt1b.text = 'Stone'})
+		}
+	}
+
+}

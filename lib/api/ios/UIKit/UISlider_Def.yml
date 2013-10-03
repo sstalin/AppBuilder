@@ -1,0 +1,321 @@
+--- 
+inherit: 
+    - UIControl
+    - UIView
+    - UIResponder
+    - NSObject
+conform: 
+    - NSCoding
+    - NSCoding (UIView)
+    - UIAppearance (UIView)
+    - UIAppearanceContainer (UIView)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    continuous: !java.util.LinkedHashMap
+        name: continuous
+        type: BOOL
+        ref: ""
+        explanation: Contains a Boolean value indicating whether changes in the sliders value generate continuous update events.
+        readonly: false
+    currentMaximumTrackImage: !java.util.LinkedHashMap
+        name: currentMaximumTrackImage
+        type: UIImage
+        ref: "*"
+        explanation: Contains the maximum track image currently being used to render the receiver. (read-only)
+        readonly: true
+    currentMinimumTrackImage: !java.util.LinkedHashMap
+        name: currentMinimumTrackImage
+        type: UIImage
+        ref: "*"
+        explanation: Contains the minimum track image currently being used to render the receiver. (read-only)
+        readonly: true
+    currentThumbImage: !java.util.LinkedHashMap
+        name: currentThumbImage
+        type: UIImage
+        ref: "*"
+        explanation: Contains the thumb image currently being used to render the receiver. (read-only)
+        readonly: true
+    maximumTrackTintColor: !java.util.LinkedHashMap
+        name: maximumTrackTintColor
+        type: UIColor
+        ref: "*"
+        explanation: The color used to tint the standard maximum track images.
+        readonly: false
+    maximumValue: !java.util.LinkedHashMap
+        name: maximumValue
+        type: float
+        ref: ""
+        explanation: Contains the maximum value of the receiver.
+        readonly: false
+    maximumValueImage: !java.util.LinkedHashMap
+        name: maximumValueImage
+        type: UIImage
+        ref: "*"
+        explanation: "Contains the image that is drawn on the side of the slider representing the maximum value. "
+        readonly: false
+    minimumTrackTintColor: !java.util.LinkedHashMap
+        name: minimumTrackTintColor
+        type: UIColor
+        ref: "*"
+        explanation: The color used to tint the standard minimum track images.
+        readonly: false
+    minimumValue: !java.util.LinkedHashMap
+        name: minimumValue
+        type: float
+        ref: ""
+        explanation: "Contains the minimum value of the receiver. "
+        readonly: false
+    minimumValueImage: !java.util.LinkedHashMap
+        name: minimumValueImage
+        type: UIImage
+        ref: "*"
+        explanation: "Contains the image that is drawn on the side of the slider representing the minimum value. "
+        readonly: false
+    thumbTintColor: !java.util.LinkedHashMap
+        name: thumbTintColor
+        type: UIColor
+        ref: "*"
+        explanation: The color used to tint the standard thumb images.
+        readonly: false
+    value: !java.util.LinkedHashMap
+        name: value
+        type: float
+        ref: ""
+        explanation: "Contains the receiver?s current value. "
+        readonly: false
+methods: !java.util.LinkedHashMap
+    maximumTrackImageForState: !java.util.LinkedHashMap
+        isInstance: &18 true
+        name: maximumTrackImageForState
+        type: !java.util.LinkedHashMap
+            name: UIImage
+            delegate: ~
+            isConst: &20 false
+            isRef: *18
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+    maximumValueImageRectForBounds: !java.util.LinkedHashMap
+        isInstance: *18
+        name: maximumValueImageRectForBounds
+        type: !java.util.LinkedHashMap
+            name: CGRect
+            delegate: ~
+            isConst: *20
+            isRef: *20
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: bounds
+                type: !java.util.LinkedHashMap
+                    name: CGRect
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+    minimumTrackImageForState: !java.util.LinkedHashMap
+        isInstance: *18
+        name: minimumTrackImageForState
+        type: !java.util.LinkedHashMap
+            name: UIImage
+            delegate: ~
+            isConst: *20
+            isRef: *18
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+    minimumValueImageRectForBounds: !java.util.LinkedHashMap
+        isInstance: *18
+        name: minimumValueImageRectForBounds
+        type: !java.util.LinkedHashMap
+            name: CGRect
+            delegate: ~
+            isConst: *20
+            isRef: *20
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: bounds
+                type: !java.util.LinkedHashMap
+                    name: CGRect
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+    setMaximumTrackImage: !java.util.LinkedHashMap
+        isInstance: *18
+        name: setMaximumTrackImage
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *20
+            isRef: *20
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: image
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *20
+                    isRef: *18
+            - !java.util.LinkedHashMap
+                name: forState
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+    setMinimumTrackImage: !java.util.LinkedHashMap
+        isInstance: *18
+        name: setMinimumTrackImage
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *20
+            isRef: *20
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: image
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *20
+                    isRef: *18
+            - !java.util.LinkedHashMap
+                name: forState
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+    setThumbImage: !java.util.LinkedHashMap
+        isInstance: *18
+        name: setThumbImage
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *20
+            isRef: *20
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: image
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *20
+                    isRef: *18
+            - !java.util.LinkedHashMap
+                name: forState
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+    setValue: !java.util.LinkedHashMap
+        isInstance: *18
+        name: setValue
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *20
+            isRef: *20
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: value
+                type: !java.util.LinkedHashMap
+                    name: float
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+            - !java.util.LinkedHashMap
+                name: animated
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+    thumbImageForState: !java.util.LinkedHashMap
+        isInstance: *18
+        name: thumbImageForState
+        type: !java.util.LinkedHashMap
+            name: UIImage
+            delegate: ~
+            isConst: *20
+            isRef: *18
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+    thumbRectForBounds: !java.util.LinkedHashMap
+        isInstance: *18
+        name: thumbRectForBounds
+        type: !java.util.LinkedHashMap
+            name: CGRect
+            delegate: ~
+            isConst: *20
+            isRef: *20
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: bounds
+                type: !java.util.LinkedHashMap
+                    name: CGRect
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+            - !java.util.LinkedHashMap
+                name: trackRect
+                param: rect
+                type: !java.util.LinkedHashMap
+                    name: CGRect
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+            - !java.util.LinkedHashMap
+                name: value
+                param: value
+                type: !java.util.LinkedHashMap
+                    name: float
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20
+    trackRectForBounds: !java.util.LinkedHashMap
+        isInstance: *18
+        name: trackRectForBounds
+        type: !java.util.LinkedHashMap
+            name: CGRect
+            delegate: ~
+            isConst: *20
+            isRef: *20
+        isVarArgs: *20
+        args: 
+            - !java.util.LinkedHashMap
+                param: bounds
+                type: !java.util.LinkedHashMap
+                    name: CGRect
+                    delegate: ~
+                    isConst: *20
+                    isRef: *20

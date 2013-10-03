@@ -1,0 +1,12 @@
+app('Pinch Gesture') { 
+
+  View { 
+	Label(id: label1)
+
+	onPinch { scale -> 
+	  label1.text = "Pinch scale: ${scale}"
+	}
+
+  }
+
+}

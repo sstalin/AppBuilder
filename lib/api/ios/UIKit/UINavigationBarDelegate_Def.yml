@@ -1,0 +1,30 @@
+--- 
+conform: 
+    - NSObject
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    navigationBar: !java.util.LinkedHashMap
+        isInstance: &5 true
+        name: navigationBar
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: &7 false
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: navigationBar
+                type: !java.util.LinkedHashMap
+                    name: UINavigationBar
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+            - !java.util.LinkedHashMap
+                name: shouldPushItem
+                param: item
+                type: !java.util.LinkedHashMap
+                    name: UINavigationItem
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5

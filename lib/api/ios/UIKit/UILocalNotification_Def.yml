@@ -1,0 +1,83 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSCoding
+    - NSCopying
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    alertAction: !java.util.LinkedHashMap
+        name: alertAction
+        type: NSString
+        ref: "*"
+        explanation: The title of the action button or slider.
+        readonly: false
+    alertBody: !java.util.LinkedHashMap
+        name: alertBody
+        type: NSString
+        ref: "*"
+        explanation: The message displayed in the notification alert.
+        readonly: false
+    alertLaunchImage: !java.util.LinkedHashMap
+        name: alertLaunchImage
+        type: NSString
+        ref: "*"
+        explanation: Identifies the image used as the launch image when the user taps (or slides) the action button (or slider).
+        readonly: false
+    applicationIconBadgeNumber: !java.util.LinkedHashMap
+        name: applicationIconBadgeNumber
+        type: NSInteger
+        ref: ""
+        explanation: The number to display as the application?s icon badge.
+        readonly: false
+    fireDate: !java.util.LinkedHashMap
+        name: fireDate
+        type: NSDate
+        ref: "*"
+        explanation: The date and time when the system should deliver the notification.
+        readonly: false
+    hasAction: !java.util.LinkedHashMap
+        name: hasAction
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value that controls whether the notification shows or hides the alert action.
+        readonly: false
+    repeatCalendar: !java.util.LinkedHashMap
+        name: repeatCalendar
+        type: NSCalendar
+        ref: "*"
+        explanation: The calendar the system should refer to when it reschedules a repeating notification.
+        readonly: false
+    repeatInterval: !java.util.LinkedHashMap
+        name: repeatInterval
+        type: NSCalendarUnit
+        ref: ""
+        explanation: The calendar interval at which to reschedule the notification.
+        readonly: false
+    soundName: !java.util.LinkedHashMap
+        name: soundName
+        type: NSString
+        ref: "*"
+        explanation: The name of the file containing the sound to play when an alert is displayed.
+        readonly: false
+    timeZone: !java.util.LinkedHashMap
+        name: timeZone
+        type: NSTimeZone
+        ref: "*"
+        explanation: The time zone of the notification?s fire date.
+        readonly: false
+    userInfo: !java.util.LinkedHashMap
+        name: userInfo
+        type: NSDictionary
+        ref: "*"
+        explanation: A dictionary for passing custom information to the notified application.
+        readonly: false
+methods: !java.util.LinkedHashMap {}
+constants: !java.util.LinkedHashMap
+    Notification Sound: !java.util.LinkedHashMap
+        name: ~
+        isEnum: &18 false
+        isTypedef: *18
+        values: ~
+        defValues: 
+            - UILocalNotificationDefaultSoundName
