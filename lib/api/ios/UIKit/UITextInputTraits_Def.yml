@@ -1,0 +1,124 @@
+--- 
+conform: 
+    - NSObject
+properties: !java.util.LinkedHashMap
+    autocapitalizationType: !java.util.LinkedHashMap
+        name: autocapitalizationType
+        type: UITextAutocapitalizationType
+        ref: ""
+        explanation: The auto-capitalization style for the text object. (required)
+        readonly: false
+    autocorrectionType: !java.util.LinkedHashMap
+        name: autocorrectionType
+        type: UITextAutocorrectionType
+        ref: ""
+        explanation: The auto-correction style for the text object. (required)
+        readonly: false
+    enablesReturnKeyAutomatically: !java.util.LinkedHashMap
+        name: enablesReturnKeyAutomatically
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether the return key is automatically enabled when text is entered by the user. (required)
+        readonly: false
+    keyboardAppearance: !java.util.LinkedHashMap
+        name: keyboardAppearance
+        type: UIKeyboardAppearance
+        ref: ""
+        explanation: The appearance style of the keyboard that is associated with the text object (required)
+        readonly: false
+    keyboardType: !java.util.LinkedHashMap
+        name: keyboardType
+        type: UIKeyboardType
+        ref: ""
+        explanation: The keyboard style associated with the text object. (required)
+        readonly: false
+    returnKeyType: !java.util.LinkedHashMap
+        name: returnKeyType
+        type: UIReturnKeyType
+        ref: ""
+        explanation: The contents of the ?return? key. (required)
+        readonly: false
+    secureTextEntry: !java.util.LinkedHashMap
+        name: secureTextEntry
+        type: BOOL
+        ref: ""
+        explanation: Identifies whether the text object should hide the text being entered. (required)
+        readonly: false
+    spellCheckingType: !java.util.LinkedHashMap
+        name: spellCheckingType
+        type: UITextSpellCheckingType
+        ref: ""
+        explanation: The spell-checking style for the text object. (required)
+        readonly: false
+methods: !java.util.LinkedHashMap {}
+constants: !java.util.LinkedHashMap
+    UITextAutocapitalizationType: !java.util.LinkedHashMap
+        name: UITextAutocapitalizationType
+        isEnum: &14 true
+        isTypedef: *14
+        values: []
+        defValues: 
+            - UITextAutocapitalizationTypeNone
+            - UITextAutocapitalizationTypeWords
+            - UITextAutocapitalizationTypeSentences
+            - UITextAutocapitalizationTypeAllCharacters
+    UITextAutocorrectionType: !java.util.LinkedHashMap
+        name: UITextAutocorrectionType
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        defValues: 
+            - UITextAutocorrectionTypeDefault
+            - UITextAutocorrectionTypeNo
+            - UITextAutocorrectionTypeYes
+    UITextSpellCheckingType: !java.util.LinkedHashMap
+        name: UITextSpellCheckingType
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        defValues: 
+            - UITextSpellCheckingTypeDefault
+            - UITextSpellCheckingTypeNo
+            - UITextSpellCheckingTypeYes
+    UIKeyboardType: !java.util.LinkedHashMap
+        name: UIKeyboardType
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        defValues: 
+            - UIKeyboardTypeDefault
+            - UIKeyboardTypeASCIICapable
+            - UIKeyboardTypeNumbersAndPunctuation
+            - UIKeyboardTypeURL
+            - UIKeyboardTypeNumberPad
+            - UIKeyboardTypePhonePad
+            - UIKeyboardTypeNamePhonePad
+            - UIKeyboardTypeEmailAddress
+            - UIKeyboardTypeDecimalPad
+            - UIKeyboardTypeTwitter
+            - UIKeyboardTypeAlphabet
+    UIKeyboardAppearance: !java.util.LinkedHashMap
+        name: UIKeyboardAppearance
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        defValues: 
+            - UIKeyboardAppearanceDefault
+            - UIKeyboardAppearanceAlert
+    UIReturnKeyType: !java.util.LinkedHashMap
+        name: UIReturnKeyType
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        defValues: 
+            - UIReturnKeyDefault
+            - UIReturnKeyGo
+            - UIReturnKeyGoogle
+            - UIReturnKeyJoin
+            - UIReturnKeyNext
+            - UIReturnKeyRoute
+            - UIReturnKeySearch
+            - UIReturnKeySend
+            - UIReturnKeyYahoo
+            - UIReturnKeyDone
+            - UIReturnKeyEmergencyCall

@@ -1,0 +1,37 @@
+app('Autosize') { 
+
+  View { 
+	Row { 
+	  Button(id: buttonUL, text: 'UL')
+	  Button(id: buttonUR, text: 'UR')
+	} 
+	Row { 
+	  Button(id: buttonL, text:'L')
+	  Button(id: buttonR, text:'R')
+	}
+	Row { 
+	  Button(id: buttonLL, text:'LL')
+	  Button(id: buttonLR, text:'LR')
+	}
+  }
+
+  onOrientationChange { 
+	if (isPortrait(orientation)) { 
+	  buttonUL.frame = [20, 20, 125, 125]
+	  buttonUR.frame = [175, 20, 125, 125]
+	  buttonL.frame = [20, 168, 125, 125]
+	  buttonR.frame = [175, 168, 125, 125]
+	  buttonLL.frame = [20, 315, 125, 125]
+	  buttonLR.frame = [175, 315, 125, 125]
+    } else {
+	  buttonUL.frame = [20, 20, 125, 125]
+	  buttonUR.frame = [20, 155, 125, 125]
+	  buttonL.frame = [177, 20, 125, 125]
+	  buttonR.frame = [177, 155, 125, 125]
+	  buttonLL.frame = [328, 20, 125, 125]
+	  buttonLR.frame = [328, 155, 125, 125]
+	}
+  }
+
+}
+

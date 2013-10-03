@@ -1,0 +1,15 @@
+app('Pinch Gesture 2') { 
+
+  View { 
+	Label(id: label1)
+	Image(id: image, file: 'yosemite-meadows.png')
+
+	onPinch { scale -> 
+	  // scale image 
+	  image.transform = Affine.scale(scale)
+	  //} exit { 
+	}
+
+  }
+
+}

@@ -1,0 +1,33 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    primaryLanguage: !java.util.LinkedHashMap
+        name: primaryLanguage
+        type: NSString
+        ref: "*"
+        explanation: "The primary language, if any, of the input mode."
+        readonly: false
+methods: !java.util.LinkedHashMap
+    activeInputModes: !java.util.LinkedHashMap
+        isInstance: &7 false
+        name: activeInputModes
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *7
+            isRef: &9 true
+        isVarArgs: *7
+        args: []
+    currentInputMode: !java.util.LinkedHashMap
+        isInstance: *7
+        name: currentInputMode
+        type: !java.util.LinkedHashMap
+            name: UITextInputMode
+            delegate: ~
+            isConst: *7
+            isRef: *9
+        isVarArgs: *7
+        args: []

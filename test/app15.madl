@@ -1,0 +1,14 @@
+app('Toolbar 01') { 
+
+  View { 
+	Label(id: label, text: 'No selection')
+	
+	Toolbar { 
+	  Space
+	  Button(text: 'Tool1', action: {label.text = 'Tool 1 selected' } )
+	  Button(type: 'Compose', action: {label.text = 'Compose selected' } )
+	  Space
+	}
+  }
+
+}

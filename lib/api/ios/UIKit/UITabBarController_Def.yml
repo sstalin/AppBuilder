@@ -1,0 +1,80 @@
+--- 
+inherit: 
+    - UIViewController
+    - UIResponder
+    - NSObject
+conform: 
+    - NSCoding
+    - UITabBarDelegate
+    - NSCoding (UIViewController)
+    - UIAppearanceContainer (UIViewController)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    customizableViewControllers: !java.util.LinkedHashMap
+        name: customizableViewControllers
+        type: NSArray
+        ref: "*"
+        explanation: The subset of view controllers managed by this tab bar controller that can be customized.
+        readonly: false
+    delegate: !java.util.LinkedHashMap
+        name: delegate
+        type: id
+        ref: ""
+        explanation: The tab bar controller?s delegate object.
+        readonly: false
+    moreNavigationController: !java.util.LinkedHashMap
+        name: moreNavigationController
+        type: UINavigationController
+        ref: "*"
+        explanation: The view controller that manages the More navigation interface. (read-only)
+        readonly: true
+    selectedIndex: !java.util.LinkedHashMap
+        name: selectedIndex
+        type: NSUInteger
+        ref: ""
+        explanation: The index of the view controller associated with the currently selected tab item.
+        readonly: false
+    selectedViewController: !java.util.LinkedHashMap
+        name: selectedViewController
+        type: UIViewController
+        ref: "*"
+        explanation: "The view controller associated with the currently selected tab item. "
+        readonly: false
+    tabBar: !java.util.LinkedHashMap
+        name: tabBar
+        type: UITabBar
+        ref: "*"
+        explanation: The tab bar view associated with this controller. (read-only)
+        readonly: true
+    viewControllers: !java.util.LinkedHashMap
+        name: viewControllers
+        type: NSArray
+        ref: "*"
+        explanation: An array of the root view controllers displayed by the tab bar interface.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    setViewControllers: !java.util.LinkedHashMap
+        isInstance: &13 true
+        name: setViewControllers
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &15 false
+            isRef: *15
+        isVarArgs: *15
+        args: 
+            - !java.util.LinkedHashMap
+                param: viewControllers
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *15
+                    isRef: *13
+            - !java.util.LinkedHashMap
+                name: animated
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *15
+                    isRef: *15

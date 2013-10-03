@@ -1,0 +1,14 @@
+--- 
+inherit: 
+    - UIStoryboardSegue
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    popoverController: !java.util.LinkedHashMap
+        name: popoverController
+        type: UIPopoverController
+        ref: "*"
+        explanation: The popover controller used to display the destination view controller. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap {}

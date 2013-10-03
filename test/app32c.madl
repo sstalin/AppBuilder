@@ -1,0 +1,8 @@
+app('Launch Orientation 4') { 
+
+  View(initialOrientation: Landscape,
+	   supportedOrientations: Landscape) { 
+	Label(id: lable, align: center, text: 'Landscape', font: 36)
+  }
+
+}

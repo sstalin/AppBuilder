@@ -1,0 +1,20 @@
+app('Shake and Break 01') { 
+  View(statusBar: no) {
+	Image(id: hmoe)
+
+	state(id: s0) { 
+	  home.file = 'home.png'
+	}
+	
+	state(id: s1) { 
+	  home.file = 'homebroken.png'
+
+	  onTouch(next: s0)
+	}
+
+	onShake { 
+	  play 'glass.wav'
+	} next s1
+	
+  }
+}

@@ -1,0 +1,228 @@
+--- 
+conform: 
+    - NSObject
+properties: !java.util.LinkedHashMap
+    window: !java.util.LinkedHashMap
+        name: window
+        type: UIWindow
+        ref: "*"
+        explanation: The window to use when presenting a storyboard.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    application: !java.util.LinkedHashMap
+        isInstance: &6 true
+        name: application
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: &8 false
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+            - !java.util.LinkedHashMap
+                name: willFinishLaunchingWithOptions
+                param: launchOptions
+                type: !java.util.LinkedHashMap
+                    name: NSDictionary
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    applicationDidBecomeActive: !java.util.LinkedHashMap
+        isInstance: *6
+        name: applicationDidBecomeActive
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    applicationDidEnterBackground: !java.util.LinkedHashMap
+        isInstance: *6
+        name: applicationDidEnterBackground
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    applicationDidFinishLaunching: !java.util.LinkedHashMap
+        isInstance: *6
+        name: applicationDidFinishLaunching
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    applicationDidReceiveMemoryWarning: !java.util.LinkedHashMap
+        isInstance: *6
+        name: applicationDidReceiveMemoryWarning
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    applicationProtectedDataDidBecomeAvailable: !java.util.LinkedHashMap
+        isInstance: *6
+        name: applicationProtectedDataDidBecomeAvailable
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    applicationProtectedDataWillBecomeUnavailable: !java.util.LinkedHashMap
+        isInstance: *6
+        name: applicationProtectedDataWillBecomeUnavailable
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    applicationSignificantTimeChange: !java.util.LinkedHashMap
+        isInstance: *6
+        name: applicationSignificantTimeChange
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    applicationWillEnterForeground: !java.util.LinkedHashMap
+        isInstance: *6
+        name: applicationWillEnterForeground
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    applicationWillResignActive: !java.util.LinkedHashMap
+        isInstance: *6
+        name: applicationWillResignActive
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    applicationWillTerminate: !java.util.LinkedHashMap
+        isInstance: *6
+        name: applicationWillTerminate
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: application
+                type: !java.util.LinkedHashMap
+                    name: UIApplication
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+constants: !java.util.LinkedHashMap
+    Launch Options Keys: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *8
+        isTypedef: *8
+        values: ~
+        defValues: 
+            - UIApplicationLaunchOptionsURLKey
+            - UIApplicationLaunchOptionsSourceApplicationKey
+            - UIApplicationLaunchOptionsRemoteNotificationKey
+            - UIApplicationLaunchOptionsAnnotationKey
+            - UIApplicationLaunchOptionsLocalNotificationKey
+            - UIApplicationLaunchOptionsLocationKey
+            - UIApplicationLaunchOptionsNewsstandDownloadsKey
+    App-Specific State Restoration Keys: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *8
+        isTypedef: *8
+        values: ~
+        defValues: 
+            - UIApplicationStateRestorationUserInterfaceIdiomKey
+            - UIApplicationStateRestorationBundleVersionKey

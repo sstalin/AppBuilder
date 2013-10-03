@@ -1,0 +1,110 @@
+
+// Verified: 8/26/2013
+app(name: 'MADL MatchNum') {
+
+	View(id:vwMain, scroll:true) {
+
+		int prvBtId = 0;
+		int prvNum = 0;
+		int clkCnt = 1;
+		int score = 0;
+
+		def checkScore = {int btId, int curNum ->
+			if (clkCnt == 1) {
+				prvBtId = btId;
+				prvNum = curNum;
+				lb1a.text = 'Found: '+ prvNum;
+				clkCnt = 2;
+			} else {
+				if (prvBtId != btId) {
+					if (prvNum == curNum) {
+						lb1a.text = 'You got it!';
+						score += 1;
+					} else {
+						lb1a.text = 'Not matched, try again.';
+					}
+				} else {
+					score -= 1;
+					lb1a.text = 'Same Pict, Not Count!';
+				}
+				lbScore.text = 'Score: '+  score;
+				clkCnt = 1;
+			}
+		}
+
+		Label(id:lbScore, text:'Score: 0')
+		Label(id:lb1a, text:'Select any picture to start.')
+
+		Panel(orientation: 'horizontal') {
+			Image(size: [55, 55], file: 'emo_01.png', action: { checkScore(1,1) })
+			Image(size: [55, 55], file: 'emo_16.png', action: { checkScore(16,8) })
+			Image(size: [55, 55], file: 'emo_15.png', action: { checkScore(15,7) })
+			Image(size: [55, 55], file: 'emo_02.png', action: { checkScore(2,2) })
+			Image(size: [55, 55], file: 'emo_17.png', action: { checkScore(17,2) })
+		}
+		Panel(orientation: 'horizontal') {
+			Image(size: [55, 55], file: 'emo_03.png', action: { checkScore(3,3) })
+			Image(size: [55, 55], file: 'emo_04.png', action: { checkScore(4,4) })
+			Image(size: [55, 55], file: 'emo_07.png', action: { checkScore(7,7) })
+			Image(size: [55, 55], file: 'emo_08.png', action: { checkScore(8,8) })
+			Image(size: [55, 55], file: 'emo_18.png', action: { checkScore(18,7) })
+		}
+		Panel(orientation: 'horizontal') {
+			Image(size: [55, 55], file: 'emo_09.png', action: { checkScore(9,1) })
+			Image(size: [55, 55], file: 'emo_06.png', action: { checkScore(6,6) })
+			Image(size: [55, 55], file: 'emo_10.png', action: { checkScore(10,2) })
+			Image(size: [55, 55], file: 'emo_12.png', action: { checkScore(12,4) })
+			Image(size: [55, 55], file: 'emo_19.png', action: { checkScore(19,2) })
+		}
+		Panel(orientation: 'horizontal') {
+			Image(size: [55, 55], file: 'emo_05.png', action: { checkScore(5,5) })
+			Image(size: [55, 55], file: 'emo_13.png', action: { checkScore(13,5) })
+			Image(size: [55, 55], file: 'emo_11.png', action: { checkScore(11,3) })
+			Image(size: [55, 55], file: 'emo_14.png', action: { checkScore(14,6) })
+			Image(size: [55, 55], file: 'emo_20.png', action: { checkScore(20,5) })
+		}
+		Panel(orientation: 'horizontal') {
+			Image(size: [55, 55], file: 'emo_21.png', action: { checkScore(21,3) })
+			Image(size: [55, 55], file: 'emo_22.png', action: { checkScore(22,4) })
+			Image(size: [55, 55], file: 'emo_23.png', action: { checkScore(23,7) })
+			Image(size: [55, 55], file: 'emo_24.png', action: { checkScore(24,8) })
+			Image(size: [55, 55], file: 'emo_25.png', action: { checkScore(25,7) })
+		}
+
+		Button(text:'Reset', action: {
+			prvBtId = 0;
+			prvNum = 0;
+			clkCnt = 1;
+			score = 0;
+			lbScore.text = 'Score: 0';
+			lb1a.text = 'Select any picture to start.';
+		})
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

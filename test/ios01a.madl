@@ -1,0 +1,21 @@
+
+/* Mobile Application Definition Language */
+
+app(name : 'First App 6') { 
+
+  PageView(id: top) { 
+    View() { 
+      Image(file: 'scene1.jpg')
+    }
+    View() { 
+      Image(file: 'scene2.jpg')
+    }
+    View() { 
+      Image(file: 'scene3.jpg')
+    }
+    View() { 
+      Image(file: 'scene4.jpg')
+    }
+  }
+
+}

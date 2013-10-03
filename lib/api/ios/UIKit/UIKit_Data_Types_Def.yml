@@ -1,0 +1,37 @@
+--- 
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap {}
+constants: !java.util.LinkedHashMap
+    UIBarStyle: !java.util.LinkedHashMap
+        name: UIBarStyle
+        isEnum: &5 true
+        isTypedef: *5
+        values: []
+        defValues: 
+            - UIBarStyleDefault
+            - UIBarStyleBlack
+            - UIBarStyleBlackOpaque
+            - UIBarStyleBlackTranslucent
+    UIDataDetectorTypes: !java.util.LinkedHashMap
+        name: UIDataDetectorTypes
+        isEnum: *5
+        isTypedef: *5
+        values: []
+        aliasOf: NSUInteger
+        defValues: 
+            - UIDataDetectorTypePhoneNumber
+            - UIDataDetectorTypeLink
+            - UIDataDetectorTypeAddress
+            - UIDataDetectorTypeCalendarEvent
+            - UIDataDetectorTypeNone
+            - UIDataDetectorTypeAll
+    UIEdgeInsets: !java.util.LinkedHashMap
+        name: ~
+        isEnum: &12 false
+        isTypedef: *5
+        values: ~
+    UIOffset: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *12
+        isTypedef: *5
+        values: ~

@@ -1,0 +1,96 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    sectionIndexTitles: !java.util.LinkedHashMap
+        name: sectionIndexTitles
+        type: NSArray
+        ref: "*"
+        explanation: Returns the list of section-index titles for the table view (read-only)
+        readonly: true
+    sectionTitles: !java.util.LinkedHashMap
+        name: sectionTitles
+        type: NSArray
+        ref: "*"
+        explanation: Returns the list of section titles for the table view. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap
+    currentCollation: !java.util.LinkedHashMap
+        isInstance: &8 false
+        name: currentCollation
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: []
+    sectionForObject: !java.util.LinkedHashMap
+        isInstance: &12 true
+        name: sectionForObject
+        type: !java.util.LinkedHashMap
+            name: NSInteger
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: object
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: ~
+                    isConst: *8
+                    isRef: *8
+            - !java.util.LinkedHashMap
+                name: collationStringSelector
+                param: selector
+                type: !java.util.LinkedHashMap
+                    name: SEL
+                    delegate: ~
+                    isConst: *8
+                    isRef: *8
+    sectionForSectionIndexTitleAtIndex: !java.util.LinkedHashMap
+        isInstance: *12
+        name: sectionForSectionIndexTitleAtIndex
+        type: !java.util.LinkedHashMap
+            name: NSInteger
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: indexTitleIndex
+                type: !java.util.LinkedHashMap
+                    name: NSInteger
+                    delegate: ~
+                    isConst: *8
+                    isRef: *8
+    sortedArrayFromArray: !java.util.LinkedHashMap
+        isInstance: *12
+        name: sortedArrayFromArray
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *8
+            isRef: *12
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: array
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *8
+                    isRef: *12
+            - !java.util.LinkedHashMap
+                name: collationStringSelector
+                param: selector
+                type: !java.util.LinkedHashMap
+                    name: SEL
+                    delegate: ~
+                    isConst: *8
+                    isRef: *8

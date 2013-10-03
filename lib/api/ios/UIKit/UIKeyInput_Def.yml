@@ -1,0 +1,42 @@
+--- 
+conform: 
+    - UITextInputTraits
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    deleteBackward: !java.util.LinkedHashMap
+        isInstance: &5 true
+        name: deleteBackward
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &7 false
+            isRef: *7
+        isVarArgs: *7
+        args: []
+    hasText: !java.util.LinkedHashMap
+        isInstance: *5
+        name: hasText
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: []
+    insertText: !java.util.LinkedHashMap
+        isInstance: *5
+        name: insertText
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: text
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5

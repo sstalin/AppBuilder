@@ -1,0 +1,17 @@
+app(name : 'Modal View') { 
+
+  View(id: v1, title: 'First') { 
+    Label(text: 'First View')
+
+    Button(text: 'Press', next: v2, animated: yes)   
+
+  }
+  
+  View(id: v2, title: 'Second') { 
+    Label(text: 'Second View')
+
+    Button(text: 'Dismiss', next: Previous )   
+		   
+  }
+
+}

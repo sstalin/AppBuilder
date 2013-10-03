@@ -1,0 +1,33 @@
+--- 
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    accessibilityElementDidBecomeFocused: !java.util.LinkedHashMap
+        isInstance: &4 true
+        name: accessibilityElementDidBecomeFocused
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &6 false
+            isRef: *6
+        isVarArgs: *6
+        args: []
+    accessibilityElementDidLoseFocus: !java.util.LinkedHashMap
+        isInstance: *4
+        name: accessibilityElementDidLoseFocus
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *6
+            isRef: *6
+        isVarArgs: *6
+        args: []
+    accessibilityElementIsFocused: !java.util.LinkedHashMap
+        isInstance: *4
+        name: accessibilityElementIsFocused
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *6
+            isRef: *6
+        isVarArgs: *6
+        args: []

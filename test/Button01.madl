@@ -1,0 +1,17 @@
+app(name: 'Button') { 
+
+  View { 
+	vfill()
+	Label(id: status)
+	vfill()
+	Row { 
+	  Button(id: left, title: 'Left', 
+			 action : { status.text = "${title} button pressed." })
+	  hfill()
+	  Button(id: right, title: 'Right',
+			 action : { status.text = "${title} button pressed." })
+	}
+	vfill(weight: 2)
+  }
+
+}

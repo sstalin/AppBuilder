@@ -1,0 +1,15 @@
+--- 
+inherit: 
+    - UIPrintFormatter
+    - NSObject
+conform: 
+    - NSCopying (UIPrintFormatter)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    view: !java.util.LinkedHashMap
+        name: view
+        type: UIView
+        ref: "*"
+        explanation: The view from which the view print formatter was derived. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap {}

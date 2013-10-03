@@ -1,0 +1,13 @@
+app(name : 'NavView',
+	navigationBar: true) { 
+
+  View(id: v1, title: 'First') { 
+    Button(id: b1, text: 'Push', 
+		   next: v2)
+  }
+  
+  View(id: v2, title: 'Second') { 
+    Label(id: l1, text: 'Something')
+  }
+
+}
