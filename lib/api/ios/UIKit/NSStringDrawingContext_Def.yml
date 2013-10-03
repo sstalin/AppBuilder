@@ -1,0 +1,37 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    actualScaleFactor: !java.util.LinkedHashMap
+        name: actualScaleFactor
+        type: CGFloat
+        ref: ""
+        explanation: The actual scale factor that was applied to the font during drawing. (read-only)
+        readonly: true
+    actualTrackingAdjustment: !java.util.LinkedHashMap
+        name: actualTrackingAdjustment
+        type: CGFloat
+        ref: ""
+        explanation: The actual tracking value that was applied during drawing. (read-only)
+        readonly: true
+    minimumScaleFactor: !java.util.LinkedHashMap
+        name: minimumScaleFactor
+        type: CGFloat
+        ref: ""
+        explanation: "The scale factor that determines the smallest font size to use during drawing. "
+        readonly: false
+    minimumTrackingAdjustment: !java.util.LinkedHashMap
+        name: minimumTrackingAdjustment
+        type: CGFloat
+        ref: ""
+        explanation: The smallest amount of space (in points) to maintain between characters.
+        readonly: false
+    totalBounds: !java.util.LinkedHashMap
+        name: totalBounds
+        type: CGRect
+        ref: ""
+        explanation: The bounding rectangle that was last used when drawing the string. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap {}

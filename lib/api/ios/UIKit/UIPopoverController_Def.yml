@@ -1,0 +1,228 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - UIAppearanceContainer
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    contentViewController: !java.util.LinkedHashMap
+        name: contentViewController
+        type: UIViewController
+        ref: "*"
+        explanation: The view controller responsible for the content portion of the popover.
+        readonly: false
+    delegate: !java.util.LinkedHashMap
+        name: delegate
+        type: id
+        ref: ""
+        explanation: The delegate you want to receive popover controller messages.
+        readonly: false
+    passthroughViews: !java.util.LinkedHashMap
+        name: passthroughViews
+        type: NSArray
+        ref: "*"
+        explanation: An array of views that the user can interact with while the popover is visible.
+        readonly: false
+    popoverArrowDirection: !java.util.LinkedHashMap
+        name: popoverArrowDirection
+        type: UIPopoverArrowDirection
+        ref: ""
+        explanation: The direction of the popover?s arrow. (read-only)
+        readonly: true
+    popoverBackgroundViewClass: !java.util.LinkedHashMap
+        name: popoverBackgroundViewClass
+        type: Class
+        ref: ""
+        explanation: The class to use for displaying the popover background content.
+        readonly: false
+    popoverContentSize: !java.util.LinkedHashMap
+        name: popoverContentSize
+        type: CGSize
+        ref: ""
+        explanation: The size of the popover?s content view.
+        readonly: false
+    popoverLayoutMargins: !java.util.LinkedHashMap
+        name: popoverLayoutMargins
+        type: UIEdgeInsets
+        ref: ""
+        explanation: The margins that define the portion of the screen in which it is permissible to display the popover.
+        readonly: false
+    popoverVisible: !java.util.LinkedHashMap
+        name: popoverVisible
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether the popover is currently visible. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap
+    dismissPopoverAnimated: !java.util.LinkedHashMap
+        isInstance: &14 true
+        name: dismissPopoverAnimated
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &16 false
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    initWithContentViewController: !java.util.LinkedHashMap
+        isInstance: *14
+        name: initWithContentViewController
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: viewController
+                type: !java.util.LinkedHashMap
+                    name: UIViewController
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+    presentPopoverFromBarButtonItem: !java.util.LinkedHashMap
+        isInstance: *14
+        name: presentPopoverFromBarButtonItem
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: item
+                type: !java.util.LinkedHashMap
+                    name: UIBarButtonItem
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: permittedArrowDirections
+                param: arrowDirections
+                type: !java.util.LinkedHashMap
+                    name: UIPopoverArrowDirection
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: animated
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    presentPopoverFromRect: !java.util.LinkedHashMap
+        isInstance: *14
+        name: presentPopoverFromRect
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: rect
+                type: !java.util.LinkedHashMap
+                    name: CGRect
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: inView
+                param: view
+                type: !java.util.LinkedHashMap
+                    name: UIView
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: permittedArrowDirections
+                param: arrowDirections
+                type: !java.util.LinkedHashMap
+                    name: UIPopoverArrowDirection
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: animated
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    setContentViewController: !java.util.LinkedHashMap
+        isInstance: *14
+        name: setContentViewController
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: viewController
+                type: !java.util.LinkedHashMap
+                    name: UIViewController
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: animated
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    setPopoverContentSize: !java.util.LinkedHashMap
+        isInstance: *14
+        name: setPopoverContentSize
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: size
+                type: !java.util.LinkedHashMap
+                    name: CGSize
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: animated
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+constants: !java.util.LinkedHashMap
+    UIPopoverArrowDirection: !java.util.LinkedHashMap
+        name: UIPopoverArrowDirection
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        aliasOf: NSUInteger
+        defValues: 
+            - UIPopoverArrowDirectionUp
+            - UIPopoverArrowDirectionDown
+            - UIPopoverArrowDirectionLeft
+            - UIPopoverArrowDirectionRight
+            - UIPopoverArrowDirectionAny
+            - UIPopoverArrowDirectionUnknown

@@ -1,0 +1,41 @@
+app(name : 'Embedded List 2c') { 
+
+  ListView(title: 'Level 1',
+		   next: view2) { 
+	Item(text: 'Level 1 item 1')
+	Item(text: 'Level 1 item 2')
+	Item(text: 'Level 1 item 3')
+	Item(text: 'Level 1 item 4')
+  }
+
+  View(id: view2, title: 'Details') { 
+	Label('Detail View')
+	Button('Button')
+	Label(id: l1, text: 'Text')
+
+	ListView { 
+	  Section { 
+		Item(text: 'Detail item 1', next: view3)
+		Item(text: 'Detail item 2', next: view4)
+		Item(text: 'Detail item 3', selection: { l1.text = 'Item3' })
+		Item(text: 'Detail item 4', selection: { l1.text = 'Item4' })
+	  }
+	}
+      
+  }    
+
+  View(id: view3, title: 'Detail View 3') { 
+	Label('Detail View 3 - line 1')
+	Label('Detail View 3 - line 2')
+	Label('Detail View 3 - line 3')
+
+  }
+
+  View(id: view4, title: 'Detail View 4') { 
+	Label('Detail View 4 - line 1')
+	Label('Detail View 4 - line 2')
+	Label('Detail View 4 - line 3')
+  }
+
+
+}

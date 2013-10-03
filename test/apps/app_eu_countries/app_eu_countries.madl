@@ -1,0 +1,1074 @@
+
+// Verified: 8/26/2013
+app(name : 'MADL EU Countries') {
+
+	def EUMemberCountries = [
+		[ key: 'austria', name: 'Austria', capital: 'Vienna' ],
+		[ key: 'belgium', name: 'Belgium', capital: 'City of Brussels' ],
+		[ key: 'bulgaria', name: 'Bulgaria', capital: 'Sofia' ],
+		[ key: 'cyprus', name: 'Cyprus', capital: 'Nicosia' ],
+		[ key: 'czechrepublic', name: 'Czech Republic', capital: 'Prague' ],
+		[ key: 'denmark', name: 'Denmark', capital: 'Copenhagen' ],
+		[ key: 'estonia', name: 'Estonia', capital: 'Tallinn' ],
+		[ key: 'finland', name: 'Finland', capital: 'Helsinki' ],
+		[ key: 'france', name: 'France', capital: 'Paris' ],
+		[ key: 'germany', name: 'Germany', capital: 'Berlin' ],
+		[ key: 'greece', name: 'Greece', capital: 'Athens' ],
+		[ key: 'hungary', name: 'Hungary', capital: 'Budapest' ],
+		[ key: 'ireland', name: 'Ireland', capital: 'Dublin' ],
+		[ key: 'italy', name: 'Italy', capital: 'Rome' ],
+		[ key: 'latvia', name: 'Latvia', capital: 'Riga' ],
+		[ key: 'lithuania', name: 'Lithuania', capital: 'Vilnius' ],
+		[ key: 'luxembourg', name: 'Luxembourg', capital: 'Luxembourg' ],
+		[ key: 'malta', name: 'Malta', capital: 'Valletta' ],
+		[ key: 'netherlands', name: 'Netherlands', capital: 'Amsterdam' ],
+		[ key: 'poland', name: 'Poland', capital: 'Warsaw' ],
+		[ key: 'portugal', name: 'Portugal', capital: 'Lisbon' ],
+		[ key: 'romania', name: 'Romania', capital: 'Bucharest' ],
+		[ key: 'slovakia', name: 'Slovakia', capital: 'Bratislava' ],
+		[ key: 'slovenia', name: 'Slovenia', capital: 'Ljubljana' ],
+		[ key: 'spain', name: 'Spain', capital: 'Madrid' ],
+		[ key: 'sweden', name: 'Sweden', capital: 'Stockholm' ],
+		[ key: 'unitedkingdom', name: 'United Kingdom', capital: 'London' ],
+	]
+
+	ListView(id: list1, title: 'European Union') {
+		EUMemberCountries.each { c ->
+			Item(text: c.name, detailText:c.capital, image: "${c.key}_flag.gif", next:"vw_${c.key}")
+		}
+	}
+
+	View(id:vw_austria, scroll:true) {
+		Label(id: lb1a, text: 'Austria')
+		Image(id: img1a, file: 'austria_flag_map.png')
+		Label(id: lb1b, lineBreak: Wrap, line:5, text: 'Austria, officially the Republic of Austria, is a federal republic and a landlocked country of roughly 8.47 million people in Central Europe.')
+		Image(id: img1b, file: 'austria_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Vienna')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Chancellor:')
+			Label(text: 'Werner Faymann')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Federal republic, Parliamentary republic, Federation')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'National anthem:')
+			Label(text: 'Land der Berge, Land am Strome')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'German Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_austria)
+		}
+	}
+	View(id:vwb_austria, title:'Austria') {
+		Web(url:'http://en.wikipedia.org/wiki/austria')
+	}
+
+
+	View(id:vw_belgium, scroll:true) {
+		Label(id: lb2a, text: 'Belgium')
+		Image(id: img2a, file: 'belgium_flag_map.png')
+		Label(id: lb2b, lineBreak: Wrap, line:5, text: 'Belgium, officially the Kingdom of Belgium, is a federal state in Western Europe. It is a founding member of the European Union and hosts the EU s headquarters as well as those of several other major international organisations such as NATO.')
+		Image(id: img2b, file: 'belgium_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'City of Brussels')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '32')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Federation, Representative democracy')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official languages:')
+			Label(text: 'French Language, Dutch Language, German Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Prime minister:')
+			Label(text: 'Elio Di Rupo')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_belgium)
+		}
+	}
+	View(id:vwb_belgium, title:'Belgium') {
+		Web(url:'http://en.wikipedia.org/wiki/belgium')
+	}
+
+
+	View(id:vw_bulgaria, scroll:true) {
+		Label(id: lb3a, text: 'Bulgaria')
+		Image(id: img3a, file: 'bulgaria_flag_map.png')
+		Label(id: lb3b, lineBreak: Wrap, line:5, text: 'Bulgaria, officially the Republic of Bulgaria, is a country located in Southeastern Europe. It is bordered by Romania to the north, Serbia and Macedonia to the west, Greece and Turkey to the south and the Black Sea to the east.')
+		Image(id: img3b, file: 'bulgaria_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Sofia')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Bulgarian lev')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary system, Parliamentary republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '7.348 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'President:')
+			Label(text: 'Rosen Plevneliev')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Prime minister:')
+			Label(text: 'Plamen Oresharski')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_bulgaria)
+		}
+	}
+	View(id:vwb_bulgaria, title:'Bulgaria') {
+		Web(url:'http://en.wikipedia.org/wiki/bulgaria')
+	}
+
+
+	View(id:vw_cyprus, scroll:true) {
+		Label(id: lb4a, text: 'Cyprus')
+		Image(id: img4a, file: 'cyprus_flag_map.png')
+		Label(id: lb4b, lineBreak: Wrap, line:5, text: 'Cyprus, officially the Republic of Cyprus, is an island country in the Eastern Mediterranean Sea. Cyprus is the third largest and third most populous island in the Mediterranean, and a member state of the European Union.')
+		Image(id: img4b, file: 'cyprus_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Nicosia')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Presidential system, Unitary state, Constitutional republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government debt:')
+			Label(text: '85.8% of GDP (2012) Eurostat')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official languages:')
+			Label(text: 'Greek Language, Turkish Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '1.117 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_cyprus)
+		}
+	}
+	View(id:vwb_cyprus, title:'Cyprus') {
+		Web(url:'http://en.wikipedia.org/wiki/cyprus')
+	}
+
+
+	View(id:vw_czechrepublic, scroll:true) {
+		Label(id: lb5a, text: 'Czech Republic')
+		Image(id: img5a, file: 'czechrepublic_flag_map.png')
+		Label(id: lb5b, lineBreak: Wrap, line:5, text: 'The Czech Republic, is a landlocked country in Central Europe. The country is bordered by Germany to the west, Austria to the south, Slovakia to the east and Poland to the north. Its capital and largest city, with 1.3 million inhabitants, is Prague.')
+		Image(id: img5b, file: 'czechrepublic_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Prague')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Czech koruna')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '420')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Czech Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'President:')
+			Label(text: 'MiloÅ¡ Zeman')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_czechrepublic)
+		}
+	}
+	View(id:vwb_czechrepublic, title:'Czech Republic') {
+		Web(url:'http://en.wikipedia.org/wiki/czech_republic')
+	}
+
+
+	View(id:vw_denmark, scroll:true) {
+		Label(id: lb6a, text: 'Denmark')
+		Image(id: img6a, file: 'denmark_flag_map.png')
+		Label(id: lb6b, lineBreak: Wrap, line:5, text: 'Denmark, officially the Kingdom of Denmark, is a state in the Scandinavian region of Northern Europe with the two autonomous constituent countries in the north Atlantic Ocean, the Faroe Islands and Greenland.')
+		Image(id: img6b, file: 'denmark_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Copenhagen')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Danish krone')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Hereditary monarchy, Federacy')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Danish Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '5.571 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Queen:')
+			Label(text: 'Margrethe II of Denmark')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_denmark)
+		}
+	}
+	View(id:vwb_denmark, title:'Denmark') {
+		Web(url:'http://en.wikipedia.org/wiki/denmark')
+	}
+
+
+	View(id:vw_estonia, scroll:true) {
+		Label(id: lb7a, text: 'Estonia')
+		Image(id: img7a, file: 'estonia_flag_map.png')
+		Label(id: lb7b, lineBreak: Wrap, line:5, text: 'Estonia is a state in the Baltic region of Northern Europe.')
+		Image(id: img7b, file: 'estonia_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Tallinn')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Estonian')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '1.28 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_estonia)
+		}
+	}
+	View(id:vwb_estonia, title:'Estonia') {
+		Web(url:'http://en.wikipedia.org/wiki/estonia')
+	}
+
+
+	View(id:vw_finland, scroll:true) {
+		Label(id: lb8a, text: 'Finland')
+		Image(id: img8a, file: 'finland_flag_map.png')
+		Label(id: lb8b, lineBreak: Wrap, line:5, text: 'Finland, officially the Republic of Finland, is a Nordic country situated in the Fennoscandian region of Northern Europe.')
+		Image(id: img8b, file: 'finland_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Helsinki')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary republic, Federacy')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'National anthem:')
+			Label(text: 'Maamme')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official languages:')
+			Label(text: 'Finnish Language, Swedish Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '5.388 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_finland)
+		}
+	}
+	View(id:vwb_finland, title:'Finland') {
+		Web(url:'http://en.wikipedia.org/wiki/finland')
+	}
+
+
+	View(id:vw_france, scroll:true) {
+		Label(id: lb9a, text: 'France')
+		Image(id: img9a, file: 'france_flag_map.png')
+		Label(id: lb9b, lineBreak: Wrap, line:5, text: 'France, officially the French Republic, is a unitary semi-presidential republic located mostly in Western Europe, with several overseas regions and territories.')
+		Image(id: img9b, file: 'france_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Paris')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currencies:')
+			Label(text: 'Euro, CFP franc')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '33')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Constitutional republic, Unitary state, Semi-presidential system')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '65.43 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'President:')
+			Label(text: 'FranÃ§ois Hollande')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_france)
+		}
+	}
+	View(id:vwb_france, title:'France') {
+		Web(url:'http://en.wikipedia.org/wiki/france')
+	}
+
+
+	View(id:vw_germany, scroll:true) {
+		Label(id: lb10a, text: 'Germany')
+		Image(id: img10a, file: 'germany_flag_map.png')
+		Label(id: lb10b, lineBreak: Wrap, line:5, text: 'Germany, officially the Federal Republic of Germany, is a federal parliamentary republic in western-central Europe. The country consists of 16 states, and its capital and largest city is Berlin.')
+		Image(id: img10b, file: 'germany_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Berlin')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '49')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Representative democracy, Constitutional republic, Parliamentary republic, Federal republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Gross domestic product:')
+			Label(text: '3.601 trillion USD (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'German Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '81.8 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_germany)
+		}
+	}
+	View(id:vwb_germany, title:'Germany') {
+		Web(url:'http://en.wikipedia.org/wiki/germany')
+	}
+
+
+	View(id:vw_greece, scroll:true) {
+		Label(id: lb11a, text: 'Greece')
+		Image(id: img11a, file: 'greece_flag_map.png')
+		Label(id: lb11b, lineBreak: Wrap, line:5, text: 'Greece, officially the Hellenic Republic, is a country in Southeast Europe. According to the 2011 census, Greece s population is around 11 million. Athens is the nation s capital and largest city, its urban area also including Piraeus.')
+		Image(id: img11b, file: 'greece_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Athens')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Constitutional republic, Parliamentary system')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government debt:')
+			Label(text: '156.9% of GDP (2012) Eurostat')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Greek Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '11.3 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_greece)
+		}
+	}
+	View(id:vwb_greece, title:'Greece') {
+		Web(url:'http://en.wikipedia.org/wiki/greece')
+	}
+
+
+	View(id:vw_hungary, scroll:true) {
+		Label(id: lb12a, text: 'Hungary')
+		Image(id: img12a, file: 'hungary_flag_map.png')
+		Label(id: lb12b, lineBreak: Wrap, line:5, text: 'Hungary is a landlocked country in Central Europe. It is situated in the Carpathian Basin and is bordered by Slovakia to the north, Ukraine, and Romania to the east, Serbia, and Croatia to the south, ...')
+		Image(id: img12b, file: 'hungary_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Budapest')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Hungarian forint')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '36')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'National anthem:')
+			Label(text: 'Himnusz')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '9.972 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_hungary)
+		}
+	}
+	View(id:vwb_hungary, title:'Hungary') {
+		Web(url:'http://en.wikipedia.org/wiki/hungary')
+	}
+
+
+	View(id:vw_ireland, scroll:true) {
+		Label(id: lb13a, text: 'Ireland')
+		Image(id: img13a, file: 'ireland_flag_map.png')
+		Label(id: lb13b, lineBreak: Wrap, line:5, text: 'Island in Europe')
+		Image(id: img13b, file: 'ireland_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Area:')
+			Label(text: '32,595 sq miles (84,421 kmÂ²)')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Island group:')
+			Label(text: 'British Isles')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_ireland)
+		}
+	}
+	View(id:vwb_ireland, title:'Ireland') {
+		Web(url:'http://en.wikipedia.org/wiki/ireland')
+	}
+
+
+	View(id:vw_italy, scroll:true) {
+		Label(id: lb14a, text: 'Italy')
+		Image(id: img14a, file: 'italy_flag_map.png')
+		Label(id: lb14b, lineBreak: Wrap, line:5, text: 'Italy, officially the Italian Republic, is a unitary parliamentary republic in Southern Europe. To the north, it borders France, Switzerland, Austria, and Slovenia along the Alps.')
+		Image(id: img14b, file: 'italy_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Rome')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Unitary republic, Constitutional republic, Parliamentary republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'National anthem:')
+			Label(text: 'Il Canto degli Italiani')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '60.72 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'President:')
+			Label(text: 'Giorgio Napolitano')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Prime minister:')
+			Label(text: 'Enrico Letta')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_italy)
+		}
+	}
+	View(id:vwb_italy, title:'Italy') {
+		Web(url:'http://en.wikipedia.org/wiki/italy')
+	}
+
+
+	View(id:vw_latvia, scroll:true) {
+		Label(id: lb15a, text: 'Latvia')
+		Image(id: img15a, file: 'latvia_flag_map.png')
+		Label(id: lb15b, lineBreak: Wrap, line:5, text: 'Latvia, officially the Republic of Latvia, is a country in the Baltic region of Northern Europe. It is bordered to the north by Estonia, to the south by Lithuania, to the east by Russia, and to the ...')
+		Image(id: img15b, file: 'latvia_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Riga')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Latvian lats')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'National anthem:')
+			Label(text: 'Dievs, svÄ“tÄ« Latviju!')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Latvian Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '2.058 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_latvia)
+		}
+	}
+	View(id:vwb_latvia, title:'Latvia') {
+		Web(url:'http://en.wikipedia.org/wiki/latvia')
+	}
+
+
+	View(id:vw_lithuania, scroll:true) {
+		Label(id: lb16a, text: 'Lithuania')
+		Image(id: img16a, file: 'lithuania_flag_map.png')
+		Label(id: lb16b, lineBreak: Wrap, line:5, text: 'Lithuania, officially the Republic of Lithuania is a country in Northern Europe, the largest of the three Baltic states. It is situated along the southeastern shore of the Baltic Sea, to the east of Sweden and Denmark.')
+		Image(id: img16b, file: 'lithuania_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Vilnius')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '370')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary republic, Semi-presidential system')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'National anthem:')
+			Label(text: 'TautiÅ¡ka giesmÄ—')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '3.03 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'President:')
+			Label(text: 'Dalia GrybauskaitÄ—')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_lithuania)
+		}
+	}
+	View(id:vwb_lithuania, title:'Lithuania') {
+		Web(url:'http://en.wikipedia.org/wiki/lithuania')
+	}
+
+
+	View(id:vw_luxembourg, scroll:true) {
+		Label(id: lb17a, text: 'Luxembourg')
+		Image(id: img17a, file: 'luxembourg_flag_map.png')
+		Label(id: lb17b, lineBreak: Wrap, line:5, text: 'Luxembourg, officially the Grand Duchy of Luxembourg, is a landlocked country in western Europe, bordered by Belgium, France, and Germany.')
+		Image(id: img17b, file: 'luxembourg_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Luxembourg')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '352')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Constitutional monarchy, Monarchy, Grand duchy, Unitary state, Democracy, Parliamentary system')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official languages:')
+			Label(text: 'Luxembourgish language, French Language, German Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '518,252 (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_luxembourg)
+		}
+	}
+	View(id:vwb_luxembourg, title:'Luxembourg') {
+		Web(url:'http://en.wikipedia.org/wiki/luxembourg')
+	}
+
+
+	View(id:vw_malta, scroll:true) {
+		Label(id: lb18a, text: 'Malta')
+		Image(id: img18a, file: 'malta_flag_map.png')
+		Label(id: lb18b, lineBreak: Wrap, line:5, text: 'Malta is a southern European country in the Mediterranean Sea 80 km south of Sicily and 333 km north of Libya. Malta covers just over 316 kmÂ², making it one of the world s smallest and most densely populated countries.')
+		Image(id: img18b, file: 'malta_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Area:')
+			Label(text: '122 sq miles (316 kmÂ²)')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Valletta')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official languages:')
+			Label(text: 'English Language, Maltese Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '415,654 (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_malta)
+		}
+	}
+	View(id:vwb_malta, title:'Malta') {
+		Web(url:'http://en.wikipedia.org/wiki/malta')
+	}
+
+
+	View(id:vw_netherlands, scroll:true) {
+		Label(id: lb19a, text: 'Netherlands')
+		Image(id: img19a, file: 'netherlands_flag_map.png')
+		Label(id: lb19b, lineBreak: Wrap, line:5, text: 'The Netherlands is a constituent country of the Kingdom of the Netherlands, consisting of twelve provinces in North-West Europe and three islands in the Caribbean.')
+		Image(id: img19b, file: 'netherlands_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Amsterdam')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '31')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Hereditary monarchy, Constitutional monarchy')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Dutch Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '16.69 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_netherlands)
+		}
+	}
+	View(id:vwb_netherlands, title:'Netherlands') {
+		Web(url:'http://en.wikipedia.org/wiki/netherlands')
+	}
+
+
+	View(id:vw_poland, scroll:true) {
+		Label(id: lb20a, text: 'Poland')
+		Image(id: img20a, file: 'poland_flag_map.png')
+		Label(id: lb20b, lineBreak: Wrap, line:5, text: 'Poland, officially the Republic of Poland, is a country in Central Europe, bordered by Germany to the west; the Czech Republic and Slovakia to the south; Ukraine, Belarus to the east; and the Baltic ...')
+		Image(id: img20b, file: 'poland_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Warsaw')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Polish zÅ‚oty')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Democracy, Parliamentary republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'National anthem:')
+			Label(text: 'Poland Is Not Yet Lost')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Polish Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '38.53 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_poland)
+		}
+	}
+	View(id:vwb_poland, title:'Poland') {
+		Web(url:'http://en.wikipedia.org/wiki/poland')
+	}
+
+
+	View(id:vw_portugal, scroll:true) {
+		Label(id: lb21a, text: 'Portugal')
+		Image(id: img21a, file: 'portugal_flag_map.png')
+		Label(id: lb21b, lineBreak: Wrap, line:5, text: 'Portugal, officially the Portuguese Republic, is a country located in Southwestern Europe, on the Iberian Peninsula.')
+		Image(id: img21b, file: 'portugal_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Lisbon')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '351')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary system, Unitary state')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Portuguese Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '10.56 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_portugal)
+		}
+	}
+	View(id:vwb_portugal, title:'Portugal') {
+		Web(url:'http://en.wikipedia.org/wiki/portugal')
+	}
+
+
+	View(id:vw_romania, scroll:true) {
+		Label(id: lb22a, text: 'Romania')
+		Image(id: img22a, file: 'romania_flag_map.png')
+		Label(id: lb22b, lineBreak: Wrap, line:5, text: 'Romania is a country located at the intersection of Central and Southeastern Europe, bordering on the Black Sea. Romania shares a border with Hungary and Serbia to the west, Ukraine and Moldova to the northeast and east, and Bulgaria to the south.')
+		Image(id: img22b, file: 'romania_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Bucharest')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '40')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Semi-presidential system, Republic, Unitary state')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'National anthem:')
+			Label(text: 'DeÈ™teaptÄƒ-te, romÃ¢ne!')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Romanian Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '21.38 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_romania)
+		}
+	}
+	View(id:vwb_romania, title:'Romania') {
+		Web(url:'http://en.wikipedia.org/wiki/romania')
+	}
+
+
+	View(id:vw_slovakia, scroll:true) {
+		Label(id: lb23a, text: 'Slovakia')
+		Image(id: img23a, file: 'slovakia_flag_map.png')
+		Label(id: lb23b, lineBreak: Wrap, line:5, text: 'The Slovak Republic is a landlocked state in Eastern Europe. It has a population of over five million and an area of about 49,000 square kilometres.')
+		Image(id: img23b, file: 'slovakia_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Bratislava')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '421')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'National anthem:')
+			Label(text: 'Nad Tatrou sa blÃ½ska')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Slovak Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '5.398 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_slovakia)
+		}
+	}
+	View(id:vwb_slovakia, title:'Slovakia') {
+		Web(url:'http://en.wikipedia.org/wiki/slovakia')
+	}
+
+
+	View(id:vw_slovenia, scroll:true) {
+		Label(id: lb24a, text: 'Slovenia')
+		Image(id: img24a, file: 'slovenia_flag_map.png')
+		Label(id: lb24b, lineBreak: Wrap, line:5, text: 'Slovenia, officially the Republic of Slovenia, is a nation state situated in Central Europe at the crossroad of main European cultural and trade routes.')
+		Image(id: img24b, file: 'slovenia_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Ljubljana')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Currency:')
+			Label(text: 'Euro')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '386')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Parliamentary republic')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Slovenian language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Prime minister:')
+			Label(text: 'Alenka BratuÅ¡ek')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_slovenia)
+		}
+	}
+	View(id:vwb_slovenia, title:'Slovenia') {
+		Web(url:'http://en.wikipedia.org/wiki/slovenia')
+	}
+
+
+	View(id:vw_spain, scroll:true) {
+		Label(id: lb25a, text: 'Spain')
+		Image(id: img25a, file: 'spain_flag_map.png')
+		Label(id: lb25b, lineBreak: Wrap, line:5, text: 'Spain, officially the Kingdom of Spain, is a sovereign state and a member of the European Union . It is located on the Iberian Peninsula in southwestern Europe.')
+		Image(id: img25b, file: 'spain_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Madrid')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '34')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Constitutional monarchy, Parliamentary system, Unitary state')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'National anthem:')
+			Label(text: 'Marcha Real')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Spanish Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '47.27 million (2012) Instituto Nacional de EstadÃ­stica')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_spain)
+		}
+	}
+	View(id:vwb_spain, title:'Spain') {
+		Web(url:'http://en.wikipedia.org/wiki/spain')
+	}
+
+
+	View(id:vw_sweden, scroll:true) {
+		Label(id: lb26a, text: 'Sweden')
+		Image(id: img26a, file: 'sweden_flag_map.png')
+		Label(id: lb26b, lineBreak: Wrap, line:5, text: 'Sweden, officially the Kingdom of Sweden, is a Scandinavian country in Northern Europe. Sweden borders Norway and Finland, and is connected to Denmark by a bridge-tunnel across the Oresund.')
+		Image(id: img26b, file: 'sweden_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'Stockholm')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '46')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Hereditary monarchy, Parliamentary system')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Gross domestic product:')
+			Label(text: '539.7 billion USD (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Official language:')
+			Label(text: 'Swedish Language')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '9.449 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_sweden)
+		}
+	}
+	View(id:vwb_sweden, title:'Sweden') {
+		Web(url:'http://en.wikipedia.org/wiki/sweden')
+	}
+
+
+	View(id:vw_unitedkingdom, scroll:true) {
+		Label(id: lb27a, text: 'United Kingdom')
+		Image(id: img27a, file: 'unitedkingdom_flag_map.png')
+		Label(id: lb27b, lineBreak: Wrap, line:5, text: 'The United Kingdom of Great Britain and Northern Ireland, commonly known as the United Kingdom and Britain, is a sovereign state located off the north-western coast of continental Europe.')
+		Image(id: img27b, file: 'unitedkingdom_poi.png')
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Capital:')
+			Label(text: 'London')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Dialing code:')
+			Label(text: '44')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Government:')
+			Label(text: 'Hereditary monarchy, Constitutional monarchy, Parliamentary system, Unitary state')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Gross domestic product:')
+			Label(text: '2.445 trillion USD (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Minimum wage:')
+			Label(text: '1,264.25 EUR per month (Jan 2013) Eurostat')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'Population:')
+			Label(text: '62.74 million (2011) World Bank')
+		}
+		Panel(orientation: 'horizontal') {
+			Label(font: [Bold], text: 'WikiPedia:')
+			Button(text:'WiKi', next:vwb_unitedkingdom)
+		}
+	}
+	View(id:vwb_unitedkingdom, title:'United Kingdom') {
+		Web(url:'http://en.wikipedia.org/wiki/united_kingdom')
+	}
+
+
+}

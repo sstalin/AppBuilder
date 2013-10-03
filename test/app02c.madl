@@ -1,0 +1,16 @@
+/* Mobile Application Definition Language */
+
+app('App Button 4') { 
+
+  View { 
+
+    int counter = 0
+
+    Label(id: l1, text: 'Hello', width: '*') 
+    Button(id: b1, text: 'Increment',
+		   action: { l1.text = counter++ }) 
+  }
+
+}
+
+

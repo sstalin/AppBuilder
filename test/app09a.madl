@@ -1,0 +1,13 @@
+app(name : 'Web 2') { 
+
+  View(id: v1, 
+       title: 'Web') {
+    Text(id: address, type: url,
+		 action: { web.url = text })
+    Web(id: web, 
+		url: 'http://google.com/')
+  } 
+
+
+
+}

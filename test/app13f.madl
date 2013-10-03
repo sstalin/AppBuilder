@@ -1,0 +1,64 @@
+
+class Item {
+  String name
+  boolean done
+  int quantity
+}
+
+app('Shopping List 7') { 
+
+  ListView(id: 'mylist', 
+		   title: 'Shopping List') { 
+
+    def beverages = ListEntity(class: Item)
+
+    beverages.values = [
+      new Item(name: 'Coffee', quantity: 1),
+      new Item(name: 'Juice', quantity: 2),
+    ]
+
+    def fruits = ListEntity(class: Item)
+
+    fruits.values = [
+      new Item(name: 'Apple', quantity: 3),
+      new Item(name: 'Organe', quantity: 2),
+    ]
+	
+	Section(title: 'Beverages') { 
+	  beverages.each { t ->
+		Item(type: CheckBox, 
+			 checked: t.done, 
+			 text: t.name,
+			 detailText: "Quantity: ${t.quantity}",
+			 menu: [
+			   [ text: "Delete beverage ${t.name}", 
+				 action: { println 'Action: Delete'; } ],
+			   [ text: "Add quantity to ${t.name}", 
+				 action: { println 'Action: Add'; } ], 
+			   [ text: "Zero quantity of ${t.name}", 
+				 action: { println 'Action: Zero';  } ], 
+			 ])
+	  }
+    }
+
+	Section(title: 'Fruits') { 
+	  fruits.each { t ->
+		Item(type: CheckBox, 
+			 checked: t.done, 
+			 text: t.name,
+			 detailText: "Quantity: ${t.quantity}",
+			 menu: [
+			   [ text: "Delete fruit ${t.name}", 
+				 action: { println 'Action: Delete';  } ],
+			   [ text: "Add quantity to ${t.name}", 
+				 action: { println 'Action: Add';  } ], 
+			   [ text: "Zero quantity of ${t.name}", 
+				 action: { println 'Action: Zero'; } ], 
+			 ])
+	  }
+    }
+  
+  }
+
+}
+

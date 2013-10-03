@@ -1,0 +1,216 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSCopying
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    ascender: !java.util.LinkedHashMap
+        name: ascender
+        type: CGFloat
+        ref: ""
+        explanation: "The top y-coordinate, offset from the baseline, of the receiver?s longest ascender. (read-only)"
+        readonly: true
+    capHeight: !java.util.LinkedHashMap
+        name: capHeight
+        type: CGFloat
+        ref: ""
+        explanation: The receiver?s cap height information. (read-only)
+        readonly: true
+    descender: !java.util.LinkedHashMap
+        name: descender
+        type: CGFloat
+        ref: ""
+        explanation: "The bottom y-coordinate, offset from the baseline, of the receiver?s longest descender. (read-only)"
+        readonly: true
+    familyName: !java.util.LinkedHashMap
+        name: familyName
+        type: NSString
+        ref: "*"
+        explanation: The font family name. (read-only)
+        readonly: true
+    fontName: !java.util.LinkedHashMap
+        name: fontName
+        type: NSString
+        ref: "*"
+        explanation: The font face name. (read-only)
+        readonly: true
+    lineHeight: !java.util.LinkedHashMap
+        name: lineHeight
+        type: CGFloat
+        ref: ""
+        explanation: The height of text lines (measured in points). (read-only)
+        readonly: true
+    pointSize: !java.util.LinkedHashMap
+        name: pointSize
+        type: CGFloat
+        ref: ""
+        explanation: "The receiver?s point size, or the effective vertical point size for a font with a nonstandard matrix. (read-only)"
+        readonly: true
+    xHeight: !java.util.LinkedHashMap
+        name: xHeight
+        type: CGFloat
+        ref: ""
+        explanation: The x-height of the receiver. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap
+    boldSystemFontOfSize: !java.util.LinkedHashMap
+        isInstance: &14 false
+        name: boldSystemFontOfSize
+        type: !java.util.LinkedHashMap
+            name: UIFont
+            delegate: ~
+            isConst: *14
+            isRef: &16 true
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: fontSize
+                type: !java.util.LinkedHashMap
+                    name: CGFloat
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+    buttonFontSize: !java.util.LinkedHashMap
+        isInstance: *14
+        name: buttonFontSize
+        type: !java.util.LinkedHashMap
+            name: CGFloat
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: []
+    familyNames: !java.util.LinkedHashMap
+        isInstance: *14
+        name: familyNames
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *14
+            isRef: *16
+        isVarArgs: *14
+        args: []
+    fontNamesForFamilyName: !java.util.LinkedHashMap
+        isInstance: *14
+        name: fontNamesForFamilyName
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *14
+            isRef: *16
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: familyName
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *14
+                    isRef: *16
+    fontWithName: !java.util.LinkedHashMap
+        isInstance: *14
+        name: fontWithName
+        type: !java.util.LinkedHashMap
+            name: UIFont
+            delegate: ~
+            isConst: *14
+            isRef: *16
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: fontName
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *14
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: size
+                param: fontSize
+                type: !java.util.LinkedHashMap
+                    name: CGFloat
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+    italicSystemFontOfSize: !java.util.LinkedHashMap
+        isInstance: *14
+        name: italicSystemFontOfSize
+        type: !java.util.LinkedHashMap
+            name: UIFont
+            delegate: ~
+            isConst: *14
+            isRef: *16
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: fontSize
+                type: !java.util.LinkedHashMap
+                    name: CGFloat
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+    labelFontSize: !java.util.LinkedHashMap
+        isInstance: *14
+        name: labelFontSize
+        type: !java.util.LinkedHashMap
+            name: CGFloat
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: []
+    smallSystemFontSize: !java.util.LinkedHashMap
+        isInstance: *14
+        name: smallSystemFontSize
+        type: !java.util.LinkedHashMap
+            name: CGFloat
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: []
+    systemFontOfSize: !java.util.LinkedHashMap
+        isInstance: *14
+        name: systemFontOfSize
+        type: !java.util.LinkedHashMap
+            name: UIFont
+            delegate: ~
+            isConst: *14
+            isRef: *16
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: fontSize
+                type: !java.util.LinkedHashMap
+                    name: CGFloat
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+    systemFontSize: !java.util.LinkedHashMap
+        isInstance: *14
+        name: systemFontSize
+        type: !java.util.LinkedHashMap
+            name: CGFloat
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: []
+    fontWithSize: !java.util.LinkedHashMap
+        isInstance: *16
+        name: fontWithSize
+        type: !java.util.LinkedHashMap
+            name: UIFont
+            delegate: ~
+            isConst: *14
+            isRef: *16
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: fontSize
+                type: !java.util.LinkedHashMap
+                    name: CGFloat
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14

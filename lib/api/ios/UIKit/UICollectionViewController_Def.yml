@@ -1,0 +1,42 @@
+--- 
+inherit: 
+    - UIViewController
+    - UIResponder
+    - NSObject
+conform: 
+    - UICollectionViewDelegate
+    - UICollectionViewDataSource
+    - NSCoding (UIViewController)
+    - UIAppearanceContainer (UIViewController)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    clearsSelectionOnViewWillAppear: !java.util.LinkedHashMap
+        name: clearsSelectionOnViewWillAppear
+        type: BOOL
+        ref: ""
+        explanation: "A Boolean value indicating if the controller clears the selection when the collection view appears. "
+        readonly: false
+    collectionView: !java.util.LinkedHashMap
+        name: collectionView
+        type: UICollectionView
+        ref: "*"
+        explanation: The collection view object managed by this view controller.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    initWithCollectionViewLayout: !java.util.LinkedHashMap
+        isInstance: &8 true
+        name: initWithCollectionViewLayout
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: &10 false
+            isRef: *10
+        isVarArgs: *10
+        args: 
+            - !java.util.LinkedHashMap
+                param: layout
+                type: !java.util.LinkedHashMap
+                    name: UICollectionViewLayout
+                    delegate: ~
+                    isConst: *10
+                    isRef: *8

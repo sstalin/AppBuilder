@@ -1,0 +1,21 @@
+/* Mobile Application Definition Language */
+
+app(name: 'App Button 7a') { 
+  
+  View(id: top) { 
+    Label(id: l1, text: 'Hello', width: '*') 
+
+    Button(size: [100, 50], image: 'scene1.jpg', 
+		  action: { l1.text = 'Click on image'})
+
+    Button(size: [100, 50], image: 'scene2.jpg', next: v2)
+
+  }
+
+  View(id:v2) { 
+    Button(size: [100, 50], image: 'scene3.jpg', next: Previous)
+  }
+
+}
+
+

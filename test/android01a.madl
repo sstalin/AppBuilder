@@ -1,0 +1,18 @@
+
+/* Android Specific */
+
+app(name : 'Android App') { 
+
+  View(id: top) { 
+    Label(id: l1, text: 'Hello') 
+    CheckBox(id: c1, text: 'Item 1')
+    CheckBox(id: c2, text: 'Item 2')
+    RadioButton(id: r1, text: 'Radio 1')
+    RadioButton(id: r2, text: 'Radio 2')
+    RadioGroup () { 
+      RadioButton(id: r11, text: 'Choice 1')
+      RadioButton(id: r12, text: 'Choice 2')
+    }
+  }
+
+}

@@ -1,0 +1,15 @@
+
+app(name: 'Welcome 2a') { 
+
+  View { 
+    Image(file: 'background.png')
+    Label(text: 'Welcome to MADL Development',
+		  frame: [20, 329, 295, 131],
+		  font: [Bold, 30],
+		  color: White,
+		  //shadow: darkGray,
+		  shadow: DarkGray,
+		  lines: 2) 
+  }
+
+}

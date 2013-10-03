@@ -1,0 +1,67 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - UIAccessibilityIdentification
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    accessibilityContainer: !java.util.LinkedHashMap
+        name: accessibilityContainer
+        type: id
+        ref: ""
+        explanation: The view that contains the accessibility element.
+        readonly: false
+    accessibilityFrame: !java.util.LinkedHashMap
+        name: accessibilityFrame
+        type: CGRect
+        ref: ""
+        explanation: "The frame of the accessibility element, in screen coordinates."
+        readonly: false
+    accessibilityHint: !java.util.LinkedHashMap
+        name: accessibilityHint
+        type: NSString
+        ref: "*"
+        explanation: A string that briefly describes the result of performing an action on the accessibility element.
+        readonly: false
+    accessibilityLabel: !java.util.LinkedHashMap
+        name: accessibilityLabel
+        type: NSString
+        ref: "*"
+        explanation: A string that succinctly identifies the accessibility element.
+        readonly: false
+    accessibilityTraits: !java.util.LinkedHashMap
+        name: accessibilityTraits
+        type: UIAccessibilityTraits
+        ref: ""
+        explanation: The combination of traits that best characterize the accessibility element.
+        readonly: false
+    accessibilityValue: !java.util.LinkedHashMap
+        name: accessibilityValue
+        type: NSString
+        ref: "*"
+        explanation: A string that represents the current value of the accessibility element.
+        readonly: false
+    isAccessibilityElement: !java.util.LinkedHashMap
+        name: isAccessibilityElement
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether the item is an accessibility element an assistive application can access.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    initWithAccessibilityContainer: !java.util.LinkedHashMap
+        isInstance: true
+        name: initWithAccessibilityContainer
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: &15 false
+            isRef: *15
+        isVarArgs: *15
+        args: 
+            - !java.util.LinkedHashMap
+                param: container
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: ~
+                    isConst: *15
+                    isRef: *15

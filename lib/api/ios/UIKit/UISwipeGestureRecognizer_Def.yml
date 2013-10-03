@@ -1,0 +1,31 @@
+--- 
+inherit: 
+    - UIGestureRecognizer
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    direction: !java.util.LinkedHashMap
+        name: direction
+        type: UISwipeGestureRecognizerDirection
+        ref: ""
+        explanation: The permitted direction of the swipe for this gesture recognizer.
+        readonly: false
+    numberOfTouchesRequired: !java.util.LinkedHashMap
+        name: numberOfTouchesRequired
+        type: NSUInteger
+        ref: ""
+        explanation: The number of touches that must be present for the swipe gesture to be recognized.
+        readonly: false
+methods: !java.util.LinkedHashMap {}
+constants: !java.util.LinkedHashMap
+    UISwipeGestureRecognizerDirection: !java.util.LinkedHashMap
+        name: UISwipeGestureRecognizerDirection
+        isEnum: &9 true
+        isTypedef: *9
+        values: []
+        defValues: 
+            - UISwipeGestureRecognizerDirectionRight
+            - UISwipeGestureRecognizerDirectionLeft
+            - UISwipeGestureRecognizerDirectionUp
+            - UISwipeGestureRecognizerDirectionDown

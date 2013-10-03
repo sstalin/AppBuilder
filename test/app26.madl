@@ -1,0 +1,23 @@
+app('Swipe Gesture') { 
+
+  View { 
+	Label(id: label1)
+	Label(id: label2)
+	Label(id: label3)
+	Label(id: label4)
+
+	onSwipe { 
+	  label1.text = 'Swipe detected'	  
+	} doAfter(delay:2) { label1.text = '' }
+
+	onSwipe(direction: Up) { 
+	  label2.text = 'Up swipe detected'
+	} doAfter(delay:2) { label2.text = '' }
+
+	onSwipe(direction: Left) { 
+	  label3.text = 'Left swipe detected' 
+	} doAfter(delay:2) { label3.text = '' }
+
+  }
+
+}

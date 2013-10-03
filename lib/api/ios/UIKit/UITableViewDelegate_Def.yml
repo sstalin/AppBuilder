@@ -1,0 +1,31 @@
+--- 
+conform: 
+    - NSObject
+    - UIScrollViewDelegate
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    tableView: !java.util.LinkedHashMap
+        isInstance: &5 true
+        name: tableView
+        type: !java.util.LinkedHashMap
+            name: NSIndexPath
+            delegate: ~
+            isConst: &7 false
+            isRef: *5
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: tableView
+                type: !java.util.LinkedHashMap
+                    name: UITableView
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+            - !java.util.LinkedHashMap
+                name: willSelectRowAtIndexPath
+                param: indexPath
+                type: !java.util.LinkedHashMap
+                    name: NSIndexPath
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5

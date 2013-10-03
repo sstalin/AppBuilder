@@ -1,0 +1,26 @@
+/* Mobile Application Definition Language */
+
+app(name: 'App Button 6g') { 
+  
+  View { 
+    Label(id: l1, text: 'Hello', width: '*') 
+    Button(id: b1, text: 'Button 1', titleFont: Serif, 
+		   action: { l1.text = b1.text })
+	Button(id: b2, text: 'Button 2', titleFont: Italic, 
+		   action: { l1.text = b2.text }) 
+
+    Button(id: b3, text: 'Color red',
+		   action: { b2.textColor = red }) 
+    Button(id: b4, text: 'Color Green',
+		   action: { b2.textColor = Green }) 
+
+    Button(id: b5, text: 'Color red',
+		   action: { l1.textColor = red }) 
+    Button(id: b6, text: 'Color Green',
+		   action: { l1.textColor = Green }) 
+
+  }
+
+}
+
+

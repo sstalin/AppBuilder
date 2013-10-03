@@ -1,0 +1,30 @@
+
+/* Mobile Application Definition Language */
+
+app(name : 'First App 4d') { 
+
+  View(id: top, 
+       scroll: true) { 
+	Label('Test scroll: line 00')
+	Label('Test scroll: line 01')
+	Label('Test scroll: line 02')
+	Label('Test scroll: line 03')
+	Label('Test scroll: line 04')
+	Label('Test scroll: line 05')
+	Label('Test scroll: line 06')
+	Label('Test scroll: line 07')
+	Label('Test scroll: line 08')
+	Label('Test scroll: line 09')
+	Label('Test scroll: line 10')
+	Label('Test scroll: line 11')
+	Label('Test scroll: line 12')
+	Label('Test scroll: line 13')
+	Label('Test scroll: line 14')
+	Label('Test scroll: line 15')
+	Label('Test scroll: line 16')
+	Label('Test scroll: line 17')
+	Label('Test scroll: line 18')
+	Label('Test scroll: line 19')
+  }
+
+}

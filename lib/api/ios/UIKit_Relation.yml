@@ -1,0 +1,639 @@
+--- 
+inherits: !java.util.LinkedHashMap
+    NSBundle UIKit Additions: NSObject
+    NSIndexPath UIKit Additions: NSObject
+    NSLayoutConstraint: NSObject
+    NSMutableParagraphStyle: NSParagraphStyle
+    NSParagraphStyle: NSObject
+    NSShadow: NSObject
+    NSStringDrawingContext: NSObject
+    NSValue UIKit Additions: NSObject
+    UIAcceleration: NSObject
+    UIAccelerometer: NSObject
+    UIAccessibilityElement: NSObject
+    UIActionSheet: UIView
+    UIActivity: NSObject
+    UIActivityIndicatorView: UIView
+    UIActivityItemProvider: NSOperation
+    UIActivityViewController: UIViewController
+    UIAlertView: UIView
+    UIApplication: UIResponder
+    UIBarButtonItem: UIBarItem
+    UIBarItem: NSObject
+    UIBezierPath: NSObject
+    UIButton: UIControl
+    UICollectionReusableView: UIView
+    UICollectionView: UIScrollView
+    UICollectionViewCell: UICollectionReusableView
+    UICollectionViewController: UIViewController
+    UICollectionViewFlowLayout: UICollectionViewLayout
+    UICollectionViewLayout: NSObject
+    UICollectionViewLayoutAttributes: NSObject
+    UICollectionViewUpdateItem: NSObject
+    UIColor: NSObject
+    UIControl: UIView
+    UIDatePicker: UIControl
+    UIDevice: NSObject
+    UIDictationPhrase: NSObject
+    UIDocument: NSObject
+    UIDocumentInteractionController: NSObject
+    UIEvent: NSObject
+    UIFont: NSObject
+    UIGestureRecognizer: NSObject
+    UIImage: NSObject
+    UIImagePickerController: UINavigationController
+    UIImageView: UIView
+    UILabel: UIView
+    UILocalizedIndexedCollation: NSObject
+    UILocalNotification: NSObject
+    UILongPressGestureRecognizer: UIGestureRecognizer
+    UIManagedDocument: UIDocument
+    UIMarkupTextPrintFormatter: UIPrintFormatter
+    UIMenuController: NSObject
+    UIMenuItem: NSObject
+    UINavigationBar: UIView
+    UINavigationController: UIViewController
+    UINavigationItem: NSObject
+    UINib: NSObject
+    UIPageControl: UIControl
+    UIPageViewController: UIViewController
+    UIPanGestureRecognizer: UIGestureRecognizer
+    UIPasteboard: NSObject
+    UIPickerView: UIView
+    UIPinchGestureRecognizer: UIGestureRecognizer
+    UIPopoverBackgroundView: UIView
+    UIPopoverController: NSObject
+    UIPrintFormatter: NSObject
+    UIPrintInfo: NSObject
+    UIPrintInteractionController: NSObject
+    UIPrintPageRenderer: NSObject
+    UIPrintPaper: NSObject
+    UIProgressView: UIView
+    UIReferenceLibraryViewController: UIViewController
+    UIRefreshControl: UIControl
+    UIResponder: NSObject
+    UIRotationGestureRecognizer: UIGestureRecognizer
+    UIScreen: NSObject
+    UIScreenMode: NSObject
+    UIScrollView: UIView
+    UISearchBar: UIView
+    UISearchDisplayController: NSObject
+    UISegmentedControl: UIControl
+    UISimpleTextPrintFormatter: UIPrintFormatter
+    UISlider: UIControl
+    UISplitViewController: UIViewController
+    UIStepper: UIControl
+    UIStoryboard: NSObject
+    UIStoryboardPopoverSegue: UIStoryboardSegue
+    UIStoryboardSegue: NSObject
+    UISwipeGestureRecognizer: UIGestureRecognizer
+    UISwitch: UIControl
+    UITabBar: UIView
+    UITabBarController: UIViewController
+    UITabBarItem: UIBarItem
+    UITableView: UIScrollView
+    UITableViewCell: UIView
+    UITableViewController: UIViewController
+    UITableViewHeaderFooterView: UIView
+    UITapGestureRecognizer: UIGestureRecognizer
+    UITextField: UIControl
+    UITextInputMode: NSObject
+    UITextInputStringTokenizer: NSObject
+    UITextPosition: NSObject
+    UITextRange: NSObject
+    UITextSelectionRect: NSObject
+    UITextView: UIScrollView
+    UIToolbar: UIView
+    UITouch: NSObject
+    UIVideoEditorController: UINavigationController
+    UIView: UIResponder
+    UIViewController: UIResponder
+    UIViewPrintFormatter: UIPrintFormatter
+    UIWebView: UIView
+    UIWindow: UIView
+conforms: !java.util.LinkedHashMap
+    NSIndexPath UIKit Additions: 
+        - NSObject (NSObject)
+        - NSCoding
+        - NSCopying
+    NSLayoutConstraint: 
+        - NSObject (NSObject)
+    NSMutableParagraphStyle: 
+        - NSCoding (NSParagraphStyle)
+        - NSCopying (NSParagraphStyle)
+        - NSMutableCopying (NSParagraphStyle)
+        - NSObject (NSObject)
+    NSParagraphStyle: 
+        - NSCoding
+        - NSCopying
+        - NSMutableCopying
+        - NSObject (NSObject)
+    NSShadow: 
+        - NSCoding
+        - NSCopying
+        - NSObject (NSObject)
+    NSStringDrawingContext: 
+        - NSObject (NSObject)
+    UIAcceleration: 
+        - NSObject (NSObject)
+    UIAccelerometer: 
+        - NSObject (NSObject)
+    UIAccessibilityElement: 
+        - UIAccessibilityIdentification
+        - NSObject (NSObject)
+    UIActionSheet: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIActivity: 
+        - NSObject (NSObject)
+    UIActivityIndicatorView: 
+        - NSCoding
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIActivityItemProvider: 
+        - UIActivityItemSource
+        - NSObject (NSObject)
+    UIActivityViewController: 
+        - NSCoding (UIViewController)
+        - UIAppearanceContainer (UIViewController)
+        - NSObject (NSObject)
+    UIAlertView: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIApplication: 
+        - UIActionSheetDelegate
+        - NSObject (NSObject)
+    UIBarButtonItem: 
+        - NSCoding
+        - UIAppearance (UIBarItem)
+        - NSObject (NSObject)
+    UIBarItem: 
+        - UIAppearance
+        - NSObject (NSObject)
+    UIBezierPath: 
+        - NSCoding
+        - NSCopying
+        - NSObject (NSObject)
+    UIButton: 
+        - NSCoding
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UICollectionReusableView: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UICollectionView: 
+        - NSCoding (UIScrollView)
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UICollectionViewCell: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UICollectionViewController: 
+        - UICollectionViewDelegate
+        - UICollectionViewDataSource
+        - NSCoding (UIViewController)
+        - UIAppearanceContainer (UIViewController)
+        - NSObject (NSObject)
+    UICollectionViewFlowLayout: 
+        - NSCoding (UICollectionViewLayout)
+        - NSObject (NSObject)
+    UICollectionViewLayout: 
+        - NSCoding
+        - NSObject (NSObject)
+    UICollectionViewLayoutAttributes: 
+        - NSCopying
+        - NSObject (NSObject)
+    UICollectionViewUpdateItem: 
+        - NSObject (NSObject)
+    UIColor: 
+        - NSCoding
+        - NSCopying
+        - NSObject (NSObject)
+    UIControl: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIDatePicker: 
+        - NSCoding
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIDevice: 
+        - NSObject (NSObject)
+    UIDictationPhrase: 
+        - NSObject (NSObject)
+    UIDocument: 
+        - NSFilePresenter
+        - NSObject (NSObject)
+    UIDocumentInteractionController: 
+        - UIActionSheetDelegate
+        - NSObject (NSObject)
+    UIEvent: 
+        - NSObject (NSObject)
+    UIFont: 
+        - NSCopying
+        - NSObject (NSObject)
+    UIGestureRecognizer: 
+        - NSObject (NSObject)
+    UIImage: 
+        - NSCoding
+        - NSObject (NSObject)
+    UIImagePickerController: 
+        - NSCoding
+        - NSCoding (UIViewController)
+        - UIAppearanceContainer (UIViewController)
+        - NSObject (NSObject)
+    UIImageView: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UILabel: 
+        - NSCoding
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UILocalizedIndexedCollation: 
+        - NSObject (NSObject)
+    UILocalNotification: 
+        - NSCoding
+        - NSCopying
+        - NSObject (NSObject)
+    UILongPressGestureRecognizer: 
+        - NSObject (NSObject)
+    UIManagedDocument: 
+        - NSFilePresenter (UIDocument)
+        - NSObject (NSObject)
+    UIMarkupTextPrintFormatter: 
+        - NSCopying (UIPrintFormatter)
+        - NSObject (NSObject)
+    UIMenuController: 
+        - NSObject (NSObject)
+    UIMenuItem: 
+        - NSObject (NSObject)
+    UINavigationBar: 
+        - NSCoding
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UINavigationController: 
+        - NSCoding (UIViewController)
+        - UIAppearanceContainer (UIViewController)
+        - NSObject (NSObject)
+    UINavigationItem: 
+        - NSCoding
+        - NSObject (NSObject)
+    UINib: 
+        - NSObject (NSObject)
+    UIPageControl: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIPageViewController: 
+        - NSCoding (UIViewController)
+        - UIAppearanceContainer (UIViewController)
+        - NSObject (NSObject)
+    UIPanGestureRecognizer: 
+        - NSObject (NSObject)
+    UIPasteboard: 
+        - NSObject (NSObject)
+    UIPickerView: 
+        - NSCoding
+        - UITableViewDataSource
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIPinchGestureRecognizer: 
+        - NSObject (NSObject)
+    UIPopoverBackgroundView: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIPopoverController: 
+        - UIAppearanceContainer
+        - NSObject (NSObject)
+    UIPrintFormatter: 
+        - NSCopying
+        - NSObject (NSObject)
+    UIPrintInfo: 
+        - NSCoding
+        - NSCopying
+        - NSObject (NSObject)
+    UIPrintInteractionController: 
+        - NSObject (NSObject)
+    UIPrintPageRenderer: 
+        - NSObject (NSObject)
+    UIPrintPaper: 
+        - NSObject (NSObject)
+    UIProgressView: 
+        - NSCoding
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIReferenceLibraryViewController: 
+        - NSCoding (UIViewController)
+        - UIAppearanceContainer (UIViewController)
+        - NSObject (NSObject)
+    UIRefreshControl: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIResponder: 
+        - NSObject (NSObject)
+    UIRotationGestureRecognizer: 
+        - NSObject (NSObject)
+    UIScreen: 
+        - NSObject (NSObject)
+    UIScreenMode: 
+        - NSObject (NSObject)
+    UIScrollView: 
+        - NSCoding
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UISearchBar: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UISearchDisplayController: 
+        - NSObject (NSObject)
+    UISegmentedControl: 
+        - NSCoding
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UISimpleTextPrintFormatter: 
+        - NSCopying (UIPrintFormatter)
+        - NSObject (NSObject)
+    UISlider: 
+        - NSCoding
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UISplitViewController: 
+        - NSCoding (UIViewController)
+        - UIAppearanceContainer (UIViewController)
+        - NSObject (NSObject)
+    UIStepper: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIStoryboard: 
+        - NSObject (NSObject)
+    UIStoryboardPopoverSegue: 
+        - NSObject (NSObject)
+    UIStoryboardSegue: 
+        - NSObject (NSObject)
+    UISwipeGestureRecognizer: 
+        - NSObject (NSObject)
+    UISwitch: 
+        - NSCoding
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UITabBar: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UITabBarController: 
+        - NSCoding
+        - UITabBarDelegate
+        - NSCoding (UIViewController)
+        - UIAppearanceContainer (UIViewController)
+        - NSObject (NSObject)
+    UITabBarItem: 
+        - UIAppearance (UIBarItem)
+        - NSObject (NSObject)
+    UITableView: 
+        - NSCoding
+        - NSCoding (UIScrollView)
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UITableViewCell: 
+        - NSCoding
+        - UIGestureRecognizerDelegate
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UITableViewController: 
+        - UITableViewDelegate
+        - UITableViewDataSource
+        - NSCoding (UIViewController)
+        - UIAppearanceContainer (UIViewController)
+        - NSObject (NSObject)
+    UITableViewHeaderFooterView: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UITapGestureRecognizer: 
+        - NSObject (NSObject)
+    UITextField: 
+        - NSCoding
+        - UITextInput
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UITextInputMode: 
+        - NSObject (NSObject)
+    UITextInputStringTokenizer: 
+        - UITextInputTokenizer
+        - NSObject (NSObject)
+    UITextPosition: 
+        - NSObject (NSObject)
+    UITextRange: 
+        - NSObject (NSObject)
+    UITextSelectionRect: 
+        - NSObject (NSObject)
+    UITextView: 
+        - UITextInput
+        - NSCoding (UIScrollView)
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIToolbar: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UITouch: 
+        - NSObject (NSObject)
+    UIVideoEditorController: 
+        - NSCoding (UIViewController)
+        - UIAppearanceContainer (UIViewController)
+        - NSObject (NSObject)
+    UIView: 
+        - NSCoding
+        - UIAppearance
+        - UIAppearanceContainer
+        - NSObject (NSObject)
+    UIViewController: 
+        - NSCoding
+        - UIAppearanceContainer
+        - NSObject (NSObject)
+    UIViewPrintFormatter: 
+        - NSCopying (UIPrintFormatter)
+        - NSObject (NSObject)
+    UIWebView: 
+        - NSCoding
+        - UIScrollViewDelegate
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIWindow: 
+        - NSCoding (UIView)
+        - UIAppearance (UIView)
+        - UIAppearanceContainer (UIView)
+        - NSObject (NSObject)
+    UIAccelerometerDelegate: 
+        - NSObject
+    UIActionSheetDelegate: 
+        - NSObject
+    UIActivityItemSource: 
+        - NSObject
+    UIAlertViewDelegate: 
+        - NSObject
+    UIAppearance: 
+        - NSObject
+    UIAppearanceContainer: 
+        - NSObject
+    UIApplicationDelegate: 
+        - NSObject
+    UICollectionViewDataSource: 
+        - NSObject
+    UICollectionViewDelegate: 
+        - UIScrollViewDelegate
+    UICollectionViewDelegateFlowLayout: 
+        - UICollectionViewDelegate
+    UIDocumentInteractionControllerDelegate: 
+        - NSObject
+    UIGestureRecognizerDelegate: 
+        - NSObject
+    UIImagePickerControllerDelegate: 
+        - NSObject
+    UIKeyInput: 
+        - UITextInputTraits
+    UINavigationBarDelegate: 
+        - NSObject
+    UINavigationControllerDelegate: 
+        - NSObject
+    UIPageViewControllerDataSource: 
+        - NSObject
+    UIPageViewControllerDelegate: 
+        - NSObject
+    UIPickerViewAccessibilityDelegate: 
+        - UIPickerViewDelegate
+    UIPickerViewDataSource: 
+        - NSObject
+    UIPickerViewDelegate: 
+        - NSObject
+    UIPopoverControllerDelegate: 
+        - NSObject
+    UIPrintInteractionControllerDelegate: 
+        - NSObject
+    UIScrollViewDelegate: 
+        - NSObject
+    UISearchBarDelegate: 
+        - NSObject
+    UISearchDisplayDelegate: 
+        - NSObject
+    UITabBarControllerDelegate: 
+        - NSObject
+    UITabBarDelegate: 
+        - NSObject
+    UITableViewDataSource: 
+        - NSObject
+    UITableViewDelegate: 
+        - NSObject
+        - UIScrollViewDelegate
+    UITextFieldDelegate: 
+        - NSObject
+    UITextInput: 
+        - UIKeyInput
+    UITextInputDelegate: 
+        - NSObject
+    UITextInputTokenizer: 
+        - NSObject
+    UITextInputTraits: 
+        - NSObject
+    UITextViewDelegate: 
+        - NSObject
+        - UIScrollViewDelegate
+    UIVideoEditorControllerDelegate: 
+        - NSObject
+    UIWebViewDelegate: 
+        - NSObject
+has: !java.util.LinkedHashMap
+    UIActionSheet: 
+        - 
+            - addButtonWithTitle
+            - NSString
+    UIAlertView: 
+        - 
+            - addButtonWithTitle
+            - NSString
+    UIBezierPath: 
+        - 
+            - addLineToPoint
+            - CGPoint
+    UIManagedDocument: 
+        - 
+            - additionalContentForURL
+            - NSURL
+    UIPasteboard: 
+        - 
+            - addItems
+            - NSArray
+    UIView: 
+        - 
+            - addConstraint
+            - NSLayoutConstraint
+        - 
+            - addConstraints
+            - NSArray
+        - 
+            - addGestureRecognizer
+            - UIGestureRecognizer
+        - 
+            - addSubview
+            - UIView
+    UIViewController: 
+        - 
+            - addChildViewController
+            - UIViewController

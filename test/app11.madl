@@ -1,0 +1,11 @@
+
+app(name : 'Picker') { 
+
+  View(id: top) { 
+    Label(id: l1, width: '*', text: 'selection')
+    Picker(options: [ 'John Appleseed', 'Chris Armstrong', 'Serena Auroux',
+					  'Susan Bean', 'Luis Becerra', 'Kate Bell', 'Alain Briere' ])
+  }
+
+}
+

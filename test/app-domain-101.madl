@@ -1,0 +1,53 @@
+
+app(name : 'Address') { 
+
+  NavigationView(id: top) { 
+    
+    ListView(id: list1,
+	     title: 'Address List') { // add button 
+      addresses.each { 
+	Item(text: it.name,
+	     next: list2)
+	     //next: [ view: list2, data: it ]) 
+      }      
+    }
+
+    ListView(id list2,
+	     title: 'Address') { // edit, delete button
+      Item(text: name)
+      Item(text: address)
+      Item(text: city)
+      Item(text: state)
+      Item(text: zip)
+      Item(text: country)
+    }
+
+  }
+
+}
+
+// model
+
+//@File   // save to file
+List<Address> addresses = []
+
+class Address {  
+
+  String name
+  String address
+  String city 
+  String state
+  String zip
+  String country
+
+}
+
+// boot-strap 
+
+def init = { 
+  addresses = [
+    new Address(name: 'Steve Jobs', address: '1 Infinite Loop', city: 'Cupertino', state: 'California', zip: '95014', country: 'USA'),
+    new Addredd(name: 'Eric Schmidt', address: '1600 Amphitheatre Parkway', city: 'Mountain View', state: 'California', zip: '94043', country: 'USA')
+  ]
+
+}

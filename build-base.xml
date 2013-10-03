@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<project name="Draw-Base" basedir=".">
+
+  <condition property="isLinux">
+    <os name="linux"/>
+  </condition>
+
+  <condition property="isWindows">
+    <os family="windows"/>
+  </condition>
+
+  <!-- Preparation --> 
+
+  <target name="prepare">
+    <!-- Create the time stamp -->
+    <tstamp>
+      <format property="TODAY_0" pattern="MM/dd/yyyy"/>
+    </tstamp>
+    <tstamp>
+      <format property="build.time" pattern="MMMM d, yyyy hh:mm:ss z" />
+    </tstamp>
+    <echo message="Beginning build: ${build.time}" />
+    <echo message="Java home: ${java.home}" />
+    <echo message="Java version: ${ant.java.version}" />
+    <echo message="Ant version: ${ant.version}" />
+
+    <!-- Create the classes directory structure used by compile -->
+    <mkdir dir="${classes}"/>
+    <mkdir dir="${lib}"/>
+    <mkdir dir="${dist}"/>
+  </target>
+
+  <!-- Compilation class path -->
+
+  <path id="compile.classpath">
+    <fileset dir="${extlib}">
+      <include name="*.jar" />
+      <exclude name="ant-1.8.2.jar" />
+    </fileset>
+  </path>
+
+  <!-- pack source files -->
+
+  <target name="packsrc">
+    <tstamp/>
+    <jar jarfile="../../backup/Groovy-Mobile-src-${DSTAMP}.jar" 
+		 basedir="." 
+		 includes="${src}/**,${test}/**,${bin}/**,scripts/**,conf/**,templates/**,build*.xml,*.properties" 
+		 excludes="**/.svn"/>
+  </target>
+
+  <target name="packlib">
+    <tstamp/>
+    <jar jarfile="../../backup/Groovy-Mobile-lib-${DSTAMP}.jar" 
+		 basedir="." 
+		 includes="${lib}/**" 
+		 excludes="**/.svn"/>
+  </target>
+
+  <!-- Cleaning up --> 
+
+  <target name="clean-classes">
+    <!-- Delete the ${classes} and ${dist} directory trees -->
+    <delete dir="${classes}/${prefix}"/>
+  </target>
+
+  <target name="clean">
+    <!-- Delete the ${classes} and ${dist} directory trees -->
+    <delete dir="${classes}/${prefix}"/>
+  </target>
+
+  <target name="cleanback">
+    <!-- Delete the *` and *.class files in ${src} and its subdirectories  -->
+    <delete>
+      <fileset dir="${src}" includes="*~"/>
+      <fileset dir="${src}" includes="**/*~"/>
+      <fileset dir="${src}" includes="**/*.class"/>
+      <fileset dir="${test}" includes="**/*~"/>
+    </delete>
+  </target>
+
+  <!-- fix file format -->
+  <target name="fixfile">
+    <fixcrlf srcdir="${src}"
+             eol="lf"
+             includes="xj/graph2d/TextShape.java"/>
+  </target>
+
+</project>
