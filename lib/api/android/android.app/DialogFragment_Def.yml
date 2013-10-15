@@ -1,5 +1,0 @@
---- 
-inherit: 
-    - android.app.Fragment
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}

@@ -1,7 +1,0 @@
-app('Launch Orientation 6') { 
-
-  View(supportedOrientations: portrait) { 
-	Label(id: lable, align: center, text: 'Portrait', font: 36)
-  }
-
-}

@@ -1,7 +1,0 @@
---- 
-inherit: 
-    - NSObject
-conform: 
-    - NSObject (NSObject)
-properties: !java.util.LinkedHashMap {}
-methods: !java.util.LinkedHashMap {}

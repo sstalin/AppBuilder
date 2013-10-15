@@ -1,7 +1,0 @@
-#!/bin/sh
-
-source $(dirname $0)/setenv.sh
-
-groovy -classpath $CLASSPATH $* 
-
-exit 0

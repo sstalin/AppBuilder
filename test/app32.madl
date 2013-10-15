@@ -1,7 +1,0 @@
-app('Launch Orientation 1') { 
-
-  View(initialOrientation: LandscapeLeft) { 
-	Label(id: label, align: center, text: 'Landscape', font: 36)
-  }
-
-}

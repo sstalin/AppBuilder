@@ -1,5 +1,0 @@
---- 
-inherit: 
-    - android.widget.BaseAdapter
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}

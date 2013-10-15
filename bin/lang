@@ -1,7 +1,0 @@
-#!/bin/sh
-
-source $(dirname $0)/setenv.sh
-
-java -classpath $CLASSPATH:$HOME/scripts/ xj.mobile.tool.Lang $* 
-
-exit 0

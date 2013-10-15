@@ -1,5 +1,0 @@
---- 
-inherit: 
-    - android.app.Notification.Style
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}

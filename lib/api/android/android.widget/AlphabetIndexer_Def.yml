@@ -1,5 +1,0 @@
---- 
-inherit: 
-    - android.database.DataSetObserver
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}

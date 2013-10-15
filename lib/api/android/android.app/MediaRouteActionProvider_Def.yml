@@ -1,5 +1,0 @@
---- 
-inherit: 
-    - android.view.ActionProvider
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}
