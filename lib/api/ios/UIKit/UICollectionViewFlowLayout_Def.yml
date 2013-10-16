@@ -1,0 +1,69 @@
+--- 
+inherit: 
+    - UICollectionViewLayout
+    - NSObject
+conform: 
+    - NSCoding (UICollectionViewLayout)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    footerReferenceSize: !java.util.LinkedHashMap
+        name: footerReferenceSize
+        type: CGSize
+        ref: ""
+        explanation: The default sizes to use for section footers.
+        readonly: false
+    headerReferenceSize: !java.util.LinkedHashMap
+        name: headerReferenceSize
+        type: CGSize
+        ref: ""
+        explanation: The default sizes to use for section headers.
+        readonly: false
+    itemSize: !java.util.LinkedHashMap
+        name: itemSize
+        type: CGSize
+        ref: ""
+        explanation: "The default size to use for cells. "
+        readonly: false
+    minimumInteritemSpacing: !java.util.LinkedHashMap
+        name: minimumInteritemSpacing
+        type: CGFloat
+        ref: ""
+        explanation: The minimum spacing to use between items in the same row.
+        readonly: false
+    minimumLineSpacing: !java.util.LinkedHashMap
+        name: minimumLineSpacing
+        type: CGFloat
+        ref: ""
+        explanation: The minimum spacing to use between lines of items in the grid.
+        readonly: false
+    scrollDirection: !java.util.LinkedHashMap
+        name: scrollDirection
+        type: UICollectionViewScrollDirection
+        ref: ""
+        explanation: "The scroll direction of the grid. "
+        readonly: false
+    sectionInset: !java.util.LinkedHashMap
+        name: sectionInset
+        type: UIEdgeInsets
+        ref: ""
+        explanation: The margins used to lay out content in a section
+        readonly: false
+methods: !java.util.LinkedHashMap {}
+constants: !java.util.LinkedHashMap
+    UICollectionViewScrollDirection: !java.util.LinkedHashMap
+        name: UICollectionViewScrollDirection
+        isEnum: &14 true
+        isTypedef: *14
+        values: []
+        aliasOf: NSUInteger
+        defValues: 
+            - UICollectionViewScrollDirectionVertical
+            - UICollectionViewScrollDirectionHorizontal
+    Flow Layout Supplementary Views: !java.util.LinkedHashMap
+        name: ~
+        isEnum: &18 false
+        isTypedef: *18
+        values: ~
+        defValues: 
+            - UICollectionElementKindSectionHeader
+            - UICollectionElementKindSectionFooter

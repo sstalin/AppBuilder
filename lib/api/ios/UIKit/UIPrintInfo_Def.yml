@@ -1,0 +1,103 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSCoding
+    - NSCopying
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    duplex: !java.util.LinkedHashMap
+        name: duplex
+        type: UIPrintInfoDuplex
+        ref: ""
+        explanation: "Specifies the duplex mode to use for the print job. "
+        readonly: false
+    jobName: !java.util.LinkedHashMap
+        name: jobName
+        type: NSString
+        ref: "*"
+        explanation: The name of the print job.
+        readonly: false
+    orientation: !java.util.LinkedHashMap
+        name: orientation
+        type: UIPrintInfoOrientation
+        ref: ""
+        explanation: "The orientation of the printed content, portrait or landscape."
+        readonly: false
+    outputType: !java.util.LinkedHashMap
+        name: outputType
+        type: UIPrintInfoOutputType
+        ref: ""
+        explanation: The kind of printable content.
+        readonly: false
+    printerID: !java.util.LinkedHashMap
+        name: printerID
+        type: NSString
+        ref: "*"
+        explanation: An identifier of the printer to use for the print job.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    printInfo: !java.util.LinkedHashMap
+        isInstance: &11 false
+        name: printInfo
+        type: !java.util.LinkedHashMap
+            name: UIPrintInfo
+            delegate: ~
+            isConst: *11
+            isRef: &13 true
+        isVarArgs: *11
+        args: []
+    printInfoWithDictionary: !java.util.LinkedHashMap
+        isInstance: *11
+        name: printInfoWithDictionary
+        type: !java.util.LinkedHashMap
+            name: UIPrintInfo
+            delegate: ~
+            isConst: *11
+            isRef: *13
+        isVarArgs: *11
+        args: 
+            - !java.util.LinkedHashMap
+                param: dictionary
+                type: !java.util.LinkedHashMap
+                    name: NSDictionary
+                    delegate: ~
+                    isConst: *11
+                    isRef: *13
+    dictionaryRepresentation: !java.util.LinkedHashMap
+        isInstance: *13
+        name: dictionaryRepresentation
+        type: !java.util.LinkedHashMap
+            name: NSDictionary
+            delegate: ~
+            isConst: *11
+            isRef: *13
+        isVarArgs: *11
+        args: []
+constants: !java.util.LinkedHashMap
+    UIPrintInfoDuplex: !java.util.LinkedHashMap
+        name: UIPrintInfoDuplex
+        isEnum: *13
+        isTypedef: *13
+        values: []
+        defValues: 
+            - UIPrintInfoDuplexNone
+            - UIPrintInfoDuplexLongEdge
+            - UIPrintInfoDuplexShortEdge
+    UIPrintInfoOrientation: !java.util.LinkedHashMap
+        name: UIPrintInfoOrientation
+        isEnum: *13
+        isTypedef: *13
+        values: []
+        defValues: 
+            - UIPrintInfoOrientationPortrait
+            - UIPrintInfoOrientationLandscape
+    UIPrintInfoOutputType: !java.util.LinkedHashMap
+        name: UIPrintInfoOutputType
+        isEnum: *13
+        isTypedef: *13
+        values: []
+        defValues: 
+            - UIPrintInfoOutputGeneral
+            - UIPrintInfoOutputPhoto
+            - UIPrintInfoOutputGrayscale

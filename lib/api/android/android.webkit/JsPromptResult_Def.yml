@@ -1,0 +1,5 @@
+--- 
+inherit: 
+    - android.webkit.JsResult
+    - java.lang.Object
+attributes: !java.util.LinkedHashMap {}

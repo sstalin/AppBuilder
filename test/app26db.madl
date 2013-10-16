@@ -1,0 +1,28 @@
+app('Scroll Gesture') { 
+
+  View { 
+	Label(id: label1)
+	Label(id: label2, lines: 2)
+
+	onScroll { 
+	  label1.text = "Scroll detected"	  
+	} doAfter(delay:2) { label1.text = '' }
+
+	onScroll { x, y, distanceX, distanceY -> 
+	  label1.text = "Scroll (${x}, ${y})"
+	  label2.text = "dx=${distanceX}\\ndy=${distanceY}"
+	} doAfter(delay:2) { label1.text = '' }
+
+	onScroll(touches: 2) { distanceX, distanceY -> 
+	  label1.text = "Two-finger scroll"
+	  label2.text = "dx=${distanceX}\\ndy=${distanceY}"
+	} doAfter(delay:2) { label1.text = '' }
+
+	onScroll(touches: 3) { distanceX, distanceY -> 
+	  label1.text = "Three-finger scroll"
+	  label2.text = "dx=${distanceX}\\ndy=${distanceY}"
+	} doAfter(delay:2) { label1.text = '' }
+
+  }
+
+}

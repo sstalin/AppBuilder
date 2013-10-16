@@ -1,0 +1,252 @@
+--- 
+inherit: 
+    - UINavigationController
+    - UIViewController
+    - UIResponder
+    - NSObject
+conform: 
+    - NSCoding
+    - NSCoding (UIViewController)
+    - UIAppearanceContainer (UIViewController)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    allowsEditing: !java.util.LinkedHashMap
+        name: allowsEditing
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether the user is allowed to edit a selected still image or movie.
+        readonly: false
+    cameraCaptureMode: !java.util.LinkedHashMap
+        name: cameraCaptureMode
+        type: UIImagePickerControllerCameraCaptureMode
+        ref: ""
+        explanation: The capture mode used by the camera.
+        readonly: false
+    cameraDevice: !java.util.LinkedHashMap
+        name: cameraDevice
+        type: UIImagePickerControllerCameraDevice
+        ref: ""
+        explanation: The camera used by the image picker controller.
+        readonly: false
+    cameraFlashMode: !java.util.LinkedHashMap
+        name: cameraFlashMode
+        type: UIImagePickerControllerCameraFlashMode
+        ref: ""
+        explanation: The flash mode used by the active camera.
+        readonly: false
+    cameraOverlayView: !java.util.LinkedHashMap
+        name: cameraOverlayView
+        type: UIView
+        ref: "*"
+        explanation: The custom view to display on top of the default image picker interface.
+        readonly: false
+    cameraViewTransform: !java.util.LinkedHashMap
+        name: cameraViewTransform
+        type: CGAffineTransform
+        ref: ""
+        explanation: The transform to apply to the camera?s preview image.
+        readonly: false
+    delegate: !java.util.LinkedHashMap
+        name: delegate
+        type: id
+        ref: ""
+        explanation: The image picker?s delegate object.
+        readonly: false
+    mediaTypes: !java.util.LinkedHashMap
+        name: mediaTypes
+        type: NSArray
+        ref: "*"
+        explanation: An array indicating the media types to be accessed by the media picker controller.
+        readonly: false
+    showsCameraControls: !java.util.LinkedHashMap
+        name: showsCameraControls
+        type: BOOL
+        ref: ""
+        explanation: Indicates whether the image picker displays the default camera controls.
+        readonly: false
+    sourceType: !java.util.LinkedHashMap
+        name: sourceType
+        type: UIImagePickerControllerSourceType
+        ref: ""
+        explanation: The type of picker interface to be displayed by the controller.
+        readonly: false
+    videoMaximumDuration: !java.util.LinkedHashMap
+        name: videoMaximumDuration
+        type: NSTimeInterval
+        ref: ""
+        explanation: "The maximum duration, in seconds, for a video recording."
+        readonly: false
+    videoQuality: !java.util.LinkedHashMap
+        name: videoQuality
+        type: UIImagePickerControllerQualityType
+        ref: ""
+        explanation: The video recording and transcoding quality.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    availableCaptureModesForCameraDevice: !java.util.LinkedHashMap
+        isInstance: &18 false
+        name: availableCaptureModesForCameraDevice
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *18
+            isRef: &20 true
+        isVarArgs: *18
+        args: 
+            - !java.util.LinkedHashMap
+                param: cameraDevice
+                type: !java.util.LinkedHashMap
+                    name: UIImagePickerControllerCameraDevice
+                    delegate: ~
+                    isConst: *18
+                    isRef: *18
+    availableMediaTypesForSourceType: !java.util.LinkedHashMap
+        isInstance: *18
+        name: availableMediaTypesForSourceType
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *18
+            isRef: *20
+        isVarArgs: *18
+        args: 
+            - !java.util.LinkedHashMap
+                param: sourceType
+                type: !java.util.LinkedHashMap
+                    name: UIImagePickerControllerSourceType
+                    delegate: ~
+                    isConst: *18
+                    isRef: *18
+    isCameraDeviceAvailable: !java.util.LinkedHashMap
+        isInstance: *18
+        name: isCameraDeviceAvailable
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *18
+            isRef: *18
+        isVarArgs: *18
+        args: 
+            - !java.util.LinkedHashMap
+                param: cameraDevice
+                type: !java.util.LinkedHashMap
+                    name: UIImagePickerControllerCameraDevice
+                    delegate: ~
+                    isConst: *18
+                    isRef: *18
+    isFlashAvailableForCameraDevice: !java.util.LinkedHashMap
+        isInstance: *18
+        name: isFlashAvailableForCameraDevice
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *18
+            isRef: *18
+        isVarArgs: *18
+        args: 
+            - !java.util.LinkedHashMap
+                param: cameraDevice
+                type: !java.util.LinkedHashMap
+                    name: UIImagePickerControllerCameraDevice
+                    delegate: ~
+                    isConst: *18
+                    isRef: *18
+    isSourceTypeAvailable: !java.util.LinkedHashMap
+        isInstance: *18
+        name: isSourceTypeAvailable
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *18
+            isRef: *18
+        isVarArgs: *18
+        args: 
+            - !java.util.LinkedHashMap
+                param: sourceType
+                type: !java.util.LinkedHashMap
+                    name: UIImagePickerControllerSourceType
+                    delegate: ~
+                    isConst: *18
+                    isRef: *18
+    startVideoCapture: !java.util.LinkedHashMap
+        isInstance: *20
+        name: startVideoCapture
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *18
+            isRef: *18
+        isVarArgs: *18
+        args: []
+    stopVideoCapture: !java.util.LinkedHashMap
+        isInstance: *20
+        name: stopVideoCapture
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *18
+            isRef: *18
+        isVarArgs: *18
+        args: []
+    takePicture: !java.util.LinkedHashMap
+        isInstance: *20
+        name: takePicture
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *18
+            isRef: *18
+        isVarArgs: *18
+        args: []
+constants: !java.util.LinkedHashMap
+    UIImagePickerControllerSourceType: !java.util.LinkedHashMap
+        name: UIImagePickerControllerSourceType
+        isEnum: *20
+        isTypedef: *20
+        values: []
+        aliasOf: NSUInteger
+        defValues: 
+            - UIImagePickerControllerSourceTypePhotoLibrary
+            - UIImagePickerControllerSourceTypeCamera
+            - UIImagePickerControllerSourceTypeSavedPhotosAlbum
+    UIImagePickerControllerQualityType: !java.util.LinkedHashMap
+        name: UIImagePickerControllerQualityType
+        isEnum: *20
+        isTypedef: *20
+        values: []
+        aliasOf: NSUInteger
+        defValues: 
+            - UIImagePickerControllerQualityTypeHigh
+            - UIImagePickerControllerQualityType640x480
+            - UIImagePickerControllerQualityTypeMedium
+            - UIImagePickerControllerQualityTypeLow
+            - UIImagePickerControllerQualityTypeIFrame1280x720
+            - UIImagePickerControllerQualityTypeIFrame960x540
+    UIImagePickerControllerCameraDevice: !java.util.LinkedHashMap
+        name: UIImagePickerControllerCameraDevice
+        isEnum: *20
+        isTypedef: *20
+        values: []
+        aliasOf: NSUInteger
+        defValues: 
+            - UIImagePickerControllerCameraDeviceRear
+            - UIImagePickerControllerCameraDeviceFront
+    UIImagePickerControllerCameraCaptureMode: !java.util.LinkedHashMap
+        name: UIImagePickerControllerCameraCaptureMode
+        isEnum: *20
+        isTypedef: *20
+        values: []
+        aliasOf: NSUInteger
+        defValues: 
+            - UIImagePickerControllerCameraCaptureModePhoto
+            - UIImagePickerControllerCameraCaptureModeVideo
+    UIImagePickerControllerCameraFlashMode: !java.util.LinkedHashMap
+        name: UIImagePickerControllerCameraFlashMode
+        isEnum: *20
+        isTypedef: *20
+        values: []
+        aliasOf: NSInteger
+        defValues: 
+            - UIImagePickerControllerCameraFlashModeOff
+            - UIImagePickerControllerCameraFlashModeAuto
+            - UIImagePickerControllerCameraFlashModeOn

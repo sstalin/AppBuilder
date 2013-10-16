@@ -1,0 +1,79 @@
+--- 
+inherit: 
+    - UIGestureRecognizer
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    maximumNumberOfTouches: !java.util.LinkedHashMap
+        name: maximumNumberOfTouches
+        type: NSUInteger
+        ref: ""
+        explanation: The maximum number of fingers that can be touching the view for this gesture to be recognized.
+        readonly: false
+    minimumNumberOfTouches: !java.util.LinkedHashMap
+        name: minimumNumberOfTouches
+        type: NSUInteger
+        ref: ""
+        explanation: The minimum number of fingers that can be touching the view for this gesture to be recognized.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    setTranslation: !java.util.LinkedHashMap
+        isInstance: &8 true
+        name: setTranslation
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &10 false
+            isRef: *10
+        isVarArgs: *10
+        args: 
+            - !java.util.LinkedHashMap
+                param: translation
+                type: !java.util.LinkedHashMap
+                    name: CGPoint
+                    delegate: ~
+                    isConst: *10
+                    isRef: *10
+            - !java.util.LinkedHashMap
+                name: inView
+                param: view
+                type: !java.util.LinkedHashMap
+                    name: UIView
+                    delegate: ~
+                    isConst: *10
+                    isRef: *8
+    translationInView: !java.util.LinkedHashMap
+        isInstance: *8
+        name: translationInView
+        type: !java.util.LinkedHashMap
+            name: CGPoint
+            delegate: ~
+            isConst: *10
+            isRef: *10
+        isVarArgs: *10
+        args: 
+            - !java.util.LinkedHashMap
+                param: view
+                type: !java.util.LinkedHashMap
+                    name: UIView
+                    delegate: ~
+                    isConst: *10
+                    isRef: *8
+    velocityInView: !java.util.LinkedHashMap
+        isInstance: *8
+        name: velocityInView
+        type: !java.util.LinkedHashMap
+            name: CGPoint
+            delegate: ~
+            isConst: *10
+            isRef: *10
+        isVarArgs: *10
+        args: 
+            - !java.util.LinkedHashMap
+                param: view
+                type: !java.util.LinkedHashMap
+                    name: UIView
+                    delegate: ~
+                    isConst: *10
+                    isRef: *8

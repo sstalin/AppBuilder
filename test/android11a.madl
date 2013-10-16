@@ -1,0 +1,23 @@
+
+app(name : 'Picker 5') { 
+
+  View(id: top) { 
+    Label(id: l1, width: '*', text: 'selection')
+    Label(id: l2, width: '*', text: 'selection')
+    Label(id: l3, width: '*', text: 'selection')
+    SpinnerGroup(id: g1, 
+				 selection: { 
+				   l1.text = value[0]; 
+				   l2.text = value[1]; 
+				   l3.text = value[2]; }) { 
+      Spinner(id: s1, 
+			  options: [ 'John Appleseed', 'Chris Armstrong', 'Serena Auroux',
+						 'Susan Bean', 'Luis Becerra', 'Kate Bell', 'Alain Briere' ])
+      Spinner(id: s2, 
+			  options: [ 1, 2, 3, 4, 5, 6 ])
+      Spinner(id: s3, 
+			  options: [ 'One', 'Two', 'Three', 'Four' ]) 
+    }
+  }
+
+}

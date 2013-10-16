@@ -1,0 +1,115 @@
+--- 
+inherit: 
+    - UIView
+    - UIResponder
+    - NSObject
+conform: 
+    - NSCoding (UIView)
+    - UIAppearance (UIView)
+    - UIAppearanceContainer (UIView)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    animationDuration: !java.util.LinkedHashMap
+        name: animationDuration
+        type: NSTimeInterval
+        ref: ""
+        explanation: The amount of time it takes to go through one cycle of the images.
+        readonly: false
+    animationImages: !java.util.LinkedHashMap
+        name: animationImages
+        type: NSArray
+        ref: "*"
+        explanation: "An array of UIImage objects to use for an animation. "
+        readonly: false
+    animationRepeatCount: !java.util.LinkedHashMap
+        name: animationRepeatCount
+        type: NSInteger
+        ref: ""
+        explanation: Specifies the number of times to repeat the animation.
+        readonly: false
+    highlighted: !java.util.LinkedHashMap
+        name: highlighted
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value that determines whether the image is highlighted.
+        readonly: false
+    highlightedAnimationImages: !java.util.LinkedHashMap
+        name: highlightedAnimationImages
+        type: NSArray
+        ref: "*"
+        explanation: "An array of UIImage objects to use for an animation when the view is highlighted. "
+        readonly: false
+    highlightedImage: !java.util.LinkedHashMap
+        name: highlightedImage
+        type: UIImage
+        ref: "*"
+        explanation: The highlighted image displayed in the image view.
+        readonly: false
+    image: !java.util.LinkedHashMap
+        name: image
+        type: UIImage
+        ref: "*"
+        explanation: The image displayed in the image view.
+        readonly: false
+    userInteractionEnabled: !java.util.LinkedHashMap
+        name: userInteractionEnabled
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value that determines whether user events are ignored and removed from the event queue.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    initWithImage: !java.util.LinkedHashMap
+        isInstance: &14 true
+        name: initWithImage
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: &16 false
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: image
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: highlightedImage
+                param: highlightedImage
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+    isAnimating: !java.util.LinkedHashMap
+        isInstance: *14
+        name: isAnimating
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: []
+    startAnimating: !java.util.LinkedHashMap
+        isInstance: *14
+        name: startAnimating
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: []
+    stopAnimating: !java.util.LinkedHashMap
+        isInstance: *14
+        name: stopAnimating
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: []

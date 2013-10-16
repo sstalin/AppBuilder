@@ -1,0 +1,5 @@
+--- 
+inherit: 
+    - android.view.InputEvent
+    - java.lang.Object
+attributes: !java.util.LinkedHashMap {}

@@ -1,0 +1,26 @@
+/* Mobile Application Definition Language */
+
+app('Action Def 4') { 
+
+  View(model: Counter) { 
+
+    Label(id: l1, text: 'Counter: 0', width: '*') 
+    Button(id: b1, text: 'Increment',
+		   action: { nextNumber() }) 
+
+
+  }
+
+}
+
+class Counter { 
+
+  int counter = 0  
+
+  void nextNumber = { 
+	l1.text = ++counter
+  }
+
+}
+
+

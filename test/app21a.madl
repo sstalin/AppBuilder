@@ -1,0 +1,7 @@
+app('Orientation 2') { 
+
+  View { 
+	Label(id: label, align: center, text: 'This Way Up', font: 36)
+  }
+
+}

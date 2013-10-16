@@ -1,0 +1,18 @@
+
+app(name : 'Picker 3') { 
+
+  View(id: top) { 
+    Label(id: l1, width: '*', text: 'style')
+    Selection(id: sel1, 
+			  options : [ 1, 2, 3, 4 ],
+			  action : { l1.text = 'Selection' })
+    Label(id: l2, text: 'selection')
+    DateTimePicker()
+  }
+
+}
+
+
+
+
+

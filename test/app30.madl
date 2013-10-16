@@ -1,0 +1,18 @@
+app('Accelerometer') { 
+
+  View { 
+
+	Label(id: label1, lines: 5)
+
+	onMotion(frequency: 10) { 
+	  label1.text = """Accelerometer
+-----------
+x: ${accelerometer.x}
+y: ${accelerometer.y}
+z: ${accelerometer.z}"""
+	}
+
+	
+  }
+
+}

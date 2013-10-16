@@ -1,0 +1,27 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSCoding
+    - NSCopying
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    shadowBlurRadius: !java.util.LinkedHashMap
+        name: shadowBlurRadius
+        type: CGFloat
+        ref: ""
+        explanation: The blur radius of the shadow.
+        readonly: false
+    shadowColor: !java.util.LinkedHashMap
+        name: shadowColor
+        type: id
+        ref: ""
+        explanation: The color of the shadow.
+        readonly: false
+    shadowOffset: !java.util.LinkedHashMap
+        name: shadowOffset
+        type: CGSize
+        ref: ""
+        explanation: The offset values of the shadow.
+        readonly: false
+methods: !java.util.LinkedHashMap {}

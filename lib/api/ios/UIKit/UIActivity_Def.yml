@@ -1,0 +1,124 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    activityDidFinish: !java.util.LinkedHashMap
+        isInstance: &6 true
+        name: activityDidFinish
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &8 false
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: completed
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *8
+                    isRef: *8
+    activityImage: !java.util.LinkedHashMap
+        isInstance: *6
+        name: activityImage
+        type: !java.util.LinkedHashMap
+            name: UIImage
+            delegate: ~
+            isConst: *8
+            isRef: *6
+        isVarArgs: *8
+        args: []
+    activityTitle: !java.util.LinkedHashMap
+        isInstance: *6
+        name: activityTitle
+        type: !java.util.LinkedHashMap
+            name: NSString
+            delegate: ~
+            isConst: *8
+            isRef: *6
+        isVarArgs: *8
+        args: []
+    activityType: !java.util.LinkedHashMap
+        isInstance: *6
+        name: activityType
+        type: !java.util.LinkedHashMap
+            name: NSString
+            delegate: ~
+            isConst: *8
+            isRef: *6
+        isVarArgs: *8
+        args: []
+    activityViewController: !java.util.LinkedHashMap
+        isInstance: *6
+        name: activityViewController
+        type: !java.util.LinkedHashMap
+            name: UIViewController
+            delegate: ~
+            isConst: *8
+            isRef: *6
+        isVarArgs: *8
+        args: []
+    canPerformWithActivityItems: !java.util.LinkedHashMap
+        isInstance: *6
+        name: canPerformWithActivityItems
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: activityItems
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+    performActivity: !java.util.LinkedHashMap
+        isInstance: *6
+        name: performActivity
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: []
+    prepareWithActivityItems: !java.util.LinkedHashMap
+        isInstance: *6
+        name: prepareWithActivityItems
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *8
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: activityItems
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *8
+                    isRef: *6
+constants: !java.util.LinkedHashMap
+    Built-in Activity Types: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *8
+        isTypedef: *8
+        values: ~
+        defValues: 
+            - UIActivityTypePostToFacebook
+            - UIActivityTypePostToTwitter
+            - UIActivityTypePostToWeibo
+            - UIActivityTypeMessage
+            - UIActivityTypeMail
+            - UIActivityTypePrint
+            - UIActivityTypeCopyToPasteboard
+            - UIActivityTypeAssignToContact
+            - UIActivityTypeSaveToCameraRoll

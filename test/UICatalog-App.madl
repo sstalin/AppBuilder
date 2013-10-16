@@ -1,0 +1,123 @@
+
+// UICatelog
+
+app(name: 'UICatalog') { 
+
+  NavigationView(id: top) { 
+
+    ListView(id: main,
+	     title: 'UICatalog') { 
+      Item(text: 'Buttons', 
+	   detailText: 'Various uses of Button',
+	   accessory: Disclosure,
+	   next: buttonView)
+      Item(text: 'Controls', 
+	   detailText: 'Various uses of Control',
+	   accessory: Disclosure,
+	   next: controlView)
+      Item(text: 'TextFields', 
+	   detailText: 'Uses of TextField',
+	   accessory: Disclosure,
+	   next: tfView)
+      Item(text: 'SearchBar', 
+	   detailText: 'Use of SearchBar',
+	   accessory: Disclosure,
+	   next: searchView)
+      Item(text: 'TextViews', 
+	   detailText: 'Uses of TextView',
+	   accessory: Disclosure,
+	   next: tvView)
+      Item(text: 'Pickers', 
+	   detailText: 'Uses of Picker',
+	   accessory: Disclosure,
+	   next: pickerView)
+      Item(text: 'Images', 
+	   detailText: 'Uses of Images',
+	   accessory: Disclosure,
+	   next: imageView)
+      Item(text: 'Web', 
+	   detailText: 'Uses of WebView',
+	   accessory: Disclosure,
+	   next: webView)
+      Item(text: 'Segments', 
+	   detailText: 'Uses of Segment',
+	   accessory: Disclosure,
+	   next: segmentView)
+      Item(text: 'Toolbars', 
+	   detailText: 'Uses of Toolbar',
+	   accessory: Disclosure,
+	   next: toolbarView)    
+      Item(text: 'Alerts', 
+	   detailText: 'Uses of Alert',
+	   accessory: Disclosure,
+	   next: alertView)  
+      Item(text: 'Transitions', 
+	   detailText: 'Uses of Transttion',
+	   accessory: Disclosure,
+	   next: transitionView)        
+    }
+
+    ListView(id : buttonView,
+	     title: 'Buttons') { 
+
+    }
+
+    ListView(id : controlView,
+	     title: 'Controls') { 
+
+    }
+
+    ListView(id : tfView,
+	     title: 'TextField') { 
+
+    }
+
+    ListView(id : searchView,
+	     title: 'Search') { 
+
+    }
+
+    ListView(id : tvView,
+	     title: 'TextView') { 
+
+    }
+
+    ListView(id : pickerView,
+	     title: 'Pickers') { 
+
+    }
+
+    ListView(id : imageView,
+	     title: 'Images') { 
+
+    }
+
+    ListView(id : webView,
+	     title: 'Web') { 
+
+    }
+
+    ListView(id : segmentView,
+	     title: 'Segments') { 
+
+    }
+
+    ListView(id : toolbarView,
+	     title: 'Toolbars') { 
+
+    }
+
+    ListView(id : alertView,
+	     title: 'Alerts') { 
+
+    }
+
+    ListView(id : transitionView,
+	     title: 'Transitions') { 
+
+    }
+
+
+  }
+
+}

@@ -1,0 +1,19 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    pixelAspectRatio: !java.util.LinkedHashMap
+        name: pixelAspectRatio
+        type: CGFloat
+        ref: ""
+        explanation: The aspect ratio of a single pixel. (read-only)
+        readonly: true
+    size: !java.util.LinkedHashMap
+        name: size
+        type: CGSize
+        ref: ""
+        explanation: "The screen size, measured in pixels. (read-only)"
+        readonly: true
+methods: !java.util.LinkedHashMap {}

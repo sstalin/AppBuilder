@@ -1,0 +1,25 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - UITextInputTokenizer
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    initWithTextInput: !java.util.LinkedHashMap
+        isInstance: &6 true
+        name: initWithTextInput
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: &8 false
+            isRef: *8
+        isVarArgs: *8
+        args: 
+            - !java.util.LinkedHashMap
+                param: textInput
+                type: !java.util.LinkedHashMap
+                    name: UIResponder
+                    delegate: < UITextInput >
+                    isConst: *8
+                    isRef: *6

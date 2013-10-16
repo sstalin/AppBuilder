@@ -1,0 +1,18 @@
+app('Tap Gesture') { 
+
+  View { 
+	Label(id: label1)
+	Label(id: label2)
+
+	onTap { 
+	  label1.text = 'Single tap detected'
+	} doAfter delay:2.second, { label1.text = '' }
+
+	onTap(taps: 2) { 
+	  label2.text = 'Double tap detected'	  
+	} doAfter delay:2500.ms, { label2.text = '' }
+
+
+  }
+
+}

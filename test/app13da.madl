@@ -1,0 +1,38 @@
+
+class Item {
+  String name
+  boolean done
+  int quantity
+}
+
+app('Shopping List 5a') { 
+
+  ListView(id: 'mylist', 
+		   title: 'Shopping List') { 
+
+	def items = ListEntity(Item)
+
+    items.values = [
+      new Item(name: 'Coffee', quantity: 1),
+      new Item(name: 'Juice', quantity: 2),
+    ]
+
+    items.each { t ->
+      Item(type: CheckBox, 
+		   checked: t.done, 
+		   text: t.name,
+		   detailText: "Quantity: ${t.quantity}",
+		   menu: [
+			 [ text: "Delete", 
+			   action: { println 'Action: Delete' } ],
+			 [ text: 'Add quantity', 
+			   action: { println 'Action: Add' } ], 
+			 [ text: 'Zero quantity', 
+			   action: { println 'Action: Zero' } ], 
+		   ])
+    }
+  
+  }
+
+}
+
