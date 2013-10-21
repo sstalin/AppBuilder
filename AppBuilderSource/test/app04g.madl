@@ -1,0 +1,19 @@
+app(name : 'Modal View 3') { 
+
+  View(id: v1, title: 'First') { 
+    Label(text: 'First View')
+
+    Button(text: 'Button 1', next: [ to: v2, data: '#1'])   
+    Button(text: 'Button 2', next: [ to: v2, data: '#2'])   
+
+  }
+  
+  View(id: v2, title: 'Second') { 
+    Label(text: 'Second View')
+    Label(text: data)
+
+    Button(text: 'Dismiss', next: Previous )   
+		   
+  }
+
+}

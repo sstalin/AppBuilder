@@ -1,0 +1,48 @@
+app(name: 'Configure User Role') { 
+  def roles = [ 'Administrator', 'Manager', 'User', 'Guest' ]
+  def users = [
+    [ name: 'John Appleseed', role: 'Administrator' ], 
+    [ name: 'Chris Armstrong', role: 'Manager' ], 
+    [ name: 'Serena Auroux', role: 'Manager' ], 
+    [ name: 'Susan Bean', role: 'User' ], 
+    [ name: 'Luis Becerra', role: 'User' ],
+    [ name: 'Kate Bell', role: 'User' ],
+    [ name: 'Alain Briere', role: 'Guest' ],
+  ]
+
+  ListView(id: user, title: 'Configure User Role', shortTitle: 'Users',
+	   '@Design:Android' : [ view : 'ExpandableListView' ]) { 
+    roles.each { role -> 
+      Section(title: role) { 
+	users.findAll { it.role == role }.each { user -> 
+	  Item(text: user.name,
+	       data: user, 
+	       next: detail)
+	}
+      }
+    }
+  }
+
+  View(id: detail,
+       title: 'User Details') { 
+    Panel(orientation: 'horizontal') { 
+      Label(text : 'Name') 
+      Text(id: name_value, text : 'John Appleseed')
+    }
+    Panel(orientation: 'horizontal') { 
+      Label(text : 'Role') 
+      Selection(id: role_value, options: roles,
+		'@Design:Android' : [ type: 'RadioGroup' ])
+	     //selected : data.role)
+    }
+    Panel(orientation: 'horizontal') { 
+      Button(id: btn_cancel, text: 'Cancel',
+	     next: user)
+      Button(id: btn_save, text: 'Save',
+	     action: { //data.name = name_value.text
+	               //data.role = role_value.selected 
+	     },
+	     next: user)
+    }
+  }
+}

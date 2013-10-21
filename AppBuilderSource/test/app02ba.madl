@@ -1,0 +1,21 @@
+/* Mobile Application Definition Language */
+
+app('App Button 3a') { 
+  
+  View { 
+    Label(id: l1, text: 'Hello', width: '*') 
+    Row { 
+      Label('Value 1: ')
+	  Label("${s1.value}")
+      NumberStepper(id: s1, value: 50, max: 100, min: 0, step: 5)
+    }
+    Row { 
+      Label('Value 2: ') 
+	  Label("${s2.value}")
+      NumberStepper(id: s2, max: 10, min: 0)
+    }
+  }
+
+}
+
+

@@ -1,0 +1,18 @@
+app('Gyro') { 
+
+  View { 
+
+	Label(id: label1, lines: 5)
+
+	onMotion(frequency: 10) { 
+	  label1.text = """Gyro
+-----------
+x: ${gyro.x}
+y: ${gyro.y}
+z: ${gyro.z}"""
+	}
+
+	
+  }
+
+}

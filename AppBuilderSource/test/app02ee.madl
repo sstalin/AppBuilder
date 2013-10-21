@@ -1,0 +1,26 @@
+/* Mobile Application Definition Language */
+
+app(name: 'App Button 6e') { 
+  
+  View { 
+    Label(id: l1, text: 'Hello', width: '*') 
+    Button(id: b1, text: 'Button 1', titleFont: Serif, 
+		   action: { l1.text = b1.text })
+	Button(id: b2, text: 'Button 2', titleFont: Italic, 
+		   action: { l1.text = b2.text }) 
+
+    Button(id: b3, text: 'Serif 12',
+		   action: { b1.titleFont = [ Serif, 12 ] }) 
+    Button(id: b4, text: 'Sans Serif 15',
+		   action: { b1.titleFont = [ Sans, 15 ] }) 
+
+    Button(id: b5, text: 'Serif',
+		   action: { b2.titleFont = [ Serif, Italic ] }) 
+    Button(id: b6, text: 'Sans Serif',
+		   action: { b2.titleFont = [ Sans, Italic ] }) 
+
+  }
+
+}
+
+

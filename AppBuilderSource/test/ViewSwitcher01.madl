@@ -1,0 +1,33 @@
+app(name: 'ViewSwitcher') { 
+
+  View { 
+	Group(overlay: true) { 
+	  View(id: blueView,
+		   background: blue,
+		   next: [on: switchView, to: yellowView, animate: flipFromLeft]) {
+		Button(text: 'Press Me')
+
+		Alert(id: blueAlert,
+			  title: 'Blue View Button Pressed',
+			  message: 'You pressed the button on the blue view',
+			  cancel: 'Yep, I did.')
+	  }
+
+	  View(id: yellowView,
+		   background: yellow,
+		   next: [on: switchView, to: blueView, animate: flipFromRight]) {
+		Button(text: 'Press Me, Too',
+			   next: yellowAlert)
+
+		Alert(id: yellowAlert,
+			  title: 'Yellow View Button Pressed',
+			  message: 'You pressed the button on the yellow view',
+			  cancel: 'Yep, I did.')
+	  }
+	}
+	ToolBar { 
+	  Button(id: switchView, text: 'Switch Views')
+	}
+  }
+
+}

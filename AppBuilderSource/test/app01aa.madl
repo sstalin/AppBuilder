@@ -1,0 +1,25 @@
+
+/* Mobile Application Definition Language */
+
+app(name : 'Test Color') { 
+
+  View(id: top, 
+       background: Yellow) {
+    Label(text: 'Color: green', color: green) 
+    Button(text: 'Color: Green', color: Green)
+    Label(text: 'textColor: Red', textColor: Red) 
+    Button(text: 'textColor: red', textColor: red)
+    Label(text: 'Background Color: orange', background: orange) 
+    Button(text: 'Tint Color: Orange', tintColor: Orange)
+
+    Label(text: 'Color: purple', color: purple)
+
+    Label(text: 'Color: #00FFFF', color: '#00FFFF')
+    Label(text: 'Color: aqua', color: aqua)
+
+    Label(text: 'Background Color: [0, 128, 128]', background: [0, 128, 128]) 
+    Label(text: 'Background Color: [0, 0.6, 0.6]', background: [0, 0.6, 0.6]) 
+
+  }
+
+}

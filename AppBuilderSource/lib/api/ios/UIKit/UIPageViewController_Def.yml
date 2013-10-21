@@ -1,0 +1,172 @@
+--- 
+inherit: 
+    - UIViewController
+    - UIResponder
+    - NSObject
+conform: 
+    - NSCoding (UIViewController)
+    - UIAppearanceContainer (UIViewController)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    dataSource: !java.util.LinkedHashMap
+        name: dataSource
+        type: id
+        ref: ""
+        explanation: The object that provides view controllers.
+        readonly: false
+    delegate: !java.util.LinkedHashMap
+        name: delegate
+        type: id
+        ref: ""
+        explanation: The delegate object.
+        readonly: false
+    doubleSided: !java.util.LinkedHashMap
+        name: doubleSided
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value that indicates whether content appears on the back of pages.
+        readonly: false
+    gestureRecognizers: !java.util.LinkedHashMap
+        name: gestureRecognizers
+        type: NSArray
+        ref: "*"
+        explanation: An array of UIGestureRecognizer objects that are configured to handle user interaction. (read-only)
+        readonly: true
+    navigationOrientation: !java.util.LinkedHashMap
+        name: navigationOrientation
+        type: UIPageViewControllerNavigationOrientation
+        ref: ""
+        explanation: The direction along which navigation occurs. (read-only)
+        readonly: true
+    spineLocation: !java.util.LinkedHashMap
+        name: spineLocation
+        type: UIPageViewControllerSpineLocation
+        ref: ""
+        explanation: The location of the spine. (read-only)
+        readonly: true
+    transitionStyle: !java.util.LinkedHashMap
+        name: transitionStyle
+        type: UIPageViewControllerTransitionStyle
+        ref: ""
+        explanation: The style used to transition between view controllers. (read-only)
+        readonly: true
+    viewControllers: !java.util.LinkedHashMap
+        name: viewControllers
+        type: NSArray
+        ref: "*"
+        explanation: The view controllers displayed by the page view controller. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap
+    initWithTransitionStyle: !java.util.LinkedHashMap
+        isInstance: &14 true
+        name: initWithTransitionStyle
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: &16 false
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: style
+                type: !java.util.LinkedHashMap
+                    name: UIPageViewControllerTransitionStyle
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: navigationOrientation
+                param: navigationOrientation
+                type: !java.util.LinkedHashMap
+                    name: UIPageViewControllerNavigationOrientation
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: options
+                param: options
+                type: !java.util.LinkedHashMap
+                    name: NSDictionary
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+    setViewControllers: !java.util.LinkedHashMap
+        isInstance: *14
+        name: setViewControllers
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: viewControllers
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: direction
+                param: direction
+                type: !java.util.LinkedHashMap
+                    name: UIPageViewControllerNavigationDirection
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: animated
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+constants: !java.util.LinkedHashMap
+    Navigation Orientations: !java.util.LinkedHashMap
+        name: UIPageViewControllerNavigationOrientation
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        aliasOf: NSInteger
+        defValues: 
+            - UIPageViewControllerNavigationOrientationHorizontal
+            - UIPageViewControllerNavigationOrientationVertical
+    Navigation Directions: !java.util.LinkedHashMap
+        name: UIPageViewControllerNavigationDirection
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        aliasOf: NSInteger
+        defValues: 
+            - UIPageViewControllerNavigationDirectionForward
+            - UIPageViewControllerNavigationDirectionReverse
+    Transition Styles: !java.util.LinkedHashMap
+        name: UIPageViewControllerTransitionStyle
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        aliasOf: NSInteger
+        defValues: 
+            - UIPageViewControllerTransitionStylePageCurl
+            - UIPageViewControllerTransitionStyleScroll
+    Options Keys: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *16
+        isTypedef: *16
+        values: ~
+        defValues: 
+            - UIPageViewControllerOptionSpineLocationKey
+            - UIPageViewControllerOptionInterPageSpacingKey
+    Spine Locations: !java.util.LinkedHashMap
+        name: UIPageViewControllerSpineLocation
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        aliasOf: NSInteger
+        defValues: 
+            - UIPageViewControllerSpineLocationNone
+            - UIPageViewControllerSpineLocationMin
+            - UIPageViewControllerSpineLocationMid
+            - UIPageViewControllerSpineLocationMax

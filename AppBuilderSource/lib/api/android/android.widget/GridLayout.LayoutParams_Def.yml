@@ -1,0 +1,54 @@
+--- 
+inherit: 
+    - android.view.ViewGroup.MarginLayoutParams
+    - android.view.ViewGroup.LayoutParams
+    - java.lang.Object
+attributes: !java.util.LinkedHashMap
+    layout_gravity: !java.util.LinkedHashMap
+        name: "android:layout_gravity"
+        method: setGravity(int)
+        methodName: setGravity
+        type: int
+        explanation: Gravity specifies how a component should be placed in its group of cells. 
+    layout_marginBottom: !java.util.LinkedHashMap
+        name: "android:layout_marginBottom"
+        method: "setMargins(int,int,int,int)"
+        methodName: setMargins
+        type: "int,int,int,int"
+        explanation: Specifies extra space on the bottom side of this view. 
+        from: android.view.ViewGroup.MarginLayoutParams
+    layout_marginEnd: !java.util.LinkedHashMap
+        name: "android:layout_marginEnd"
+        method: setMarginEnd(int)
+        methodName: setMarginEnd
+        type: int
+        explanation: Specifies extra space on the end side of this view. 
+        from: android.view.ViewGroup.MarginLayoutParams
+    layout_marginLeft: !java.util.LinkedHashMap
+        name: "android:layout_marginLeft"
+        method: "setMargins(int,int,int,int)"
+        methodName: setMargins
+        type: "int,int,int,int"
+        explanation: Specifies extra space on the left side of this view. 
+        from: android.view.ViewGroup.MarginLayoutParams
+    layout_marginRight: !java.util.LinkedHashMap
+        name: "android:layout_marginRight"
+        method: "setMargins(int,int,int,int)"
+        methodName: setMargins
+        type: "int,int,int,int"
+        explanation: Specifies extra space on the right side of this view. 
+        from: android.view.ViewGroup.MarginLayoutParams
+    layout_marginStart: !java.util.LinkedHashMap
+        name: "android:layout_marginStart"
+        method: setMarginStart(int)
+        methodName: setMarginStart
+        type: int
+        explanation: Specifies extra space on the start side of this view. 
+        from: android.view.ViewGroup.MarginLayoutParams
+    layout_marginTop: !java.util.LinkedHashMap
+        name: "android:layout_marginTop"
+        method: "setMargins(int,int,int,int)"
+        methodName: setMargins
+        type: "int,int,int,int"
+        explanation: Specifies extra space on the top side of this view. 
+        from: android.view.ViewGroup.MarginLayoutParams

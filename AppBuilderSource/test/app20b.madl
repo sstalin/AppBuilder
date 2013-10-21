@@ -1,0 +1,17 @@
+app('Graphics 3') { 
+
+  Canvas { 
+	Path(start: [40, 130], closed: true, width: 3, color: red) { 
+	  lineTo (20, 200)
+	  lineTo (70, 158)
+	  lineTo (10, 158)
+	  lineTo (60, 200)
+	}
+
+	Path(start: [50, 50]) { 
+	  curveTo(location: [150, 50], control: [ [75, 25], [125, 75] ])
+	  arcTo(location: [250, 50], control: [200, 25], radius: 70)
+	}
+  }
+
+}

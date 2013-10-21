@@ -1,0 +1,14 @@
+--- 
+inherit: []
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    awakeFromNib: !java.util.LinkedHashMap
+        isInstance: true
+        name: awakeFromNib
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &7 false
+            isRef: *7
+        isVarArgs: *7
+        args: []

@@ -1,0 +1,59 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    storyboardWithName: !java.util.LinkedHashMap
+        isInstance: &6 false
+        name: storyboardWithName
+        type: !java.util.LinkedHashMap
+            name: UIStoryboard
+            delegate: ~
+            isConst: *6
+            isRef: &8 true
+        isVarArgs: *6
+        args: 
+            - !java.util.LinkedHashMap
+                param: name
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *6
+                    isRef: *8
+            - !java.util.LinkedHashMap
+                name: bundle
+                param: storyboardBundleOrNil
+                type: !java.util.LinkedHashMap
+                    name: NSBundle
+                    delegate: ~
+                    isConst: *6
+                    isRef: *8
+    instantiateInitialViewController: !java.util.LinkedHashMap
+        isInstance: *8
+        name: instantiateInitialViewController
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: *6
+            isRef: *6
+        isVarArgs: *6
+        args: []
+    instantiateViewControllerWithIdentifier: !java.util.LinkedHashMap
+        isInstance: *8
+        name: instantiateViewControllerWithIdentifier
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: *6
+            isRef: *6
+        isVarArgs: *6
+        args: 
+            - !java.util.LinkedHashMap
+                param: identifier
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *6
+                    isRef: *8

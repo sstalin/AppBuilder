@@ -1,0 +1,12 @@
+app('Orientation') { 
+
+  View { 
+	Label(id: label, align: center, text: 'Face Up', width: '*', font: 36)
+
+	onOrientationChange { 
+	  label.text = 'Orientation Changed';   
+	}	
+
+  }
+
+}

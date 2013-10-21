@@ -1,0 +1,6 @@
+--- 
+inherit: 
+    - android.app.AlertDialog
+    - android.app.Dialog
+    - java.lang.Object
+attributes: !java.util.LinkedHashMap {}

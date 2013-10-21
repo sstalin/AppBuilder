@@ -1,0 +1,4 @@
+--- 
+inherit: 
+    - java.lang.Object
+attributes: !java.util.LinkedHashMap {}

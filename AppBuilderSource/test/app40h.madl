@@ -1,0 +1,23 @@
+/* Mobile Application Definition Language */
+
+app('Action Def 9') { 
+
+  View { 
+    int counter = 0  
+
+    Label(id: l1, text: 'Counter: 0', width: '*') 
+    Button(id: b1, text: 'First',
+		   action: { nextNumber(this, 2) }) 
+    Button(id: b2, text: 'Second',
+		   action: { nextNumber(this, -2) }) 
+
+	def nextNumber = {b, v -> 
+	  //counter += v
+	  l1.text = "${b.text} pressed. Counter = ${counter += v}"
+	}
+
+  }
+
+}
+
+

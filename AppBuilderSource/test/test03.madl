@@ -1,0 +1,9 @@
+
+app(name : 'Test') { 
+
+  View(id: top) { 
+    Lable(id: l1, text: 'Hello') 
+    Lable(id: l2, text: 'World') 
+  }
+
+}

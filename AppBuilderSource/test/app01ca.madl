@@ -1,0 +1,10 @@
+
+/* Mobile Application Definition Language */
+
+app(name : 'First App 4a') { 
+
+  View(id: top) { 
+    Image(file: 'iPad.jpg', scroll: false)
+  }
+
+}

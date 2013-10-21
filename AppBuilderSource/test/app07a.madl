@@ -1,0 +1,39 @@
+app(name : 'Countries 2') { 
+
+  def EUMemberCountries = [ 
+    [ key: 'austria', name: 'Austria' ],
+    [ key: 'belgium', name: 'Belgium' ],
+    [ key: 'bulgaria', name: 'Bulgaria' ],
+    [ key: 'cyprus', name: 'Cyprus' ],
+    [ key: 'czechrepublic', name: 'Czech Republic' ],
+    [ key: 'denmark', name: 'Denmark' ],
+    [ key: 'estonia', name: 'Estonia' ],
+    [ key: 'finland', name: 'Finland' ],
+    [ key: 'france', name: 'France' ],
+    [ key: 'germany', name: 'Germany' ],
+    [ key: 'greece', name: 'Greece' ],
+    [ key: 'hungary', name: 'Hungary' ],
+    [ key: 'ireland', name: 'Ireland' ],
+    [ key: 'italy', name: 'Italy' ],
+    [ key: 'latvia', name: 'Latvia' ],
+    [ key: 'lithuania', name: 'Lithuania' ],
+    [ key: 'luxembourg', name: 'Luxembourg' ],
+    [ key: 'malta', name: 'Malta' ],
+    [ key: 'netherlands', name: 'Netherlands' ],
+    [ key: 'poland', name: 'Poland' ],
+    [ key: 'portugal', name: 'Portugal' ],
+    [ key: 'romania', name: 'Romania' ],
+    [ key: 'slovakia', name: 'Slovakia' ],
+    [ key: 'slovenia', name: 'Slovenia' ],
+    [ key: 'spain', name: 'Spain' ],
+    [ key: 'sweden', name: 'Sweden' ],
+    [ key: 'unitedkingdom', name: 'United Kingdom' ], 
+  ]
+  
+  ListView(id: list1, title: 'European Union') { 
+    EUMemberCountries.each { c ->
+      Item(text: c.name, image: "${c.key}_flag.gif")
+    }
+  }
+  
+}

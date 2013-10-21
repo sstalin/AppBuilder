@@ -1,0 +1,14 @@
+app(name : 'App Button 8') { 
+
+  View(id: top) { 
+	Label(id: lb1a, text : 'Value?') 
+	Panel(orientation: 'horizontal') { 
+	  Label(id: lb1b, text : 'Value?') 
+	  Text(id: t1a, text : 'Number', type: decimal)
+	}
+	Button(text: 'Convert!', action:{
+			 lb1a.text = Float.parseFloat(t1a.text);
+		   })
+  }
+
+}

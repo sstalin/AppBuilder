@@ -1,0 +1,113 @@
+app(name : 'Countries') { 
+
+  def EUMemberCountries = [ 
+    'Austria',
+    'Belgium',
+    'Bulgaria',
+    'Cyprus',
+    'Czech Republic',
+    'Denmark',
+    'Estonia',
+    'Finland',
+    'France',
+    'Germany',
+    'Greece',
+    'Hungary',
+    'Ireland',
+    'Italy',
+    'Latvia',
+    'Lithuania',
+    'Luxembourg',
+    'Malta',
+    'Netherlands',
+    'Poland',
+    'Portugal',
+    'Romania',
+    'Slovakia',
+    'Slovenia',
+    'Spain',
+    'Sweden',
+    'United Kingdom', 
+  ]
+  
+  def EUCandidateCountries = [ 
+    'Croatia',
+    'Macedonia',
+    'Iceland',
+    'Montenegro',
+    'Turkey',
+  ]
+  
+  def OtherEuropeanCountries = [
+    'Albania',
+    'Andorra',
+    'Armenia',
+    'Azerbaijan',
+    'Belarus',
+    'Bosnia and Herzegovina',
+    'Georgia',
+    'Liechtenstein',
+    'Moldova',
+    'Monaco',
+    'Norway',
+    'Russia',
+    'San Marino',
+    'Serbia',
+    'Switzerland',
+    'Ukraine',
+    'Vatican City State',
+  ]
+
+  def EuroZoneCountries = [
+    'Andorra',
+    'Austria',
+    'Belgium',
+    'Cyprus',
+    'Estonia',
+    'Finland',
+    'France',
+    'Germany',
+    'Greece',
+    'Ireland',
+    'Italy',
+    'Kosovo',
+    'Luxembourg',
+    'Malta',
+    'Monaco',
+    'Montenegro',
+    'Netherlands',
+    'Portugal',
+    'San Marino',
+    'Slovakia',
+    'Slovenia',
+    'Spain',
+    'Vatican City',
+  ]
+
+  ListView(id: list1, title: 'European Countries') { 
+    Section (title: 'European Union Members') { 
+      EUMemberCountries.each { item ->
+		Item(text: item)
+      }
+    }
+    Section (title: 'European Union Candidates') { 
+      EUCandidateCountries.each { item ->
+		Item(text: item)
+      }
+    }
+
+    Section (title: 'Other European Countires') { 
+      OtherEuropeanCountries.each { item ->
+		Item(text: item)
+      }
+    }
+
+    Section (title: 'EuroZone Members') { 
+      EuroZoneCountries.each { item ->
+		Item(text: item)
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,35 @@
+
+app(name : 'Alerts 5a') { 
+
+  View(id: top) { 
+    Button(text: 'Action 1',
+		   next: [ to: p1, data: 'Data: Action 1' ])
+    Button(text: 'Action 2',
+		   next: [ to: p2, data: [text: text, title: 'Action']])
+    Button(text: 'Alert 1',
+		   next: [ to: p3, data: 'Data: Alert 1' ])
+    Button(text: 'Alert 2',
+		   next: [ to: p4, data: [text: text, title: 'Alert']])
+
+    Popup(id: p1, 
+		  title: data)
+		  //title: "Simaple Action\n${data}")
+
+    Popup(id: p2,
+		  title: data.title,
+		  //title: "${data.title}\n${data.text}",
+		  cancel: 'Cancel',
+		  affirm: 'OK')
+
+    Alert(id: p3,
+		  title: 'Simple alert',
+		  message: data) 
+    
+    Alert(id: p4,
+		  title: data.title,
+		  message: data.text,
+		  cancel: 'Cancel',
+		  affirm: 'OK')
+    
+  }
+}

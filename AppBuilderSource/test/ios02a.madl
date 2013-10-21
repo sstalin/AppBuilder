@@ -1,0 +1,19 @@
+app(name : 'iOS App') { 
+
+  View(id: top) { 
+    Label(id: l1, text: 'Hello', width: '*') 
+    CheckBox(id: c1, text: 'Item 1', 
+			 action : { l1.text = 'Checkbox: Item 1' } )
+    CheckBox(id: c2, text: 'Item 2', 
+			 action : { l1.text = 'Checkbox: Item 2'} )
+    
+    RadioGroup () { 
+      RadioButton(id: r11, text: 'Choice 1', 
+				  action : { l1.text = 'Radio 1 button selected' } )
+      RadioButton(id: r12, text: 'Choice 2', 
+				  action : { l1.text = 'Radio 2 button selected' } )
+    }
+    
+  }
+
+}
