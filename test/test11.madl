@@ -1,6 +1,0 @@
-
-class Actions {  
-   def salute = { @Arg("Name") name ->  
-      "Hello ${name}"  
-   }  
-}  

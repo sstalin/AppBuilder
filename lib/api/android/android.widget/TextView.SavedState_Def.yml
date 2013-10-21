@@ -1,6 +1,0 @@
---- 
-inherit: 
-    - android.view.View.BaseSavedState
-    - android.view.AbsSavedState
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}

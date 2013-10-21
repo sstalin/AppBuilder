@@ -1,5 +1,0 @@
---- 
-inherit: 
-    - android.app.Dialog
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}

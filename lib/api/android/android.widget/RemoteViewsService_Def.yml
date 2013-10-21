@@ -1,7 +1,0 @@
---- 
-inherit: 
-    - android.app.Service
-    - android.content.ContextWrapper
-    - android.content.Context
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}

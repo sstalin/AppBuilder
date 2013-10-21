@@ -1,9 +1,0 @@
-
-app(name : 'Test') { 
-
-  View(id: top) { 
-    Label(id: l1, text: 'Hello')
-    Label(id: l1, text: 'World')
-  }
-
-}

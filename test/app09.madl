@@ -1,9 +1,0 @@
-app(name : 'Web') { 
-
-  View(id: v1, 
-       title: 'Web') { 
-    Web(id: web, 
-		url: 'http://google.com/')
-  } 
-
-}

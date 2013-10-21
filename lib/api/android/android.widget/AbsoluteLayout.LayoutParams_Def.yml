@@ -1,5 +1,0 @@
---- 
-inherit: 
-    - android.view.ViewGroup.LayoutParams
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}

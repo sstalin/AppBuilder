@@ -1,5 +1,0 @@
---- 
-inherit: 
-    - android.os.Handler
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}

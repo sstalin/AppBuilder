@@ -1,7 +1,0 @@
-app('Orientation 3') { 
-
-  View(supportedOrientations: All) { 
-	Label(id: label, align: center, text: 'This Way Up', font: 36)
-  }
-
-}

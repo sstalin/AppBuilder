@@ -1,7 +1,0 @@
-app(name: 'Welcome') { 
-
-  View { 
-    Image(file: 'nonexistant.png')
-  }
-
-}

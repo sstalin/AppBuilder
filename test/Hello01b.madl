@@ -1,9 +1,0 @@
-app(name: 'Hello World 1b') { 
-
-  View { 
-	Label(text: 'Hello World!',
-		  font: [Bold, 36],
-		  color: Red)
-  }
-
-}

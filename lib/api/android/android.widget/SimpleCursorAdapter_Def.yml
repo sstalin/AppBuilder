@@ -1,7 +1,0 @@
---- 
-inherit: 
-    - android.widget.ResourceCursorAdapter
-    - android.widget.CursorAdapter
-    - android.widget.BaseAdapter
-    - java.lang.Object
-attributes: !java.util.LinkedHashMap {}
