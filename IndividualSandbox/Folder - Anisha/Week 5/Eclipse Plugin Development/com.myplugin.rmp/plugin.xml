@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Resource Manager Category"
+            id="com.myplugin.rmp">
+      </category>
+      <view
+            category="com.myplugin.rmp"
+            class="com.myplugin.rmp.views.PropertyManagerView"
+            icon="icons/sample.gif"
+            id="com.myplugin.rmp.views.PropertyManagerView"
+            name="Property Manager View">
+      </view>
+      <view
+            name="Resource Manager View"
+            icon="icons/sample.gif"
+            category="com.myplugin.rmp"
+            class="com.myplugin.rmp.views.ResourceManagerView"
+            id="com.myplugin.rmp.views.ResourceManagerView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.myplugin.rmp.ResourceManagerPerspectiveFactory"
+            icon="icons/sample.gif"
+            id="plugin.rmp.ResourceManagerPerspective"
+            name="Resource Manager">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               id="com.myplugin.rmp.viewResourceManagerView"
+               relationship="stack"
+               relative="org.eclipse.ui.views.TaskList"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            description="This is resource manager action set"
+            id="com.myplugin.rmp.workbenchActionSet"
+            label="Resource Manager ActionSet"
+            visible="true">
+         <menu
+               id="com.myplugin.rmp.workbenchMenu"
+               label="Resource Manager"
+               path="additions">
+            <groupMarker
+                  name="content">
+            </groupMarker>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="com.myplugin.rmp.actions.OpenResourceManagerViewActionDelegate"
+               icon="icons/sample.gif"
+               id="com.myplugin.rmp.openResourcemanagerView"
+               label="Open &amp; Resource Manager View"
+               menubarPath="com.myplugin.rmp.workbenchMenu/content"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Open the resource manager view">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="com.myplugin.rmp.ResourceManagerViewContribution"
+            targetID="com.myplugin.rmp.views.ResourceManagerView">
+         <action
+               class="com.myplugin.rmp.ResourceManagerViewActionDelegate"
+               icon="icons/sample.gif"
+               id="com.myplugin.rmp.ResourceManagerViewAction"
+               label="Click Me!"
+               style="push"
+               toolbarPath="additions">
+         </action>
+      </viewContribution>
+   </extension>
+
+</plugin>
