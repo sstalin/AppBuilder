@@ -1,0 +1,377 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    changeCount: !java.util.LinkedHashMap
+        name: changeCount
+        type: NSInteger
+        ref: ""
+        explanation: The number of times the pasteboard?s contents have changed. (read-only)
+        readonly: true
+    color: !java.util.LinkedHashMap
+        name: color
+        type: UIColor
+        ref: "*"
+        explanation: The color object of the first pasteboard item.
+        readonly: false
+    colors: !java.util.LinkedHashMap
+        name: colors
+        type: NSArray
+        ref: "*"
+        explanation: An array of color objects in all pasteboard items.
+        readonly: false
+    image: !java.util.LinkedHashMap
+        name: image
+        type: UIImage
+        ref: "*"
+        explanation: The image object of the first pasteboard item.
+        readonly: false
+    images: !java.util.LinkedHashMap
+        name: images
+        type: NSArray
+        ref: "*"
+        explanation: An array of image objects in all pasteboard items.
+        readonly: false
+    items: !java.util.LinkedHashMap
+        name: items
+        type: NSArray
+        ref: "*"
+        explanation: The pasteboard items on the pasteboard.
+        readonly: false
+    name: !java.util.LinkedHashMap
+        name: name
+        type: NSString
+        ref: "*"
+        explanation: The name of the pasteboard. (read-only)
+        readonly: true
+    numberOfItems: !java.util.LinkedHashMap
+        name: numberOfItems
+        type: NSInteger
+        ref: ""
+        explanation: Returns the number of items in the pasteboard (read-only)
+        readonly: true
+    persistent: !java.util.LinkedHashMap
+        name: persistent
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value that indicates whether the pasteboard is persistent.
+        readonly: false
+    string: !java.util.LinkedHashMap
+        name: string
+        type: NSString
+        ref: "*"
+        explanation: The string value of the first pasteboard item.
+        readonly: false
+    strings: !java.util.LinkedHashMap
+        name: strings
+        type: NSArray
+        ref: "*"
+        explanation: An array of strings in all pasteboard items.
+        readonly: false
+    URL: !java.util.LinkedHashMap
+        name: URL
+        type: NSURL
+        ref: "*"
+        explanation: The URL object of the first pasteboard item.
+        readonly: false
+    URLs: !java.util.LinkedHashMap
+        name: URLs
+        type: NSArray
+        ref: "*"
+        explanation: An array of URL objects in all pasteboard items.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    generalPasteboard: !java.util.LinkedHashMap
+        isInstance: &19 false
+        name: generalPasteboard
+        type: !java.util.LinkedHashMap
+            name: UIPasteboard
+            delegate: ~
+            isConst: *19
+            isRef: &21 true
+        isVarArgs: *19
+        args: []
+    pasteboardWithName: !java.util.LinkedHashMap
+        isInstance: *19
+        name: pasteboardWithName
+        type: !java.util.LinkedHashMap
+            name: UIPasteboard
+            delegate: ~
+            isConst: *19
+            isRef: *21
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: pasteboardName
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+            - !java.util.LinkedHashMap
+                name: create
+                param: create
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *19
+                    isRef: *19
+    pasteboardWithUniqueName: !java.util.LinkedHashMap
+        isInstance: *19
+        name: pasteboardWithUniqueName
+        type: !java.util.LinkedHashMap
+            name: UIPasteboard
+            delegate: ~
+            isConst: *19
+            isRef: *21
+        isVarArgs: *19
+        args: []
+    removePasteboardWithName: !java.util.LinkedHashMap
+        isInstance: *19
+        name: removePasteboardWithName
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *19
+            isRef: *19
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: pasteboardName
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+    addItems: !java.util.LinkedHashMap
+        isInstance: *21
+        name: addItems
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *19
+            isRef: *19
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: items
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+    containsPasteboardTypes: !java.util.LinkedHashMap
+        isInstance: *21
+        name: containsPasteboardTypes
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *19
+            isRef: *19
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: pasteboardTypes
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+            - !java.util.LinkedHashMap
+                name: inItemSet
+                param: itemSet
+                type: !java.util.LinkedHashMap
+                    name: NSIndexSet
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+    dataForPasteboardType: !java.util.LinkedHashMap
+        isInstance: *21
+        name: dataForPasteboardType
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *19
+            isRef: *21
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: pasteboardType
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+            - !java.util.LinkedHashMap
+                name: inItemSet
+                param: itemSet
+                type: !java.util.LinkedHashMap
+                    name: NSIndexSet
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+    itemSetWithPasteboardTypes: !java.util.LinkedHashMap
+        isInstance: *21
+        name: itemSetWithPasteboardTypes
+        type: !java.util.LinkedHashMap
+            name: NSIndexSet
+            delegate: ~
+            isConst: *19
+            isRef: *21
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: pasteboardTypes
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+    pasteboardTypes: !java.util.LinkedHashMap
+        isInstance: *21
+        name: pasteboardTypes
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *19
+            isRef: *21
+        isVarArgs: *19
+        args: []
+    pasteboardTypesForItemSet: !java.util.LinkedHashMap
+        isInstance: *21
+        name: pasteboardTypesForItemSet
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *19
+            isRef: *21
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: itemSet
+                type: !java.util.LinkedHashMap
+                    name: NSIndexSet
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+    setData: !java.util.LinkedHashMap
+        isInstance: *21
+        name: setData
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *19
+            isRef: *19
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: data
+                type: !java.util.LinkedHashMap
+                    name: NSData
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+            - !java.util.LinkedHashMap
+                name: forPasteboardType
+                param: pasteboardType
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+    setValue: !java.util.LinkedHashMap
+        isInstance: *21
+        name: setValue
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *19
+            isRef: *19
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: value
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: ~
+                    isConst: *19
+                    isRef: *19
+            - !java.util.LinkedHashMap
+                name: forPasteboardType
+                param: pasteboardType
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+    valueForPasteboardType: !java.util.LinkedHashMap
+        isInstance: *21
+        name: valueForPasteboardType
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: *19
+            isRef: *19
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: pasteboardType
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+    valuesForPasteboardType: !java.util.LinkedHashMap
+        isInstance: *21
+        name: valuesForPasteboardType
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: *19
+            isRef: *21
+        isVarArgs: *19
+        args: 
+            - !java.util.LinkedHashMap
+                param: pasteboardType
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+            - !java.util.LinkedHashMap
+                name: inItemSet
+                param: itemSet
+                type: !java.util.LinkedHashMap
+                    name: NSIndexSet
+                    delegate: ~
+                    isConst: *19
+                    isRef: *21
+constants: !java.util.LinkedHashMap
+    Pasteboard Names: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *19
+        isTypedef: *19
+        values: ~
+        defValues: 
+            - UIPasteboardNameGeneral
+            - UIPasteboardNameFind
+    Data Type Extensions: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *19
+        isTypedef: *19
+        values: ~
+        defValues: 
+            - UIPasteboardTypeListString
+            - UIPasteboardTypeListURL
+            - UIPasteboardTypeListImage
+            - UIPasteboardTypeListColor
+    UserInfo Dictionary Keys: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *19
+        isTypedef: *19
+        values: ~
+        defValues: 
+            - UIPasteboardChangedTypesAddedKey
+            - UIPasteboardChangedTypesRemovedKey

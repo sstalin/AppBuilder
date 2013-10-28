@@ -1,0 +1,27 @@
+--- 
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap {}
+constants: !java.util.LinkedHashMap
+    UIEdgeInsetsZero: !java.util.LinkedHashMap
+        name: ~
+        isEnum: &5 false
+        isTypedef: *5
+        values: ~
+        defValues: 
+            - UIEdgeInsetsZero
+    UIOffsetZero: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *5
+        isTypedef: *5
+        values: ~
+        defValues: 
+            - UIOffsetZero
+    Interface Builder Constants: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *5
+        isTypedef: *5
+        values: ~
+        defValues: 
+            - IBAction
+            - IBOutlet
+            - IBOutletCollection

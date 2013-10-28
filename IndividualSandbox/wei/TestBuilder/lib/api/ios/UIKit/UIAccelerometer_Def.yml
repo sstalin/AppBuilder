@@ -1,0 +1,29 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    delegate: !java.util.LinkedHashMap
+        name: delegate
+        type: id
+        ref: ""
+        explanation: "The delegate object you want to receive acceleration events. "
+        readonly: false
+    updateInterval: !java.util.LinkedHashMap
+        name: updateInterval
+        type: NSTimeInterval
+        ref: ""
+        explanation: The interval at which to deliver acceleration data to the delegate.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    sharedAccelerometer: !java.util.LinkedHashMap
+        isInstance: &8 false
+        name: sharedAccelerometer
+        type: !java.util.LinkedHashMap
+            name: UIAccelerometer
+            delegate: ~
+            isConst: *8
+            isRef: true
+        isVarArgs: *8
+        args: []

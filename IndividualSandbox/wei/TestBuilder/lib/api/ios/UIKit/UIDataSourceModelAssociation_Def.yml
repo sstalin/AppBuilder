@@ -1,0 +1,53 @@
+--- 
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    indexPathForElementWithModelIdentifier: !java.util.LinkedHashMap
+        isInstance: &4 true
+        name: indexPathForElementWithModelIdentifier
+        type: !java.util.LinkedHashMap
+            name: NSIndexPath
+            delegate: ~
+            isConst: &6 false
+            isRef: *4
+        isVarArgs: *6
+        args: 
+            - !java.util.LinkedHashMap
+                param: identifier
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *6
+                    isRef: *4
+            - !java.util.LinkedHashMap
+                name: inView
+                param: view
+                type: !java.util.LinkedHashMap
+                    name: UIView
+                    delegate: ~
+                    isConst: *6
+                    isRef: *4
+    modelIdentifierForElementAtIndexPath: !java.util.LinkedHashMap
+        isInstance: *4
+        name: modelIdentifierForElementAtIndexPath
+        type: !java.util.LinkedHashMap
+            name: NSString
+            delegate: ~
+            isConst: *6
+            isRef: *4
+        isVarArgs: *6
+        args: 
+            - !java.util.LinkedHashMap
+                param: idx
+                type: !java.util.LinkedHashMap
+                    name: NSIndexPath
+                    delegate: ~
+                    isConst: *6
+                    isRef: *4
+            - !java.util.LinkedHashMap
+                name: inView
+                param: view
+                type: !java.util.LinkedHashMap
+                    name: UIView
+                    delegate: ~
+                    isConst: *6
+                    isRef: *4

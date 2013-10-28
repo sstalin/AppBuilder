@@ -1,0 +1,1110 @@
+=== Log started at Mon Oct 28 17:24:38 CDT 2013
+[Main] infile: src/app04f.madl   fileanme: app04f  srcdir: src
+[ModelBuilder] verbose=true
+[CheckScript] class app
+[CheckScript] method: main
+[CheckScript] method: run
+[Preprocessor] checkViewBuilder verbose=false
+[CheckScript] method: this$dist$invoke$3
+[CheckScript] method: this$dist$set$3
+[CheckScript] method: this$dist$get$3
+===== Start iOS =====
+[AppBuilder] Start App Builder
+[AppBuilder] classes: [:]
+[ModelBuilder] handleParameters(): args = [[name:Modal View 2]]  [java.util.ArrayList]
+[ModelBuilder] handleParameter(): Parameter: key=name value=Modal View 2 : java.lang.String
+[ModelBuilder] propertyMissing(): v1
+[ModelBuilder] methodMissing View 5 parent: app
+[ModelBuilder] Method View 5 0 [View]
+[ModelBuilder] parent: app1  child: View
+[ModelBuilder] handleParameters(): args = [[id:v1, title:First], app$_run_closure2_closure3@bf38f5d]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=v1 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=v1 : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=title value=First : java.lang.String
+[ModelBuilder] methodMissing Label 6 parent: View
+[ModelBuilder] Method Label 6 0.0 [View, Label]
+[ModelBuilder] parent: v1  child: Label
+[ModelBuilder] handleParameters(): args = [[text:View 1 
+Line 1-1 
+Line 1-2
+ ...
+]]  [[Ljava.lang.Object;]
+[ModelBuilder] handleParameter(): Parameter: key=text value=View 1 
+Line 1-1 
+Line 1-2
+ ...
+ : java.lang.String
+[ModelBuilder] propertyMissing(): v2
+[ModelBuilder] propertyMissing(): PartialCurl
+[ModelBuilder] methodMissing Button 12 parent: View
+[ModelBuilder] Method Button 12 0.1 [View, Button]
+[ModelBuilder] parent: v1  child: Button
+[ModelBuilder] handleParameters(): args = [[text:Press, next:v2, transition:PartialCurl]]  [[Ljava.lang.Object;]
+[ModelBuilder] retrieve exp source for text: null
+[ModelBuilder] handleParameter(): Parameter: key=text value=Press : java.lang.String
+[PropertyModel] eval: context=null owner=null plural=false name=v2 value=null
+[ModelBuilder] handleParameter(): Parameter: key=next value=v2 : java.lang.String
+[PropertyModel] eval: context=xj.mobile.model.properties.ModalTransitionStyle owner=null plural=false name=PartialCurl value=null
+[ModelBuilder] handleParameter(): Parameter: key=transition value=ModalTransitionStyle.PartialCurl : xj.mobile.model.properties.ModalTransitionStyle
+[ModelBuilder] propertyMissing(): v2
+[ModelBuilder] methodMissing View 15 parent: app
+[ModelBuilder] Method View 15 1 [View]
+[ModelBuilder] parent: app1  child: View
+[ModelBuilder] handleParameters(): args = [[id:v2, title:Second], app$_run_closure2_closure4@674c8c6e]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=v2 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=v2 : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=title value=Second : java.lang.String
+[ModelBuilder] methodMissing Label 16 parent: View
+[ModelBuilder] Method Label 16 1.0 [View, Label]
+[ModelBuilder] parent: v2  child: Label
+[ModelBuilder] handleParameters(): args = [[text:View 2 
+Line 2-1 
+Line 2-2
+ ...
+]]  [[Ljava.lang.Object;]
+[ModelBuilder] handleParameter(): Parameter: key=text value=View 2 
+Line 2-1 
+Line 2-2
+ ...
+ : java.lang.String
+[ModelBuilder] propertyMissing(): Previous
+[ModelBuilder] methodMissing Button 22 parent: View
+[ModelBuilder] Method Button 22 1.1 [View, Button]
+[ModelBuilder] parent: v2  child: Button
+[ModelBuilder] handleParameters(): args = [[text:Dismiss, next:Previous]]  [[Ljava.lang.Object;]
+[ModelBuilder] retrieve exp source for text: null
+[ModelBuilder] handleParameter(): Parameter: key=text value=Dismiss : java.lang.String
+[PropertyModel] eval: context=null owner=null plural=false name=Previous value=null
+[ModelBuilder] handleParameter(): Parameter: key=next value=Previous : java.lang.String
+[DependencyAnalyzer] postProcess() visit widget v1
+[DependencyAnalyzer] postProcess() visit widget label1
+[DependencyAnalyzer] postProcess() visit widget button1
+[DependencyAnalyzer] postProcess() visit widget v2
+[DependencyAnalyzer] postProcess() visit widget label2
+[DependencyAnalyzer] postProcess() visit widget button2
+[AppBuilder] Application:
+id=app1  [String]
+#type=app  [String]
+mainView=v1
+name=Modal View 2  [String]
+children: size=2
+=== child[0] ===
+ class=View
+ id=v1  [String]
+ #type=View  [String]
+ title=First  [String]
+ #line=5  [Integer]
+ #info=
+  name=View  [String]
+ parent=app1
+ #pos=0  [String]
+ children: size=2
+ === child[0.0] ===
+  class=Widget
+  id=label1  [String]
+  #type=Label  [String]
+  text=View 1 
+Line 1-1 
+Line 1-2
+ ...
+  [String]
+  #line=6  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v1
+  #pos=0.0  [String]
+ === child[0.1] ===
+  class=Widget
+  id=button1  [String]
+  #type=Button  [String]
+  text=Press  [String]
+  #line=12  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: v2
+    transition=
+     VariableExpression: PartialCurl
+  next=v2  [String]
+  transition=ModalTransitionStyle.PartialCurl  [ModalTransitionStyle]
+  parent=v1
+  #pos=0.1  [String]
+=== child[1] ===
+ class=View
+ id=v2  [String]
+ #type=View  [String]
+ title=Second  [String]
+ #line=15  [Integer]
+ #info=
+  name=View  [String]
+ parent=app1
+ #pos=1  [String]
+ children: size=2
+ === child[1.0] ===
+  class=Widget
+  id=label2  [String]
+  #type=Label  [String]
+  text=View 2 
+Line 2-1 
+Line 2-2
+ ...
+  [String]
+  #line=16  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v2
+  #pos=1.0  [String]
+ === child[1.1] ===
+  class=Widget
+  id=button2  [String]
+  #type=Button  [String]
+  text=Dismiss  [String]
+  #line=22  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: Previous
+  next=Previous  [String]
+  parent=v2
+  #pos=1.1  [String]
+[AppChecker] verbose=false
+[ModelBuilder] verbose=true
+[ModelBuilder] verbose=true
+[ModelBuilder] verbose=true
+[AppTransformer] transformView v1
+[AppTransformer] transformWidget Label label1
+[AppTransformer] transformWidget Button button1
+[AppTransformer] transformView v2
+[AppTransformer] transformWidget Label label2
+[AppTransformer] transformWidget Button button2
+[AppBuilder] After common transformation:
+id=app1  [String]
+#type=app  [String]
+mainView=v1
+name=Modal View 2  [String]
+children: size=2
+=== child[0] ===
+ class=View
+ id=v1  [String]
+ #type=View  [String]
+ title=First  [String]
+ #line=5  [Integer]
+ supportedOrientations=
+  [0]=InterfaceOrientations.Portrait
+  [1]=InterfaceOrientations.LandscapeLeft
+  [2]=InterfaceOrientations.LandscapeRight
+ root=true  [Boolean]
+ #info=
+  name=View  [String]
+ supportedOrientationsMethod=false
+ parent=app1
+ #pos=0  [String]
+ children: size=2
+ === child[0.0] ===
+  class=Widget
+  id=label1  [String]
+  #type=Label  [String]
+  text=View 1 
+Line 1-1 
+Line 1-2
+ ...
+  [String]
+  #line=6  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v1
+  #pos=0.0  [String]
+  lines=5  [Integer]
+ === child[0.1] ===
+  class=Widget
+  id=button1  [String]
+  #type=Button  [String]
+  text=Press  [String]
+  #line=12  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: v2
+    transition=
+     VariableExpression: PartialCurl
+  next=v2  [String]
+  transition=ModalTransitionStyle.PartialCurl  [ModalTransitionStyle]
+  parent=v1
+  #pos=0.1  [String]
+=== child[1] ===
+ class=View
+ id=v2  [String]
+ #type=View  [String]
+ title=Second  [String]
+ #line=15  [Integer]
+ #info=
+  name=View  [String]
+ parent=app1
+ #pos=1  [String]
+ children: size=2
+ === child[1.0] ===
+  class=Widget
+  id=label2  [String]
+  #type=Label  [String]
+  text=View 2 
+Line 2-1 
+Line 2-2
+ ...
+  [String]
+  #line=16  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v2
+  #pos=1.0  [String]
+  lines=5  [Integer]
+ === child[1.1] ===
+  class=Widget
+  id=button2  [String]
+  #type=Button  [String]
+  text=Dismiss  [String]
+  #line=22  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: Previous
+  next=Previous  [String]
+  parent=v2
+  #pos=1.1  [String]
+[AppTransformer] transformView v1
+[AppTransformer] transformWidget Label label1
+[AppTransformer] transformWidget Button button1
+[AppTransformer] transformView v2
+[AppTransformer] transformWidget Label label2
+[AppTransformer] transformWidget Button button2
+[AppBuilder] After design transformation:
+id=app1  [String]
+#type=app  [String]
+mainView=v1
+name=Modal View 2  [String]
+children: size=2
+=== child[0] ===
+ class=View
+ id=v1  [String]
+ #type=View  [String]
+ title=First  [String]
+ #line=5  [Integer]
+ supportedOrientations=
+  [0]=InterfaceOrientations.Portrait
+  [1]=InterfaceOrientations.LandscapeLeft
+  [2]=InterfaceOrientations.LandscapeRight
+ root=true  [Boolean]
+ #info=
+  name=View  [String]
+ supportedOrientationsMethod=false
+ parent=app1
+ #pos=0  [String]
+ children: size=2
+ === child[0.0] ===
+  class=Widget
+  id=label1  [String]
+  #type=Label  [String]
+  text=View 1 
+Line 1-1 
+Line 1-2
+ ...
+  [String]
+  #line=6  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v1
+  #pos=0.0  [String]
+  lines=5  [Integer]
+ === child[0.1] ===
+  class=Widget
+  id=button1  [String]
+  #type=Button  [String]
+  text=Press  [String]
+  #line=12  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: v2
+    transition=
+     VariableExpression: PartialCurl
+  next=v2  [String]
+  transition=ModalTransitionStyle.PartialCurl  [ModalTransitionStyle]
+  parent=v1
+  #pos=0.1  [String]
+=== child[1] ===
+ class=View
+ id=v2  [String]
+ #type=View  [String]
+ title=Second  [String]
+ #line=15  [Integer]
+ #info=
+  name=View  [String]
+ parent=app1
+ #pos=1  [String]
+ children: size=2
+ === child[1.0] ===
+  class=Widget
+  id=label2  [String]
+  #type=Label  [String]
+  text=View 2 
+Line 2-1 
+Line 2-2
+ ...
+  [String]
+  #line=16  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v2
+  #pos=1.0  [String]
+  lines=5  [Integer]
+ === child[1.1] ===
+  class=Widget
+  id=button2  [String]
+  #type=Button  [String]
+  text=Dismiss  [String]
+  #line=22  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: Previous
+  next=Previous  [String]
+  parent=v2
+  #pos=1.1  [String]
+[ModuleProcessor] classes: [View]
+[ObjectiveCModuleProcessor] Process module: null generateCode: false
+[ClassProcessor] init()
+[ClassProcessor] Process class: View  package: null
+[MethodHelper] VariableScope of push
+[MethodHelper] referencedClassVariables
+[MethodHelper] referencedLocalVariables
+[MethodHelper] ==========================
+[ClassProcessor] hasMain: false
+[ClassProcessor] useTypeSet: [void, java.lang.Object, boolean]
+[ClassProcessor] hasTypeSet: []
+[ClassProcessor] useStaticTypeSet: []
+[ClassProcessor] hasStaticTypeSet: []
+[IOSAppGenerator] Generating iOS App ...
+[IOSAppGenerator] Generating iOS App: process view hieraychy
+[ViewHierarchyProcessor] setup() v1
+[ViewProcessor] initViewInfo() typeInfo: null
+[IOSAPIResolver] initialize
+[AndroidAPIResolver] initialize
+[iOS.DefaultViewProcessor] processRootView()
+[ViewHierarchyProcessor] WidgetTable v1: [v1, label1, button1]
+[ViewHierarchyProcessor] setup() v2
+[ViewProcessor] initViewInfo() typeInfo: null
+[ViewHierarchyProcessor] WidgetTable v2: [v2, label2, button2]
+[ViewHierarchyProcessor] process() v1
+[ViewHierarchyProcessor] process() v1: vp.process() v1 View
+[ViewProcessor] process() V1
+[Layout] view id=v1 type=View
+[Layout] layout(): id=v1 cur=(10,10) remaining=(300,460)
+[Layout] v1 child label1 isUI=true cur=(10,10) remaining=(300,460) size=(0,0)
+[Layout] determineWidgetFrame(): widget=[Label, label1] cur=(10,10) max=(300,460)
+[Layout] widget Label label1 layout: [10, 10, 243, 96, false, false]
+[Layout] v1 child button1 isUI=true cur=(10,114) remaining=(300,356) size=(253,106)
+[Layout] determineWidgetFrame(): widget=[Button, button1] cur=(10,114) max=(300,356)
+[Layout] widget Button button1 layout: [10, 114, 64, 37, false, false]
+[DefaultViewProcessor] needKeyboardScrolling: false
+[WidgetProcessor] process label1
+[IOSAttributeHandler] getAttributeValue backgroundColor: null  type = Color
+[IOSAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[ViewProcessor] process attribute builder Label
+[IOSAPIResolver]  findPropertyDef() UILabel builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[CodeGenerator] generateSetNativeAttributeCode() attrValue=xj.mobile.builder.ModelBuilder@15e9fab0 attrValue.class=class xj.mobile.builder.ModelBuilder
+[ViewProcessor] process attribute lines Label
+[IOSAPIResolver]  findPropertyDef() UILabel lines
+[IOSAPIResolver]  findPropertyDef() UILabel lines (numberOfLines) ==> UILabel numberOfLines NSInteger 
+[CodeGenerator] generateSetNativeAttributeCode() attrValue=5 attrValue.class=class java.lang.Integer
+[IOSAttributeHandler] getAttributeValue lines: java.lang.Integer  type = NSInteger
+[CodeGenerator] generateSetNativeAttributeCode() value=5 value.class=class java.lang.Integer
+[WidgetProcessor] process button1
+[IOSAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[ViewProcessor] process attribute builder Button
+[IOSAPIResolver]  findPropertyDef() UIButton builder
+[IOSAPIResolver] add delegate attribute titleAdjustsFontSizeToFitWidth in UIButton
+[IOSAPIResolver] add delegate attribute titleAdjustsLetterSpacingToFitWidth in UIButton
+[IOSAPIResolver] add delegate attribute titleAttributedText in UIButton
+[IOSAPIResolver] add delegate attribute titleBaselineAdjustment in UIButton
+[IOSAPIResolver] add delegate attribute titleEnabled in UIButton
+[IOSAPIResolver] add delegate attribute titleFont in UIButton
+[IOSAPIResolver] add delegate attribute titleHighlighted in UIButton
+[IOSAPIResolver] add delegate attribute titleHighlightedTextColor in UIButton
+[IOSAPIResolver] add delegate attribute titleLineBreakMode in UIButton
+[IOSAPIResolver] add delegate attribute titleMinimumScaleFactor in UIButton
+[IOSAPIResolver] add delegate attribute titleNumberOfLines in UIButton
+[IOSAPIResolver] add delegate attribute titlePreferredMaxLayoutWidth in UIButton
+[IOSAPIResolver] add delegate attribute titleShadowColor in UIButton
+[IOSAPIResolver] add delegate attribute titleShadowOffset in UIButton
+[IOSAPIResolver] add delegate attribute titleText in UIButton
+[IOSAPIResolver] add delegate attribute titleTextAlignment in UIButton
+[IOSAPIResolver] add delegate attribute titleTextColor in UIButton
+[IOSAPIResolver] add delegate attribute titleUserInteractionEnabled in UIButton
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UILabel builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[CodeGenerator] generateSetNativeAttributeCode() attrValue=xj.mobile.builder.ModelBuilder@15e9fab0 attrValue.class=class xj.mobile.builder.ModelBuilder
+[ViewProcessor] process attribute transition Button
+[IOSAPIResolver]  findPropertyDef() UIButton transition
+[IOSAPIResolver]  findPropertyDef() UIAppearance transition
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer transition
+[IOSAPIResolver]  findPropertyDef() UIAppearance transition
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer transition
+[IOSAPIResolver]  findPropertyDef() UIAppearance transition
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer transition
+[IOSAPIResolver]  findPropertyDef() UILabel transition
+[IOSAPIResolver]  findPropertyDef() UIAppearance transition
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer transition
+[IOSAPIResolver]  findPropertyDef() UIAppearance transition
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer transition
+[CodeGenerator] generateSetNativeAttributeCode() attrValue=ModalTransitionStyle.PartialCurl attrValue.class=class xj.mobile.model.properties.ModalTransitionStyle
+[ViewHierarchyProcessor] process() v2
+[ViewHierarchyProcessor] process() v2: vp.process() v2 View
+[ViewProcessor] process() V2
+[Layout] view id=v2 type=View
+[Layout] layout(): id=v2 cur=(10,10) remaining=(300,460)
+[Layout] v2 child label2 isUI=true cur=(10,10) remaining=(300,460) size=(0,0)
+[Layout] determineWidgetFrame(): widget=[Label, label2] cur=(10,10) max=(300,460)
+[Layout] widget Label label2 layout: [10, 10, 243, 96, false, false]
+[Layout] v2 child button2 isUI=true cur=(10,114) remaining=(300,356) size=(253,106)
+[Layout] determineWidgetFrame(): widget=[Button, button2] cur=(10,114) max=(300,356)
+[Layout] widget Button button2 layout: [10, 114, 82, 37, false, false]
+[DefaultViewProcessor] needKeyboardScrolling: false
+[WidgetProcessor] process label2
+[IOSAttributeHandler] getAttributeValue backgroundColor: null  type = Color
+[IOSAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[ViewProcessor] process attribute builder Label
+[IOSAPIResolver]  findPropertyDef() UILabel builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[CodeGenerator] generateSetNativeAttributeCode() attrValue=xj.mobile.builder.ModelBuilder@15e9fab0 attrValue.class=class xj.mobile.builder.ModelBuilder
+[ViewProcessor] process attribute lines Label
+[IOSAPIResolver]  findPropertyDef() UILabel lines
+[IOSAPIResolver]  findPropertyDef() UILabel lines (numberOfLines) ==> UILabel numberOfLines NSInteger 
+[CodeGenerator] generateSetNativeAttributeCode() attrValue=5 attrValue.class=class java.lang.Integer
+[IOSAttributeHandler] getAttributeValue lines: java.lang.Integer  type = NSInteger
+[CodeGenerator] generateSetNativeAttributeCode() value=5 value.class=class java.lang.Integer
+[WidgetProcessor] process button2
+[IOSAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[ViewProcessor] process attribute builder Button
+[IOSAPIResolver]  findPropertyDef() UIButton builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UILabel builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[CodeGenerator] generateSetNativeAttributeCode() attrValue=xj.mobile.builder.ModelBuilder@15e9fab0 attrValue.class=class xj.mobile.builder.ModelBuilder
+[IOSAppTemplate] Generating iOS App: process app delegate
+     [echo] Create iOS App Project
+     [echo] appname: Modal View 2
+     [echo] appid: ModalView2
+     [echo] author: App Team
+     [echo] org: App Inc
+     [copy] Copying 5 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04f
+     [copy] Copying 5 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04f
+     [echo] Project Done
+
+     [echo] Create AppDelegate
+     [copy] Copying 2 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04f
+     [echo] AppDelegate Done
+
+[IOSAppTemplate] Generating iOS App: generate view controllers
+     [echo] Create ViewController
+     [copy] Copying 2 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04f/Modal View 2
+     [echo] ViewController Done
+
+     [echo] Create ViewController
+     [copy] Copying 2 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04f/Modal View 2
+     [echo] ViewController Done
+
+
+[IOSAppGenerator] iOS App compleed.
+[AppBuilder] End App Builder
+===== End iOS =====
+===== Start Android =====
+[AppBuilder] Start App Builder
+[AppBuilder] classes: [:]
+[ModelBuilder] handleParameters(): args = [[name:Modal View 2]]  [java.util.ArrayList]
+[ModelBuilder] handleParameter(): Parameter: key=name value=Modal View 2 : java.lang.String
+[ModelBuilder] propertyMissing(): v1
+[ModelBuilder] methodMissing View 5 parent: app
+[ModelBuilder] Method View 5 0 [View]
+[ModelBuilder] parent: app2  child: View
+[ModelBuilder] handleParameters(): args = [[id:v1, title:First], app$_run_closure2_closure3@5a3a5cc5]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=v1 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=v1 : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=title value=First : java.lang.String
+[ModelBuilder] methodMissing Label 6 parent: View
+[ModelBuilder] Method Label 6 0.0 [View, Label]
+[ModelBuilder] parent: v1  child: Label
+[ModelBuilder] handleParameters(): args = [[text:View 1 
+Line 1-1 
+Line 1-2
+ ...
+]]  [[Ljava.lang.Object;]
+[ModelBuilder] handleParameter(): Parameter: key=text value=View 1 
+Line 1-1 
+Line 1-2
+ ...
+ : java.lang.String
+[ModelBuilder] propertyMissing(): v2
+[ModelBuilder] propertyMissing(): PartialCurl
+[ModelBuilder] methodMissing Button 12 parent: View
+[ModelBuilder] Method Button 12 0.1 [View, Button]
+[ModelBuilder] parent: v1  child: Button
+[ModelBuilder] handleParameters(): args = [[text:Press, next:v2, transition:PartialCurl]]  [[Ljava.lang.Object;]
+[ModelBuilder] retrieve exp source for text: null
+[ModelBuilder] handleParameter(): Parameter: key=text value=Press : java.lang.String
+[PropertyModel] eval: context=null owner=null plural=false name=v2 value=null
+[ModelBuilder] handleParameter(): Parameter: key=next value=v2 : java.lang.String
+[PropertyModel] eval: context=xj.mobile.model.properties.ModalTransitionStyle owner=null plural=false name=PartialCurl value=null
+[ModelBuilder] handleParameter(): Parameter: key=transition value=ModalTransitionStyle.PartialCurl : xj.mobile.model.properties.ModalTransitionStyle
+[ModelBuilder] propertyMissing(): v2
+[ModelBuilder] methodMissing View 15 parent: app
+[ModelBuilder] Method View 15 1 [View]
+[ModelBuilder] parent: app2  child: View
+[ModelBuilder] handleParameters(): args = [[id:v2, title:Second], app$_run_closure2_closure4@a445214]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=v2 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=v2 : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=title value=Second : java.lang.String
+[ModelBuilder] methodMissing Label 16 parent: View
+[ModelBuilder] Method Label 16 1.0 [View, Label]
+[ModelBuilder] parent: v2  child: Label
+[ModelBuilder] handleParameters(): args = [[text:View 2 
+Line 2-1 
+Line 2-2
+ ...
+]]  [[Ljava.lang.Object;]
+[ModelBuilder] handleParameter(): Parameter: key=text value=View 2 
+Line 2-1 
+Line 2-2
+ ...
+ : java.lang.String
+[ModelBuilder] propertyMissing(): Previous
+[ModelBuilder] methodMissing Button 22 parent: View
+[ModelBuilder] Method Button 22 1.1 [View, Button]
+[ModelBuilder] parent: v2  child: Button
+[ModelBuilder] handleParameters(): args = [[text:Dismiss, next:Previous]]  [[Ljava.lang.Object;]
+[ModelBuilder] retrieve exp source for text: null
+[ModelBuilder] handleParameter(): Parameter: key=text value=Dismiss : java.lang.String
+[PropertyModel] eval: context=null owner=null plural=false name=Previous value=null
+[ModelBuilder] handleParameter(): Parameter: key=next value=Previous : java.lang.String
+[DependencyAnalyzer] postProcess() visit widget v1
+[DependencyAnalyzer] postProcess() visit widget label3
+[DependencyAnalyzer] postProcess() visit widget button3
+[DependencyAnalyzer] postProcess() visit widget v2
+[DependencyAnalyzer] postProcess() visit widget label4
+[DependencyAnalyzer] postProcess() visit widget button4
+[AppBuilder] Application:
+id=app2  [String]
+#type=app  [String]
+mainView=v1
+name=Modal View 2  [String]
+children: size=2
+=== child[0] ===
+ class=View
+ id=v1  [String]
+ #type=View  [String]
+ title=First  [String]
+ #line=5  [Integer]
+ #info=
+  name=View  [String]
+ parent=app2
+ #pos=0  [String]
+ children: size=2
+ === child[0.0] ===
+  class=Widget
+  id=label3  [String]
+  #type=Label  [String]
+  text=View 1 
+Line 1-1 
+Line 1-2
+ ...
+  [String]
+  #line=6  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v1
+  #pos=0.0  [String]
+ === child[0.1] ===
+  class=Widget
+  id=button3  [String]
+  #type=Button  [String]
+  text=Press  [String]
+  #line=12  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: v2
+    transition=
+     VariableExpression: PartialCurl
+  next=v2  [String]
+  transition=ModalTransitionStyle.PartialCurl  [ModalTransitionStyle]
+  parent=v1
+  #pos=0.1  [String]
+=== child[1] ===
+ class=View
+ id=v2  [String]
+ #type=View  [String]
+ title=Second  [String]
+ #line=15  [Integer]
+ #info=
+  name=View  [String]
+ parent=app2
+ #pos=1  [String]
+ children: size=2
+ === child[1.0] ===
+  class=Widget
+  id=label4  [String]
+  #type=Label  [String]
+  text=View 2 
+Line 2-1 
+Line 2-2
+ ...
+  [String]
+  #line=16  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v2
+  #pos=1.0  [String]
+ === child[1.1] ===
+  class=Widget
+  id=button4  [String]
+  #type=Button  [String]
+  text=Dismiss  [String]
+  #line=22  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: Previous
+  next=Previous  [String]
+  parent=v2
+  #pos=1.1  [String]
+[AppChecker] verbose=false
+[AppTransformer] transformView v1
+[AppTransformer] transformWidget Label label3
+[AppTransformer] transformWidget Button button3
+[AppTransformer] transformView v2
+[AppTransformer] transformWidget Label label4
+[AppTransformer] transformWidget Button button4
+[AppBuilder] After common transformation:
+id=app2  [String]
+#type=app  [String]
+mainView=v1
+name=Modal View 2  [String]
+children: size=2
+=== child[0] ===
+ class=View
+ id=v1  [String]
+ #type=View  [String]
+ title=First  [String]
+ #line=5  [Integer]
+ supportedOrientations=
+  [0]=InterfaceOrientations.Portrait
+  [1]=InterfaceOrientations.LandscapeLeft
+  [2]=InterfaceOrientations.LandscapeRight
+ root=true  [Boolean]
+ #info=
+  name=View  [String]
+ supportedOrientationsMethod=false
+ parent=app2
+ #pos=0  [String]
+ children: size=2
+ === child[0.0] ===
+  class=Widget
+  id=label3  [String]
+  #type=Label  [String]
+  text=View 1 
+Line 1-1 
+Line 1-2
+ ...
+  [String]
+  #line=6  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v1
+  #pos=0.0  [String]
+  lines=5  [Integer]
+ === child[0.1] ===
+  class=Widget
+  id=button3  [String]
+  #type=Button  [String]
+  text=Press  [String]
+  #line=12  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: v2
+    transition=
+     VariableExpression: PartialCurl
+  next=v2  [String]
+  transition=ModalTransitionStyle.PartialCurl  [ModalTransitionStyle]
+  parent=v1
+  #pos=0.1  [String]
+=== child[1] ===
+ class=View
+ id=v2  [String]
+ #type=View  [String]
+ title=Second  [String]
+ #line=15  [Integer]
+ #info=
+  name=View  [String]
+ parent=app2
+ #pos=1  [String]
+ children: size=2
+ === child[1.0] ===
+  class=Widget
+  id=label4  [String]
+  #type=Label  [String]
+  text=View 2 
+Line 2-1 
+Line 2-2
+ ...
+  [String]
+  #line=16  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v2
+  #pos=1.0  [String]
+  lines=5  [Integer]
+ === child[1.1] ===
+  class=Widget
+  id=button4  [String]
+  #type=Button  [String]
+  text=Dismiss  [String]
+  #line=22  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: Previous
+  next=Previous  [String]
+  parent=v2
+  #pos=1.1  [String]
+[AppTransformer] transformView v1
+[AppTransformer] transformWidget Label label3
+[AppTransformer] transformWidget Button button3
+[AppTransformer] transformView v2
+[AppTransformer] transformWidget Label label4
+[AppTransformer] transformWidget Button button4
+[AppBuilder] After design transformation:
+id=app2  [String]
+#type=app  [String]
+mainView=v1
+name=Modal View 2  [String]
+children: size=2
+=== child[0] ===
+ class=View
+ id=v1  [String]
+ #type=View  [String]
+ title=First  [String]
+ #line=5  [Integer]
+ supportedOrientations=
+  [0]=InterfaceOrientations.Portrait
+  [1]=InterfaceOrientations.LandscapeLeft
+  [2]=InterfaceOrientations.LandscapeRight
+ root=true  [Boolean]
+ #info=
+  name=View  [String]
+ supportedOrientationsMethod=false
+ parent=app2
+ #pos=0  [String]
+ children: size=2
+ === child[0.0] ===
+  class=Widget
+  id=label3  [String]
+  #type=Label  [String]
+  text=View 1 
+Line 1-1 
+Line 1-2
+ ...
+  [String]
+  #line=6  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v1
+  #pos=0.0  [String]
+  lines=5  [Integer]
+ === child[0.1] ===
+  class=Widget
+  id=button3  [String]
+  #type=Button  [String]
+  text=Press  [String]
+  #line=12  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: v2
+    transition=
+     VariableExpression: PartialCurl
+  next=v2  [String]
+  transition=ModalTransitionStyle.PartialCurl  [ModalTransitionStyle]
+  parent=v1
+  #pos=0.1  [String]
+=== child[1] ===
+ class=View
+ id=v2  [String]
+ #type=View  [String]
+ title=Second  [String]
+ #line=15  [Integer]
+ #info=
+  name=View  [String]
+ parent=app2
+ #pos=1  [String]
+ children: size=2
+ === child[1.0] ===
+  class=Widget
+  id=label4  [String]
+  #type=Label  [String]
+  text=View 2 
+Line 2-1 
+Line 2-2
+ ...
+  [String]
+  #line=16  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v2
+  #pos=1.0  [String]
+  lines=5  [Integer]
+ === child[1.1] ===
+  class=Widget
+  id=button4  [String]
+  #type=Button  [String]
+  text=Dismiss  [String]
+  #line=22  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: Previous
+  next=Previous  [String]
+  parent=v2
+  #pos=1.1  [String]
+[ModuleProcessor] classes: [View]
+Process module: null generateCode: false
+[ClassProcessor] init()
+[ClassProcessor] Process class: View  package: null
+[MethodHelper] VariableScope of push
+[MethodHelper] referencedClassVariables
+[MethodHelper] referencedLocalVariables
+[MethodHelper] ==========================
+[ClassProcessor] hasMain: false
+[ClassProcessor] useTypeSet: [void, java.lang.Object, boolean]
+[ClassProcessor] hasTypeSet: []
+[ClassProcessor] useStaticTypeSet: []
+[ClassProcessor] hasStaticTypeSet: []
+[AndroidAppGenerator] Generating Android App ...
+[AndroidAppGenerator] Generating Android App: process view hieraychy
+[ViewHierarchyProcessor] setup() v1
+[ViewProcessor] initViewInfo() typeInfo: null
+[Android.DefaultViewProcessor] processRootView()
+[ViewHierarchyProcessor] WidgetTable v1: [v1, label3, button3]
+[ViewHierarchyProcessor] setup() v2
+[ViewProcessor] initViewInfo() typeInfo: null
+[ViewHierarchyProcessor] WidgetTable v2: [v2, label4, button4]
+[ViewHierarchyProcessor] process() v1
+[ViewHierarchyProcessor] process() v1: vp.process() v1 View
+[ViewProcessor] process() ModalView2
+[Layout] view id=v1 type=View
+[Layout] layout(): id=v1 cur=(10,10) remaining=(300,460)
+[Layout] v1 child label3 isUI=true cur=(10,10) remaining=(300,460) size=(0,0)
+[Layout] determineWidgetFrame(): widget=[Label, label3] cur=(10,10) max=(300,460)
+[Layout] widget Label label3 layout: [10, 10, 243, 96, false, false]
+[Layout] v1 child button3 isUI=true cur=(10,114) remaining=(300,356) size=(253,106)
+[Layout] determineWidgetFrame(): widget=[Button, button3] cur=(10,114) max=(300,356)
+[Layout] widget Button button3 layout: [10, 114, 64, 37, false, false]
+[WidgetProcessor] process label3
+[WidgetProcessor] wtemp.uiclass TextView
+[WidgetProcessor] process attribute text TextView
+[AndroidAPIResolver]  findPropertyDef() TextView text
+[AndroidAPIResolver]  findPropertyDef() TextView text (text) ==> TextView text CharSequence,TextView.BufferType
+[AndroidAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[WidgetProcessor] process attribute builder TextView
+[AndroidAPIResolver]  findPropertyDef() TextView builder
+[WidgetProcessor] process attribute lines TextView
+[AndroidAPIResolver]  findPropertyDef() TextView lines
+[AndroidAPIResolver]  findPropertyDef() TextView lines (lines) ==> TextView lines int
+[AndroidAttributeHandler] getAttributeValue lines: java.lang.Integer  type = int
+[WidgetProcessor] process attribute lines TextView xmlName=android:lines
+[WidgetProcessor] process button3
+[WidgetProcessor] wtemp.uiclass Button
+[WidgetProcessor] process attribute text Button
+[AndroidAPIResolver]  findPropertyDef() Button text
+[AndroidAPIResolver]  findPropertyDef() Button text (text) ==> Button text CharSequence,TextView.BufferType
+[AndroidAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[WidgetProcessor] process attribute builder Button
+[AndroidAPIResolver]  findPropertyDef() Button builder
+[WidgetProcessor] process attribute transition Button
+[AndroidAPIResolver]  findPropertyDef() Button transition
+[Android.DefaultViewProcessor] layout:
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="10dp"
+              android:orientation="vertical">
+  <TextView android:id="@+id/label3"
+            android:text="View 1 &#10;Line 1-1 &#10;Line 1-2&#10; ...&#10;"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="5" />
+  <Button android:id="@+id/button3"
+          android:text="Press"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:onClick="buttonAction_button3" />
+</LinearLayout>
+[ViewHierarchyProcessor] process() v2
+[ViewHierarchyProcessor] process() v2: vp.process() v2 View
+[ViewProcessor] process() V2
+[Layout] view id=v2 type=View
+[Layout] layout(): id=v2 cur=(10,10) remaining=(300,460)
+[Layout] v2 child label4 isUI=true cur=(10,10) remaining=(300,460) size=(0,0)
+[Layout] determineWidgetFrame(): widget=[Label, label4] cur=(10,10) max=(300,460)
+[Layout] widget Label label4 layout: [10, 10, 243, 96, false, false]
+[Layout] v2 child button4 isUI=true cur=(10,114) remaining=(300,356) size=(253,106)
+[Layout] determineWidgetFrame(): widget=[Button, button4] cur=(10,114) max=(300,356)
+[Layout] widget Button button4 layout: [10, 114, 82, 37, false, false]
+[WidgetProcessor] process label4
+[WidgetProcessor] wtemp.uiclass TextView
+[WidgetProcessor] process attribute text TextView
+[AndroidAPIResolver]  findPropertyDef() TextView text
+[AndroidAPIResolver]  findPropertyDef() TextView text (text) ==> TextView text CharSequence,TextView.BufferType
+[AndroidAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[WidgetProcessor] process attribute builder TextView
+[AndroidAPIResolver]  findPropertyDef() TextView builder
+[WidgetProcessor] process attribute lines TextView
+[AndroidAPIResolver]  findPropertyDef() TextView lines
+[AndroidAPIResolver]  findPropertyDef() TextView lines (lines) ==> TextView lines int
+[AndroidAttributeHandler] getAttributeValue lines: java.lang.Integer  type = int
+[WidgetProcessor] process attribute lines TextView xmlName=android:lines
+[WidgetProcessor] process button4
+[WidgetProcessor] wtemp.uiclass Button
+[WidgetProcessor] process attribute text Button
+[AndroidAPIResolver]  findPropertyDef() Button text
+[AndroidAPIResolver]  findPropertyDef() Button text (text) ==> Button text CharSequence,TextView.BufferType
+[AndroidAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[WidgetProcessor] process attribute builder Button
+[AndroidAPIResolver]  findPropertyDef() Button builder
+[Android.DefaultViewProcessor] layout:
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="10dp"
+              android:orientation="vertical">
+  <TextView android:id="@+id/label4"
+            android:text="View 2 &#10;Line 2-1 &#10;Line 2-2&#10; ...&#10;"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="5" />
+  <Button android:id="@+id/button4"
+          android:text="Dismiss"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:onClick="buttonAction_button4" />
+</LinearLayout>
+Android targe: 2   theme: Theme.Holo.Light
+Execute command: /Users/WeiLoveLisha/Downloads/adt-bundle-mac-x86_64-20130917/sdk/tools/android create project --target 2 --name ModalView2 --path gen/Platform.Android/app04f --activity ModalView2 --package com.madl.app04f
+Return code: 0
+Std err:
+
+Std out:
+Created project directory: gen/Platform.Android/app04f
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/src/com/madl/app04f
+Added file gen/Platform.Android/app04f/src/com/madl/app04f/ModalView2.java
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/res
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/bin
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/libs
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/res/values
+Added file gen/Platform.Android/app04f/res/values/strings.xml
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/res/layout
+Added file gen/Platform.Android/app04f/res/layout/main.xml
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/res/drawable-hdpi
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/res/drawable-mdpi
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/res/drawable-ldpi
+Added file gen/Platform.Android/app04f/AndroidManifest.xml
+Added file gen/Platform.Android/app04f/build.xml
+Added file gen/Platform.Android/app04f/proguard-project.txt
+
+     [echo] Create Android App Project
+     [echo] appname: Modal View 2
+     [echo] appid: ModalView2
+     [echo] author: App Team
+     [echo] org: App Inc
+     [echo] Copy res/drawable
+     [copy] Copying 3 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f
+
+[AndroidAppTemplate] generateViewClass ModalView2  outputDir = gen/Platform.Android/app04f/src/com/madl/app04f
+     [echo] Create View Class
+     [copy] Copying 1 file to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/src/com/madl/app04f
+     [echo] View Class Done
+
+[AndroidAppTemplate] generateViewClass V2  outputDir = gen/Platform.Android/app04f/src/com/madl/app04f
+     [echo] Create View Class
+     [copy] Copying 1 file to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/src/com/madl/app04f
+     [echo] View Class Done
+
+[AbdroidAppTemplate] Android Manifest:
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.madl.app04f"
+          android:versionCode="1"
+          android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="14"
+            android:targetSdkVersion="17" />
+  <application android:label="@string/app_name"
+               android:theme="@android:style/Theme.Holo.Light"
+               android:icon="@drawable/icon">
+    <activity android:name="ModalView2"
+              android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name=".V2"
+              android:label="@string/V2_title" />
+  </application>
+</manifest>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Modal View 2</string>
+  <string name="ModalView2_title">First</string>
+  <string name="V2_title">Second</string>
+</resources>
+[AndroidAppGenerator] Android App compleed.
+[AppBuilder] End App Builder
+===== End Android =====

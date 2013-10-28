@@ -1,0 +1,38 @@
+--- 
+conform: 
+    - NSObject
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    tabBarController: !java.util.LinkedHashMap
+        isInstance: &5 true
+        name: tabBarController
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &7 false
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: tabBarController
+                type: !java.util.LinkedHashMap
+                    name: UITabBarController
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+            - !java.util.LinkedHashMap
+                name: willEndCustomizingViewControllers
+                param: viewControllers
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+            - !java.util.LinkedHashMap
+                name: changed
+                param: changed
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *7
+                    isRef: *7

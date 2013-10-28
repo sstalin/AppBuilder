@@ -1,0 +1,38 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    title: !java.util.LinkedHashMap
+        name: title
+        type: NSString
+        ref: "*"
+        explanation: The title of the menu item.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    initWithTitle: !java.util.LinkedHashMap
+        isInstance: &7 true
+        name: initWithTitle
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: &9 false
+            isRef: *9
+        isVarArgs: *9
+        args: 
+            - !java.util.LinkedHashMap
+                param: title
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *9
+                    isRef: *7
+            - !java.util.LinkedHashMap
+                name: action
+                param: action
+                type: !java.util.LinkedHashMap
+                    name: SEL
+                    delegate: ~
+                    isConst: *9
+                    isRef: *9

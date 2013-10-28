@@ -1,0 +1,10 @@
+=== Log started at Mon Oct 28 16:16:53 CDT 2013
+[Main] infile: src/app04.madl   fileanme: app04  srcdir: src
+[ModelBuilder] verbose=true
+[CheckScript] class app
+[CheckScript] method: main
+[CheckScript] method: run
+[Preprocessor] checkViewBuilder verbose=false
+[CheckScript] method: this$dist$invoke$3
+[CheckScript] method: this$dist$set$3
+[CheckScript] method: this$dist$get$3
