@@ -1,4 +1,4 @@
-package appbuildersandbox;
+package edu.depaul.appbuilderdevtool.wizards;
 
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;

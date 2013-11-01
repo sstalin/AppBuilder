@@ -11,7 +11,7 @@
       </category>
       <wizard
             canFinishEarly="true"
-            class="appbuildersandbox.AppBuilderNewProjectWizard"
+            class="edu.depaul.appbuilderdevtool.wizards.AppBuilderNewProjectWizard"
             finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
             hasPages="true"
             id="AppBuilderSandbox.wizard2"

@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: AppBuilderSandbox
 Bundle-SymbolicName: AppBuilderSandbox;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: appbuildersandbox.Activator
+Bundle-Activator: edu.depaul.appbuilderdevtool.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

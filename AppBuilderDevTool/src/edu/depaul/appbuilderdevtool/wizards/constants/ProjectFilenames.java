@@ -1,4 +1,4 @@
-package appbuildersandbox.constants;
+package edu.depaul.appbuilderdevtool.wizards.constants;
 
 public class ProjectFilenames {
 

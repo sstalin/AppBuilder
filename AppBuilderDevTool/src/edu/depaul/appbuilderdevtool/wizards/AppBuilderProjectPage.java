@@ -1,4 +1,4 @@
-package appbuildersandbox;
+package edu.depaul.appbuilderdevtool.wizards;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 
-import appbuildersandbox.constants.ProjectFilenames;
+import edu.depaul.appbuilderdevtool.wizards.constants.ProjectFilenames;
 
 public class AppBuilderProjectPage extends WizardNewProjectCreationPage {
 

@@ -1,4 +1,4 @@
-package appbuildersandbox;
+package edu.depaul.appbuilderdevtool;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
