@@ -1,0 +1,38 @@
+--- 
+conform: 
+    - NSObject
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    tabBar: !java.util.LinkedHashMap
+        isInstance: &5 true
+        name: tabBar
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &7 false
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: tabBar
+                type: !java.util.LinkedHashMap
+                    name: UITabBar
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+            - !java.util.LinkedHashMap
+                name: willEndCustomizingItems
+                param: items
+                type: !java.util.LinkedHashMap
+                    name: NSArray
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+            - !java.util.LinkedHashMap
+                name: changed
+                param: changed
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *7
+                    isRef: *7

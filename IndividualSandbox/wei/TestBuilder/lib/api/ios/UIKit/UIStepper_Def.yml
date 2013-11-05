@@ -1,0 +1,245 @@
+--- 
+inherit: 
+    - UIControl
+    - UIView
+    - UIResponder
+    - NSObject
+conform: 
+    - NSCoding (UIView)
+    - UIAppearance (UIView)
+    - UIAppearanceContainer (UIView)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    autorepeat: !java.util.LinkedHashMap
+        name: autorepeat
+        type: BOOL
+        ref: ""
+        explanation: The automatic vs. nonautomatic repeat state of the stepper.
+        readonly: false
+    continuous: !java.util.LinkedHashMap
+        name: continuous
+        type: BOOL
+        ref: ""
+        explanation: The continuous vs. noncontinuous state of the stepper.
+        readonly: false
+    maximumValue: !java.util.LinkedHashMap
+        name: maximumValue
+        type: double
+        ref: ""
+        explanation: The highest possible numeric value for the stepper.
+        readonly: false
+    minimumValue: !java.util.LinkedHashMap
+        name: minimumValue
+        type: double
+        ref: ""
+        explanation: The lowest possible numeric value for the stepper.
+        readonly: false
+    stepValue: !java.util.LinkedHashMap
+        name: stepValue
+        type: double
+        ref: ""
+        explanation: "The step, or increment, value for the stepper."
+        readonly: false
+    tintColor: !java.util.LinkedHashMap
+        name: tintColor
+        type: UIColor
+        ref: "*"
+        explanation: "The tint color for the stepper control. "
+        readonly: false
+    value: !java.util.LinkedHashMap
+        name: value
+        type: double
+        ref: ""
+        explanation: The numeric value of the stepper.
+        readonly: false
+    wraps: !java.util.LinkedHashMap
+        name: wraps
+        type: BOOL
+        ref: ""
+        explanation: The wrap vs. no-wrap state of the stepper.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    backgroundImageForState: !java.util.LinkedHashMap
+        isInstance: &14 true
+        name: backgroundImageForState
+        type: !java.util.LinkedHashMap
+            name: UIImage
+            delegate: ~
+            isConst: &16 false
+            isRef: *14
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    decrementImageForState: !java.util.LinkedHashMap
+        isInstance: *14
+        name: decrementImageForState
+        type: !java.util.LinkedHashMap
+            name: UIImage
+            delegate: ~
+            isConst: *16
+            isRef: *14
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    dividerImageForLeftSegmentState: !java.util.LinkedHashMap
+        isInstance: *14
+        name: dividerImageForLeftSegmentState
+        type: !java.util.LinkedHashMap
+            name: UIImage
+            delegate: ~
+            isConst: *16
+            isRef: *14
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: leftState
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: rightSegmentState
+                param: rightState
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    incrementImageForState: !java.util.LinkedHashMap
+        isInstance: *14
+        name: incrementImageForState
+        type: !java.util.LinkedHashMap
+            name: UIImage
+            delegate: ~
+            isConst: *16
+            isRef: *14
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    setBackgroundImage: !java.util.LinkedHashMap
+        isInstance: *14
+        name: setBackgroundImage
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: image
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: forState
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    setDecrementImage: !java.util.LinkedHashMap
+        isInstance: *14
+        name: setDecrementImage
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: image
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: forState
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    setDividerImage: !java.util.LinkedHashMap
+        isInstance: *14
+        name: setDividerImage
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: image
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: forLeftSegmentState
+                param: leftState
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: rightSegmentState
+                param: rightState
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    setIncrementImage: !java.util.LinkedHashMap
+        isInstance: *14
+        name: setIncrementImage
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: image
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: forState
+                param: state
+                type: !java.util.LinkedHashMap
+                    name: UIControlState
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16

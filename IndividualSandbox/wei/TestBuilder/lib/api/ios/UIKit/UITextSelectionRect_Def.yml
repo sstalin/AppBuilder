@@ -1,0 +1,43 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    containsEnd: !java.util.LinkedHashMap
+        name: containsEnd
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether the rectangle contains the end of the selection. (read-only)
+        readonly: true
+    containsStart: !java.util.LinkedHashMap
+        name: containsStart
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether the rectangle contains the start of the selection. (read-only)
+        readonly: true
+    isVertical: !java.util.LinkedHashMap
+        name: isVertical
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether the text is oriented vertically. (read-only)
+        readonly: true
+    range: !java.util.LinkedHashMap
+        name: range
+        type: UITextRange
+        ref: "*"
+        explanation: The range of text. (read-only)
+        readonly: true
+    rect: !java.util.LinkedHashMap
+        name: rect
+        type: CGRect
+        ref: ""
+        explanation: The rectangle that encloses the receiver?s text range. (read-only)
+        readonly: true
+    writingDirection: !java.util.LinkedHashMap
+        name: writingDirection
+        type: UITextWritingDirection
+        ref: ""
+        explanation: The writing direction of text in the receiver?s text range. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap {}

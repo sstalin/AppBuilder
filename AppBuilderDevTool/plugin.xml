@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="1"
+         name="newProjectWizard"
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="AppBuilderSandbox.category2"
+            name="AppBuilder">
+      </category>
+      <wizard
+            canFinishEarly="true"
+            class="edu.depaul.appbuilderdevtool.wizards.AppBuilderNewProjectWizard"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            hasPages="true"
+            id="AppBuilderSandbox.wizard2"
+            name="AppBuilder Project"
+            project="true">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="edu.depaul.appbuilderdevtool.editor.MadlEditor"
+            contributorClass="edu.depaul.appbuilderdevtool.editor.MadlEditorContributor"
+            extensions="madl"
+            icon="icons/sample.gif"
+            id="edu.depaul.appbuilderdevtool.editor.MadlEditor"
+            name="Madl language Editor">
+      </editor>
+   </extension>
+</plugin>

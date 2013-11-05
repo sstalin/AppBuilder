@@ -1,0 +1,14 @@
+app
+	[name:name, type:String, value:Modal View 2, class:java.lang.String]
+View
+	[name:title, type:String, value:First, class:java.lang.String]
+	[name:title, type:String, value:Second, class:java.lang.String]
+Label
+	[name:text, type:String, value:View 1 &br;Line 1-1 &br;Line 1-2&br; ...&br;, class:java.lang.String]
+	[name:text, type:String, value:View 2 &br;Line 2-1 &br;Line 2-2&br; ...&br;, class:java.lang.String]
+Button
+	[name:next, type:String, value:v2, class:java.lang.String]
+	[name:next, type:String, value:Previous, class:java.lang.String]
+	[name:text, type:String, value:Press, class:java.lang.String]
+	[name:text, type:String, value:Dismiss, class:java.lang.String]
+	[name:transition, type:ModalTransitionStyle, value:ModalTransitionStyle.PartialCurl, class:xj.mobile.model.properties.ModalTransitionStyle]

@@ -1,0 +1,163 @@
+--- 
+inherit: 
+    - UIView
+    - UIResponder
+    - NSObject
+conform: 
+    - NSCoding
+    - NSCoding (UIView)
+    - UIAppearance (UIView)
+    - UIAppearanceContainer (UIView)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    adjustsFontSizeToFitWidth: !java.util.LinkedHashMap
+        name: adjustsFontSizeToFitWidth
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether the font size should be reduced in order to fit the title string into the label?s bounding rectangle.
+        readonly: false
+    adjustsLetterSpacingToFitWidth: !java.util.LinkedHashMap
+        name: adjustsLetterSpacingToFitWidth
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether spacing between letters should be adjusted to fit the string within the label?s bounds rectangle.
+        readonly: false
+    attributedText: !java.util.LinkedHashMap
+        name: attributedText
+        type: NSAttributedString
+        ref: "*"
+        explanation: "The styled text displayed by the label. "
+        readonly: false
+    baselineAdjustment: !java.util.LinkedHashMap
+        name: baselineAdjustment
+        type: UIBaselineAdjustment
+        ref: ""
+        explanation: Controls how text baselines are adjusted when text needs to shrink to fit in the label.
+        readonly: false
+    enabled: !java.util.LinkedHashMap
+        name: enabled
+        type: BOOL
+        ref: ""
+        explanation: The enabled state to use when drawing the label?s text.
+        readonly: false
+    font: !java.util.LinkedHashMap
+        name: font
+        type: UIFont
+        ref: "*"
+        explanation: "The font of the text. "
+        readonly: false
+    highlighted: !java.util.LinkedHashMap
+        name: highlighted
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether the receiver should be drawn with a highlight.
+        readonly: false
+    highlightedTextColor: !java.util.LinkedHashMap
+        name: highlightedTextColor
+        type: UIColor
+        ref: "*"
+        explanation: The highlight color applied to the label?s text.
+        readonly: false
+    lineBreakMode: !java.util.LinkedHashMap
+        name: lineBreakMode
+        type: NSLineBreakMode
+        ref: ""
+        explanation: The technique to use for wrapping and truncating the label?s text.
+        readonly: false
+    minimumScaleFactor: !java.util.LinkedHashMap
+        name: minimumScaleFactor
+        type: CGFloat
+        ref: ""
+        explanation: The minimum scale factor supported for the label?s text.
+        readonly: false
+    numberOfLines: !java.util.LinkedHashMap
+        name: numberOfLines
+        type: NSInteger
+        ref: ""
+        explanation: The maximum number of lines to use for rendering text.
+        readonly: false
+    preferredMaxLayoutWidth: !java.util.LinkedHashMap
+        name: preferredMaxLayoutWidth
+        type: CGFloat
+        ref: ""
+        explanation: The preferred maximum width (in points) for a multiline label.
+        readonly: false
+    shadowColor: !java.util.LinkedHashMap
+        name: shadowColor
+        type: UIColor
+        ref: "*"
+        explanation: The shadow color of the text.
+        readonly: false
+    shadowOffset: !java.util.LinkedHashMap
+        name: shadowOffset
+        type: CGSize
+        ref: ""
+        explanation: "The shadow offset (measured in points) for the text. "
+        readonly: false
+    text: !java.util.LinkedHashMap
+        name: text
+        type: NSString
+        ref: "*"
+        explanation: "The text displayed by the label. "
+        readonly: false
+    textAlignment: !java.util.LinkedHashMap
+        name: textAlignment
+        type: NSTextAlignment
+        ref: ""
+        explanation: The technique to use for aligning the text.
+        readonly: false
+    textColor: !java.util.LinkedHashMap
+        name: textColor
+        type: UIColor
+        ref: "*"
+        explanation: The color of the text.
+        readonly: false
+    userInteractionEnabled: !java.util.LinkedHashMap
+        name: userInteractionEnabled
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value that determines whether user events are ignored and removed from the event queue.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    drawTextInRect: !java.util.LinkedHashMap
+        isInstance: &24 true
+        name: drawTextInRect
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &26 false
+            isRef: *26
+        isVarArgs: *26
+        args: 
+            - !java.util.LinkedHashMap
+                param: rect
+                type: !java.util.LinkedHashMap
+                    name: CGRect
+                    delegate: ~
+                    isConst: *26
+                    isRef: *26
+    textRectForBounds: !java.util.LinkedHashMap
+        isInstance: *24
+        name: textRectForBounds
+        type: !java.util.LinkedHashMap
+            name: CGRect
+            delegate: ~
+            isConst: *26
+            isRef: *26
+        isVarArgs: *26
+        args: 
+            - !java.util.LinkedHashMap
+                param: bounds
+                type: !java.util.LinkedHashMap
+                    name: CGRect
+                    delegate: ~
+                    isConst: *26
+                    isRef: *26
+            - !java.util.LinkedHashMap
+                name: limitedToNumberOfLines
+                param: numberOfLines
+                type: !java.util.LinkedHashMap
+                    name: NSInteger
+                    delegate: ~
+                    isConst: *26
+                    isRef: *26

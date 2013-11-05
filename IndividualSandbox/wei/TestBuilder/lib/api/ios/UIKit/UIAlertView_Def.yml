@@ -1,0 +1,206 @@
+--- 
+inherit: 
+    - UIView
+    - UIResponder
+    - NSObject
+conform: 
+    - NSCoding (UIView)
+    - UIAppearance (UIView)
+    - UIAppearanceContainer (UIView)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    alertViewStyle: !java.util.LinkedHashMap
+        name: alertViewStyle
+        type: UIAlertViewStyle
+        ref: ""
+        explanation: The kind of alert displayed to the user.
+        readonly: false
+    cancelButtonIndex: !java.util.LinkedHashMap
+        name: cancelButtonIndex
+        type: NSInteger
+        ref: ""
+        explanation: The index number of the cancel button.
+        readonly: false
+    delegate: !java.util.LinkedHashMap
+        name: delegate
+        type: id
+        ref: ""
+        explanation: The receiver?s delegate or nil if it doesn?t have a delegate.
+        readonly: false
+    firstOtherButtonIndex: !java.util.LinkedHashMap
+        name: firstOtherButtonIndex
+        type: NSInteger
+        ref: ""
+        explanation: The index of the first other button. (read-only)
+        readonly: true
+    message: !java.util.LinkedHashMap
+        name: message
+        type: NSString
+        ref: "*"
+        explanation: Descriptive text that provides more details than the title.
+        readonly: false
+    numberOfButtons: !java.util.LinkedHashMap
+        name: numberOfButtons
+        type: NSInteger
+        ref: ""
+        explanation: The number of buttons on the alert view. (read-only)
+        readonly: true
+    title: !java.util.LinkedHashMap
+        name: title
+        type: NSString
+        ref: "*"
+        explanation: The string that appears in the receiver?s title bar.
+        readonly: false
+    visible: !java.util.LinkedHashMap
+        name: visible
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value that indicates whether the receiver is displayed. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap
+    addButtonWithTitle: !java.util.LinkedHashMap
+        isInstance: &14 true
+        name: addButtonWithTitle
+        type: !java.util.LinkedHashMap
+            name: NSInteger
+            delegate: ~
+            isConst: &16 false
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: title
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+    buttonTitleAtIndex: !java.util.LinkedHashMap
+        isInstance: *14
+        name: buttonTitleAtIndex
+        type: !java.util.LinkedHashMap
+            name: NSString
+            delegate: ~
+            isConst: *16
+            isRef: *14
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: buttonIndex
+                type: !java.util.LinkedHashMap
+                    name: NSInteger
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    dismissWithClickedButtonIndex: !java.util.LinkedHashMap
+        isInstance: *14
+        name: dismissWithClickedButtonIndex
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: buttonIndex
+                type: !java.util.LinkedHashMap
+                    name: NSInteger
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: animated
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+    initWithTitle: !java.util.LinkedHashMap
+        isInstance: *14
+        name: initWithTitle
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: title
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: message
+                param: message
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: delegate
+                param: delegate
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+            - !java.util.LinkedHashMap
+                name: cancelButtonTitle
+                param: cancelButtonTitle
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: otherButtonTitles
+                param: otherButtonTitles
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *16
+                    isRef: *14
+    show: !java.util.LinkedHashMap
+        isInstance: *14
+        name: show
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *16
+            isRef: *16
+        isVarArgs: *16
+        args: []
+    textFieldAtIndex: !java.util.LinkedHashMap
+        isInstance: *14
+        name: textFieldAtIndex
+        type: !java.util.LinkedHashMap
+            name: UITextField
+            delegate: ~
+            isConst: *16
+            isRef: *14
+        isVarArgs: *16
+        args: 
+            - !java.util.LinkedHashMap
+                param: textFieldIndex
+                type: !java.util.LinkedHashMap
+                    name: NSInteger
+                    delegate: ~
+                    isConst: *16
+                    isRef: *16
+constants: !java.util.LinkedHashMap
+    UIAlertViewStyle: !java.util.LinkedHashMap
+        name: UIAlertViewStyle
+        isEnum: *14
+        isTypedef: *14
+        values: []
+        defValues: 
+            - UIAlertViewStyleDefault
+            - UIAlertViewStyleSecureTextInput
+            - UIAlertViewStylePlainTextInput
+            - UIAlertViewStyleLoginAndPasswordInput

@@ -1,0 +1,20 @@
+--- 
+inherit: 
+    - UIGestureRecognizer
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    rotation: !java.util.LinkedHashMap
+        name: rotation
+        type: CGFloat
+        ref: ""
+        explanation: The rotation of the gesture in radians.
+        readonly: false
+    velocity: !java.util.LinkedHashMap
+        name: velocity
+        type: CGFloat
+        ref: ""
+        explanation: The velocity of the rotation gesture in radians per second. (read-only)
+        readonly: true
+methods: !java.util.LinkedHashMap {}

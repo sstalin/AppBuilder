@@ -1,0 +1,47 @@
+--- 
+conform: 
+    - NSObject
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    videoEditorController: !java.util.LinkedHashMap
+        isInstance: &5 true
+        name: videoEditorController
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &7 false
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: editor
+                type: !java.util.LinkedHashMap
+                    name: UIVideoEditorController
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+            - !java.util.LinkedHashMap
+                name: didSaveEditedVideoToPath
+                param: editedVideoPath
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+    videoEditorControllerDidCancel: !java.util.LinkedHashMap
+        isInstance: *5
+        name: videoEditorControllerDidCancel
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: editor
+                type: !java.util.LinkedHashMap
+                    name: UIVideoEditorController
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5

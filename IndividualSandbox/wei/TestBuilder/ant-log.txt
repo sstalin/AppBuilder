@@ -1,0 +1,3 @@
+     [echo] Create View Class
+     [copy] Copying 1 file to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04f/src/com/madl/app04f
+     [echo] View Class Done

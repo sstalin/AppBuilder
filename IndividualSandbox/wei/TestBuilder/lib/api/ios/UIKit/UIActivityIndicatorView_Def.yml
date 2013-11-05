@@ -1,0 +1,76 @@
+--- 
+inherit: 
+    - UIView
+    - UIResponder
+    - NSObject
+conform: 
+    - NSCoding
+    - NSCoding (UIView)
+    - UIAppearance (UIView)
+    - UIAppearanceContainer (UIView)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    color: !java.util.LinkedHashMap
+        name: color
+        type: UIColor
+        ref: "*"
+        explanation: The color of the activity indicator.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    initWithActivityIndicatorStyle: !java.util.LinkedHashMap
+        isInstance: &7 true
+        name: initWithActivityIndicatorStyle
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: &9 false
+            isRef: *9
+        isVarArgs: *9
+        args: 
+            - !java.util.LinkedHashMap
+                param: style
+                type: !java.util.LinkedHashMap
+                    name: UIActivityIndicatorViewStyle
+                    delegate: ~
+                    isConst: *9
+                    isRef: *9
+    isAnimating: !java.util.LinkedHashMap
+        isInstance: *7
+        name: isAnimating
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *9
+            isRef: *9
+        isVarArgs: *9
+        args: []
+    startAnimating: !java.util.LinkedHashMap
+        isInstance: *7
+        name: startAnimating
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *9
+            isRef: *9
+        isVarArgs: *9
+        args: []
+    stopAnimating: !java.util.LinkedHashMap
+        isInstance: *7
+        name: stopAnimating
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *9
+            isRef: *9
+        isVarArgs: *9
+        args: []
+constants: !java.util.LinkedHashMap
+    UIActivityIndicatorStyle: !java.util.LinkedHashMap
+        name: UIActivityIndicatorViewStyle
+        isEnum: *7
+        isTypedef: *7
+        values: []
+        defValues: 
+            - UIActivityIndicatorViewStyleWhiteLarge
+            - UIActivityIndicatorViewStyleWhite
+            - UIActivityIndicatorViewStyleGray

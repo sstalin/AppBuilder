@@ -1,0 +1,11 @@
+app
+	[name:name, type:String, value:NavView, class:java.lang.String]
+	[name:navigationBar, type:Boolean, value:true, class:java.lang.Boolean]
+View
+	[name:title, type:String, value:First, class:java.lang.String]
+	[name:title, type:String, value:Second, class:java.lang.String]
+Button
+	[name:next, type:String, value:v2, class:java.lang.String]
+	[name:text, type:String, value:Push, class:java.lang.String]
+Label
+	[name:text, type:String, value:Something, class:java.lang.String]

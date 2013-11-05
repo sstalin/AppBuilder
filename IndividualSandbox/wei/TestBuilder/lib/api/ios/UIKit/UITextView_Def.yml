@@ -1,0 +1,126 @@
+--- 
+inherit: 
+    - UIScrollView
+    - UIView
+    - UIResponder
+    - NSObject
+conform: 
+    - UITextInput
+    - NSCoding (UIScrollView)
+    - NSCoding (UIView)
+    - UIAppearance (UIView)
+    - UIAppearanceContainer (UIView)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    allowsEditingTextAttributes: !java.util.LinkedHashMap
+        name: allowsEditingTextAttributes
+        type: BOOL
+        ref: ""
+        explanation: "A Boolean value indicating whether the text view allows the user to edit style information. "
+        readonly: false
+    attributedText: !java.util.LinkedHashMap
+        name: attributedText
+        type: NSAttributedString
+        ref: "*"
+        explanation: The styled text displayed by the text view.
+        readonly: false
+    clearsOnInsertion: !java.util.LinkedHashMap
+        name: clearsOnInsertion
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether inserting text replaces the previous contents.
+        readonly: false
+    dataDetectorTypes: !java.util.LinkedHashMap
+        name: dataDetectorTypes
+        type: UIDataDetectorTypes
+        ref: ""
+        explanation: The types of data converted to clickable URLs in the text view.
+        readonly: false
+    delegate: !java.util.LinkedHashMap
+        name: delegate
+        type: id
+        ref: ""
+        explanation: The receiver?s delegate.
+        readonly: false
+    editable: !java.util.LinkedHashMap
+        name: editable
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value indicating whether the receiver is editable.
+        readonly: false
+    font: !java.util.LinkedHashMap
+        name: font
+        type: UIFont
+        ref: "*"
+        explanation: "The font of the text. "
+        readonly: false
+    inputAccessoryView: !java.util.LinkedHashMap
+        name: inputAccessoryView
+        type: UIView
+        ref: "*"
+        explanation: The custom accessory view to display when the text view becomes the first responder
+        readonly: false
+    inputView: !java.util.LinkedHashMap
+        name: inputView
+        type: UIView
+        ref: "*"
+        explanation: "The custom input view to display when the text view becomes the first responder. "
+        readonly: false
+    selectedRange: !java.util.LinkedHashMap
+        name: selectedRange
+        type: NSRange
+        ref: ""
+        explanation: The current selection range of the receiver.
+        readonly: false
+    text: !java.util.LinkedHashMap
+        name: text
+        type: NSString
+        ref: "*"
+        explanation: The text displayed by the text view.
+        readonly: false
+    textAlignment: !java.util.LinkedHashMap
+        name: textAlignment
+        type: NSTextAlignment
+        ref: ""
+        explanation: The technique to use for aligning the text.
+        readonly: false
+    textColor: !java.util.LinkedHashMap
+        name: textColor
+        type: UIColor
+        ref: "*"
+        explanation: The color of the text.
+        readonly: false
+    typingAttributes: !java.util.LinkedHashMap
+        name: typingAttributes
+        type: NSDictionary
+        ref: "*"
+        explanation: The attributes to apply to new text being entered by the user.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    hasText: !java.util.LinkedHashMap
+        isInstance: &20 true
+        name: hasText
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: &22 false
+            isRef: *22
+        isVarArgs: *22
+        args: []
+    scrollRangeToVisible: !java.util.LinkedHashMap
+        isInstance: *20
+        name: scrollRangeToVisible
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *22
+            isRef: *22
+        isVarArgs: *22
+        args: 
+            - !java.util.LinkedHashMap
+                param: range
+                type: !java.util.LinkedHashMap
+                    name: NSRange
+                    delegate: ~
+                    isConst: *22
+                    isRef: *22

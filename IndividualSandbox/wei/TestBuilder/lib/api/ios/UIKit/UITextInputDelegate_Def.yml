@@ -1,0 +1,73 @@
+--- 
+conform: 
+    - NSObject
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    selectionDidChange: !java.util.LinkedHashMap
+        isInstance: &5 true
+        name: selectionDidChange
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &7 false
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: textInput
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: <UITextInput>
+                    isConst: *7
+                    isRef: *7
+    selectionWillChange: !java.util.LinkedHashMap
+        isInstance: *5
+        name: selectionWillChange
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: textInput
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: <UITextInput>
+                    isConst: *7
+                    isRef: *7
+    textDidChange: !java.util.LinkedHashMap
+        isInstance: *5
+        name: textDidChange
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: textInput
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: <UITextInput>
+                    isConst: *7
+                    isRef: *7
+    textWillChange: !java.util.LinkedHashMap
+        isInstance: *5
+        name: textWillChange
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: textInput
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: <UITextInput>
+                    isConst: *7
+                    isRef: *7
