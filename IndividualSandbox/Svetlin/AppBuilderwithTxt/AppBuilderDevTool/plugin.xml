@@ -11,7 +11,7 @@
       </category>
       <wizard
             canFinishEarly="true"
-            class="edu.depaul.edu.madl.tool.wizards.AppBuilderNewProjectWizard"
+            class="edu.depaul.cdm.madl.tools.wizards.AppBuilderNewProjectWizard"
             finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
             hasPages="true"
             id="AppBuilderSandbox.wizard2"
@@ -38,7 +38,7 @@
     <extension point="org.eclipse.ui.newWizards">
     <category id="edu.depaul.cdm.cpdt.editor" name="New madl file Wizards"> 
     </category>
-    <wizard id="edu.depaul.cdm.cpdt.editor.wizards.MadlNewWizard" class="edu.depaul.cdm.madl.editor.wizards.MadlNewWizard" icon="icons/sample.gif" name="Multi-page Madl Editor file" category="edu.depaul.cdm.cpdt.editor">
+    <wizard id="edu.depaul.cdm.cpdt.editor.wizards.MadlNewWizard" class="edu.depaul.cdm.madl.tools.editor.wizards.MadlNewWizard" icon="icons/sample.gif" name="Multi-page Madl Editor file" category="edu.depaul.cdm.cpdt.editor">
      </wizard>
      </extension>
      <extension point="org.eclipse.core.filebuffers.documentSetup" id="edu.depaul.cdm.madl.editor.ui.text.editor.MadlDocumentSetupParticipant" name="MadlDocumentSetupParticipant">
