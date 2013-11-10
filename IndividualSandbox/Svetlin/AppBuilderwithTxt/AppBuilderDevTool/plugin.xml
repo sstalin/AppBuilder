@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="1"
+         name="newProjectWizard"
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="AppBuilderSandbox.category2"
+            name="AppBuilder">
+      </category>
+      <wizard
+            canFinishEarly="true"
+            class="edu.depaul.edu.madl.tool.wizards.AppBuilderNewProjectWizard"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            hasPages="true"
+            id="AppBuilderSandbox.wizard2"
+            name="AppBuilder Project"
+            project="true">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="edu.depaul.cdm.madl.tools.multipage.MultiPageMadlEditor"
+            contributorClass="edu.depaul.appbuilderdevtool.editor.MadlEditorContributor"
+            extensions="madl"
+            icon="icons/sample.gif"
+            id="edu.depaul.appbuilderdevtool.editor.MadlEditor"
+            name="Madl language Editor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.editors">
+   <editor id="edu.depaul.cdm.cpdt.editor.multipage.MadlEditor" class="edu.depaul.cdm.madl.tools.multipage.MultiPageMadlEditor" contributorClass="edu.depaul.cdm.madl.tools.multipage.MadlEditorContributor" icon="icons/sample.gif" extensions="madl" name="Madl Editor">
+    </editor>
+    </extension>
+    <extension point="org.eclipse.ui.newWizards">
+    <category id="edu.depaul.cdm.cpdt.editor" name="New madl file Wizards"> 
+    </category>
+    <wizard id="edu.depaul.cdm.cpdt.editor.wizards.MadlNewWizard" class="edu.depaul.cdm.madl.editor.wizards.MadlNewWizard" icon="icons/sample.gif" name="Multi-page Madl Editor file" category="edu.depaul.cdm.cpdt.editor">
+     </wizard>
+     </extension>
+     <extension point="org.eclipse.core.filebuffers.documentSetup" id="edu.depaul.cdm.madl.editor.ui.text.editor.MadlDocumentSetupParticipant" name="MadlDocumentSetupParticipant">
+     <participant class="edu.depaul.cdm.madl.tools.ui.internal.text.editor.MadlDocumentSetupParticipant" extensions="madl">
+      </participant>
+      </extension>
+      <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="edu.depaul.cdm.madl.tools.ui.internal.text.MadlUIPreferenceInitializer"/>
+      </extension>
+</plugin>
