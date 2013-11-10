@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Cross Mobile Development Language Editor
+Bundle-SymbolicName: edu.depaul.cdm.cpdt.editor;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: edu.depaul.cdm.cpdt.editor.Activator
+Bundle-Vendor: DePaul
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.core.resources,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.workbench.texteditor,
+ org.eclipse.text,
+ org.eclipse.swt
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.ui.views.contentoutline
