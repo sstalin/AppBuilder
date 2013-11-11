@@ -14,7 +14,7 @@
             class="edu.depaul.appbuilderdevtool.wizards.AppBuilderNewProjectWizard"
             finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
             hasPages="true"
-            id="AppBuilderSandbox.wizard2"
+            id="AppBuilderDevTool.projectWizard"
             name="AppBuilder Project"
             project="true">
       </wizard>
