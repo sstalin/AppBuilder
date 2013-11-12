@@ -1,6 +1,7 @@
-package edu.depaul.appbuilderdevtool;
+package edu.depaul.madl.wizards;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -13,6 +14,8 @@ public class Activator extends AbstractUIPlugin {
 
 	// The shared instance
 	private static Activator plugin;
+	
+	public Bundle bundle = getBundle();
 	
 	/**
 	 * The constructor
@@ -46,5 +49,9 @@ public class Activator extends AbstractUIPlugin {
 	public static Activator getDefault() {
 		return plugin;
 	}
+	
+//	public static Bundle getPluginBundle() {
+//		return getBundle();
+//	}
 
 }
