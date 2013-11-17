@@ -6,11 +6,12 @@
          name="newProjectWizard"
          point="org.eclipse.ui.newWizards">
       <category
-            id="AppBuilderSandbox.category2"
+            id="AppBuilderProjectWizardCategory"
             name="AppBuilder">
       </category>
       <wizard
             canFinishEarly="true"
+            category="AppBuilderProjectWizardCategory"
             class="edu.depaul.madl.wizards.AppBuilderNewProjectWizard"
             finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
             hasPages="true"
