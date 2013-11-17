@@ -1,3 +1,5 @@
 AppBuilderSource/classes
 AppBuilderDevTool/bin
 .DS_Store
+Madl/editor/tools/plugins/edu.depaul.cdm.madl.eclipse.ui/bin/*
+Madl/editor/tools/plugins/edu.depaul.cdm.madl.tools.ui/bin/*
