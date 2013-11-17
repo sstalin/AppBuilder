@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Madl
-Bundle-SymbolicName: edu.depaul.cdm.madl.eclipse.ui;singleton:=true
+Bundle-SymbolicName: edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: edu.depaul.madl.wizards.Activator
 Require-Bundle: org.eclipse.ui,
