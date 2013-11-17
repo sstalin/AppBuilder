@@ -15,6 +15,7 @@
             class="edu.depaul.madl.wizards.AppBuilderNewProjectWizard"
             finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
             hasPages="true"
+            icon="icons/sample.gif"
             id="AppBuilderDevTool.projectWizard"
             name="AppBuilder Project"
             project="true">
