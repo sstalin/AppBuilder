@@ -1,8 +1,17 @@
 package edu.depaul.madl.wizards;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.io.Writer;
+import java.net.URL;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -16,6 +25,8 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
+
+import edu.depaul.madl.wizards.constants.ProjectFilenames;
 
 
 public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
@@ -56,17 +67,9 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
 		//create folder by using resources package
 		IFolder folder = project.getFolder("src");
 		folder.create(true, true, null);
-		IFile file = folder.getFile("app01.madl");
 		
-		//change string to input string
-				InputStream stream = null;
-				try {
-					stream = new ByteArrayInputStream(madl01().getBytes("UTF-8"));
-				} catch (UnsupportedEncodingException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-	    file.create(stream, true, null);
+		IFile file = folder.getFile(ProjectFilenames.MADL_FILE);		
+		insertSampleApp(file);
 		
 		//create the rest of folder
 		IFolder f_conf = project.getFolder("conf");
@@ -82,22 +85,21 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
 		f_sound.create(true, true, null);
 	}
 	
-	private String madl01(){
-		StringBuilder strBuilder = new StringBuilder();
-		strBuilder.append("/* Android Specific */\n");
-		strBuilder.append("app(name : \'Android App\') { \n");
-		strBuilder.append("	View(id: top) { \n");
-		strBuilder.append("    Label(id: l1, text: \'Hello\')\n");
-		strBuilder.append("    CheckBox(id: c1, text: 'Item 1')\n");
-		strBuilder.append("    CheckBox(id: c2, text: 'Item 2')\n");
-		strBuilder.append("    RadioButton(id: r1, text: 'Radio 1')\n");
-		strBuilder.append("    RadioButton(id: r2, text: 'Radio 2')\n");
-		strBuilder.append("    RadioGroup () { \n");
-		strBuilder.append("      RadioButton(id: r11, text: 'Choice 1')\n");
-		strBuilder.append("      RadioButton(id: r12, text: 'Choice 2')\n");
-		strBuilder.append("    }\n");
-		strBuilder.append("  }\n");
-		strBuilder.append("}\n");
-		return strBuilder.toString();
+	private void insertSampleApp(IFile file) {
+		URL url;
+		try {
+			// Get the input from the template file
+		    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/templates/enter_name_app");
+		    InputStream inputStream = url.openConnection().getInputStream();
+		    
+		    System.out.println("Inserting sample app...");		    		    
+		    file.create(inputStream, true, null);
+		 
+		} catch (IOException e) {
+	        System.err.println("Error in insertSampleApp method while opening template");
+		    e.printStackTrace();
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
 	}
 }
