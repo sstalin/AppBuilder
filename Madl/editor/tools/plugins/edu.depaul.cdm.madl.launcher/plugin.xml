@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="edu.depaul.cdm.madl.launch.MadlLaunch"
+            id="edu.depaul.cdm.madl.launcher.launchConfigurationType.MadlLaunch"
+            modes="run"
+            name="MadlLauncher"
+            sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+            sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer">
+      </launchConfigurationType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="edu.depaul.cdm.madl.launcher.launchConfigurationType.MadlLaunch"
+            icon="icons/launch.png"
+            id="edu.depaul.cdm.madl.launcher.launchConfigurationTypeImage.launch">
+      </launchConfigurationTypeImage>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="edu.depaul.cdm.madl.tabGroup.TabGroup"
+            id="edu.depaul.cdm.madl.launcher.launchConfigurationTabGroup.MadlLaunch"
+            type="edu.depaul.cdm.madl.launcher.launchConfigurationType.MadlLaunch">
+      </launchConfigurationTabGroup>
+   </extension>
+
+</plugin>
