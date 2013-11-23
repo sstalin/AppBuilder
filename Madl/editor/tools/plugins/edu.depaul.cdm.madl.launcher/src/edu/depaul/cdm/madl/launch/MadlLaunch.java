@@ -6,6 +6,7 @@ import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
 import org.eclipse.jdt.launching.AbstractJavaLaunchConfigurationDelegate;
+import org.eclipse.jdt.launching.JavaLaunchDelegate;
 
 
 public class MadlLaunch extends AbstractJavaLaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
@@ -14,9 +15,8 @@ public class MadlLaunch extends AbstractJavaLaunchConfigurationDelegate implemen
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
 		// TODO Auto-generated method stub
-		System.out.println("I'm in the Launch");
-		String[] str = getEnvironment(configuration);
-		System.out.println(str);
+		JavaLaunchDelegate javaLauncher = new JavaLaunchDelegate();
+		javaLauncher.launch(configuration, mode, launch, monitor);
 
 	}
 

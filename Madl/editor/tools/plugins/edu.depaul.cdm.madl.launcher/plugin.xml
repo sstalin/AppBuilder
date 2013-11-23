@@ -7,7 +7,7 @@
             delegate="edu.depaul.cdm.madl.launch.MadlLaunch"
             id="edu.depaul.cdm.madl.launcher.launchConfigurationType.MadlLaunch"
             modes="run"
-            name="MadlLauncher"
+            name="Madl Applicatoin"
             sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
             sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer">
       </launchConfigurationType>
