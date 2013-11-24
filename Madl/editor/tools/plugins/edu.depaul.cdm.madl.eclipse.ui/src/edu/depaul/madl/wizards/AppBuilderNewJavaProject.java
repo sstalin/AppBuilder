@@ -1,16 +1,7 @@
 package edu.depaul.madl.wizards;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.io.Writer;
 import java.net.URL;
 
 import org.eclipse.core.resources.IFile;
@@ -83,6 +74,8 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
 		
 		IFolder f_sound = project.getFolder("sound_video");
 		f_sound.create(true, true, null);
+		
+		putOrgPropertiesFileInProjectRoot();
 	}
 	
 	private void insertSampleApp(IFile file) {
@@ -101,5 +94,31 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
 		} catch (CoreException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void putOrgPropertiesFileInProjectRoot() {
+		URL url;
+		
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		IProject project = root.getProject(getProjectName());
+		
+		
+		try {
+			// Get the input from the org.properties template file
+		    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/templates/org.properties");
+		    InputStream inputStream = url.openConnection().getInputStream();
+		    
+//		    System.out.println("Inserting org.properties...");		    		    
+//		    ResourcesPlugin.getWorkspace().getRoot().
+//				getProject(getProjectName()).getFolder().
+//				getFile(ProjectFilenames.ORG_PROPERTIES_FILE).
+//				create(inputStream, true, null);
+		 
+		} catch (IOException e) {
+	        System.err.println("Error in putOrgPropertiesFileInProjectRoot method while opening template");
+		    e.printStackTrace();
+		} //catch (CoreException e) {
+//			e.printStackTrace();
+//		}
 	}
 }
