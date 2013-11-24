@@ -1,0 +1,12 @@
+edu.depaul.cdm.madl.editor.wizards
+edu.depaul.cdm.madl.tools.core
+edu.depaul.cdm.madl.tools.multipage
+edu.depaul.cdm.madl.tools.ui
+edu.depaul.cdm.madl.tools.ui.internal.text
+edu.depaul.cdm.madl.tools.ui.internal.text.editor
+edu.depaul.cdm.madl.tools.ui.internal.text.functions
+edu.depaul.cdm.madl.tools.ui.internal.text.madl
+edu.depaul.cdm.madl.tools.ui.internal.text.madl.codeassist
+edu.depaul.cdm.madl.tools.ui.internal.text.madldoc
+edu.depaul.cdm.madl.tools.ui.internal.viewsupport
+edu.depaul.cdm.madl.tools.ui.text
