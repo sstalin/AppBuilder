@@ -2,7 +2,7 @@ package edu.depaul.cdm.madl.tools.core;
 
 public class Dummy_Parser {
 	// prevent from creating instances
-	private Dummy_Parser() {
+	public Dummy_Parser() {
 	}
 
 	private static String[] keywords = { "app", "abstract", "as", "assert", "boolean",

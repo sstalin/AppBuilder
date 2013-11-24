@@ -44,6 +44,7 @@ import edu.depaul.cdm.madl.tools.ui.internal.text.functions.PreferencesAdapter;
 import edu.depaul.cdm.madl.tools.ui.internal.text.functions.SingleTokenMadlScanner;
 import edu.depaul.cdm.madl.tools.ui.internal.text.madl.MadlCodeScanner;
 import edu.depaul.cdm.madl.tools.ui.internal.text.madl.MadlDoubleClickSelector;
+import edu.depaul.cdm.madl.tools.ui.internal.text.madl.codeassist.MadlContentAssistant;
 import edu.depaul.cdm.madl.tools.ui.internal.text.madldoc.LineDocAutoIndentStrategy;
 import edu.depaul.cdm.madl.tools.ui.internal.text.madldoc.MadlDocAutoIndentStrategy;
 import edu.depaul.cdm.madl.tools.ui.internal.text.madldoc.MadlDocScanner;
@@ -307,11 +308,19 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
     // return shortenedStateMasks;
   }
 
-  //SS commented out 
-  /*@Override
+//SS commented out, Anisha uncommented
+  @Override
   public IContentAssistant getContentAssistant(ISourceViewer sourceViewer) {
 
-    if (getEditor() != null) {
+	  MadlContentAssistant contentAssistant = new MadlContentAssistant();
+		
+	  contentAssistant.setInformationControlCreator(getInformationControlCreator(sourceViewer));
+
+	 return contentAssistant;
+	  
+	  
+	  
+/*     if (getEditor() != null) {
 
       ContentAssistant assistant = new ContentAssistant();
       assistant.setDocumentPartitioning(getConfiguredDocumentPartitioning(sourceViewer));
@@ -324,7 +333,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
           IDocument.DEFAULT_CONTENT_TYPE);
       assistant.setContentAssistProcessor(javaProcessor, IDocument.DEFAULT_CONTENT_TYPE);
 
-      ContentAssistProcessor singleLineProcessor = new DartCompletionProcessor(
+     ContentAssistProcessor singleLineProcessor = new DartCompletionProcessor(
           getEditor(),
           assistant,
           MadlPartitions.MADL_SINGLE_LINE_COMMENT);
@@ -364,8 +373,8 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
       return assistant;
     }
 
-    return null;
-  }*/
+    return null;*/
+  }
 
   @Override
   public IContentFormatter getContentFormatter(ISourceViewer sourceViewer) {

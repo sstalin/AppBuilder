@@ -20,6 +20,7 @@ public MadlDocumentSetupParticipant(){}
 	@Override
 	public void setup(IDocument document) {
 		// TODO Auto-generated method stub
+		//MadlToolsPlugin this_plugin= new MadlToolsPlugin();
 		MadlTextTools tools= MadlToolsPlugin.getDefault().getMadlTextTools();
 		tools.setupMadlDocumentPartitioner(document, MadlPartitions.MADL_PARTITIONING);
 	}
