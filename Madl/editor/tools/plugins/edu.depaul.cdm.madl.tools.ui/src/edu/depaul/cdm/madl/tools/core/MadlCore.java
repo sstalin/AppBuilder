@@ -27,19 +27,4 @@ public class MadlCore extends Plugin{
 	   * The id of the plug-in that defines the Dart model.
 	   */
 	  public static final String PLUGIN_ID = MadlCore.class.getPackage().getName();
-	  
-	  /**
-	   * Return the unique instance of this class.
-	   * 
-	   * @return the unique instance of this class
-	   */
-	  public static MadlCore getPlugin() {
-	    return PLUG_IN;
-	  }
-	  /**
-	   * Initialize a newly created instance of this class.
-	   */
-	  public MadlCore() {
-	    PLUG_IN = this;
-	  }
 }

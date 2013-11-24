@@ -13,9 +13,8 @@ import org.eclipse.ui.editors.text.TextEditor;
 import org.eclipse.ui.texteditor.AbstractDecoratedTextEditor;
 import org.eclipse.ui.texteditor.ChainedPreferenceStore;
 
-import edu.depaul.cdm.madl.tools.core.MadlCore;
+import edu.depaul.cdm.madl.tools.ui.Activator;
 import edu.depaul.cdm.madl.tools.ui.MadlToolsPlugin;
-import edu.depaul.cdm.madl.tools.ui.internal.text.functions.PreferencesAdapter;
 import edu.depaul.cdm.madl.tools.ui.text.MadlPartitions;
 import edu.depaul.cdm.madl.tools.ui.text.MadlSourceViewerConfiguration;
 import edu.depaul.cdm.madl.tools.ui.text.MadlTextTools;
@@ -38,6 +37,7 @@ public class MadlEditor extends AbstractDecoratedTextEditor {
 	@Override
 	protected void initializeEditor() {
 		IPreferenceStore store = createCombinedPreferenceStore(null);
+		//IPreferenceStore store= createPreferenceStore();
 		setPreferenceStore(store);
 		setSourceViewerConfiguration(createMadlSourceViewerConfiguration());
 }
@@ -63,24 +63,23 @@ public class MadlEditor extends AbstractDecoratedTextEditor {
 	   * @param input The editor input for which to create the preference store
 	   * @return the preference store for this editor
 	   */
-	  @SuppressWarnings("deprecation")
-	private IPreferenceStore createCombinedPreferenceStore(IEditorInput input) {
+	  private IPreferenceStore createCombinedPreferenceStore(IEditorInput input) {
 	    List<IPreferenceStore> stores = new ArrayList<IPreferenceStore>(3);
 
 	  /*  IProject project = EditorUtility.getProject(input);
 	    if (project != null) {
 	      stores.add(new EclipsePreferencesAdapter(new ProjectScope(project), DartCore.PLUGIN_ID));
-	    }*/
-	    stores.add(new PreferencesAdapter((new MadlCore()).getPlugin().getPluginPreferences()));
-	    stores.add( MadlToolsPlugin.getDefault().getPreferenceStore());
+	    }
+
+	    stores.add(new PreferencesAdapter(DartCore.getPlugin().getPluginPreferences()));*/
+	    stores.add((new MadlToolsPlugin()).getDefault().getPreferenceStore());
 	    stores.add(EditorsUI.getPreferenceStore());
 	   
 	    return new ChainedPreferenceStore(stores.toArray(new IPreferenceStore[stores.size()]));
 	  }
 	  
-	  @SuppressWarnings("unused")
-	private IPreferenceStore createPreferenceStore(){
-		return MadlToolsPlugin.getDefault().getPreferenceStore();
+	  private IPreferenceStore createPreferenceStore(){
+		return Activator.getDefault().getPreferenceStore();
 		  
 	  }
 }
