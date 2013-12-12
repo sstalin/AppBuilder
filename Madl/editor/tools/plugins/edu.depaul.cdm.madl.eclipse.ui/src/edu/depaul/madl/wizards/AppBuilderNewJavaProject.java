@@ -63,19 +63,19 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
 		insertSampleApp(file);
 		
 		//create the rest of folder
-		IFolder f_conf = project.getFolder("conf");
-		f_conf.create(true, true, null);
+		IFolder conf = project.getFolder("conf");
+		conf.create(true, true, null);
 		
-		IFolder f_templete = project.getFolder("templete");
-		f_templete.create(true, true, null);
+		IFolder template = project.getFolder("template");
+		template.create(true, true, null);
 		
-		IFolder f_lib = project.getFolder("lib");
-		f_lib.create(true, true, null);
+		IFolder lib = project.getFolder("lib");
+		lib.create(true, true, null);
 		
-		IFolder f_sound = project.getFolder("sound_video");
-		f_sound.create(true, true, null);
+		IFolder soundVideo = project.getFolder("sound_video");
+		soundVideo.create(true, true, null);
 		
-		putOrgPropertiesFileInProjectRoot();
+		generateOrgPropertiesFile(project);
 	}
 	
 	private void insertSampleApp(IFile file) {
@@ -96,29 +96,25 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
 		}
 	}
 	
-	private void putOrgPropertiesFileInProjectRoot() {
+	private void generateOrgPropertiesFile(IProject project) {
 		URL url;
 		
-		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		IProject project = root.getProject(getProjectName());
-		
+		// Create the file in the project root
+		IFile file = getProjectHandle().getFile(ProjectFilenames.ORG_PROPERTIES_FILE);
 		
 		try {
-			// Get the input from the org.properties template file
-		    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/templates/org.properties");
+			// Get the input from the template file
+		    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/templates/" + ProjectFilenames.ORG_PROPERTIES_FILE);
 		    InputStream inputStream = url.openConnection().getInputStream();
 		    
-//		    System.out.println("Inserting org.properties...");		    		    
-//		    ResourcesPlugin.getWorkspace().getRoot().
-//				getProject(getProjectName()).getFolder().
-//				getFile(ProjectFilenames.ORG_PROPERTIES_FILE).
-//				create(inputStream, true, null);
+		    System.out.println("Generating " + ProjectFilenames.ORG_PROPERTIES_FILE + " file");		    		    
+		    file.create(inputStream, true, null);
 		 
 		} catch (IOException e) {
-	        System.err.println("Error in putOrgPropertiesFileInProjectRoot method while opening template");
+	        System.err.println("Error generating " + ProjectFilenames.ORG_PROPERTIES_FILE + " file while reading template");
 		    e.printStackTrace();
-		} //catch (CoreException e) {
-//			e.printStackTrace();
-//		}
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
 	}
 }
