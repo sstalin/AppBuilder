@@ -17,5 +17,25 @@
          </property>
       </product>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.example.e4.rcp.wizard.editors.MultiPageEditor"
+            contributorClass="com.example.e4.rcp.wizard.editors.MultiPageEditorContributor"
+            default="true"
+            extensions="mpe"
+            icon="icons/sample.gif"
+            id="com.example.e4.rcp.wizard.editors.MultiPageEditor"
+            name="Sample Multi-page Editor">
+      </editor>
+      <editor
+            class="com.example.e4.rcp.wizard.editors.MultiPageEditor"
+            contributorClass="com.example.e4.rcp.wizard.editors.MultiPageEditorContributor"
+            extensions="mpe"
+            icon="icons/sample.gif"
+            id="com.example.e4.rcp.wizard.editors.MultiPageEditor"
+            name="Sample Multi-page Editor">
+      </editor>
+   </extension>
 
 </plugin>

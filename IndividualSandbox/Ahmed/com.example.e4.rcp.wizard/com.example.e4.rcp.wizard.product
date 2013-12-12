@@ -3,6 +3,7 @@
 
 <product name="com.example.e4.rcp.wizard" id="com.example.e4.rcp.wizard.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
 
+
    <configIni use="default">
    </configIni>
 
@@ -13,16 +14,30 @@
 
    <windowImages/>
 
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+
    <plugins>
       <plugin id="com.example.e4.rcp.wizard"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
+      <plugin id="javax.servlet"/>
       <plugin id="javax.xml"/>
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.util"/>
       <plugin id="org.apache.batik.util.gui"/>
       <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.eclipse.ant.core"/>
       <plugin id="org.eclipse.core.commands"/>
       <plugin id="org.eclipse.core.contenttype"/>
       <plugin id="org.eclipse.core.databinding"/>
@@ -43,8 +58,11 @@
       <plugin id="org.eclipse.core.jobs"/>
       <plugin id="org.eclipse.core.resources"/>
       <plugin id="org.eclipse.core.resources.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.core.resources.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.auth"/>
       <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
+      <plugin id="org.eclipse.core.variables"/>
       <plugin id="org.eclipse.e4.core.commands"/>
       <plugin id="org.eclipse.e4.core.contexts"/>
       <plugin id="org.eclipse.e4.core.di"/>
@@ -59,6 +77,7 @@
       <plugin id="org.eclipse.e4.ui.services"/>
       <plugin id="org.eclipse.e4.ui.widgets"/>
       <plugin id="org.eclipse.e4.ui.workbench"/>
+      <plugin id="org.eclipse.e4.ui.workbench.addons.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench.renderers.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench.renderers.swt.cocoa"/>
       <plugin id="org.eclipse.e4.ui.workbench.swt"/>
@@ -69,6 +88,7 @@
       <plugin id="org.eclipse.emf.ecore.change"/>
       <plugin id="org.eclipse.emf.ecore.xmi"/>
       <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.bidi"/>
       <plugin id="org.eclipse.equinox.common"/>
       <plugin id="org.eclipse.equinox.concurrent"/>
       <plugin id="org.eclipse.equinox.ds"/>
@@ -76,6 +96,7 @@
       <plugin id="org.eclipse.equinox.preferences"/>
       <plugin id="org.eclipse.equinox.registry"/>
       <plugin id="org.eclipse.equinox.util"/>
+      <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
       <plugin id="org.eclipse.osgi"/>
@@ -99,6 +120,8 @@
       <plugin id="org.eclipse.swt.photon.qnx.x86" fragment="true"/>
       <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
       <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.workbench"/>
       <plugin id="org.w3c.css.sac"/>
       <plugin id="org.w3c.dom.smil"/>
       <plugin id="org.w3c.dom.svg"/>
