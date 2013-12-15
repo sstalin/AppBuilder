@@ -104,7 +104,7 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
 		
 		try {
 			// Get the input from the template file
-		    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/templates/" + ProjectFilenames.ORG_PROPERTIES_FILE);
+		    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/" + ProjectFilenames.ORG_PROPERTIES_FILE);
 		    InputStream inputStream = url.openConnection().getInputStream();
 		    
 		    System.out.println("Generating " + ProjectFilenames.ORG_PROPERTIES_FILE + " file");		    		    
