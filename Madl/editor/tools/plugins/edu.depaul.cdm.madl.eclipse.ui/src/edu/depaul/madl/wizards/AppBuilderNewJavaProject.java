@@ -11,6 +11,8 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
@@ -66,6 +68,9 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
 		IFolder conf = project.getFolder("conf");
 		conf.create(true, true, null);
 		
+		IFolder images = project.getFolder("conf/images");
+		images.create(true, true, null);
+		
 		IFolder template = project.getFolder("template");
 		template.create(true, true, null);
 		
@@ -76,6 +81,7 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
 		soundVideo.create(true, true, null);
 		
 		generateOrgPropertiesFile(project);
+		copyImagesIntoConf(project);
 	}
 	
 	private void insertSampleApp(IFile file) {
@@ -112,6 +118,26 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage{
 		 
 		} catch (IOException e) {
 	        System.err.println("Error generating " + ProjectFilenames.ORG_PROPERTIES_FILE + " file while reading template");
+		    e.printStackTrace();
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void copyImagesIntoConf(IProject project) {		
+		URL url;
+		
+		// Create the empty file
+		IFile file = getProjectHandle().getFile("conf/images/checkbox-off.png");
+		
+		try {
+			// Get the input from the resources file
+		    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/images/checkbox-off.png");
+		    InputStream inputStream = url.openConnection().getInputStream();
+		    		    		    
+		    file.create(inputStream, true, null);
+		 
+		} catch (IOException e) {
 		    e.printStackTrace();
 		} catch (CoreException e) {
 			e.printStackTrace();
