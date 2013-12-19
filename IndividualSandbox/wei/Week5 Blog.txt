@@ -1,0 +1,9 @@
+Week 5 Blog:
+Have done:
+A log of tutorial need to follow up.
+Study with the eclipse plug-in stuff
+Tried to set up and implement a Grovvy editor in Eclipse.
+Prepare a short presentation to the following class about the achievement and future goal.
+
+Future work:
+Meet with the team member on next Monday to share the progress of the project and discuss about the next week's task.

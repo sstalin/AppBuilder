@@ -1,0 +1,259 @@
+--- 
+inherit: 
+    - NSObject
+conform: 
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    delegate: !java.util.LinkedHashMap
+        name: delegate
+        type: id
+        ref: ""
+        explanation: The delegate of the print interaction controller.
+        readonly: false
+    printFormatter: !java.util.LinkedHashMap
+        name: printFormatter
+        type: UIPrintFormatter
+        ref: "*"
+        explanation: "An object that lays out the content of pages based on the kind of content. "
+        readonly: false
+    printInfo: !java.util.LinkedHashMap
+        name: printInfo
+        type: UIPrintInfo
+        ref: "*"
+        explanation: An object encapsulating information about the print job.
+        readonly: false
+    printingItem: !java.util.LinkedHashMap
+        name: printingItem
+        type: id
+        ref: ""
+        explanation: A single ready-to-print object.
+        readonly: false
+    printingItems: !java.util.LinkedHashMap
+        name: printingItems
+        type: NSArray
+        ref: "*"
+        explanation: "An array of ready-to-print objects. "
+        readonly: false
+    printPageRenderer: !java.util.LinkedHashMap
+        name: printPageRenderer
+        type: UIPrintPageRenderer
+        ref: ""
+        explanation: "An object that draws pages of printable content when requested by UIKit. "
+        readonly: false
+    printPaper: !java.util.LinkedHashMap
+        name: printPaper
+        type: UIPrintPaper
+        ref: "*"
+        explanation: An object representing the paper size and printing area for the print job. (read-only)
+        readonly: true
+    showsPageRange: !java.util.LinkedHashMap
+        name: showsPageRange
+        type: BOOL
+        ref: ""
+        explanation: A Boolean value that determines whether the printing options include a page-range control.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    canPrintData: !java.util.LinkedHashMap
+        isInstance: &14 false
+        name: canPrintData
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: data
+                type: !java.util.LinkedHashMap
+                    name: NSData
+                    delegate: ~
+                    isConst: *14
+                    isRef: &19 true
+    canPrintURL: !java.util.LinkedHashMap
+        isInstance: *14
+        name: canPrintURL
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: url
+                type: !java.util.LinkedHashMap
+                    name: NSURL
+                    delegate: ~
+                    isConst: *14
+                    isRef: *19
+    isPrintingAvailable: !java.util.LinkedHashMap
+        isInstance: *14
+        name: isPrintingAvailable
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: []
+    printableUTIs: !java.util.LinkedHashMap
+        isInstance: *14
+        name: printableUTIs
+        type: !java.util.LinkedHashMap
+            name: NSSet
+            delegate: ~
+            isConst: *14
+            isRef: *19
+        isVarArgs: *14
+        args: []
+    sharedPrintController: !java.util.LinkedHashMap
+        isInstance: *14
+        name: sharedPrintController
+        type: !java.util.LinkedHashMap
+            name: UIPrintInteractionController
+            delegate: ~
+            isConst: *14
+            isRef: *19
+        isVarArgs: *14
+        args: []
+    dismissAnimated: !java.util.LinkedHashMap
+        isInstance: *19
+        name: dismissAnimated
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+    presentAnimated: !java.util.LinkedHashMap
+        isInstance: *19
+        name: presentAnimated
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: completionHandler
+                param: completion
+                type: !java.util.LinkedHashMap
+                    name: UIPrintInteractionCompletionHandler
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+    presentFromBarButtonItem: !java.util.LinkedHashMap
+        isInstance: *19
+        name: presentFromBarButtonItem
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: item
+                type: !java.util.LinkedHashMap
+                    name: UIBarButtonItem
+                    delegate: ~
+                    isConst: *14
+                    isRef: *19
+            - !java.util.LinkedHashMap
+                name: animated
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: completionHandler
+                param: completion
+                type: !java.util.LinkedHashMap
+                    name: UIPrintInteractionCompletionHandler
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+    presentFromRect: !java.util.LinkedHashMap
+        isInstance: *19
+        name: presentFromRect
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *14
+            isRef: *14
+        isVarArgs: *14
+        args: 
+            - !java.util.LinkedHashMap
+                param: rect
+                type: !java.util.LinkedHashMap
+                    name: CGRect
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: inView
+                param: view
+                type: !java.util.LinkedHashMap
+                    name: UIView
+                    delegate: ~
+                    isConst: *14
+                    isRef: *19
+            - !java.util.LinkedHashMap
+                name: animated
+                param: animated
+                type: !java.util.LinkedHashMap
+                    name: BOOL
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+            - !java.util.LinkedHashMap
+                name: completionHandler
+                param: completion
+                type: !java.util.LinkedHashMap
+                    name: UIPrintInteractionCompletionHandler
+                    delegate: ~
+                    isConst: *14
+                    isRef: *14
+constants: !java.util.LinkedHashMap
+    UIPrintInteractionCompletionHandler: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *14
+        isTypedef: *19
+        values: ~
+        defValues: []
+    UIKit Printing Error Domain: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *14
+        isTypedef: *14
+        values: ~
+        defValues: 
+            - UIPrintErrorDomain
+    UIKit Printing Error Codes: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *19
+        isTypedef: *14
+        values: []
+        defValues: 
+            - UIPrintingNotAvailableError
+            - UIPrintNoContentError
+            - UIPrintUnknownImageFormatError
+            - UIPrintJobFailedError

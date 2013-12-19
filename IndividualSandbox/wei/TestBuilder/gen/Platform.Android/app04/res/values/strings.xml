@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">NavView</string>
+  <string name="NavView_title">First</string>
+  <string name="V2_title">Second</string>
+</resources>

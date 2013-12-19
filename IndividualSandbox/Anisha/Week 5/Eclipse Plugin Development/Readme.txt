@@ -1,0 +1,1 @@
+Tutorial followed: https://sites.google.com/site/eclipseplugindevelopment/pluginDev

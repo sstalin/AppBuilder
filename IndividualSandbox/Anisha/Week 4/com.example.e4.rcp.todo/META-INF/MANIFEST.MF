@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Todo
+Bundle-SymbolicName: com.example.e4.rcp.todo;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: EXAMPLE
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: org.eclipse.e4.core.di.annotations,
+ org.eclipse.e4.ui.workbench,
+ org.eclipse.jface.layout,
+ org.eclipse.jface.viewers
+Require-Bundle: org.eclipse.e4.ui.model.workbench,
+ org.eclipse.core.expressions;bundle-version="3.4.500"

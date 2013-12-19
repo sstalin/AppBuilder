@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="1"
+         name="newProjectWizard"
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="AppBuilderSandbox.category2"
+            name="AppBuilder">
+      </category>
+      <wizard
+            canFinishEarly="true"
+            class="appbuildersandbox.AppBuilderNewProjectWizard"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            hasPages="true"
+            id="AppBuilderSandbox.wizard2"
+            name="AppBuilder Project"
+            project="true">
+      </wizard>
+   </extension>
+</plugin>

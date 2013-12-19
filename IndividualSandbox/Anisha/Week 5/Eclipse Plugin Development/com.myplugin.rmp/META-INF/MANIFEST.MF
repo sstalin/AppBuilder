@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rmp Plug-in
+Bundle-SymbolicName: com.myplugin.rmp; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: com.myplugin.rmp.Activator
+Bundle-Vendor: MYPLUGIN
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui.ide
+Eclipse-LazyStart: true

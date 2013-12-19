@@ -1,0 +1,98 @@
+--- 
+conform: 
+    - NSObject
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    searchDisplayController: !java.util.LinkedHashMap
+        isInstance: &5 true
+        name: searchDisplayController
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &7 false
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: controller
+                type: !java.util.LinkedHashMap
+                    name: UISearchDisplayController
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+            - !java.util.LinkedHashMap
+                name: willUnloadSearchResultsTableView
+                param: tableView
+                type: !java.util.LinkedHashMap
+                    name: UITableView
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+    searchDisplayControllerDidBeginSearch: !java.util.LinkedHashMap
+        isInstance: *5
+        name: searchDisplayControllerDidBeginSearch
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: controller
+                type: !java.util.LinkedHashMap
+                    name: UISearchDisplayController
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+    searchDisplayControllerDidEndSearch: !java.util.LinkedHashMap
+        isInstance: *5
+        name: searchDisplayControllerDidEndSearch
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: controller
+                type: !java.util.LinkedHashMap
+                    name: UISearchDisplayController
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+    searchDisplayControllerWillBeginSearch: !java.util.LinkedHashMap
+        isInstance: *5
+        name: searchDisplayControllerWillBeginSearch
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: controller
+                type: !java.util.LinkedHashMap
+                    name: UISearchDisplayController
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+    searchDisplayControllerWillEndSearch: !java.util.LinkedHashMap
+        isInstance: *5
+        name: searchDisplayControllerWillEndSearch
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: controller
+                type: !java.util.LinkedHashMap
+                    name: UISearchDisplayController
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5

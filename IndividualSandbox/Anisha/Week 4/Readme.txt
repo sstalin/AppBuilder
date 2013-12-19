@@ -1,0 +1,1 @@
+Tutorial followed : http://users.drew.edu/bburd/Eclipse/CreatingAnEclipsePlugin.html

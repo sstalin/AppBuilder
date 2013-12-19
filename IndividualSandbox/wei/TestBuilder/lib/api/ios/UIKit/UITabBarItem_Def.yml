@@ -1,0 +1,164 @@
+--- 
+inherit: 
+    - UIBarItem
+    - NSObject
+conform: 
+    - UIAppearance (UIBarItem)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    badgeValue: !java.util.LinkedHashMap
+        name: badgeValue
+        type: NSString
+        ref: "*"
+        explanation: Text that is displayed in the upper-right corner of the item with a surrounding red oval.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    finishedSelectedImage: !java.util.LinkedHashMap
+        isInstance: &7 true
+        name: finishedSelectedImage
+        type: !java.util.LinkedHashMap
+            name: UIImage
+            delegate: ~
+            isConst: &9 false
+            isRef: *7
+        isVarArgs: *9
+        args: []
+    finishedUnselectedImage: !java.util.LinkedHashMap
+        isInstance: *7
+        name: finishedUnselectedImage
+        type: !java.util.LinkedHashMap
+            name: UIImage
+            delegate: ~
+            isConst: *9
+            isRef: *7
+        isVarArgs: *9
+        args: []
+    initWithTabBarSystemItem: !java.util.LinkedHashMap
+        isInstance: *7
+        name: initWithTabBarSystemItem
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: *9
+            isRef: *9
+        isVarArgs: *9
+        args: 
+            - !java.util.LinkedHashMap
+                param: systemItem
+                type: !java.util.LinkedHashMap
+                    name: UITabBarSystemItem
+                    delegate: ~
+                    isConst: *9
+                    isRef: *9
+            - !java.util.LinkedHashMap
+                name: tag
+                param: tag
+                type: !java.util.LinkedHashMap
+                    name: NSInteger
+                    delegate: ~
+                    isConst: *9
+                    isRef: *9
+    initWithTitle: !java.util.LinkedHashMap
+        isInstance: *7
+        name: initWithTitle
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: *9
+            isRef: *9
+        isVarArgs: *9
+        args: 
+            - !java.util.LinkedHashMap
+                param: title
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *9
+                    isRef: *7
+            - !java.util.LinkedHashMap
+                name: image
+                param: image
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *9
+                    isRef: *7
+            - !java.util.LinkedHashMap
+                name: tag
+                param: tag
+                type: !java.util.LinkedHashMap
+                    name: NSInteger
+                    delegate: ~
+                    isConst: *9
+                    isRef: *9
+    setFinishedSelectedImage: !java.util.LinkedHashMap
+        isInstance: *7
+        name: setFinishedSelectedImage
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *9
+            isRef: *9
+        isVarArgs: *9
+        args: 
+            - !java.util.LinkedHashMap
+                param: selectedImage
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *9
+                    isRef: *7
+            - !java.util.LinkedHashMap
+                name: withFinishedUnselectedImage
+                param: unselectedImage
+                type: !java.util.LinkedHashMap
+                    name: UIImage
+                    delegate: ~
+                    isConst: *9
+                    isRef: *7
+    setTitlePositionAdjustment: !java.util.LinkedHashMap
+        isInstance: *7
+        name: setTitlePositionAdjustment
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *9
+            isRef: *9
+        isVarArgs: *9
+        args: 
+            - !java.util.LinkedHashMap
+                param: adjustment
+                type: !java.util.LinkedHashMap
+                    name: UIOffset
+                    delegate: ~
+                    isConst: *9
+                    isRef: *9
+    titlePositionAdjustment: !java.util.LinkedHashMap
+        isInstance: *7
+        name: titlePositionAdjustment
+        type: !java.util.LinkedHashMap
+            name: UIOffset
+            delegate: ~
+            isConst: *9
+            isRef: *9
+        isVarArgs: *9
+        args: []
+constants: !java.util.LinkedHashMap
+    UITabBarSystemItem: !java.util.LinkedHashMap
+        name: UITabBarSystemItem
+        isEnum: *7
+        isTypedef: *7
+        values: []
+        defValues: 
+            - UITabBarSystemItemMore
+            - UITabBarSystemItemFavorites
+            - UITabBarSystemItemFeatured
+            - UITabBarSystemItemTopRated
+            - UITabBarSystemItemRecents
+            - UITabBarSystemItemContacts
+            - UITabBarSystemItemHistory
+            - UITabBarSystemItemBookmarks
+            - UITabBarSystemItemSearch
+            - UITabBarSystemItemDownloads
+            - UITabBarSystemItemMostRecent
+            - UITabBarSystemItemMostViewed

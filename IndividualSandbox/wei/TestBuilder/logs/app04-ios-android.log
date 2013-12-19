@@ -1,0 +1,912 @@
+=== Log started at Mon Oct 28 17:04:21 CDT 2013
+[Main] infile: src/app04.madl   fileanme: app04  srcdir: src
+[ModelBuilder] verbose=true
+[CheckScript] class app
+[CheckScript] method: main
+[CheckScript] method: run
+[Preprocessor] checkViewBuilder verbose=false
+[CheckScript] method: this$dist$invoke$3
+[CheckScript] method: this$dist$set$3
+[CheckScript] method: this$dist$get$3
+===== Start iOS =====
+[AppBuilder] Start App Builder
+[AppBuilder] classes: [:]
+[ModelBuilder] handleParameters(): args = [[name:NavView, navigationBar:true]]  [java.util.ArrayList]
+[ModelBuilder] handleParameter(): Parameter: key=name value=NavView : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=navigationBar value=true : java.lang.Boolean
+[ModelBuilder] propertyMissing(): v1
+[ModelBuilder] methodMissing View 6 parent: app
+[ModelBuilder] Method View 6 0 [View]
+[ModelBuilder] parent: app1  child: View
+[ModelBuilder] handleParameters(): args = [[id:v1, title:First], app$_run_closure2_closure3@753b460f]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=v1 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=v1 : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=title value=First : java.lang.String
+[ModelBuilder] propertyMissing(): b1
+[ModelBuilder] propertyMissing(): v2
+[ModelBuilder] methodMissing Button 7 parent: View
+[ModelBuilder] Method Button 7 0.0 [View, Button]
+[ModelBuilder] parent: v1  child: Button
+[ModelBuilder] handleParameters(): args = [[id:b1, text:Push, next:v2]]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=b1 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=b1 : java.lang.String
+[ModelBuilder] retrieve exp source for text: null
+[ModelBuilder] handleParameter(): Parameter: key=text value=Push : java.lang.String
+[PropertyModel] eval: context=null owner=null plural=false name=v2 value=null
+[ModelBuilder] handleParameter(): Parameter: key=next value=v2 : java.lang.String
+[ModelBuilder] propertyMissing(): v2
+[ModelBuilder] methodMissing View 11 parent: app
+[ModelBuilder] Method View 11 1 [View]
+[ModelBuilder] parent: app1  child: View
+[ModelBuilder] handleParameters(): args = [[id:v2, title:Second], app$_run_closure2_closure4@2d17d41d]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=v2 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=v2 : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=title value=Second : java.lang.String
+[ModelBuilder] propertyMissing(): l1
+[ModelBuilder] methodMissing Label 12 parent: View
+[ModelBuilder] Method Label 12 1.0 [View, Label]
+[ModelBuilder] parent: v2  child: Label
+[ModelBuilder] handleParameters(): args = [[id:l1, text:Something]]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=l1 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=l1 : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=text value=Something : java.lang.String
+[DependencyAnalyzer] postProcess() visit widget v1
+[DependencyAnalyzer] postProcess() visit widget b1
+[DependencyAnalyzer] postProcess() visit widget v2
+[DependencyAnalyzer] postProcess() visit widget l1
+[AppBuilder] Application:
+id=app1  [String]
+#type=app  [String]
+mainView=v1
+name=NavView  [String]
+navigationBar=true  [Boolean]
+children: size=2
+=== child[0] ===
+ class=View
+ id=v1  [String]
+ #type=View  [String]
+ title=First  [String]
+ #line=6  [Integer]
+ #info=
+  name=View  [String]
+ parent=app1
+ #pos=0  [String]
+ children: size=1
+ === child[0.0] ===
+  class=Widget
+  id=b1  [String]
+  #type=Button  [String]
+  text=Push  [String]
+  #line=7  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: v2
+  next=v2  [String]
+  parent=v1
+  #pos=0.0  [String]
+=== child[1] ===
+ class=View
+ id=v2  [String]
+ #type=View  [String]
+ title=Second  [String]
+ #line=11  [Integer]
+ #info=
+  name=View  [String]
+ parent=app1
+ #pos=1  [String]
+ children: size=1
+ === child[1.0] ===
+  class=Widget
+  id=l1  [String]
+  #type=Label  [String]
+  text=Something  [String]
+  #line=12  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v2
+  #pos=1.0  [String]
+[AppChecker] verbose=false
+[AppBuilder] After canonicalization():
+id=app1  [String]
+#type=app  [String]
+mainView=top
+name=NavView  [String]
+children=
+ [0]=top
+navigationBar=true  [Boolean]
+children: size=1
+=== child[0] ===
+ class=View
+ id=top  [String]
+ #type=NavigationView  [String]
+ children: size=2
+ === child[0.0] ===
+  class=View
+  id=v1  [String]
+  #type=View  [String]
+  title=First  [String]
+  #line=6  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=0  [String]
+  children: size=1
+  === child[0.0.0] ===
+   class=Widget
+   id=b1  [String]
+   #type=Button  [String]
+   text=Push  [String]
+   #line=7  [Integer]
+   #info=
+    name=Button  [String]
+    expressions=
+     next=
+      VariableExpression: v2
+   next=v2  [String]
+   parent=v1
+   #pos=0.0  [String]
+ === child[0.1] ===
+  class=View
+  id=v2  [String]
+  #type=View  [String]
+  title=Second  [String]
+  #line=11  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=1  [String]
+  children: size=1
+  === child[0.1.0] ===
+   class=Widget
+   id=l1  [String]
+   #type=Label  [String]
+   text=Something  [String]
+   #line=12  [Integer]
+   #info=
+    name=Label  [String]
+   parent=v2
+   #pos=1.0  [String]
+[ModelBuilder] verbose=true
+[ModelBuilder] verbose=true
+[ModelBuilder] verbose=true
+[AppTransformer] transformView top
+[AppTransformer] transformView v1
+[AppTransformer] transformWidget Button b1
+[AppTransformer] transformView v2
+[AppTransformer] transformWidget Label l1
+[AppBuilder] After common transformation:
+id=app1  [String]
+#type=app  [String]
+mainView=top
+name=NavView  [String]
+children=
+ [0]=top
+navigationBar=true  [Boolean]
+children: size=1
+=== child[0] ===
+ class=View
+ id=top  [String]
+ #type=NavigationView  [String]
+ supportedOrientations=
+  [0]=InterfaceOrientations.Portrait
+  [1]=InterfaceOrientations.LandscapeLeft
+  [2]=InterfaceOrientations.LandscapeRight
+ root=true  [Boolean]
+ supportedOrientationsMethod=false
+ children: size=2
+ === child[0.0] ===
+  class=View
+  id=v1  [String]
+  #type=View  [String]
+  title=First  [String]
+  #line=6  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=0  [String]
+  children: size=1
+  === child[0.0.0] ===
+   class=Widget
+   id=b1  [String]
+   #type=Button  [String]
+   text=Push  [String]
+   #line=7  [Integer]
+   #info=
+    name=Button  [String]
+    expressions=
+     next=
+      VariableExpression: v2
+   next=v2  [String]
+   parent=v1
+   #pos=0.0  [String]
+ === child[0.1] ===
+  class=View
+  id=v2  [String]
+  #type=View  [String]
+  title=Second  [String]
+  #line=11  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=1  [String]
+  children: size=1
+  === child[0.1.0] ===
+   class=Widget
+   id=l1  [String]
+   #type=Label  [String]
+   text=Something  [String]
+   #line=12  [Integer]
+   #info=
+    name=Label  [String]
+   parent=v2
+   #pos=1.0  [String]
+[AppTransformer] transformView top
+[AppTransformer] transformView v1
+[AppTransformer] transformWidget Button b1
+[AppTransformer] transformView v2
+[AppTransformer] transformWidget Label l1
+[AppBuilder] After design transformation:
+id=app1  [String]
+#type=app  [String]
+mainView=top
+name=NavView  [String]
+children=
+ [0]=top
+navigationBar=true  [Boolean]
+children: size=1
+=== child[0] ===
+ class=View
+ id=top  [String]
+ #type=NavigationView  [String]
+ supportedOrientations=
+  [0]=InterfaceOrientations.Portrait
+  [1]=InterfaceOrientations.LandscapeLeft
+  [2]=InterfaceOrientations.LandscapeRight
+ root=true  [Boolean]
+ supportedOrientationsMethod=false
+ children: size=2
+ === child[0.0] ===
+  class=View
+  id=v1  [String]
+  #type=View  [String]
+  title=First  [String]
+  #line=6  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=0  [String]
+  children: size=1
+  === child[0.0.0] ===
+   class=Widget
+   id=b1  [String]
+   #type=Button  [String]
+   text=Push  [String]
+   #line=7  [Integer]
+   #info=
+    name=Button  [String]
+    expressions=
+     next=
+      VariableExpression: v2
+   next=v2  [String]
+   parent=v1
+   #pos=0.0  [String]
+ === child[0.1] ===
+  class=View
+  id=v2  [String]
+  #type=View  [String]
+  title=Second  [String]
+  #line=11  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=1  [String]
+  children: size=1
+  === child[0.1.0] ===
+   class=Widget
+   id=l1  [String]
+   #type=Label  [String]
+   text=Something  [String]
+   #line=12  [Integer]
+   #info=
+    name=Label  [String]
+   parent=v2
+   #pos=1.0  [String]
+[ModuleProcessor] classes: [View]
+[ObjectiveCModuleProcessor] Process module: null generateCode: false
+[ClassProcessor] init()
+[ClassProcessor] Process class: View  package: null
+[MethodHelper] VariableScope of push
+[MethodHelper] referencedClassVariables
+[MethodHelper] referencedLocalVariables
+[MethodHelper] ==========================
+[ClassProcessor] hasMain: false
+[ClassProcessor] useTypeSet: [void, java.lang.Object, boolean]
+[ClassProcessor] hasTypeSet: []
+[ClassProcessor] useStaticTypeSet: []
+[ClassProcessor] hasStaticTypeSet: []
+[IOSAppGenerator] Generating iOS App ...
+[IOSAppGenerator] Generating iOS App: process view hieraychy
+[ViewHierarchyProcessor] setup() top
+[ViewProcessor] initViewInfo() typeInfo: null
+[IOSAPIResolver] initialize
+[AndroidAPIResolver] initialize
+[iOS.DefaultViewProcessor] processRootView()
+[ViewHierarchyProcessor] WidgetTable top: [top]
+[ViewHierarchyProcessor] setup() top: process widget v1 View
+[ViewHierarchyProcessor] setup() v1
+[ViewProcessor] initViewInfo() typeInfo: null
+[ViewHierarchyProcessor] WidgetTable v1: [v1, b1]
+[ViewHierarchyProcessor] setup() top: process widget v2 View
+[ViewHierarchyProcessor] setup() v2
+[ViewProcessor] initViewInfo() typeInfo: null
+[ViewHierarchyProcessor] WidgetTable v2: [v2, l1]
+[ViewHierarchyProcessor] process() top
+[ViewHierarchyProcessor] process() top: process widget v1 View
+[ViewHierarchyProcessor] process() v1
+[ViewHierarchyProcessor] process() v1: vp.process() v1 View
+[ViewProcessor] process() V1
+[Layout] view id=v1 type=View
+[Layout] layout(): id=v1 cur=(10,10) remaining=(300,460)
+[Layout] v1 child b1 isUI=true cur=(10,10) remaining=(300,460) size=(0,0)
+[Layout] determineWidgetFrame(): widget=[Button, b1] cur=(10,10) max=(300,460)
+[Layout] widget Button b1 layout: [10, 10, 60, 37, false, false]
+[DefaultViewProcessor] needKeyboardScrolling: false
+[WidgetProcessor] process b1
+[IOSAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[ViewProcessor] process attribute builder Button
+[IOSAPIResolver]  findPropertyDef() UIButton builder
+[IOSAPIResolver] add delegate attribute titleAdjustsFontSizeToFitWidth in UIButton
+[IOSAPIResolver] add delegate attribute titleAdjustsLetterSpacingToFitWidth in UIButton
+[IOSAPIResolver] add delegate attribute titleAttributedText in UIButton
+[IOSAPIResolver] add delegate attribute titleBaselineAdjustment in UIButton
+[IOSAPIResolver] add delegate attribute titleEnabled in UIButton
+[IOSAPIResolver] add delegate attribute titleFont in UIButton
+[IOSAPIResolver] add delegate attribute titleHighlighted in UIButton
+[IOSAPIResolver] add delegate attribute titleHighlightedTextColor in UIButton
+[IOSAPIResolver] add delegate attribute titleLineBreakMode in UIButton
+[IOSAPIResolver] add delegate attribute titleMinimumScaleFactor in UIButton
+[IOSAPIResolver] add delegate attribute titleNumberOfLines in UIButton
+[IOSAPIResolver] add delegate attribute titlePreferredMaxLayoutWidth in UIButton
+[IOSAPIResolver] add delegate attribute titleShadowColor in UIButton
+[IOSAPIResolver] add delegate attribute titleShadowOffset in UIButton
+[IOSAPIResolver] add delegate attribute titleText in UIButton
+[IOSAPIResolver] add delegate attribute titleTextAlignment in UIButton
+[IOSAPIResolver] add delegate attribute titleTextColor in UIButton
+[IOSAPIResolver] add delegate attribute titleUserInteractionEnabled in UIButton
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UILabel builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[CodeGenerator] generateSetNativeAttributeCode() attrValue=xj.mobile.builder.ModelBuilder@4db3925 attrValue.class=class xj.mobile.builder.ModelBuilder
+[ViewHierarchyProcessor] process() top: process widget v2 View
+[ViewHierarchyProcessor] process() v2
+[ViewHierarchyProcessor] process() v2: vp.process() v2 View
+[ViewProcessor] process() V2
+[Layout] view id=v2 type=View
+[Layout] layout(): id=v2 cur=(10,10) remaining=(300,460)
+[Layout] v2 child l1 isUI=true cur=(10,10) remaining=(300,460) size=(0,0)
+[Layout] determineWidgetFrame(): widget=[Label, l1] cur=(10,10) max=(300,460)
+[Layout] widget Label l1 layout: [10, 10, 108, 21, false, false]
+[DefaultViewProcessor] needKeyboardScrolling: false
+[WidgetProcessor] process l1
+[IOSAttributeHandler] getAttributeValue backgroundColor: null  type = Color
+[IOSAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[ViewProcessor] process attribute builder Label
+[IOSAPIResolver]  findPropertyDef() UILabel builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[IOSAPIResolver]  findPropertyDef() UIAppearance builder
+[IOSAPIResolver]  findPropertyDef() UIAppearanceContainer builder
+[CodeGenerator] generateSetNativeAttributeCode() attrValue=xj.mobile.builder.ModelBuilder@4db3925 attrValue.class=class xj.mobile.builder.ModelBuilder
+[ViewHierarchyProcessor] process() top: vp.process() top NavigationView
+[DefaultViewProcessor] needKeyboardScrolling: false
+[IOSAppTemplate] Generating iOS App: process app delegate
+     [echo] Create iOS App Project
+     [echo] appname: NavView
+     [echo] appid: NavView
+     [echo] author: App Team
+     [echo] org: App Inc
+     [copy] Copying 5 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04
+     [copy] Copying 5 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04
+     [echo] Project Done
+
+     [echo] Create AppDelegate
+     [copy] Copying 2 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04
+     [echo] AppDelegate Done
+
+[IOSAppTemplate] Generating iOS App: generate view controllers
+     [echo] Create ViewController
+     [copy] Copying 2 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04/NavView
+     [echo] ViewController Done
+
+     [echo] Create ViewController
+     [copy] Copying 2 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04/NavView
+     [echo] ViewController Done
+
+     [echo] Create ViewController
+     [copy] Copying 2 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.iOS/app04/NavView
+     [echo] ViewController Done
+
+
+[IOSAppGenerator] iOS App compleed.
+[AppBuilder] End App Builder
+===== End iOS =====
+===== Start Android =====
+[AppBuilder] Start App Builder
+[AppBuilder] classes: [:]
+[ModelBuilder] handleParameters(): args = [[name:NavView, navigationBar:true]]  [java.util.ArrayList]
+[ModelBuilder] handleParameter(): Parameter: key=name value=NavView : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=navigationBar value=true : java.lang.Boolean
+[ModelBuilder] propertyMissing(): v1
+[ModelBuilder] methodMissing View 6 parent: app
+[ModelBuilder] Method View 6 0 [View]
+[ModelBuilder] parent: app2  child: View
+[ModelBuilder] handleParameters(): args = [[id:v1, title:First], app$_run_closure2_closure3@77b6981b]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=v1 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=v1 : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=title value=First : java.lang.String
+[ModelBuilder] propertyMissing(): b1
+[ModelBuilder] propertyMissing(): v2
+[ModelBuilder] methodMissing Button 7 parent: View
+[ModelBuilder] Method Button 7 0.0 [View, Button]
+[ModelBuilder] parent: v1  child: Button
+[ModelBuilder] handleParameters(): args = [[id:b1, text:Push, next:v2]]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=b1 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=b1 : java.lang.String
+[ModelBuilder] retrieve exp source for text: null
+[ModelBuilder] handleParameter(): Parameter: key=text value=Push : java.lang.String
+[PropertyModel] eval: context=null owner=null plural=false name=v2 value=null
+[ModelBuilder] handleParameter(): Parameter: key=next value=v2 : java.lang.String
+[ModelBuilder] propertyMissing(): v2
+[ModelBuilder] methodMissing View 11 parent: app
+[ModelBuilder] Method View 11 1 [View]
+[ModelBuilder] parent: app2  child: View
+[ModelBuilder] handleParameters(): args = [[id:v2, title:Second], app$_run_closure2_closure4@c5a7e3e]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=v2 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=v2 : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=title value=Second : java.lang.String
+[ModelBuilder] propertyMissing(): l1
+[ModelBuilder] methodMissing Label 12 parent: View
+[ModelBuilder] Method Label 12 1.0 [View, Label]
+[ModelBuilder] parent: v2  child: Label
+[ModelBuilder] handleParameters(): args = [[id:l1, text:Something]]  [[Ljava.lang.Object;]
+[PropertyModel] eval: context=null owner=null plural=false name=l1 value=null
+[ModelBuilder] handleParameter(): Parameter: key=id value=l1 : java.lang.String
+[ModelBuilder] handleParameter(): Parameter: key=text value=Something : java.lang.String
+[DependencyAnalyzer] postProcess() visit widget v1
+[DependencyAnalyzer] postProcess() visit widget b1
+[DependencyAnalyzer] postProcess() visit widget v2
+[DependencyAnalyzer] postProcess() visit widget l1
+[AppBuilder] Application:
+id=app2  [String]
+#type=app  [String]
+mainView=v1
+name=NavView  [String]
+navigationBar=true  [Boolean]
+children: size=2
+=== child[0] ===
+ class=View
+ id=v1  [String]
+ #type=View  [String]
+ title=First  [String]
+ #line=6  [Integer]
+ #info=
+  name=View  [String]
+ parent=app2
+ #pos=0  [String]
+ children: size=1
+ === child[0.0] ===
+  class=Widget
+  id=b1  [String]
+  #type=Button  [String]
+  text=Push  [String]
+  #line=7  [Integer]
+  #info=
+   name=Button  [String]
+   expressions=
+    next=
+     VariableExpression: v2
+  next=v2  [String]
+  parent=v1
+  #pos=0.0  [String]
+=== child[1] ===
+ class=View
+ id=v2  [String]
+ #type=View  [String]
+ title=Second  [String]
+ #line=11  [Integer]
+ #info=
+  name=View  [String]
+ parent=app2
+ #pos=1  [String]
+ children: size=1
+ === child[1.0] ===
+  class=Widget
+  id=l1  [String]
+  #type=Label  [String]
+  text=Something  [String]
+  #line=12  [Integer]
+  #info=
+   name=Label  [String]
+  parent=v2
+  #pos=1.0  [String]
+[AppChecker] verbose=false
+[AppBuilder] After canonicalization():
+id=app2  [String]
+#type=app  [String]
+mainView=top
+name=NavView  [String]
+children=
+ [0]=top
+navigationBar=true  [Boolean]
+children: size=1
+=== child[0] ===
+ class=View
+ id=top  [String]
+ #type=NavigationView  [String]
+ children: size=2
+ === child[0.0] ===
+  class=View
+  id=v1  [String]
+  #type=View  [String]
+  title=First  [String]
+  #line=6  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=0  [String]
+  children: size=1
+  === child[0.0.0] ===
+   class=Widget
+   id=b1  [String]
+   #type=Button  [String]
+   text=Push  [String]
+   #line=7  [Integer]
+   #info=
+    name=Button  [String]
+    expressions=
+     next=
+      VariableExpression: v2
+   next=v2  [String]
+   parent=v1
+   #pos=0.0  [String]
+ === child[0.1] ===
+  class=View
+  id=v2  [String]
+  #type=View  [String]
+  title=Second  [String]
+  #line=11  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=1  [String]
+  children: size=1
+  === child[0.1.0] ===
+   class=Widget
+   id=l1  [String]
+   #type=Label  [String]
+   text=Something  [String]
+   #line=12  [Integer]
+   #info=
+    name=Label  [String]
+   parent=v2
+   #pos=1.0  [String]
+[AppTransformer] transformView top
+[AppTransformer] transformView v1
+[AppTransformer] transformWidget Button b1
+[AppTransformer] transformView v2
+[AppTransformer] transformWidget Label l1
+[AppBuilder] After common transformation:
+id=app2  [String]
+#type=app  [String]
+mainView=top
+name=NavView  [String]
+children=
+ [0]=top
+navigationBar=true  [Boolean]
+children: size=1
+=== child[0] ===
+ class=View
+ id=top  [String]
+ #type=NavigationView  [String]
+ supportedOrientations=
+  [0]=InterfaceOrientations.Portrait
+  [1]=InterfaceOrientations.LandscapeLeft
+  [2]=InterfaceOrientations.LandscapeRight
+ root=true  [Boolean]
+ supportedOrientationsMethod=false
+ children: size=2
+ === child[0.0] ===
+  class=View
+  id=v1  [String]
+  #type=View  [String]
+  title=First  [String]
+  #line=6  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=0  [String]
+  children: size=1
+  === child[0.0.0] ===
+   class=Widget
+   id=b1  [String]
+   #type=Button  [String]
+   text=Push  [String]
+   #line=7  [Integer]
+   #info=
+    name=Button  [String]
+    expressions=
+     next=
+      VariableExpression: v2
+   next=v2  [String]
+   parent=v1
+   #pos=0.0  [String]
+ === child[0.1] ===
+  class=View
+  id=v2  [String]
+  #type=View  [String]
+  title=Second  [String]
+  #line=11  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=1  [String]
+  children: size=1
+  === child[0.1.0] ===
+   class=Widget
+   id=l1  [String]
+   #type=Label  [String]
+   text=Something  [String]
+   #line=12  [Integer]
+   #info=
+    name=Label  [String]
+   parent=v2
+   #pos=1.0  [String]
+[AppTransformer] transformView top
+[AppTransformer] transformView v1
+[AppTransformer] transformWidget Button b1
+[AppTransformer] transformView v2
+[AppTransformer] transformWidget Label l1
+[AppBuilder] After design transformation:
+id=app2  [String]
+#type=app  [String]
+mainView=top
+name=NavView  [String]
+children=
+ [0]=top
+navigationBar=true  [Boolean]
+children: size=1
+=== child[0] ===
+ class=View
+ id=top  [String]
+ #type=NavigationView  [String]
+ supportedOrientations=
+  [0]=InterfaceOrientations.Portrait
+  [1]=InterfaceOrientations.LandscapeLeft
+  [2]=InterfaceOrientations.LandscapeRight
+ root=true  [Boolean]
+ supportedOrientationsMethod=false
+ children: size=2
+ === child[0.0] ===
+  class=View
+  id=v1  [String]
+  #type=View  [String]
+  title=First  [String]
+  #line=6  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=0  [String]
+  children: size=1
+  === child[0.0.0] ===
+   class=Widget
+   id=b1  [String]
+   #type=Button  [String]
+   text=Push  [String]
+   #line=7  [Integer]
+   #info=
+    name=Button  [String]
+    expressions=
+     next=
+      VariableExpression: v2
+   next=v2  [String]
+   parent=v1
+   #pos=0.0  [String]
+ === child[0.1] ===
+  class=View
+  id=v2  [String]
+  #type=View  [String]
+  title=Second  [String]
+  #line=11  [Integer]
+  #info=
+   name=View  [String]
+  parent=top
+  #pos=1  [String]
+  children: size=1
+  === child[0.1.0] ===
+   class=Widget
+   id=l1  [String]
+   #type=Label  [String]
+   text=Something  [String]
+   #line=12  [Integer]
+   #info=
+    name=Label  [String]
+   parent=v2
+   #pos=1.0  [String]
+[ModuleProcessor] classes: [View]
+Process module: null generateCode: false
+[ClassProcessor] init()
+[ClassProcessor] Process class: View  package: null
+[MethodHelper] VariableScope of push
+[MethodHelper] referencedClassVariables
+[MethodHelper] referencedLocalVariables
+[MethodHelper] ==========================
+[ClassProcessor] hasMain: false
+[ClassProcessor] useTypeSet: [void, java.lang.Object, boolean]
+[ClassProcessor] hasTypeSet: []
+[ClassProcessor] useStaticTypeSet: []
+[ClassProcessor] hasStaticTypeSet: []
+[AndroidAppGenerator] Generating Android App ...
+[AndroidAppGenerator] Generating Android App: process view hieraychy
+[ViewHierarchyProcessor] setup() top
+[ViewProcessor] initViewInfo() typeInfo: null
+[Android.DefaultViewProcessor] processRootView()
+[ViewHierarchyProcessor] WidgetTable top: [top]
+[ViewHierarchyProcessor] setup() top: process widget v1 View
+[ViewHierarchyProcessor] setup() v1
+[ViewProcessor] initViewInfo() typeInfo: null
+[ViewHierarchyProcessor] WidgetTable v1: [v1, b1]
+[ViewHierarchyProcessor] setup() top: process widget v2 View
+[ViewHierarchyProcessor] setup() v2
+[ViewProcessor] initViewInfo() typeInfo: null
+[ViewHierarchyProcessor] WidgetTable v2: [v2, l1]
+[ViewHierarchyProcessor] process() top
+[ViewHierarchyProcessor] process() top: process widget v1 View
+[ViewHierarchyProcessor] process() v1
+[ViewHierarchyProcessor] process() v1: vp.process() v1 View
+[ViewProcessor] process() NavView
+[Layout] view id=v1 type=View
+[Layout] layout(): id=v1 cur=(10,10) remaining=(300,460)
+[Layout] v1 child b1 isUI=true cur=(10,10) remaining=(300,460) size=(0,0)
+[Layout] determineWidgetFrame(): widget=[Button, b1] cur=(10,10) max=(300,460)
+[Layout] widget Button b1 layout: [10, 10, 60, 37, false, false]
+[WidgetProcessor] process b1
+[WidgetProcessor] wtemp.uiclass Button
+[WidgetProcessor] process attribute text Button
+[AndroidAPIResolver]  findPropertyDef() Button text
+[AndroidAPIResolver]  findPropertyDef() Button text (text) ==> Button text CharSequence,TextView.BufferType
+[AndroidAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[WidgetProcessor] process attribute builder Button
+[AndroidAPIResolver]  findPropertyDef() Button builder
+[Android.DefaultViewProcessor] layout:
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="10dp"
+              android:orientation="vertical">
+  <Button android:id="@+id/b1"
+          android:text="Push"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:onClick="buttonAction_b1" />
+</LinearLayout>
+[ViewHierarchyProcessor] process() top: process widget v2 View
+[ViewHierarchyProcessor] process() v2
+[ViewHierarchyProcessor] process() v2: vp.process() v2 View
+[ViewProcessor] process() V2
+[Layout] view id=v2 type=View
+[Layout] layout(): id=v2 cur=(10,10) remaining=(300,460)
+[Layout] v2 child l1 isUI=true cur=(10,10) remaining=(300,460) size=(0,0)
+[Layout] determineWidgetFrame(): widget=[Label, l1] cur=(10,10) max=(300,460)
+[Layout] widget Label l1 layout: [10, 10, 108, 21, false, false]
+[WidgetProcessor] process l1
+[WidgetProcessor] wtemp.uiclass TextView
+[WidgetProcessor] process attribute text TextView
+[AndroidAPIResolver]  findPropertyDef() TextView text
+[AndroidAPIResolver]  findPropertyDef() TextView text (text) ==> TextView text CharSequence,TextView.BufferType
+[AndroidAttributeHandler] getAttributeValue text: java.lang.String  type = String
+[WidgetProcessor] process attribute builder TextView
+[AndroidAPIResolver]  findPropertyDef() TextView builder
+[Android.DefaultViewProcessor] layout:
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="10dp"
+              android:orientation="vertical">
+  <TextView android:id="@+id/l1"
+            android:text="Something"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+</LinearLayout>
+[ViewHierarchyProcessor] process() top: vp.process() top NavigationView
+[Android.DefaultViewProcessor] layout:
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="10dp"
+              android:orientation="vertical" />
+Android targe: 2   theme: Theme.Holo.Light
+Execute command: /Users/WeiLoveLisha/Downloads/adt-bundle-mac-x86_64-20130917/sdk/tools/android create project --target 2 --name NavView --path gen/Platform.Android/app04 --activity NavView --package com.madl.app04
+Return code: 0
+Std err:
+
+Std out:
+Created project directory: gen/Platform.Android/app04
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/src/com/madl/app04
+Added file gen/Platform.Android/app04/src/com/madl/app04/NavView.java
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/res
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/bin
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/libs
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/res/values
+Added file gen/Platform.Android/app04/res/values/strings.xml
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/res/layout
+Added file gen/Platform.Android/app04/res/layout/main.xml
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/res/drawable-hdpi
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/res/drawable-mdpi
+Created directory /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/res/drawable-ldpi
+Added file gen/Platform.Android/app04/AndroidManifest.xml
+Added file gen/Platform.Android/app04/build.xml
+Added file gen/Platform.Android/app04/proguard-project.txt
+
+     [echo] Create Android App Project
+     [echo] appname: NavView
+     [echo] appid: NavView
+     [echo] author: App Team
+     [echo] org: App Inc
+     [echo] Copy res/drawable
+     [copy] Copying 3 files to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04
+
+[AndroidAppTemplate] generateViewClass NavView  outputDir = gen/Platform.Android/app04/src/com/madl/app04
+     [echo] Create View Class
+     [copy] Copying 1 file to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/src/com/madl/app04
+     [echo] View Class Done
+
+[AndroidAppTemplate] generateViewClass V2  outputDir = gen/Platform.Android/app04/src/com/madl/app04
+     [echo] Create View Class
+     [copy] Copying 1 file to /Users/WeiLoveLisha/Documents/runtime-EclipseApplication/TestBuilder/gen/Platform.Android/app04/src/com/madl/app04
+     [echo] View Class Done
+
+[AbdroidAppTemplate] Android Manifest:
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.madl.app04"
+          android:versionCode="1"
+          android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="14"
+            android:targetSdkVersion="17" />
+  <application android:label="@string/app_name"
+               android:theme="@android:style/Theme.Holo.Light"
+               android:icon="@drawable/icon">
+    <activity android:name="NavView"
+              android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name=".V2"
+              android:label="@string/V2_title" />
+  </application>
+</manifest>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">NavView</string>
+  <string name="NavView_title">First</string>
+  <string name="V2_title">Second</string>
+</resources>
+[AndroidAppGenerator] Android App compleed.
+[AppBuilder] End App Builder
+===== End Android =====

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="com.example.e4.rcp.wizard"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/com.example.e4.rcp.wizard/css/default.css">
+         </property>
+         <property
+               name="appName"
+               value="com.example.e4.rcp.wizard">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.example.e4.rcp.wizard.editors.MultiPageEditor"
+            contributorClass="com.example.e4.rcp.wizard.editors.MultiPageEditorContributor"
+            default="true"
+            extensions="mpe"
+            icon="icons/sample.gif"
+            id="com.example.e4.rcp.wizard.editors.MultiPageEditor"
+            name="Sample Multi-page Editor">
+      </editor>
+      <editor
+            class="com.example.e4.rcp.wizard.editors.MultiPageEditor"
+            contributorClass="com.example.e4.rcp.wizard.editors.MultiPageEditorContributor"
+            extensions="mpe"
+            icon="icons/sample.gif"
+            id="com.example.e4.rcp.wizard.editors.MultiPageEditor"
+            name="Sample Multi-page Editor">
+      </editor>
+   </extension>
+
+</plugin>

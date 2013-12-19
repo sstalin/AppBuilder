@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CrossPlatformEditor101
+Bundle-SymbolicName: org.eclipse.se491.madl;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: crossplatformeditor101.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text;bundle-version="3.8.101",
+ org.eclipse.ui.editors;bundle-version="3.8.100"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

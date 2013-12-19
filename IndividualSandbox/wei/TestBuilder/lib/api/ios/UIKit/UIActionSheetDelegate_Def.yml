@@ -1,0 +1,81 @@
+--- 
+conform: 
+    - NSObject
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    actionSheet: !java.util.LinkedHashMap
+        isInstance: &5 true
+        name: actionSheet
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: &7 false
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: actionSheet
+                type: !java.util.LinkedHashMap
+                    name: UIActionSheet
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+            - !java.util.LinkedHashMap
+                name: willDismissWithButtonIndex
+                param: buttonIndex
+                type: !java.util.LinkedHashMap
+                    name: NSInteger
+                    delegate: ~
+                    isConst: *7
+                    isRef: *7
+    actionSheetCancel: !java.util.LinkedHashMap
+        isInstance: *5
+        name: actionSheetCancel
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: actionSheet
+                type: !java.util.LinkedHashMap
+                    name: UIActionSheet
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+    didPresentActionSheet: !java.util.LinkedHashMap
+        isInstance: *5
+        name: didPresentActionSheet
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: actionSheet
+                type: !java.util.LinkedHashMap
+                    name: UIActionSheet
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+    willPresentActionSheet: !java.util.LinkedHashMap
+        isInstance: *5
+        name: willPresentActionSheet
+        type: !java.util.LinkedHashMap
+            name: void
+            delegate: ~
+            isConst: *7
+            isRef: *7
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: actionSheet
+                type: !java.util.LinkedHashMap
+                    name: UIActionSheet
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5

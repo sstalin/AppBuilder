@@ -1,0 +1,168 @@
+--- 
+inherit: 
+    - UIDocument
+    - NSObject
+conform: 
+    - NSFilePresenter (UIDocument)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    managedObjectContext: !java.util.LinkedHashMap
+        name: managedObjectContext
+        type: NSManagedObjectContext
+        ref: "*"
+        explanation: The document?s managed object context. (read-only)
+        readonly: true
+    managedObjectModel: !java.util.LinkedHashMap
+        name: managedObjectModel
+        type: NSManagedObjectModel
+        ref: "*"
+        explanation: The document?s managed object model. (read-only)
+        readonly: true
+    modelConfiguration: !java.util.LinkedHashMap
+        name: modelConfiguration
+        type: NSString
+        ref: "*"
+        explanation: A model configuration name to be passed when configuring the persistent store.
+        readonly: false
+    persistentStoreOptions: !java.util.LinkedHashMap
+        name: persistentStoreOptions
+        type: NSDictionary
+        ref: "*"
+        explanation: Options used when creating the document?s persistent store.
+        readonly: false
+methods: !java.util.LinkedHashMap
+    persistentStoreName: !java.util.LinkedHashMap
+        isInstance: &10 false
+        name: persistentStoreName
+        type: !java.util.LinkedHashMap
+            name: NSString
+            delegate: ~
+            isConst: *10
+            isRef: &12 true
+        isVarArgs: *10
+        args: []
+    additionalContentForURL: !java.util.LinkedHashMap
+        isInstance: *12
+        name: additionalContentForURL
+        type: !java.util.LinkedHashMap
+            name: id
+            delegate: ~
+            isConst: *10
+            isRef: *10
+        isVarArgs: *10
+        args: 
+            - !java.util.LinkedHashMap
+                param: absoluteURL
+                type: !java.util.LinkedHashMap
+                    name: NSURL
+                    delegate: ~
+                    isConst: *10
+                    isRef: *12
+    configurePersistentStoreCoordinatorForURL: !java.util.LinkedHashMap
+        isInstance: *12
+        name: configurePersistentStoreCoordinatorForURL
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *10
+            isRef: *10
+        isVarArgs: *10
+        args: 
+            - !java.util.LinkedHashMap
+                param: storeURL
+                type: !java.util.LinkedHashMap
+                    name: NSURL
+                    delegate: ~
+                    isConst: *10
+                    isRef: *12
+            - !java.util.LinkedHashMap
+                name: ofType
+                param: fileType
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *10
+                    isRef: *12
+            - !java.util.LinkedHashMap
+                name: modelConfiguration
+                param: configuration
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *10
+                    isRef: *12
+            - !java.util.LinkedHashMap
+                name: storeOptions
+                param: storeOptions
+                type: !java.util.LinkedHashMap
+                    name: NSDictionary
+                    delegate: ~
+                    isConst: *10
+                    isRef: *12
+    persistentStoreTypeForFileType: !java.util.LinkedHashMap
+        isInstance: *12
+        name: persistentStoreTypeForFileType
+        type: !java.util.LinkedHashMap
+            name: NSString
+            delegate: ~
+            isConst: *10
+            isRef: *12
+        isVarArgs: *10
+        args: 
+            - !java.util.LinkedHashMap
+                param: fileType
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *10
+                    isRef: *12
+    readAdditionalContentFromURL: !java.util.LinkedHashMap
+        isInstance: *12
+        name: readAdditionalContentFromURL
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *10
+            isRef: *10
+        isVarArgs: *10
+        args: 
+            - !java.util.LinkedHashMap
+                param: absoluteURL
+                type: !java.util.LinkedHashMap
+                    name: NSURL
+                    delegate: ~
+                    isConst: *10
+                    isRef: *12
+    writeAdditionalContent: !java.util.LinkedHashMap
+        isInstance: *12
+        name: writeAdditionalContent
+        type: !java.util.LinkedHashMap
+            name: BOOL
+            delegate: ~
+            isConst: *10
+            isRef: *10
+        isVarArgs: *10
+        args: 
+            - !java.util.LinkedHashMap
+                param: content
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: ~
+                    isConst: *10
+                    isRef: *10
+            - !java.util.LinkedHashMap
+                name: toURL
+                param: absoluteURL
+                type: !java.util.LinkedHashMap
+                    name: NSURL
+                    delegate: ~
+                    isConst: *10
+                    isRef: *12
+            - !java.util.LinkedHashMap
+                name: originalContentsURL
+                param: absoluteOriginalContentsURL
+                type: !java.util.LinkedHashMap
+                    name: NSURL
+                    delegate: ~
+                    isConst: *10
+                    isRef: *12

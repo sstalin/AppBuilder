@@ -1,0 +1,47 @@
+--- 
+inherit: 
+    - NSObject
+properties: !java.util.LinkedHashMap {}
+methods: !java.util.LinkedHashMap
+    loadNibNamed: !java.util.LinkedHashMap
+        isInstance: &5 true
+        name: loadNibNamed
+        type: !java.util.LinkedHashMap
+            name: NSArray
+            delegate: ~
+            isConst: &7 false
+            isRef: *5
+        isVarArgs: *7
+        args: 
+            - !java.util.LinkedHashMap
+                param: name
+                type: !java.util.LinkedHashMap
+                    name: NSString
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+            - !java.util.LinkedHashMap
+                name: owner
+                param: owner
+                type: !java.util.LinkedHashMap
+                    name: id
+                    delegate: ~
+                    isConst: *7
+                    isRef: *7
+            - !java.util.LinkedHashMap
+                name: options
+                param: options
+                type: !java.util.LinkedHashMap
+                    name: NSDictionary
+                    delegate: ~
+                    isConst: *7
+                    isRef: *5
+constants: !java.util.LinkedHashMap
+    Nib File Loading Options: !java.util.LinkedHashMap
+        name: ~
+        isEnum: *7
+        isTypedef: *7
+        values: ~
+        defValues: 
+            - UINibProxiedObjectsKey
+            - UINibExternalObjects

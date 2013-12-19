@@ -1,0 +1,29 @@
+--- 
+inherit: 
+    - UIViewController
+    - UIResponder
+    - NSObject
+conform: 
+    - NSCoding (UIViewController)
+    - UIAppearanceContainer (UIViewController)
+    - NSObject (NSObject)
+properties: !java.util.LinkedHashMap
+    delegate: !java.util.LinkedHashMap
+        name: delegate
+        type: id
+        ref: ""
+        explanation: The delegate you want to receive split view controller messages.
+        readonly: false
+    presentsWithGesture: !java.util.LinkedHashMap
+        name: presentsWithGesture
+        type: BOOL
+        ref: ""
+        explanation: Specifies whether the hidden view can be presented and dismissed via a swipe gesture.
+        readonly: false
+    viewControllers: !java.util.LinkedHashMap
+        name: viewControllers
+        type: NSArray
+        ref: "*"
+        explanation: The array of view controllers managed by the receiver.
+        readonly: false
+methods: !java.util.LinkedHashMap {}
