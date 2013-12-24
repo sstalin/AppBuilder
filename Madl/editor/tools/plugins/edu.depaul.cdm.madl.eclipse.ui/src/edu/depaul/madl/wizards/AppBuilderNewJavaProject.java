@@ -152,12 +152,12 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage {
 		
 		try {
 			// Get the inputs from the resources files
-			checkboxOffUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/images/checkbox-off.png");
-			checkboxOnUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/images/checkbox-on.png");
-			iconUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/images/icon.png");
-			icon2xUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/images/icon@2x.png");
-			radioButtonOffUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/images/radiobutton-off.png");
-			radioButtonOnUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/images/radiobutton-on.png");
+			checkboxOffUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/conf/images/checkbox-off.png");
+			checkboxOnUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/conf/images/checkbox-on.png");
+			iconUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/conf/images/icon.png");
+			icon2xUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/conf/images/icon@2x.png");
+			radioButtonOffUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/conf/images/radiobutton-off.png");
+			radioButtonOnUrl = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/resources/conf/images/radiobutton-on.png");
 			
 			InputStream checkboxOffInput = checkboxOffUrl.openConnection().getInputStream();
 			InputStream checkboxOnInput = checkboxOnUrl.openConnection().getInputStream();

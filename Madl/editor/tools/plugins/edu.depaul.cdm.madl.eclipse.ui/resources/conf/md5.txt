@@ -1,0 +1,11 @@
+androiddebugkey, May 25, 2011, PrivateKeyEntry, 
+Certificate fingerprint (MD5): 43:80:F2:F7:4D:26:6A:0D:63:8F:46:6E:CF:5C:85:C4
+
+Android Maps API key: 
+0bNUEgdqxrvUIJmvV1rDFED3f8tudmxmdyRauPA
+
+<com.google.android.maps.MapView
+                 android:layout_width="fill_parent"
+                 android:layout_height="fill_parent"
+                 android:apiKey="0bNUEgdqxrvUIJmvV1rDFED3f8tudmxmdyRauPA"
+                 />
