@@ -10,7 +10,7 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 
-import edu.depaul.cdm.madl.tools.core.Dummy_Parser;
+import edu.depaul.cdm.madl.compiler.Dummy_Parser;
 
 
 

@@ -1,0 +1,8 @@
+# Don't ignore things in pkg folder
+!*
+
+packages
+pubspec.lock
+.project
+.children
+out

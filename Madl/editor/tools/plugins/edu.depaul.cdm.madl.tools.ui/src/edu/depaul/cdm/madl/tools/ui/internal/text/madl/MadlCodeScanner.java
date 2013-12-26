@@ -23,15 +23,8 @@ import static com.google.dart.compiler.parser.Token.LIBRARY;
 import static com.google.dart.compiler.parser.Token.NATIVE;
 import static com.google.dart.compiler.parser.Token.WITH;*/
 
-import edu.depaul.cdm.madl.tools.ui.MadlUiDebug;
-import edu.depaul.cdm.madl.tools.ui.PreferenceConstants;
-import edu.depaul.cdm.madl.tools.ui.internal.text.functions.AbstractMadlScanner;
-import edu.depaul.cdm.madl.tools.ui.internal.text.functions.CombinedWordRule;
-import edu.depaul.cdm.madl.tools.ui.internal.text.functions.ISourceVersionDependent;
-import edu.depaul.cdm.madl.tools.ui.internal.text.functions.MadlWhitespaceDetector;
-import edu.depaul.cdm.madl.tools.ui.internal.text.functions.MadlWordDetector;
-import edu.depaul.cdm.madl.tools.ui.text.IColorManager;
-import edu.depaul.cdm.madl.tools.ui.text.IMadlColorConstants;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.text.rules.ICharacterScanner;
@@ -42,8 +35,14 @@ import org.eclipse.jface.text.rules.Token;
 import org.eclipse.jface.text.rules.WhitespaceRule;
 import org.eclipse.jface.util.PropertyChangeEvent;
 
-import java.util.ArrayList;
-import java.util.List;
+import edu.depaul.cdm.madl.tools.ui.MadlUiDebug;
+import edu.depaul.cdm.madl.tools.ui.internal.text.functions.AbstractMadlScanner;
+import edu.depaul.cdm.madl.tools.ui.internal.text.functions.CombinedWordRule;
+import edu.depaul.cdm.madl.tools.ui.internal.text.functions.ISourceVersionDependent;
+import edu.depaul.cdm.madl.tools.ui.internal.text.functions.MadlWhitespaceDetector;
+import edu.depaul.cdm.madl.tools.ui.internal.text.functions.MadlWordDetector;
+import edu.depaul.cdm.madl.tools.ui.text.IColorManager;
+import edu.depaul.cdm.madl.tools.ui.text.IMadlColorConstants;
 
 /**
  * A Dart code scanner.
@@ -225,7 +224,7 @@ public class MadlCodeScanner extends AbstractMadlScanner {
   }
 
   //public static final String[] DIRECTIVES;
-  public static final String[] KEYWORDS=edu.depaul.cdm.madl.tools.core.Dummy_Parser.getKeyWords();;
+  public static final String[] KEYWORDS=edu.depaul.cdm.madl.compiler.Dummy_Parser.getKeyWords();;
   //public static final String[] PSEUDO_KEYWORDS;
 
   //public static final String[] OPERATORS;
@@ -268,10 +267,10 @@ public class MadlCodeScanner extends AbstractMadlScanner {
   private static String[] fgConstants = {"false", "null", "true"}; //$NON-NLS-3$ //$NON-NLS-2$ //$NON-NLS-1$
   
   //SS commented out
-/*
-  private static final String ANNOTATION_BASE_KEY = PreferenceConstants.EDITOR_SEMANTIC_HIGHLIGHTING_PREFIX
-      + SemanticHighlightings.ANNOTATION;*/
-/*  private static final String ANNOTATION_COLOR_KEY = ANNOTATION_BASE_KEY
+
+/*  private static final String ANNOTATION_BASE_KEY = PreferenceConstants.EDITOR_SEMANTIC_HIGHLIGHTING_PREFIX
+      + SemanticHighlightings.ANNOTATION;
+  private static final String ANNOTATION_COLOR_KEY = ANNOTATION_BASE_KEY
       + PreferenceConstants.EDITOR_SEMANTIC_HIGHLIGHTING_COLOR_SUFFIX;*/
 
   private static String[] fgTokenProperties = {

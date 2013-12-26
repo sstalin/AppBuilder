@@ -1,0 +1,24 @@
+package edu.depaul.cdm.madl.tools.core.analysis.model;
+
+/**
+ * Event sent via {@link ProjectListener} to indicate that a project has been analyzed.
+ * 
+ * @coverage dart.tools.core.model
+ */
+public class ProjectEvent {
+
+  private final Project project;
+
+  public ProjectEvent(Project project) {
+    this.project = project;
+  }
+
+  /**
+   * Answer the project that was updated
+   * 
+   * @return the project (not {@code null})
+   */
+  public Project getProject() {
+    return project;
+  }
+}
