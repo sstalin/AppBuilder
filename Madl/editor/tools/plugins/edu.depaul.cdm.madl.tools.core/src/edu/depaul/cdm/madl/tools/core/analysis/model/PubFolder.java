@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, the Dart project authors.
+ * Copyright (c) 2013, the Madl project authors.
  * 
  * Licensed under the Eclipse Public License v1.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -13,9 +13,9 @@
  */
 package edu.depaul.cdm.madl.tools.core.analysis.model;
 
-import com.google.dart.engine.sdk.DartSdk;
-import com.google.dart.tools.core.internal.analysis.model.InvertedSourceContainer;
-import com.google.dart.tools.core.pub.PubspecModel;
+/*import edu.depaul.cdm.madl.engine.sdk.MadlSdk;
+import edu.depaul.cdm.madl.tools.core.internal.analysis.model.InvertedSourceContainer;
+import edu.depaul.cdm.madl.tools.core.pub.PubspecModel;*/
 
 import org.eclipse.core.runtime.CoreException;
 
@@ -24,7 +24,7 @@ import java.io.IOException;
 /**
  * Represents a project or folder within a project containing a pubspec file.
  * 
- * @coverage dart.tools.core.model
+ * @coverage madl.tools.core.model
  */
 public interface PubFolder extends ResourceMap {
 
@@ -34,21 +34,21 @@ public interface PubFolder extends ResourceMap {
    * has been removed), this "inverted" source container is used to remove sources from the
    * associated context.
    */
-  InvertedSourceContainer getInvertedSourceContainer();
+  //InvertedSourceContainer getInvertedSourceContainer();
 
   /**
    * The pubspec model representing the pubspec.yaml file
    * 
    * @return the pubspec model (not {@code null}
    */
-  PubspecModel getPubspec() throws CoreException, IOException;
+  //PubspecModel getPubspec() throws CoreException, IOException;
 
   /**
-   * Answer the {@link DartSdk} used when constructing the analysis context.
+   * Answer the {@link MadlSdk} used when constructing the analysis context.
    * 
    * @return the sdk (not {@code null})
    */
-  DartSdk getSdk();
+ // MadlSdk getSdk();
 
   /**
    * Updates the pubspec model, called when the pubspec.yaml file is changed

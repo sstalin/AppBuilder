@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012, the Dart project authors.
+ * Copyright (c) 2012, the Madl project authors.
  * 
  * Licensed under the Eclipse Public License v1.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -13,27 +13,27 @@
  */
 package edu.depaul.cdm.madl.tools.ui.text;
 
-//import com.google.dart.tools.ui.DartToolsPlugin;
-//import com.google.dart.tools.ui.DartX;
-//import com.google.dart.tools.ui.actions.DartEditorActionDefinitionIds;
-//import com.google.dart.tools.ui.internal.text.correction.DartCorrectionAssistant;
-//import com.google.dart.tools.ui.internal.text.dart.ContentAssistProcessor;
-//import com.google.dart.tools.ui.internal.text.dart.DartAutoIndentStrategy;
-//import com.google.dart.tools.ui.internal.text.dart.DartCompletionProcessor;
-//import com.google.dart.tools.ui.internal.text.dart.DartDocDoubleClickStrategy;
-//import com.google.dart.tools.ui.internal.text.dart.DartReconcilingEditor;
-//import com.google.dart.tools.ui.internal.text.dart.DartReconcilingStrategy;
-//import com.google.dart.tools.ui.internal.text.dart.DartStringAutoIndentStrategy;
-//import com.google.dart.tools.ui.internal.text.dart.DartStringDoubleClickSelector;
-//import com.google.dart.tools.ui.internal.text.dart.SmartSemicolonAutoEditStrategy;
-//import com.google.dart.tools.ui.internal.text.editor.DartTextHover;
+//import com.google.madl.tools.ui.MadlToolsPlugin;
+//import com.google.madl.tools.ui.MadlX;
+//import com.google.madl.tools.ui.actions.MadlEditorActionDefinitionIds;
+//import com.google.madl.tools.ui.internal.text.correction.MadlCorrectionAssistant;
+//import com.google.madl.tools.ui.internal.text.madl.ContentAssistProcessor;
+//import com.google.madl.tools.ui.internal.text.madl.MadlAutoIndentStrategy;
+//import com.google.madl.tools.ui.internal.text.madl.MadlCompletionProcessor;
+//import com.google.madl.tools.ui.internal.text.madl.MadlDocDoubleClickStrategy;
+//import com.google.madl.tools.ui.internal.text.madl.MadlReconcilingEditor;
+//import com.google.madl.tools.ui.internal.text.madl.MadlReconcilingStrategy;
+//import com.google.madl.tools.ui.internal.text.madl.MadlStringAutoIndentStrategy;
+//import com.google.madl.tools.ui.internal.text.madl.MadlStringDoubleClickSelector;
+//import com.google.madl.tools.ui.internal.text.madl.SmartSemicolonAutoEditStrategy;
+//import com.google.madl.tools.ui.internal.text.editor.MadlTextHover;
 //import edu.depaul.cdm.madl.editor.ui.text.functions.ContentAssistPreference;
-//import edu.depaul.cdm.madl.editor.ui.text.functions.DartElementProvider;
-//import edu.depaul.cdm.madl.editor.ui.text.functions.DartOutlineElementProvider;
-//import edu.depaul.cdm.madl.editor.ui.text.functions.DartOutlineInformationControl;
+//import edu.depaul.cdm.madl.editor.ui.text.functions.MadlElementProvider;
+//import edu.depaul.cdm.madl.editor.ui.text.functions.MadlOutlineElementProvider;
+//import edu.depaul.cdm.madl.editor.ui.text.functions.MadlOutlineInformationControl;
 //import edu.depaul.cdm.madl.editor.ui.text.functions.HTMLAnnotationHover;
-//import com.google.dart.tools.ui.internal.typehierarchy.HierarchyInformationControl;
-//import com.google.dart.tools.ui.text.editor.tmp.JavaScriptCore;
+//import com.google.madl.tools.ui.internal.typehierarchy.HierarchyInformationControl;
+//import com.google.madl.tools.ui.text.editor.tmp.JavaScriptCore;
 
 
 import edu.depaul.cdm.madl.tools.ui.internal.text.functions.AbstractMadlScanner;
@@ -94,7 +94,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 /**
- * Configuration for a source viewer which shows Dart code.
+ * Configuration for a source viewer which shows Madl code.
  * <p>
  * This class may be instantiated; it is not intended to be subclassed.
  * </p>
@@ -112,7 +112,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
    * Creates and returns a preference store which combines the preference stores from the text tools
    * and which is read-only.
    * 
-   * @param javaTextTools the Dart text tools
+   * @param javaTextTools the Madl text tools
    * @return the combined read-only preference store
    */
   @SuppressWarnings("unused")
@@ -149,24 +149,24 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
    */
   private String fDocumentPartitioning;
   /**
-   * The Dart source code scanner.
+   * The Madl source code scanner.
    */
   private AbstractMadlScanner fCodeScanner;
   /**
-   * The Dart multi-line comment scanner.
+   * The Madl multi-line comment scanner.
    */
   private AbstractMadlScanner fMultilineCommentScanner;
 
   /**
-   * The Dart single-line comment scanner.
+   * The Madl single-line comment scanner.
    */
   private AbstractMadlScanner fSinglelineCommentScanner;
   /**
-   * The Dart string scanner.
+   * The Madl string scanner.
    */
   private AbstractMadlScanner fStringScanner;
   /**
-   * The Dart multi-line scanner
+   * The Madl multi-line scanner
    */
   private AbstractMadlScanner fMultilineStringScanner;
   /**
@@ -185,13 +185,13 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
   private MadlDoubleClickSelector fJavaDoubleClickSelector;
 
   /**
-   * Creates a new Dart source viewer configuration for viewers in the given editor using the given
+   * Creates a new Madl source viewer configuration for viewers in the given editor using the given
    * preference store, the color manager and the specified document partitioning.
    * <p>
-   * Creates a Dart source viewer configuration in the new setup without text tools. Clients are
+   * Creates a Madl source viewer configuration in the new setup without text tools. Clients are
    * allowed to call
    * {@link MadlSourceViewerConfiguration#handlePropertyChangeEvent(PropertyChangeEvent)} on the
-   * resulting Dart source viewer configuration.
+   * resulting Madl source viewer configuration.
    * </p>
    * 
    * @param colorManager the color manager
@@ -238,7 +238,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
   // SS commented out
 /*  @Override
   public IAutoEditStrategy[] getAutoEditStrategies(ISourceViewer sourceViewer, String contentType) {
-    DartX.todo("indent");
+    MadlX.todo("indent");
     String partitioning = getConfiguredDocumentPartitioning(sourceViewer);
     if (MadlPartitions.MADL_DOC.equals(contentType)
         || MadlPartitions.MADL_MULTI_LINE_COMMENT.equals(contentType)) {
@@ -248,17 +248,17 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
     } else if (MadlPartitions.MADL_MULTI_LINE_STRING.equals(contentType)) {
       return new IAutoEditStrategy[] {
           new SmartSemicolonAutoEditStrategy(partitioning),
-          new DartStringAutoIndentStrategy(partitioning)};
+          new MadlStringAutoIndentStrategy(partitioning)};
     } else if (MadlPartitions.MADL_STRING.equals(contentType)) {
       return new IAutoEditStrategy[] {
           new SmartSemicolonAutoEditStrategy(partitioning),
-          new DartStringAutoIndentStrategy(partitioning)};
+          new MadlStringAutoIndentStrategy(partitioning)};
     } else if (IDocument.DEFAULT_CONTENT_TYPE.equals(contentType)) {
       return new IAutoEditStrategy[] {
           new SmartSemicolonAutoEditStrategy(partitioning),
-          new DartAutoIndentStrategy(partitioning, sourceViewer)};
+          new MadlAutoIndentStrategy(partitioning, sourceViewer)};
     } else {
-      return new IAutoEditStrategy[] {new DartAutoIndentStrategy(partitioning, sourceViewer)};
+      return new IAutoEditStrategy[] {new MadlAutoIndentStrategy(partitioning, sourceViewer)};
     }
   }*/
 
@@ -283,7 +283,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
   public int[] getConfiguredTextHoverStateMasks(ISourceViewer sourceViewer, String contentType) {
     return super.getConfiguredTextHoverStateMasks(sourceViewer, contentType);
     // JavaEditorTextHoverDescriptor[] hoverDescs =
-    // DartToolsPlugin.getDefault().getJavaEditorTextHoverDescriptors();
+    // MadlToolsPlugin.getDefault().getJavaEditorTextHoverDescriptors();
     // int stateMasks[] = new int[hoverDescs.length];
     // int stateMasksLength = 0;
     // for (int i = 0; i < hoverDescs.length; i++) {
@@ -327,13 +327,13 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
 
       assistant.setRestoreCompletionProposalSize(getSettings("completion_proposal_size")); //$NON-NLS-1$
 
-      IContentAssistProcessor javaProcessor = new DartCompletionProcessor(
+      IContentAssistProcessor javaProcessor = new MadlCompletionProcessor(
           getEditor(),
           assistant,
           IDocument.DEFAULT_CONTENT_TYPE);
       assistant.setContentAssistProcessor(javaProcessor, IDocument.DEFAULT_CONTENT_TYPE);
 
-     ContentAssistProcessor singleLineProcessor = new DartCompletionProcessor(
+     ContentAssistProcessor singleLineProcessor = new MadlCompletionProcessor(
           getEditor(),
           assistant,
           MadlPartitions.MADL_SINGLE_LINE_COMMENT);
@@ -343,14 +343,14 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
       // TODO temporary, see docProcessor below
       assistant.setContentAssistProcessor(singleLineProcessor, MadlPartitions.MADL_SINGLE_LINE_DOC);
 
-      ContentAssistProcessor stringProcessor = new DartCompletionProcessor(
+      ContentAssistProcessor stringProcessor = new MadlCompletionProcessor(
           getEditor(),
           assistant,
           MadlPartitions.MADL_STRING);
       assistant.setContentAssistProcessor(stringProcessor, MadlPartitions.MADL_STRING);
       assistant.setContentAssistProcessor(stringProcessor, MadlPartitions.MADL_MULTI_LINE_STRING);
 
-      ContentAssistProcessor multiLineProcessor = new DartCompletionProcessor(
+      ContentAssistProcessor multiLineProcessor = new MadlCompletionProcessor(
           getEditor(),
           assistant,
           MadlPartitions.MADL_MULTI_LINE_COMMENT);
@@ -361,7 +361,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
       assistant.setContentAssistProcessor(multiLineProcessor, MadlPartitions.MADL_DOC);
 
       // TODO Code completion in doc comments
-//      ContentAssistProcessor docProcessor = new DartDocCompletionProcessor(getEditor(), assistant);
+//      ContentAssistProcessor docProcessor = new MadlDocCompletionProcessor(getEditor(), assistant);
 //      assistant.setContentAssistProcessor(docProcessor, MadlPartitions.MADL_DOC);
 //      assistant.setContentAssistProcessor(docProcessor, MadlPartitions.MADL_SINGLE_LINE_DOC);
 
@@ -382,7 +382,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
 //        getConfiguredDocumentPartitioning(sourceViewer),
 //        IDocument.DEFAULT_CONTENT_TYPE);
 //
-//    formatter.setMasterStrategy(new DartFormattingStrategy());
+//    formatter.setMasterStrategy(new MadlFormattingStrategy());
 //    formatter.setSlaveStrategy(new CommentFormattingStrategy(), MadlPartitions.MADL_DOC);
 //    formatter.setSlaveStrategy(
 //        new CommentFormattingStrategy(),
@@ -418,7 +418,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
       return new DefaultTextDoubleClickStrategy();
     } else if (MadlPartitions.MADL_STRING.equals(contentType)
         || MadlPartitions.MADL_MULTI_LINE_STRING.equals(contentType)) {
-      return new DartStringDoubleClickSelector(getConfiguredDocumentPartitioning(sourceViewer));
+      return new MadlStringDoubleClickSelector(getConfiguredDocumentPartitioning(sourceViewer));
     }*/
     if (fJavaDoubleClickSelector == null) {
       fJavaDoubleClickSelector = new MadlDoubleClickSelector();
@@ -433,17 +433,17 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
    * 
    * @param sourceViewer the source viewer to be configured by this configuration
    * @param doCodeResolve a boolean which specifies whether code resolve should be used to compute
-   *          the Dart element
+   *          the Madl element
    * @return an information presenter
    */
   //SS commented out 
-/*  public IInformationPresenter getHierarchyPresenter(ISourceViewer sourceViewer,
+ public IInformationPresenter getHierarchyPresenter(ISourceViewer sourceViewer,
       boolean doCodeResolve) {
-    IInformationControlCreator hierarchyPresenterControlCreator = getHierarchyPresenterControlCreator(sourceViewer);
+ /*   IInformationControlCreator hierarchyPresenterControlCreator = getHierarchyPresenterControlCreator(sourceViewer);
     InformationPresenter presenter = new InformationPresenter(hierarchyPresenterControlCreator);
     presenter.setDocumentPartitioning(getConfiguredDocumentPartitioning(sourceViewer));
     presenter.setAnchor(AbstractInformationControlManager.ANCHOR_GLOBAL);
-    IInformationProvider provider = new DartElementProvider(getEditor(), doCodeResolve);
+    IInformationProvider provider = new MadlElementProvider(getEditor(), doCodeResolve);
     presenter.setInformationProvider(provider, IDocument.DEFAULT_CONTENT_TYPE);
     presenter.setInformationProvider(provider, MadlPartitions.MADL_DOC);
     presenter.setInformationProvider(provider, MadlPartitions.MADL_MULTI_LINE_COMMENT);
@@ -451,13 +451,15 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
     presenter.setInformationProvider(provider, MadlPartitions.MADL_STRING);
     presenter.setInformationProvider(provider, MadlPartitions.MADL_MULTI_LINE_STRING);
     presenter.setSizeConstraints(50, 20, true, false);
-    return presenter;
-  }*/
+    return presenter;*/
+	 //TODO
+	 return null;
+  }
 
   @Override
   public String[] getIndentPrefixes(ISourceViewer sourceViewer, String contentType) {
     return super.getIndentPrefixes(sourceViewer, contentType);
-    // DartProject project = getProject();
+    // MadlProject project = getProject();
     // final int tabWidth = CodeFormatterUtil.getTabWidth(project);
     // final int indentWidth = CodeFormatterUtil.getIndentWidth(project);
     // boolean allowTabs = tabWidth <= indentWidth;
@@ -518,26 +520,28 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
    * 
    * @param sourceViewer the source viewer to be configured by this configuration
    * @param doCodeResolve a boolean which specifies whether code resolve should be used to compute
-   *          the Dart element
+   *          the Madl element
    * @return an information presenter
    */
   
   //SS commented out
-/*  @SuppressWarnings("deprecation")
+  @SuppressWarnings("deprecation")
   public IInformationPresenter getOutlinePresenter(ISourceViewer sourceViewer, boolean doCodeResolve) {
-    InformationPresenter presenter;
-    if (doCodeResolve) {
+	  //ss
+ /*   InformationPresenter presenter;
+    
+   if (doCodeResolve) {
       presenter = new InformationPresenter(getOutlinePresenterControlCreator(
           sourceViewer,
-          DartEditorActionDefinitionIds.OPEN_STRUCTURE));
+          MadlEditorActionDefinitionIds.OPEN_STRUCTURE));
     } else {
       presenter = new InformationPresenter(getOutlinePresenterControlCreator(
           sourceViewer,
-          DartEditorActionDefinitionIds.SHOW_OUTLINE));
+          MadlEditorActionDefinitionIds.SHOW_OUTLINE));
     }
     presenter.setDocumentPartitioning(getConfiguredDocumentPartitioning(sourceViewer));
     presenter.setAnchor(AbstractInformationControlManager.ANCHOR_GLOBAL);
-    IInformationProvider provider = new DartOutlineElementProvider(getEditor());
+    IInformationProvider provider = new MadlOutlineElementProvider(getEditor());
     presenter.setInformationProvider(provider, IDocument.DEFAULT_CONTENT_TYPE);
     presenter.setInformationProvider(provider, MadlPartitions.MADL_DOC);
     presenter.setInformationProvider(provider, MadlPartitions.MADL_MULTI_LINE_COMMENT);
@@ -547,8 +551,10 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
     presenter.setInformationProvider(provider, MadlPartitions.MADL_MULTI_LINE_STRING);
     presenter.setInformationProvider(provider, MadlPartitions.JAVA_CHARACTER);
     presenter.setSizeConstraints(50, 20, true, false);
-    return presenter;
-  }*/
+    return presenter;*/
+	  //TODO
+	  return null;
+  }
 
   //SS commented out 
 /*  @Override
@@ -601,7 +607,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
   public IQuickAssistAssistant getQuickAssistAssistant(ISourceViewer sourceViewer) {
     ITextEditor editor = getEditor();
     if (editor != null) {
-      DartCorrectionAssistant assistant = new DartCorrectionAssistant(editor);
+      MadlCorrectionAssistant assistant = new MadlCorrectionAssistant(editor);
       assistant.setRestoreCompletionProposalSize(getSettings("quick_assist_proposal_size")); //$NON-NLS-1$
       return assistant;
     }
@@ -612,11 +618,11 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
   @Override
   public IReconciler getReconciler(ISourceViewer sourceViewer) {
 	  
-   // DartX.todo("spelling");
+   // MadlX.todo("spelling");
     final ITextEditor editor = getEditor();
-  /*  if (editor instanceof DartReconcilingEditor) {
-      DartReconcilingEditor dartEditor = (DartReconcilingEditor) editor;
-      IReconcilingStrategy strategy = new DartReconcilingStrategy(dartEditor);
+  /*  if (editor instanceof MadlReconcilingEditor) {
+      MadlReconcilingEditor madlEditor = (MadlReconcilingEditor) editor;
+      IReconcilingStrategy strategy = new MadlReconcilingStrategy(madlEditor);
       MonoReconciler reconciler = new MonoReconciler(strategy, true);
       reconciler.setIsIncrementalReconciler(true);
       reconciler.setIsAllowedToModifyDocument(false);
@@ -642,9 +648,9 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
   //SS commented out
 /*  @Override
   public ITextHover getTextHover(ISourceViewer sourceViewer, String contentType, int stateMask) {
-    return new DartTextHover(fTextEditor, sourceViewer, this);
+    return new MadlTextHover(fTextEditor, sourceViewer, this);
     // JavaEditorTextHoverDescriptor[] hoverDescs =
-    // DartToolsPlugin.getDefault().getJavaEditorTextHoverDescriptors();
+    // MadlToolsPlugin.getDefault().getJavaEditorTextHoverDescriptors();
     // int i = 0;
     // while (i < hoverDescs.length) {
     // if (hoverDescs[i].isEnabled()
@@ -704,9 +710,9 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
   }
 
   /**
-   * Returns the Dart source code scanner for this configuration.
+   * Returns the Madl source code scanner for this configuration.
    * 
-   * @return the Dart source code scanner
+   * @return the Madl source code scanner
    */
   protected RuleBasedScanner getCodeScanner() {
     return fCodeScanner;
@@ -734,7 +740,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
   @Override
   protected Map getHyperlinkDetectorTargets(ISourceViewer sourceViewer) {
     Map targets = super.getHyperlinkDetectorTargets(sourceViewer);
-    targets.put("com.google.dart.tools.ui.dartCode", fTextEditor); //$NON-NLS-1$
+    targets.put("com.google.madl.tools.ui.madlCode", fTextEditor); //$NON-NLS-1$
     return targets;
   }
 
@@ -748,36 +754,36 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
   }
 
   /**
-   * Returns the Dart multi-line comment scanner for this configuration.
+   * Returns the Madl multi-line comment scanner for this configuration.
    * 
-   * @return the Dart multi-line comment scanner
+   * @return the Madl multi-line comment scanner
    */
   protected RuleBasedScanner getMultilineCommentScanner() {
     return fMultilineCommentScanner;
   }
 
   /**
-   * Returns the Dart multi-line string scanner for this configuration.
+   * Returns the Madl multi-line string scanner for this configuration.
    * 
-   * @return the Dart multi-line string scanner
+   * @return the Madl multi-line string scanner
    */
   protected RuleBasedScanner getMultilineStringScanner() {
     return fMultilineStringScanner;
   }
 
   /**
-   * Returns the Dart single-line comment scanner for this configuration.
+   * Returns the Madl single-line comment scanner for this configuration.
    * 
-   * @return the Dart single-line comment scanner
+   * @return the Madl single-line comment scanner
    */
   protected RuleBasedScanner getSinglelineCommentScanner() {
     return fSinglelineCommentScanner;
   }
 
   /**
-   * Returns the Dart string scanner for this configuration.
+   * Returns the Madl string scanner for this configuration.
    * 
-   * @return the Dart string scanner
+   * @return the Madl string scanner
    */
   protected RuleBasedScanner getStringScanner() {
     return fStringScanner;
@@ -839,7 +845,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
   /**
    * Returns the outline presenter control creator. The creator is a factory creating outline
    * presenter controls for the given source viewer. This implementation always returns a creator
-   * for <code>DartOutlineInformationControl</code> instances.
+   * for <code>MadlOutlineInformationControl</code> instances.
    * 
    * @param sourceViewer the source viewer to be configured by this configuration
    * @param commandId the ID of the command that opens this control
@@ -852,7 +858,7 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
       @Override
       public IInformationControl createInformationControl(Shell parent) {
         int shellStyle = SWT.RESIZE;
-        return new DartOutlineInformationControl(parent, shellStyle, fTextEditor);
+        return new MadlOutlineInformationControl(parent, shellStyle, fTextEditor);
       }
     };
   }*/
@@ -865,10 +871,10 @@ public class MadlSourceViewerConfiguration extends TextSourceViewerConfiguration
    */
   //SS commented out 
 /*  private IDialogSettings getSettings(String sectionName) {
-    IDialogSettings settings = DartToolsPlugin.getDefault().getDialogSettings().getSection(
+    IDialogSettings settings = MadlToolsPlugin.getDefault().getDialogSettings().getSection(
         sectionName);
     if (settings == null) {
-      settings = DartToolsPlugin.getDefault().getDialogSettings().addNewSection(sectionName);
+      settings = MadlToolsPlugin.getDefault().getDialogSettings().addNewSection(sectionName);
     }
 
     return settings;

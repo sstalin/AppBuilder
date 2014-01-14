@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, the Dart project authors.
+ * Copyright (c) 2013, the Madl project authors.
  * 
  * Licensed under the Eclipse Public License v1.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -16,13 +16,13 @@ package edu.depaul.cdm.madl.tools.ui.internal.text.madl;
 import edu.depaul.cdm.madl.engine.ast.CompilationUnit;
 import edu.depaul.cdm.madl.engine.context.AnalysisContext;
 import edu.depaul.cdm.madl.engine.source.Source;
-//import edu.depaul.cdm.madl.tools.core.analysis.model.Project;
+import edu.depaul.cdm.madl.tools.core.analysis.model.Project;
 
 import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.FocusListener;
 
 /**
- * Interface used by {@link DartReconcilingStrategy} to interact with the editor.
+ * Interface used by {@link MadlReconcilingStrategy} to interact with the editor.
  */
 public interface MadlReconcilingEditor {
 
@@ -62,7 +62,7 @@ public interface MadlReconcilingEditor {
    * @return the {@link Project} or {@code null} if none
    */
   //SS commented out
- // Project getInputProject();
+  Project getInputProject();
 
   /**
    * Answer the source being displayed in this editor.
@@ -82,8 +82,8 @@ public interface MadlReconcilingEditor {
   /**
    * Set the reconciling strategy associated with this editor
    * 
-   * @param dartReconcilingStrategy the strategy or {@code null} if none
+   * @param madlReconcilingStrategy the strategy or {@code null} if none
    */
   //SS commented out
-  void setDartReconcilingStrategy(MadlReconcilingStrategy dartReconcilingStrategy);
+  void setMadlReconcilingStrategy(MadlReconcilingStrategy madlReconcilingStrategy);
 }

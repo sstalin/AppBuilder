@@ -211,7 +211,7 @@ public interface MadlElement extends IAdaptable {
    * 
    * @return the Madl project that contains this element
    */
- // public MadlProject getMadlProject();
+  public MadlProject getMadlProject();
 
   /**
    * Return the name of this element as it should appear in the user interface. This is a

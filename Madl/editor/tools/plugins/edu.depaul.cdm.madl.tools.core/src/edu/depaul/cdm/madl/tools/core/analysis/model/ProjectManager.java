@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Dart project authors.
+ * Copyright 2013 Madl project authors.
  * 
  * Licensed under the Eclipse Public License v1.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -13,12 +13,12 @@
  */
 package edu.depaul.cdm.madl.tools.core.analysis.model;
 
-import com.google.dart.engine.context.AnalysisContext;
-import com.google.dart.engine.index.Index;
-import com.google.dart.engine.search.SearchEngine;
-import com.google.dart.engine.source.Source;
-import com.google.dart.tools.core.internal.analysis.model.WorkspaceDeltaProcessor;
-import com.google.dart.tools.core.internal.model.DartIgnoreManager;
+import edu.depaul.cdm.madl.engine.context.AnalysisContext;
+import edu.depaul.cdm.madl.engine.index.Index;
+import edu.depaul.cdm.madl.engine.search.SearchEngine;
+import edu.depaul.cdm.madl.engine.source.Source;
+//import edu.depaul.cdm.madl.tools.core.internal.analysis.model.WorkspaceDeltaProcessor;
+//import edu.depaul.cdm.madl.tools.core.internal.model.MadlIgnoreManager;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -26,9 +26,9 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 
 /**
- * Instances of {@code ProjectManager} manage Eclipse projects that have the Dart nature.
+ * Instances of {@code ProjectManager} manage Eclipse projects that have the Madl nature.
  * 
- * @coverage dart.tools.core.model
+ * @coverage madl.tools.core.model
  */
 public interface ProjectManager extends ContextManager {
 
@@ -48,14 +48,14 @@ public interface ProjectManager extends ContextManager {
   IResource getHtmlFileForLibrary(Source source);
 
   /**
-   * Answer the global ignore manager used for all Dart source
+   * Answer the global ignore manager used for all Madl source
    * 
    * @return the ignore manager (not {@code null})
    */
-  DartIgnoreManager getIgnoreManager();
+  //MadlIgnoreManager getIgnoreManager();
 
   /**
-   * Answer the global index used for all Dart source
+   * Answer the global index used for all Madl source
    * 
    * @return the index (not {@code null})
    */

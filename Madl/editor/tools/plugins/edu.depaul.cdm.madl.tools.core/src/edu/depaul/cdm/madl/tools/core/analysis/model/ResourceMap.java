@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, the Dart project authors.
+ * Copyright (c) 2013, the Madl project authors.
  * 
  * Licensed under the Eclipse Public License v1.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -13,8 +13,8 @@
  */
 package edu.depaul.cdm.madl.tools.core.analysis.model;
 
-import com.google.dart.engine.context.AnalysisContext;
-import com.google.dart.engine.source.Source;
+import edu.depaul.cdm.madl.engine.context.AnalysisContext;
+import edu.depaul.cdm.madl.engine.source.Source;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -24,7 +24,7 @@ import org.eclipse.core.resources.IResource;
  * Instances of {@code ResourceMap} provides a bi-directional map between sources in a particular
  * {@link AnalysisContext} and instances of {@link IResource}.
  * 
- * @coverage dart.tools.core.model
+ * @coverage madl.tools.core.model
  */
 public interface ResourceMap {
 

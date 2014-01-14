@@ -32,6 +32,7 @@ import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.texteditor.AbstractDecoratedTextEditor;
 import org.eclipse.ui.ide.IDE;
 
+import edu.depaul.cdm.madl.tools.ui.internal.text.editor.CompilationUnitEditor;
 import edu.depaul.cdm.madl.tools.ui.internal.text.editor.MadlEditor;
 
 /**
@@ -66,7 +67,7 @@ public class MultiPageMadlEditor extends MultiPageEditorPart implements IResourc
 	 */
 	void createPage0() {
 		try {
-			editor = new MadlEditor();
+			editor = new CompilationUnitEditor();
 			int index = addPage(editor, getEditorInput());
 			setPageText(index, editor.getTitle());
 		} catch (PartInitException e) {

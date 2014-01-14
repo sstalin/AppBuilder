@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Dart project authors.
+ * Copyright 2013 Madl project authors.
  * 
  * Licensed under the Eclipse Public License v1.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -13,15 +13,15 @@
  */
 package edu.depaul.cdm.madl.tools.core.analysis.model;
 
-import com.google.dart.engine.ast.CompilationUnit;
-import com.google.dart.engine.source.Source;
+import edu.depaul.cdm.madl.engine.ast.CompilationUnit;
+import edu.depaul.cdm.madl.engine.source.Source;
 
 import org.eclipse.core.resources.IResource;
 
 /**
  * Instances of {@link ResolvedEvent} contain information about the resolved compilation unit.
  * 
- * @coverage dart.tools.core.model
+ * @coverage madl.tools.core.model
  */
 public interface ResolvedEvent extends AnalysisEvent {
 

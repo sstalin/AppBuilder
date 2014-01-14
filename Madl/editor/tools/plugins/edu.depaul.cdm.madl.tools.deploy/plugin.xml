@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="edu.depaul.cdm.madl.tools.deploy.MadlIDEApplication">
+         </run>
+      </application>
+   </extension>
+   
+    <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="%madl.perspective.name"
+            icon="$nl$/icons/full/eview16/dperspective.png"
+            class="edu.depaul.cdm.madl.tools.ui.MadlPerspective"
+            id="edu.depaul.cdm.madl.tools.ui.MadlPerspective">
+         <description>
+            %dart.perspective.description
+         </description>
+      </perspective>    
+   </extension>
+
+</plugin>

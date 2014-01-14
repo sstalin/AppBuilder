@@ -13,18 +13,20 @@
  */
 package edu.depaul.cdm.madl.engine.ast;
 
-import com.google.dart.engine.AnalysisEngine;
-import com.google.dart.engine.element.ClassElement;
-import com.google.dart.engine.element.Element;
-import com.google.dart.engine.element.ExecutableElement;
-import com.google.dart.engine.element.FunctionTypeAliasElement;
-import com.google.dart.engine.element.LocalVariableElement;
-import com.google.dart.engine.element.ParameterElement;
-import com.google.dart.engine.element.TypeParameterElement;
-import com.google.dart.engine.element.VariableElement;
-import com.google.dart.engine.internal.element.AuxiliaryElements;
-import com.google.dart.engine.scanner.Token;
-import com.google.dart.engine.scanner.TokenType;
+import edu.depaul.cdm.madl.engine.AnalysisEngine;
+import edu.depaul.cdm.madl.engine.element.ClassElement;
+import edu.depaul.cdm.madl.engine.element.Element;
+
+//import edu.depaul.cdm.madl.engine.element.ExecutableElement;
+//import edu.depaul.cdm.madl.engine.element.FunctionTypeAliasElement;
+//import edu.depaul.cdm.madl.engine.element.LocalVariableElement;
+//import edu.depaul.cdm.madl.engine.element.ParameterElement;
+//import edu.depaul.cdm.madl.engine.element.TypeParameterElement;
+//import edu.depaul.cdm.madl.engine.element.VariableElement;
+//import edu.depaul.cdm.madl.engine.internal.element.AuxiliaryElements;
+
+import edu.depaul.cdm.madl.engine.scanner.Token;
+import edu.depaul.cdm.madl.engine.scanner.TokenType;
 
 /**
  * Instances of the class {@code SimpleIdentifier} represent a simple identifier.
@@ -64,7 +66,7 @@ public class SimpleIdentifier extends Identifier {
    * be set to hold onto the static and propagated information. The auxiliary element will hold onto
    * the elements from the getter context.
    */
-  private AuxiliaryElements auxiliaryElements = null;
+  //private AuxiliaryElements auxiliaryElements = null;
 
   /**
    * Initialize a newly created identifier.
@@ -77,16 +79,17 @@ public class SimpleIdentifier extends Identifier {
 
   @Override
   public <R> R accept(ASTVisitor<R> visitor) {
-    return visitor.visitSimpleIdentifier(this);
+	  return null;
+    //return visitor.visitSimpleIdentifier(this);
   }
 
   /**
    * Get the auxiliary elements, this will be {@code null} if the node is not in a getter and setter
    * context, or if it is not yet fully resolved.
    */
-  public AuxiliaryElements getAuxiliaryElements() {
+/*  public AuxiliaryElements getAuxiliaryElements() {
     return auxiliaryElements;
-  }
+  }*/
 
   @Override
   public Token getBeginToken() {
@@ -137,7 +140,8 @@ public class SimpleIdentifier extends Identifier {
    */
   public boolean inDeclarationContext() {
     ASTNode parent = getParent();
-    if (parent instanceof CatchClause) {
+    //ss
+    /*if (parent instanceof CatchClause) {
       CatchClause clause = (CatchClause) parent;
       return this == clause.getExceptionParameter() || this == clause.getStackTraceParameter();
     } else if (parent instanceof ClassDeclaration) {
@@ -164,7 +168,7 @@ public class SimpleIdentifier extends Identifier {
       return this == ((TypeParameter) parent).getName();
     } else if (parent instanceof VariableDeclaration) {
       return this == ((VariableDeclaration) parent).getName();
-    }
+    }*/
     return false;
   }
 
@@ -177,7 +181,8 @@ public class SimpleIdentifier extends Identifier {
    * 
    * @return {@code true} if this expression is in a context where a getter will be invoked
    */
-  public boolean inGetterContext() {
+  //ss
+/*  public boolean inGetterContext() {
     ASTNode parent = getParent();
     ASTNode target = this;
     // skip prefix
@@ -208,7 +213,7 @@ public class SimpleIdentifier extends Identifier {
       }
     }
     return true;
-  }
+  }*/
 
   /**
    * Return {@code true} if this expression is computing a left-hand value.
@@ -223,7 +228,7 @@ public class SimpleIdentifier extends Identifier {
     ASTNode parent = getParent();
     ASTNode target = this;
     // skip prefix
-    if (parent instanceof PrefixedIdentifier) {
+  /*  if (parent instanceof PrefixedIdentifier) {
       PrefixedIdentifier prefixed = (PrefixedIdentifier) parent;
       // if this is the prefix, then return false
       if (prefixed.getPrefix() == this) {
@@ -246,7 +251,7 @@ public class SimpleIdentifier extends Identifier {
       return true;
     } else if (parent instanceof AssignmentExpression) {
       return ((AssignmentExpression) parent).getLeftHandSide() == target;
-    }
+    }*/
     return false;
   }
 
@@ -258,10 +263,11 @@ public class SimpleIdentifier extends Identifier {
   /**
    * Set the auxiliary elements.
    */
-  public void setAuxiliaryElements(AuxiliaryElements auxiliaryElements) {
+  //ss
+/*  public void setAuxiliaryElements(AuxiliaryElements auxiliaryElements) {
     this.auxiliaryElements = auxiliaryElements;
   }
-
+*/
   /**
    * Set the element associated with this identifier based on propagated type information to the
    * given element.
@@ -327,7 +333,7 @@ public class SimpleIdentifier extends Identifier {
       return null;
     }
     ASTNode parent = getParent();
-    if (parent instanceof ClassDeclaration && ((ClassDeclaration) parent).getName() == this) {
+/*    if (parent instanceof ClassDeclaration && ((ClassDeclaration) parent).getName() == this) {
       return validateElement(parent, ClassElement.class, element);
     } else if (parent instanceof ClassTypeAlias && ((ClassTypeAlias) parent).getName() == this) {
       return validateElement(parent, ClassElement.class, element);
@@ -351,7 +357,7 @@ public class SimpleIdentifier extends Identifier {
     } else if (parent instanceof VariableDeclaration
         && ((VariableDeclaration) parent).getName() == this) {
       return validateElement(parent, VariableElement.class, element);
-    }
+    }*/
     return element;
   }
 }

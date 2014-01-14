@@ -24,9 +24,9 @@ import edu.depaul.cdm.madl.tools.core.MadlCore;
 //import edu.depaul.cdm.madl.tools.ui.internal.text.MadlStatusConstants;
 //import edu.depaul.cdm.madl.tools.ui.internal.text.madl.ContentAssistHistory;
 //import edu.depaul.cdm.madl.tools.ui.internal.text.editor.ASTProvider;
-//import edu.depaul.cdm.madl.tools.ui.internal.text.editor.CompilationUnitDocumentProvider;
-//import edu.depaul.cdm.madl.tools.ui.internal.text.editor.ICompilationUnitDocumentProvider;
-//import edu.depaul.cdm.madl.tools.ui.internal.text.editor.WorkingCopyManager;
+import edu.depaul.cdm.madl.tools.ui.internal.text.editor.CompilationUnitDocumentProvider;
+import edu.depaul.cdm.madl.tools.ui.internal.text.editor.ICompilationUnitDocumentProvider;
+import edu.depaul.cdm.madl.tools.ui.internal.text.editor.WorkingCopyManager;
 //import edu.depaul.cdm.madl.tools.ui.internal.text.folding.JavaFoldingStructureProviderRegistry;
 
 import edu.depaul.cdm.madl.tools.ui.internal.text.functions.PreferencesAdapter;
@@ -276,10 +276,10 @@ public class MadlToolsPlugin extends AbstractUIPlugin {
 /*  public static ImageDescriptorRegistry getImageDescriptorRegistry() {
     return getDefault().internalGetImageDescriptorRegistry();
   }
-
+*/
   public static String getPluginId() {
     return MadlUI.ID_PLUGIN;
-  }*/
+  }
 
   /**
    * Get the associated bundle's version.
@@ -423,12 +423,12 @@ public class MadlToolsPlugin extends AbstractUIPlugin {
   static {
    // MadlX.todo();
   }
-//ss
- /* private TypeFilter typeFilter;
+
+  //private TypeFilter typeFilter;
 
   private WorkingCopyManager workingCopyManager;
   @Deprecated
-  private ICompilationUnitDocumentProvider compilationUnitDocumentProvider;*/
+  private ICompilationUnitDocumentProvider compilationUnitDocumentProvider;
 
   static {
    // MadlX.todo();
@@ -576,12 +576,12 @@ public class MadlToolsPlugin extends AbstractUIPlugin {
     return combinedPreferenceStore;
   }
 //ss
-  /*public synchronized ICompilationUnitDocumentProvider getCompilationUnitDocumentProvider() {
+  public synchronized ICompilationUnitDocumentProvider getCompilationUnitDocumentProvider() {
     if (compilationUnitDocumentProvider == null) {
       compilationUnitDocumentProvider = new CompilationUnitDocumentProvider();
     }
     return compilationUnitDocumentProvider;
-  }*/
+  }
 
   /**
    * Returns the Madl content assist history.
@@ -769,13 +769,13 @@ public class MadlToolsPlugin extends AbstractUIPlugin {
   }*/
 
   //ss
- /* public synchronized WorkingCopyManager getWorkingCopyManager() {
+  public synchronized WorkingCopyManager getWorkingCopyManager() {
     if (workingCopyManager == null) {
       ICompilationUnitDocumentProvider provider = getCompilationUnitDocumentProvider();
       workingCopyManager = new WorkingCopyManager(provider);
     }
     return workingCopyManager;
-  }*/
+  }
 
   /**
    * Resets the Java editor text hovers contributed to the workbench.
@@ -843,12 +843,12 @@ public class MadlToolsPlugin extends AbstractUIPlugin {
         astProvider.dispose();
         astProvider = null;
       }
-
+*/
       if (workingCopyManager != null) {
         workingCopyManager.shutdown();
         workingCopyManager = null;
       }
-
+/*
       if (compilationUnitDocumentProvider != null) {
         compilationUnitDocumentProvider.shutdown();
         compilationUnitDocumentProvider = null;

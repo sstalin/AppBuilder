@@ -24,7 +24,7 @@ import org.eclipse.ui.PlatformUI;
 /**
  * Utilities for executing actions, such as {@link RunnableObjectEx}.
  * 
- * @coverage madl.editor.ui.refactoring.core
+ * @coverage dart.editor.ui.refactoring.core
  */
 public class ExecutionUtils {
 

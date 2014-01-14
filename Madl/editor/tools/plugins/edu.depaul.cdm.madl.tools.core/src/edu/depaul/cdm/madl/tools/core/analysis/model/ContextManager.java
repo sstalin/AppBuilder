@@ -17,7 +17,7 @@ import edu.depaul.cdm.madl.engine.context.AnalysisContext;
 import edu.depaul.cdm.madl.engine.element.LibraryElement;
 //import edu.depaul.cdm.madl.engine.sdk.MadlSdk;
 import edu.depaul.cdm.madl.engine.source.Source;
-//import edu.depaul.cdm.madl.engine.source.SourceKind;
+import edu.depaul.cdm.madl.engine.source.SourceKind;
 import edu.depaul.cdm.madl.tools.core.internal.builder.AnalysisWorker;
 
 import org.eclipse.core.resources.IContainer;
@@ -125,7 +125,7 @@ public interface ContextManager {
    * 
    * @return the sdk (not {@code null})
    */
-  MadlSdk getSdk();
+ // MadlSdk getSdk();
 
   /**
    * Answer the context containing analysis of sources in the SDK.

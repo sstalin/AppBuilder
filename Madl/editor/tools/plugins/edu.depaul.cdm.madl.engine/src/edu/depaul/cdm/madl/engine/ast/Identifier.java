@@ -1,5 +1,5 @@
 /*
- * Copyright 2012, the Dart project authors.
+ * Copyright 2012, the Madl project authors.
  * 
  * Licensed under the Eclipse Public License v1.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -25,7 +25,7 @@ import edu.depaul.cdm.madl.engine.element.Element;
  *   | {@link PrefixedIdentifier prefixedIdentifier}
  * </pre>
  * 
- * @coverage dart.engine.ast
+ * @coverage madl.engine.ast
  */
 public abstract class Identifier extends Expression {
   /**

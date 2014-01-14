@@ -13,12 +13,6 @@
  */
 package edu.depaul.cdm.madl.tools.ui.internal.text.madl;
 
-import edu.depaul.cdm.madl.compiler.analysis.model.AnalysisEvent;
-import edu.depaul.cdm.madl.compiler.analysis.model.AnalysisListener;
-import edu.depaul.cdm.madl.compiler.analysis.model.ContextManager;
-import edu.depaul.cdm.madl.compiler.analysis.model.ResolvedEvent;
-import edu.depaul.cdm.madl.compiler.internal.builder.AnalysisManager;
-import edu.depaul.cdm.madl.compiler.internal.builder.AnalysisWorker;
 import edu.depaul.cdm.madl.engine.ast.CompilationUnit;
 import edu.depaul.cdm.madl.engine.context.AnalysisContext;
 import edu.depaul.cdm.madl.engine.context.AnalysisException;
@@ -26,6 +20,12 @@ import edu.depaul.cdm.madl.engine.source.Source;
 import edu.depaul.cdm.madl.engine.utilities.instrumentation.Instrumentation;
 import edu.depaul.cdm.madl.engine.utilities.instrumentation.InstrumentationBuilder;
 import edu.depaul.cdm.madl.tools.core.MadlCore;
+import edu.depaul.cdm.madl.tools.core.analysis.model.AnalysisEvent;
+import edu.depaul.cdm.madl.tools.core.analysis.model.AnalysisListener;
+import edu.depaul.cdm.madl.tools.core.analysis.model.ContextManager;
+import edu.depaul.cdm.madl.tools.core.analysis.model.ResolvedEvent;
+import edu.depaul.cdm.madl.tools.core.internal.builder.AnalysisManager;
+import edu.depaul.cdm.madl.tools.core.internal.builder.AnalysisWorker;
 import edu.depaul.cdm.madl.tools.ui.internal.text.editor.MadlEditor;
 
 import org.eclipse.core.runtime.IProgressMonitor;

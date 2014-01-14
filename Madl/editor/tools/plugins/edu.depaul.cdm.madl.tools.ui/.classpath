@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry excluding="edu/depaul/cdm/madl/tools/ui/MadlToolsPlugin1.java" kind="src" path="src"/>
+	<classpathentry excluding="edu/depaul/cdm/madl/tools/ui/MadlToolsPlugin1.java|edu/depaul/cdm/madl/tools/ui/internal/NewMadlWorkbenchAdapter.java|edu/depaul/cdm/madl/tools/ui/instrumentation/Heartbeat.java|edu/depaul/cdm/madl/tools/ui/internal/intro/SampleDescriptionHelper.java|edu/depaul/cdm/madl/tools/ui/internal/intro/SampleHelper.java" kind="src" path="src"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

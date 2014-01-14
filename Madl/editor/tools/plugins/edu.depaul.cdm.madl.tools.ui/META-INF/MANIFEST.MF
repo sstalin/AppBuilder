@@ -12,7 +12,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.forms;bundle-version="3.6.1",
  edu.depaul.cdm.madl.engine;bundle-version="1.0.0",
  edu.depaul.cdm.madl.compiler;bundle-version="1.0.0",
- edu.depaul.cdm.madl.engine.services;bundle-version="1.0.0"
+ edu.depaul.cdm.madl.engine.services;bundle-version="1.0.0",
+ edu.depaul.cdm.madl.thirdparty;bundle-version="1.0.0",
+ org.eclipse.core.filesystem;bundle-version="1.4.0",
+ org.eclipse.ui.workbench.texteditor;bundle-version="3.8.101"
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.201311061029
@@ -23,3 +26,24 @@ Bundle-SymbolicName: edu.depaul.cdm.madl.tools.ui;singleton:=true
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: com.ibm.icu.text;version="50.1.1",
  com.ibm.icu.util;version="50.1.1"
+Export-Package: edu.depaul.cdm.madl.editor.wizards,
+ edu.depaul.cdm.madl.tools.internal.corext.refactoring.util,
+ edu.depaul.cdm.madl.tools.multipage,
+ edu.depaul.cdm.madl.tools.ui,
+ edu.depaul.cdm.madl.tools.ui.actions,
+ edu.depaul.cdm.madl.tools.ui.instrumentation,
+ edu.depaul.cdm.madl.tools.ui.internal,
+ edu.depaul.cdm.madl.tools.ui.internal.formatter,
+ edu.depaul.cdm.madl.tools.ui.internal.intro,
+ edu.depaul.cdm.madl.tools.ui.internal.preferences,
+ edu.depaul.cdm.madl.tools.ui.internal.projects,
+ edu.depaul.cdm.madl.tools.ui.internal.text,
+ edu.depaul.cdm.madl.tools.ui.internal.text.comment,
+ edu.depaul.cdm.madl.tools.ui.internal.text.editor,
+ edu.depaul.cdm.madl.tools.ui.internal.text.functions,
+ edu.depaul.cdm.madl.tools.ui.internal.text.madl,
+ edu.depaul.cdm.madl.tools.ui.internal.text.madl.codeassist,
+ edu.depaul.cdm.madl.tools.ui.internal.text.madldoc,
+ edu.depaul.cdm.madl.tools.ui.internal.util,
+ edu.depaul.cdm.madl.tools.ui.internal.viewsupport,
+ edu.depaul.cdm.madl.tools.ui.text

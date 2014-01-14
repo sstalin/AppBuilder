@@ -1,15 +1,15 @@
 package edu.depaul.cdm.madl.tools.core.analysis.model;
 
-import com.google.dart.engine.context.AnalysisContext;
-import com.google.dart.engine.source.Source;
+import edu.depaul.cdm.madl.engine.context.AnalysisContext;
+import edu.depaul.cdm.madl.engine.source.Source;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IProject;
 
 /**
- * Instances of {@code Project} represents an Eclipse project that has a Dart nature.
+ * Instances of {@code Project} represents an Eclipse project that has a Madl nature.
  * 
- * @coverage dart.tools.core.model
+ * @coverage madl.tools.core.model
  */
 public interface Project extends ContextManager {
 
@@ -45,7 +45,7 @@ public interface Project extends ContextManager {
   PubFolder[] getPubFolders();
 
   /**
-   * Answer the Eclipse project associated with this Dart project
+   * Answer the Eclipse project associated with this Madl project
    * 
    * @return the Eclipse project (not {@code null})
    */

@@ -14,9 +14,9 @@
 package edu.depaul.cdm.madl.tools.ui.internal.text.editor;
 
 
-/*import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;*/
+import com.google.common.collect.Maps;
 
 import edu.depaul.cdm.madl.compiler.ast.MadlUnit;
 import edu.depaul.cdm.madl.compiler.ast.MadlVariable;
@@ -27,14 +27,14 @@ import edu.depaul.cdm.madl.engine.ast.ASTNode;
 import edu.depaul.cdm.madl.engine.ast.CompilationUnitMember;
 import edu.depaul.cdm.madl.engine.ast.NodeList;
 import edu.depaul.cdm.madl.engine.ast.SimpleIdentifier;
-//import edu.depaul.cdm.madl.engine.ast.visitor.NodeLocator;
+import edu.depaul.cdm.madl.engine.ast.visitor.NodeLocator;
 import edu.depaul.cdm.madl.engine.context.AnalysisContext;
 import edu.depaul.cdm.madl.engine.element.CompilationUnitElement;
-//import edu.depaul.cdm.madl.engine.index.Index;
-//import edu.depaul.cdm.madl.engine.search.SearchEngine;
-//import edu.depaul.cdm.madl.engine.search.SearchEngineFactory;
+import edu.depaul.cdm.madl.engine.index.Index;
+import edu.depaul.cdm.madl.engine.search.SearchEngine;
+import edu.depaul.cdm.madl.engine.search.SearchEngineFactory;
 import edu.depaul.cdm.madl.engine.services.assist.AssistContext;
-//import edu.depaul.cdm.madl.engine.source.ContentCache;
+import edu.depaul.cdm.madl.engine.source.ContentCache;
 //import edu.depaul.cdm.madl.engine.source.FileBasedSource;
 import edu.depaul.cdm.madl.engine.source.Source;
 import edu.depaul.cdm.madl.engine.utilities.source.SourceRange;
@@ -45,12 +45,12 @@ import edu.depaul.cdm.madl.tools.core.MessageConsole;
 import edu.depaul.cdm.madl.tools.core.analysis.model.Project;
 import edu.depaul.cdm.madl.tools.core.analysis.model.ProjectManager;
 //import edu.depaul.cdm.madl.tools.core.formatter.DefaultCodeFormatterConstants;
-//import edu.depaul.cdm.madl.tools.core.internal.builder.AnalysisWorker;
+import edu.depaul.cdm.madl.tools.core.internal.builder.AnalysisWorker;
 //import edu.depaul.cdm.madl.tools.core.model.CompilationUnit;
 import edu.depaul.cdm.madl.tools.core.model.MadlElement;
 import edu.depaul.cdm.madl.tools.core.model.MadlModelException;
 import edu.depaul.cdm.madl.tools.core.model.SourceReference;
-//import edu.depaul.cdm.madl.tools.core.utilities.general.SourceRangeFactory;*/
+import edu.depaul.cdm.madl.tools.core.utilities.general.SourceRangeFactory;
 
 import edu.depaul.cdm.madl.tools.internal.corext.refactoring.util.ExecutionUtils;
 import edu.depaul.cdm.madl.tools.internal.corext.refactoring.util.RunnableEx;
@@ -102,7 +102,7 @@ import edu.depaul.cdm.madl.tools.ui.internal.text.editor.selectionactions.Struct
 
 //import edu.depaul.cdm.madl.tools.ui.internal.text.functions.MadlChangeHover;
 import edu.depaul.cdm.madl.tools.ui.internal.text.functions.MadlPairMatcher;
-//import edu.depaul.cdm.madl.tools.ui.internal.text.functions.MadlWordFinder;
+import edu.depaul.cdm.madl.tools.ui.internal.text.functions.MadlWordFinder;
 import edu.depaul.cdm.madl.tools.ui.internal.text.functions.MadlWordIterator;
 import edu.depaul.cdm.madl.tools.ui.internal.text.functions.DocumentCharacterIterator;
 
@@ -2101,8 +2101,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     // cancel possible running computation
     fMarkOccurrenceAnnotations = false;
     uninstallOccurrencesFinder();
-
-    uninstallOverrideIndicator();
+//ss
+   // uninstallOverrideIndicator();
 
     uninstallSemanticHighlighting();
 
@@ -2224,7 +2224,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     MadlX.todo("outline");
     if (IContentOutlinePage.class.equals(required)) {
       if (fOutlinePage == null) {
-        fOutlinePage = createOutlinePage();
+    	  //ss
+        //fOutlinePage = createOutlinePage();
       }
       return fOutlinePage;
     }
@@ -2413,8 +2414,10 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     if (inputResourceFile != null) {
       return projectManager.getSource(inputResourceFile);
     }
+    
     // may be SDK
-    if (inputJavaFile != null) {
+    //ss
+ /*   if (inputJavaFile != null) {
       AnalysisContext context = projectManager.getSdkContext();
       Source source = new FileBasedSource(
           context.getSourceFactory().getContentCache(),
@@ -2424,9 +2427,11 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
         return source;
       }
       return source;
-    }
+    }*/
     // some random external file
-    return new FileBasedSource(new ContentCache(), inputJavaFile);
+    //ss
+   // return new FileBasedSource(new ContentCache(), inputJavaFile);
+    return null;
   }
 
   public edu.depaul.cdm.madl.engine.ast.CompilationUnit getInputUnit() {
@@ -2605,10 +2610,11 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
    * Resets the foldings structure according to the folding preferences.
    */
   public void resetProjection() {
-    MadlX.todo("folding");
+	  //ss
+ /*   MadlX.todo("folding");
     if (fProjectionModelUpdater != null) {
       fProjectionModelUpdater.initialize();
-    }
+    }*/
   }
 
   public void selectEndReveal(edu.depaul.cdm.madl.engine.element.Element element) {
@@ -2707,7 +2713,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
 
       setHighlightRange(elementOffset, elementLength, true);
       if (fOutlinePage != null) {
-        fOutlinePage.select((LightNodeElement) element);
+    	  //ss
+       // fOutlinePage.select((LightNodeElement) element);
       }
     }
 
@@ -2728,7 +2735,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
    * @param event the event to be investigated
    * @return <code>true</code> if event causes a change
    */
-  protected boolean affectsOverrideIndicatorAnnotations(PropertyChangeEvent event) {
+  //ss
+/*  protected boolean affectsOverrideIndicatorAnnotations(PropertyChangeEvent event) {
     String key = event.getProperty();
     AnnotationPreference preference = getAnnotationPreferenceLookup().getAnnotationPreference(
         OverrideIndicatorManager.ANNOTATION_TYPE);
@@ -2740,7 +2748,7 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
         || key.equals(preference.getVerticalRulerPreferenceKey())
         || key.equals(preference.getOverviewRulerPreferenceKey())
         || key.equals(preference.getTextPreferenceKey());
-  }
+  }*/
 
   @Override
   protected boolean affectsTextPresentation(PropertyChangeEvent event) {
@@ -2804,10 +2812,11 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
 //      caret = offset + styledText.getCaretOffset();
 //    }
 
+    //ss
     ASTNode node = new NodeLocator(caret).searchWithin(unit);
 
     // May be whitespace between class declaration {}, try to find class member.
-    if (node instanceof ClassDeclaration) {
+ /*   if (node instanceof ClassDeclaration) {
       ClassDeclaration classDeclaration = (ClassDeclaration) node;
       if (classDeclaration.getLeftBracket().getOffset() + 1 < caret
           && caret < classDeclaration.getRightBracket().getOffset()) {
@@ -2818,10 +2827,11 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
           }
         }
       }
-    }
+    }*/
 
     // May be unit whitespace, try to find unit member.
-    if (node instanceof edu.depaul.cdm.madl.engine.ast.CompilationUnit) {
+    //ss
+/*    if (node instanceof edu.depaul.cdm.madl.engine.ast.CompilationUnit) {
       NodeList<CompilationUnitMember> declarations = ((edu.depaul.cdm.madl.engine.ast.CompilationUnit) node).getDeclarations();
       for (CompilationUnitMember member : declarations) {
         if (caret < member.getOffset()) {
@@ -2829,7 +2839,7 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
           break;
         }
       }
-    }
+    }*/
 
     return LightNodeElements.createLightNodeElement(inputResourceFile, node);
   }
@@ -2871,8 +2881,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
 
   @Override
   protected void configureSourceViewerDecorationSupport(SourceViewerDecorationSupport support) {
-
-    fBracketMatcher.setSourceVersion(getPreferenceStore().getString(JavaScriptCore.COMPILER_SOURCE));
+//ss
+    //fBracketMatcher.setSourceVersion(getPreferenceStore().getString(JavaScriptCore.COMPILER_SOURCE));
     support.setCharacterPairMatcher(fBracketMatcher);
     support.setMatchingCharacterPainterPreferenceKeys(MATCHING_BRACKETS, MATCHING_BRACKETS_COLOR);
 
@@ -2888,7 +2898,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     MadlX.todo("actions");
     ActionGroup oeg, ovg;
     ActionGroup dsg, ddg;
-    fActionGroups = new CompositeActionGroup(new ActionGroup[] {
+    //ss
+    /*fActionGroups = new CompositeActionGroup(new ActionGroup[] {
         oeg = new OpenEditorActionGroup(this), ovg = new OpenViewActionGroup(this),
         dsg = new MadlSearchActionGroup(this), ddg = new MadldocActionGroup(this)});
     fOpenEditorActionGroup = new CompositeActionGroup(new ActionGroup[] {ovg, oeg, dsg, ddg});
@@ -3006,6 +3017,7 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     // setAction(IMadlEditorActionConstants.COPY_QUALIFIED_NAME, action);
 
     removeTrailingWhitespaceAction = new RemoveTrailingWhitespaceAction(getSourceViewer());
+    */
   }
 
   @Override
@@ -3045,10 +3057,11 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     // return column;
   }
 
-  @Override
+  //ss
+/*  @Override
   protected LineChangeHover createChangeHover() {
     return new MadlChangeHover(MadlPartitions.MADL_PARTITIONING, getOrientation());
-  }
+  }*/
 
   protected ISourceViewer createMadlSourceViewer(Composite parent, IVerticalRuler verticalRuler,
       IOverviewRuler overviewRuler, boolean isOverviewRulerVisible, int styles,
@@ -3116,11 +3129,12 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
    * 
    * @return the created Madl outline page
    */
-  protected MadlOutlinePage createOutlinePage() {
+  //ss
+/*  protected MadlOutlinePage createOutlinePage() {
     MadlOutlinePage page = new MadlOutlinePage(fOutlinerContextMenuId, this);
     setOutlinePageInput(page, getEditorInput());
     return page;
-  }
+  }*/
 
   @Override
   protected final ISourceViewer createSourceViewer(Composite parent, IVerticalRuler verticalRuler,
@@ -3134,8 +3148,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
         isOverviewRulerVisible(),
         styles,
         store);
-
-    MadlUIHelp.setHelp(this, viewer.getTextWidget(), MadlHelpContextIds.JAVA_EDITOR);
+//ss
+   // MadlUIHelp.setHelp(this, viewer.getTextWidget(), MadlHelpContextIds.JAVA_EDITOR);
 
     MadlSourceViewer madlSourceViewer = null;
     if (viewer instanceof MadlSourceViewer) {
@@ -3159,7 +3173,7 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     fProjectionSupport.addSummarizableAnnotationType("org.eclipse.ui.workbench.texteditor.error"); //$NON-NLS-1$
     fProjectionSupport.addSummarizableAnnotationType("org.eclipse.ui.workbench.texteditor.warning"); //$NON-NLS-1$
 
-    MadlX.todo("hover");
+ /*   MadlX.todo("hover");
     fProjectionSupport.setHoverControlCreator(new IInformationControlCreator() {
       @Override
       public IInformationControl createInformationControl(Shell shell) {
@@ -3169,21 +3183,24 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
             SWT.NONE,
             EditorsUI.getTooltipAffordanceString());
       }
-    });
-    fProjectionSupport.setInformationPresenterControlCreator(new IInformationControlCreator() {
+    });*/
+    
+    //ss
+ /*   fProjectionSupport.setInformationPresenterControlCreator(new IInformationControlCreator() {
       @Override
       public IInformationControl createInformationControl(Shell shell) {
         int shellStyle = SWT.RESIZE | SWT.TOOL | getOrientation();
         int style = SWT.V_SCROLL | SWT.H_SCROLL;
         return new SourceViewerInformationControl(shell, shellStyle, style);
       }
-    });
+    });*/
+    
     fProjectionSupport.install();
-
-    fProjectionModelUpdater = MadlToolsPlugin.getDefault().getFoldingStructureProviderRegistry().getCurrentFoldingProvider();
+//ss
+   /* fProjectionModelUpdater = MadlToolsPlugin.getDefault().getFoldingStructureProviderRegistry().getCurrentFoldingProvider();
     if (fProjectionModelUpdater != null) {
       fProjectionModelUpdater.install(this, projectionViewer);
-    }
+    }*/
 
     // ensure source viewer decoration support has been created and configured
     getSourceViewerDecorationSupport(viewer);
@@ -3219,7 +3236,7 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
       }
     });
 
-    EditorUtility.addGTKPasteHack(viewer);
+   // EditorUtility.addGTKPasteHack(viewer);
 
     IDocument document = getDocumentProvider().getDocument(null);
     if (document != null) {
@@ -3296,7 +3313,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
    * @param annotationPosition the position of the found annotation
    * @return the found annotation
    */
-  @Override
+  //ss
+  /*@Override
   protected Annotation findAnnotation(final int offset, final int length, boolean forward,
       Position annotationPosition) {
 
@@ -3377,15 +3395,17 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
 
     return nextAnnotation;
   }
-
+*/
   /**
    * Returns the standard action group of this editor.
    * 
    * @return returns this editor's standard action group
    */
-  protected ActionGroup getActionGroup() {
+  //ss
+/*  protected ActionGroup getActionGroup() {
+	  
     return fActionGroups;
-  }
+  }*/
 
   /**
    * Returns the Madl element of this editor's input corresponding to the given MadlElement.
@@ -3419,17 +3439,20 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
    * 
    * @return the folding action group, or <code>null</code> if there is none
    */
-  protected FoldingActionGroup getFoldingActionGroup() {
+/*  protected FoldingActionGroup getFoldingActionGroup() {
     return fFoldingGroup;
-  }
+  }*/
 
   /**
    * Returns the Madl element wrapped by this editors input.
    * 
    * @return the Madl element wrapped by this editors input.
    */
+
   protected MadlElement getInputMadlElement() {
-    return EditorUtility.getEditorInputMadlElement(this, false);
+    //return EditorUtility.getEditorInputMadlElement(this, false);
+	  //ss this method is not supported
+	  return null;
   }
 
   protected ISelectionChangedListener getPatchedSelectionChangedListener() {
@@ -3647,17 +3670,17 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
         }
         return;
       }
-
-      if (JavaScriptCore.COMPILER_SOURCE.equals(property)) {
+//ss
+    /*  if (JavaScriptCore.COMPILER_SOURCE.equals(property)) {
         if (event.getNewValue() instanceof String) {
           fBracketMatcher.setSourceVersion((String) event.getNewValue());
           // fall through as others are interested in source change as well.
         }
-      }
+      }*/
 
       ((MadlSourceViewerConfiguration) getSourceViewerConfiguration()).handlePropertyChangeEvent(event);
-
-      if (affectsOverrideIndicatorAnnotations(event)) {
+//ss
+     /* if (affectsOverrideIndicatorAnnotations(event)) {
         if (isShowingOverrideIndicators()) {
           if (fOverrideIndicatorManager == null) {
             installOverrideIndicator(true);
@@ -3668,10 +3691,11 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
           }
         }
         return;
-      }
+      }*/
 
       if (PreferenceConstants.EDITOR_FOLDING_PROVIDER.equals(property)) {
-        if (sourceViewer instanceof ProjectionViewer) {
+    	  //ss
+  /*      if (sourceViewer instanceof ProjectionViewer) {
           MadlX.todo("folding");
           ProjectionViewer projectionViewer = (ProjectionViewer) sourceViewer;
           if (fProjectionModelUpdater != null) {
@@ -3683,10 +3707,10 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
             fProjectionModelUpdater.install(this, projectionViewer);
           }
         }
-        return;
+        return;*/
       }
-
-      if (DefaultCodeFormatterConstants.FORMATTER_TAB_SIZE.equals(property)
+//ss
+    /*  if (DefaultCodeFormatterConstants.FORMATTER_TAB_SIZE.equals(property)
           || DefaultCodeFormatterConstants.FORMATTER_INDENTATION_SIZE.equals(property)
           || DefaultCodeFormatterConstants.FORMATTER_TAB_CHAR.equals(property)) {
         StyledText textWidget = sourceViewer.getTextWidget();
@@ -3695,7 +3719,7 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
           textWidget.setTabs(tabWidth);
         }
         return;
-      }
+      }*/
 
       if (PreferenceConstants.EDITOR_FOLDING_ENABLED.equals(property)) {
         if (sourceViewer instanceof ProjectionViewer) {
@@ -3796,8 +3820,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
       fOccurrencesFinderJobCanceler.install();
     }
   }
-
-  protected void installOverrideIndicator(boolean provideAST) {
+//ss
+/*  protected void installOverrideIndicator(boolean provideAST) {
     uninstallOverrideIndicator();
     IAnnotationModel model = getDocumentProvider().getAnnotationModel(getEditorInput());
     final edu.depaul.cdm.madl.engine.ast.CompilationUnit cu = getInputUnit();
@@ -3806,7 +3830,7 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     }
     fOverrideIndicatorManager = new OverrideIndicatorManager(model, cu);
     fOverrideIndicatorManager.install(this);
-  }
+  }*/
 
   protected boolean isActivePart() {
     IWorkbenchPart part = getActivePart();
@@ -3823,7 +3847,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
    * 
    * @return <code>true</code> if the override indicators are shown
    */
-  protected boolean isShowingOverrideIndicators() {
+  //ss
+/*  protected boolean isShowingOverrideIndicators() {
     AnnotationPreference preference = getAnnotationPreferenceLookup().getAnnotationPreference(
         OverrideIndicatorManager.ANNOTATION_TYPE);
     IPreferenceStore store = getPreferenceStore();
@@ -3831,7 +3856,7 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
         || getBoolean(store, preference.getVerticalRulerPreferenceKey())
         || getBoolean(store, preference.getOverviewRulerPreferenceKey())
         || getBoolean(store, preference.getTextPreferenceKey());
-  }
+  }*/
 
   @Override
   protected boolean isTabsToSpacesConversionEnabled() {
@@ -3845,8 +3870,8 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     ProjectionViewer projectionViewer = (ProjectionViewer) getSourceViewer();
     projectionViewer.setRedraw(false);
     try {
-
-      boolean projectionMode = projectionViewer.isProjectionMode();
+//ss
+   /*   boolean projectionMode = projectionViewer.isProjectionMode();
       if (projectionMode) {
         projectionViewer.disableProjection();
         MadlX.todo("folding");
@@ -3863,7 +3888,7 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
           fProjectionModelUpdater.install(this, projectionViewer);
         }
         projectionViewer.enableProjection();
-      }
+      }*/
 
     } finally {
       projectionViewer.setRedraw(true);
@@ -3873,22 +3898,22 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
 
   @Override
   protected void performSave(boolean overwrite, IProgressMonitor progressMonitor) {
-    UIInstrumentationBuilder instrumentation = UIInstrumentation.builder("Editor-Save-Perf");
+    //UIInstrumentationBuilder instrumentation = UIInstrumentation.builder("Editor-Save-Perf");
     try {
 
       performSaveActions();
 
-      instrumentation.metric("Save-Actions", "complete");
+     // instrumentation.metric("Save-Actions", "complete");
 
       super.performSave(overwrite, progressMonitor);
 
-      instrumentation.metric("Save", "complete");
+     // instrumentation.metric("Save", "complete");
 
       int lines = getDocumentProvider().getDocument(getEditorInput()).getNumberOfLines();
-      instrumentation.metric("Lines", lines);
+      //instrumentation.metric("Lines", lines);
 
     } finally {
-      instrumentation.log();
+      //instrumentation.log();
     }
   }
 
@@ -3940,9 +3965,10 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
   }
 
   protected void setContextMenuContext(IMenuManager menu, ActionContext context) {
-    fOpenEditorActionGroup.setContext(context);
+	//ss  
+  /*  fOpenEditorActionGroup.setContext(context);
     fOpenEditorActionGroup.fillContextMenu(menu);
-    fOpenEditorActionGroup.setContext(null);
+    fOpenEditorActionGroup.setContext(null);*/
   }
 
   /**
@@ -4171,13 +4197,13 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
       fOccurrencesFinderJobCanceler.uninstall();
       fOccurrencesFinderJobCanceler = null;
     }
-
-    if (fPostSelectionListenerWithAST != null) {
+//ss
+ /*   if (fPostSelectionListenerWithAST != null) {
       SelectionListenerWithASTManager.getDefault().removeListener(
           this,
           fPostSelectionListenerWithAST);
       fPostSelectionListenerWithAST = null;
-    }
+    }*/
     if (occurrencesResponder != null) {
       getSelectionProvider().removeSelectionChangedListener(occurrencesResponder);
       occurrencesResponder = null;
@@ -4185,13 +4211,14 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     removeOccurrenceAnnotations();
   }
 
-  protected void uninstallOverrideIndicator() {
+  //ss
+/*  protected void uninstallOverrideIndicator() {
     if (fOverrideIndicatorManager != null) {
       fOverrideIndicatorManager.removeAnnotations();
       fOverrideIndicatorManager.uninstall();
       fOverrideIndicatorManager = null;
     }
-  }
+  }*/
 
   @Override
   protected void updateMarkerViews(Annotation annotation) {
@@ -4339,12 +4366,13 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
 //      }
 //    }
 
-    if (matches == null && selectedNode != null) {
+  /*  if (matches == null && selectedNode != null) {
       if (selectedNode instanceof SimpleIdentifier) {
         SimpleIdentifier ident = (SimpleIdentifier) selectedNode;
         matches = edu.depaul.cdm.madl.engine.services.util.NameOccurrencesFinder.findIn(ident, unit);
       }
-    }
+    }*/
+    
     if (matches == null || matches.size() == 0) {
       if (!fStickyOccurrenceAnnotations) {
         removeOccurrenceAnnotations();
@@ -4484,7 +4512,7 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     // apply selected element
     LightNodeElement element = computeHighlightRangeSourceElement(resolvedUnit, offset);
     if (element != null && fOutlinePage != null) {
-      fOutlinePage.select(element);
+     // fOutlinePage.select(element);
     }
   }
 
@@ -4496,11 +4524,11 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
    */
   private IPreferenceStore createCombinedPreferenceStore(IEditorInput input) {
     List<IPreferenceStore> stores = new ArrayList<IPreferenceStore>(3);
-
-    IProject project = EditorUtility.getProject(input);
+//ss
+    /*IProject project = EditorUtility.getProject(input);
     if (project != null) {
       stores.add(new EclipsePreferencesAdapter(new ProjectScope(project), MadlCore.PLUGIN_ID));
-    }
+    }*/
 
     stores.add(MadlToolsPlugin.getDefault().getPreferenceStore());
     stores.add(new PreferencesAdapter(MadlCore.getPlugin().getPluginPreferences()));
@@ -4659,10 +4687,10 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
     }
 
     setOutlinePageInput(fOutlinePage, input);
-
-    if (isShowingOverrideIndicators()) {
+//ss
+   /* if (isShowingOverrideIndicators()) {
       installOverrideIndicator(false);
-    }
+    }*/
   }
 
   /*
@@ -4691,16 +4719,17 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
   }
 
   private boolean isRemoveTrailingWhitespaceEnabled() {
-    return PreferenceConstants.getPreferenceStore().getBoolean(
-        PreferenceConstants.EDITOR_REMOVE_TRAILING_WS);
+	  //ss
+  /*  return PreferenceConstants.getPreferenceStore().getBoolean(
+        PreferenceConstants.EDITOR_REMOVE_TRAILING_WS);*/
+	  return false;
   }
 
   /**
    * @return <code>true</code> if Semantic Highlighting is enabled.
    */
   private boolean isSemanticHighlightingEnabled() {
-    return true;
-//    return SemanticHighlightings.isEnabled(getPreferenceStore());
+   return SemanticHighlightings.isEnabled(getPreferenceStore());
   }
 
   private void patchSelectionChangeParticipation() {
@@ -4711,13 +4740,14 @@ public abstract class MadlEditor extends AbstractDecoratedTextEditor implements
   }
 
   private void performSaveActions() {
-    if (isRemoveTrailingWhitespaceEnabled()) {
+	  //ss
+   /* if (isRemoveTrailingWhitespaceEnabled()) {
       try {
         removeTrailingWhitespaceAction.run();
       } catch (InvocationTargetException e) {
         MadlToolsPlugin.log(e);
       }
-    }
+    }*/
   }
 
   /**
