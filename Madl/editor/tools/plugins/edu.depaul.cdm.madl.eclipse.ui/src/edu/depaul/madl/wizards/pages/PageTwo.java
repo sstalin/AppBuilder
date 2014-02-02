@@ -14,7 +14,8 @@ import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
-import edu.depaul.madl.wizards.constants.AppBuilderDTO;
+import edu.depaul.cdm.madl.eclipse.ui.Activator;
+import edu.depaul.cdm.madl.eclipse.ui.PreferenceConstants;
 
 public class PageTwo extends WizardPage {
 
@@ -37,7 +38,7 @@ public class PageTwo extends WizardPage {
 		
 		// AppBuilder source directory dialog label
 		Label appBuilderSourceFileDialogLabel = new Label(container, SWT.NONE);
-		appBuilderSourceFileDialogLabel.setText("Choose the AppBuilder source root directory:");
+		appBuilderSourceFileDialogLabel.setText("AppBuilder Home:");
 		
 		// Button to open the directory dialog
 		Button button = new Button(container, SWT.PUSH);
@@ -51,7 +52,8 @@ public class PageTwo extends WizardPage {
 	    
 	    // Text field to display or allow user to enter the AppBuilder source directory
 		appBuilderSourceText = new Text(container, SWT.BORDER | SWT.SINGLE);
-		appBuilderSourceText.setText("");
+		System.out.println("PreferenceConstants.APP_BUILDER_HOME: " + PreferenceConstants.APP_BUILDER_HOME);
+		appBuilderSourceText.setText(PreferenceConstants.APP_BUILDER_HOME);
 		appBuilderSourceText.addKeyListener(new KeyListener() {
 
 			@Override
@@ -81,11 +83,12 @@ public class PageTwo extends WizardPage {
 	
 	private void openDirectoryDialog() {
 		DirectoryDialog dirDialog = new DirectoryDialog(container.getShell());
-	    dirDialog.setText("Select your home directory");
+	    dirDialog.setText("Select AppBuilder Home directory");
 	    String selectedDir = dirDialog.open();
 	    System.out.println("Selected directory: " + selectedDir);
 	    appBuilderSourceText.setText(selectedDir);
-	    AppBuilderDTO.APP_BUILDER_SOURCE_ROOT_DIRECTORY = selectedDir;
+	    PreferenceConstants.APP_BUILDER_HOME = selectedDir;
+//	    Activator.getDefault().getPreferenceStore().setDefault("APP_BUILDER_HOME", selectedDir);
 	}
 
 }

@@ -5,7 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 import org.eclipse.core.resources.IProject;
 
-import edu.depaul.madl.wizards.constants.AppBuilderDTO;
+import edu.depaul.cdm.madl.eclipse.ui.PreferenceConstants;
 
 public class AppBuilderConfiguration {
 
@@ -30,6 +30,8 @@ public class AppBuilderConfiguration {
 	}
 	
 	public void copyAppBuilderFiles() {
+		System.out.println("Copying AppBuilder files from: " + PreferenceConstants.APP_BUILDER_HOME);
+		
 		// Files and directories in the project
 		File projectConfDir = new File(getProject().getLocation() + File.separator + "conf");
 		File projectLibApiDir = new File(getProject().getLocation() + File.separator + "lib/api");
@@ -38,10 +40,10 @@ public class AppBuilderConfiguration {
 		
 		try {
 			// Local AppBuilder files and directories
-			File localConfDir = new File(AppBuilderDTO.APP_BUILDER_SOURCE_ROOT_DIRECTORY + "/conf");
-			File localLibApiDir = new File(AppBuilderDTO.APP_BUILDER_SOURCE_ROOT_DIRECTORY + "/lib/api");
-			File localTemplateDir = new File(AppBuilderDTO.APP_BUILDER_SOURCE_ROOT_DIRECTORY + "/templates");
-			File localOrgPropertiesFile = new File(AppBuilderDTO.APP_BUILDER_SOURCE_ROOT_DIRECTORY + "/test/org.properties");
+			File localConfDir = new File(PreferenceConstants.APP_BUILDER_HOME + "/conf");
+			File localLibApiDir = new File(PreferenceConstants.APP_BUILDER_HOME + "/lib/api");
+			File localTemplateDir = new File(PreferenceConstants.APP_BUILDER_HOME + "/templates");
+			File localOrgPropertiesFile = new File(PreferenceConstants.APP_BUILDER_HOME + "/test/org.properties");
 			
 			// Copy AppBuilder from local location to the Eclipse project
 			FileUtils.copyDirectory(localConfDir, projectConfDir);
