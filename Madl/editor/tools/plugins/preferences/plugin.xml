@@ -7,7 +7,7 @@
       <page
             class="edu.depaul.cdm.madl.eclipse.ui.AppBuilderPreferencesPage"
             id="edu.depaul.cdm.madl.eclipse.ui.page1"
-            name="AppBuilderPreferencesPage">
+            name="App Builder Preferences">
       </page>
    </extension>
 
