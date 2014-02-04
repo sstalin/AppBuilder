@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="1"
+         name="newProjectWizard"
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="AppBuilderProjectWizardCategory"
+            name="AppBuilder">
+      </category>
+      <wizard
+            canFinishEarly="true"
+            category="AppBuilderProjectWizardCategory"
+            class="edu.depaul.madl.wizards.AppBuilderNewProjectWizard"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            hasPages="true"
+            icon="icons/sample.gif"
+            id="AppBuilderDevTool.projectWizard"
+            name="AppBuilder Project"
+            project="true">
+      </wizard>
+   </extension>
+</plugin>
