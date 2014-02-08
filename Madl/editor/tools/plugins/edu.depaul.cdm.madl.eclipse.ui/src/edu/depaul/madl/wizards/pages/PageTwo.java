@@ -37,40 +37,40 @@ public class PageTwo extends WizardPage {
 		layout.numColumns = 1;
 		
 		// AppBuilder source directory dialog label
-		Label appBuilderSourceFileDialogLabel = new Label(container, SWT.NONE);
-		appBuilderSourceFileDialogLabel.setText("AppBuilder Home:");
+//		Label appBuilderSourceFileDialogLabel = new Label(container, SWT.NONE);
+//		appBuilderSourceFileDialogLabel.setText("AppBuilder Home:");
 		
 		// Button to open the directory dialog
-		Button button = new Button(container, SWT.PUSH);
-	    button.setText("Select Directory");
-	    button.addSelectionListener(new SelectionAdapter() {
-	      @Override
-	      public void widgetSelected(SelectionEvent e) {
-	        openDirectoryDialog();
-	      }
-	    });
+//		Button button = new Button(container, SWT.PUSH);
+//	    button.setText("Select Directory");
+//	    button.addSelectionListener(new SelectionAdapter() {
+//	      @Override
+//	      public void widgetSelected(SelectionEvent e) {
+//	        openDirectoryDialog();
+//	      }
+//	    });
 	    
 	    // Text field to display or allow user to enter the AppBuilder source directory
-		appBuilderSourceText = new Text(container, SWT.BORDER | SWT.SINGLE);
-		System.out.println("PreferenceConstants.APP_BUILDER_HOME: " + PreferenceConstants.APP_BUILDER_HOME);
-		appBuilderSourceText.setText(PreferenceConstants.APP_BUILDER_HOME);
-		appBuilderSourceText.addKeyListener(new KeyListener() {
-
-			@Override
-			public void keyPressed(KeyEvent e) {
-			}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
-				if (!appBuilderSourceText.getText().isEmpty()) {
-					setPageComplete(true);
-				}
-			}
-		});
+//		appBuilderSourceText = new Text(container, SWT.BORDER | SWT.SINGLE);
+//		System.out.println("PreferenceConstants.APP_BUILDER_HOME: " + PreferenceConstants.APP_BUILDER_HOME);
+//		appBuilderSourceText.setText(PreferenceConstants.APP_BUILDER_HOME);
+//		appBuilderSourceText.addKeyListener(new KeyListener() {
+//
+//			@Override
+//			public void keyPressed(KeyEvent e) {
+//			}
+//
+//			@Override
+//			public void keyReleased(KeyEvent e) {
+//				if (!appBuilderSourceText.getText().isEmpty()) {
+//					setPageComplete(true);
+//				}
+//			}
+//		});
 		
 		// Stretches the text field across both columns, otherwise it's too small
-		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-		appBuilderSourceText.setLayoutData(gd);
+//		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+//		appBuilderSourceText.setLayoutData(gd);
 		
 		// Required to avoid an error in the system
 		setControl(container);
