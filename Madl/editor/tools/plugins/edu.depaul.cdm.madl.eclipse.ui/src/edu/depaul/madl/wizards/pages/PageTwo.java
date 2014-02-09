@@ -1,5 +1,7 @@
 package edu.depaul.madl.wizards.pages;
 
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
@@ -9,6 +11,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Label;
@@ -16,11 +19,21 @@ import org.eclipse.swt.widgets.Text;
 
 import edu.depaul.cdm.madl.eclipse.ui.Activator;
 import edu.depaul.cdm.madl.eclipse.ui.PreferenceConstants;
+import edu.depaul.madl.wizards.AppBuilderConfiguration;
 
 public class PageTwo extends WizardPage {
 
 	private Text appBuilderSourceText;
 	private Composite container;
+	
+	private Text textDeveloperName;
+	private Text textDeveloperOrg;
+	private Text textDeveloperDomain;
+	
+	private Button iosEnabledYes;
+	private Combo iosVersions;
+	private Button androidEnabledYes;
+	private Combo androidVersions;
 	
 	public PageTwo() {
 		super("Page Two");
@@ -34,43 +47,99 @@ public class PageTwo extends WizardPage {
 		container = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
 		container.setLayout(layout);
-		layout.numColumns = 1;
+		layout.numColumns = 2;
 		
-		// AppBuilder source directory dialog label
-//		Label appBuilderSourceFileDialogLabel = new Label(container, SWT.NONE);
-//		appBuilderSourceFileDialogLabel.setText("AppBuilder Home:");
+		// Developer - Name Label
+		Label labelDeveloperName = new Label(container, SWT.NONE);
+		labelDeveloperName.setText("Developer Name:");
 		
-		// Button to open the directory dialog
-//		Button button = new Button(container, SWT.PUSH);
-//	    button.setText("Select Directory");
-//	    button.addSelectionListener(new SelectionAdapter() {
-//	      @Override
-//	      public void widgetSelected(SelectionEvent e) {
-//	        openDirectoryDialog();
-//	      }
-//	    });
-	    
-	    // Text field to display or allow user to enter the AppBuilder source directory
-//		appBuilderSourceText = new Text(container, SWT.BORDER | SWT.SINGLE);
-//		System.out.println("PreferenceConstants.APP_BUILDER_HOME: " + PreferenceConstants.APP_BUILDER_HOME);
-//		appBuilderSourceText.setText(PreferenceConstants.APP_BUILDER_HOME);
-//		appBuilderSourceText.addKeyListener(new KeyListener() {
-//
-//			@Override
-//			public void keyPressed(KeyEvent e) {
-//			}
-//
-//			@Override
-//			public void keyReleased(KeyEvent e) {
-//				if (!appBuilderSourceText.getText().isEmpty()) {
-//					setPageComplete(true);
-//				}
-//			}
-//		});
+		// Developer - Name Field
+		textDeveloperName = new Text(container, SWT.BORDER);
+		GridData developerNameGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		developerNameGridData.horizontalIndent = 8;
+		textDeveloperName.setLayoutData(developerNameGridData);
+		GridData developerNameData = new GridData(SWT.FILL, SWT.TOP, true, false);
+		textDeveloperName.setData(developerNameData);
 		
-		// Stretches the text field across both columns, otherwise it's too small
-//		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-//		appBuilderSourceText.setLayoutData(gd);
+		// Developer - Org Label
+		Label labelDeveloperOrg = new Label(container, SWT.NONE);
+		labelDeveloperOrg.setText("Developer Organization:");
+		
+		// Developer - Org Field
+		textDeveloperOrg = new Text(container, SWT.BORDER);
+		GridData developerOrgGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		developerOrgGridData.horizontalIndent = 8;
+		textDeveloperOrg.setLayoutData(developerOrgGridData);
+		GridData developerOrgData = new GridData(SWT.FILL, SWT.TOP, true, false);
+		textDeveloperOrg.setData(developerOrgData );
+		
+		// Developer - Domain Label
+		Label labelDeveloperDomain = new Label(container, SWT.NONE);
+		labelDeveloperDomain.setText("Developer Domain:");
+		
+		// Developer - Domain Field
+		textDeveloperDomain = new Text(container, SWT.BORDER);
+		GridData developerDomainGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		developerDomainGridData.horizontalIndent = 8;
+		textDeveloperDomain.setLayoutData(developerDomainGridData);
+		GridData developerDomainData = new GridData(SWT.FILL, SWT.TOP, true, false);
+		textDeveloperDomain.setData(developerDomainData);
+		
+		// Platform - iOS Enabled Radio Buttons
+		Label iosEnabledLabel = new Label(container, SWT.BORDER);
+		iosEnabledLabel.setText("Create iOS App:");
+		
+		// Make a separate Composite to group the iOS radio buttons
+		Composite iosRadioButtonContainer = new Composite(container, SWT.NONE);
+		GridLayout iosLayout = new GridLayout();
+		iosRadioButtonContainer.setLayout(iosLayout);
+		iosLayout.numColumns = 3;
+		
+		// Add the iOS buttons to the Composite and set default to Yes
+		iosEnabledYes = new Button(iosRadioButtonContainer, SWT.RADIO);
+		iosEnabledYes.setText("Yes");
+		Button iosEnabledNo = new Button(iosRadioButtonContainer, SWT.RADIO);
+		iosEnabledNo.setText("No");
+		iosEnabledYes.setSelection(true);
+		
+		// Platform - iOS Version
+		Label iosVersionLabel = new Label(container, SWT.BORDER);
+		iosVersionLabel.setText("iOS Version:");
+		
+		// iOS Versions dropdown with 6 selected by default
+		iosVersions = new Combo(container, SWT.READ_ONLY);
+		iosVersions.add("6", 0);
+		iosVersions.add("7", 1);
+		iosVersions.select(0);
+		
+		// Platform - Android Enabled Radio Buttons
+		Label androidEnabledLabel = new Label(container, SWT.BORDER);
+		androidEnabledLabel.setText("Create Android App:");
+		
+		// Make a separate Composite to group the Android radio buttons
+		Composite androidRadioButtonContainer = new Composite(container, SWT.NONE);
+		GridLayout androidLayout = new GridLayout();
+		androidRadioButtonContainer.setLayout(androidLayout);
+		androidLayout.numColumns = 3;
+		
+		// Add the Android buttons to the Composite and set default to Yes
+		androidEnabledYes = new Button(androidRadioButtonContainer, SWT.RADIO);
+		androidEnabledYes.setText("Yes");
+		Button androidEnabledNo = new Button(androidRadioButtonContainer, SWT.RADIO);
+		androidEnabledNo.setText("No");
+		androidEnabledYes.setSelection(true);
+		
+		// Platform - Android Version
+		Label androidVersionLabel = new Label(container, SWT.BORDER);
+		androidVersionLabel.setText("Android Version:");
+		
+		// Android Versions dropdown with 4 selected by default
+		androidVersions = new Combo(container, SWT.READ_ONLY);
+		androidVersions.add("4", 0);
+		androidVersions.add("4.1", 1);
+		androidVersions.add("4.2", 2);
+		androidVersions.add("4.3", 3);
+		androidVersions.select(0);
 		
 		// Required to avoid an error in the system
 		setControl(container);
@@ -90,5 +159,39 @@ public class PageTwo extends WizardPage {
 	    PreferenceConstants.APP_BUILDER_HOME = selectedDir;
 //	    Activator.getDefault().getPreferenceStore().setDefault("APP_BUILDER_HOME", selectedDir);
 	}
+	
+	public String getDeveloperName() {
+		System.out.println("getDeveloperName: " + textDeveloperName.toString());
+		return textDeveloperName.getText();
+	}
 
+	public String getDeveloperOrg() {
+		System.out.println("getDeveloperOrg: " + textDeveloperOrg.toString());
+		return textDeveloperOrg.getText();
+	}
+	
+	public String getDeveloperDomain() {
+		System.out.println("getDeveloperDomain: " + textDeveloperDomain.toString());
+		return textDeveloperDomain.getText();
+	}
+	
+	public boolean isIosEnabled() {
+		System.out.println("isIosEnabled: " + iosEnabledYes.getSelection());
+		return iosEnabledYes.getSelection();
+	}
+	
+	public String getIosVersion() {
+		System.out.println("getIosVersion: " + iosVersions.getItems()[iosVersions.getSelectionIndex()]);
+		return iosVersions.getItems()[iosVersions.getSelectionIndex()];
+	}
+	
+	public boolean isAndroidEnabled() {
+		System.out.println("isAndroidEnabled: " + androidEnabledYes.getSelection());
+		return androidEnabledYes.getSelection();
+	}
+	
+	public String getAndroidVersion() {
+		System.out.println("getAndroidVersion: " + androidVersions.getItems()[androidVersions.getSelectionIndex()]);
+		return androidVersions.getItems()[androidVersions.getSelectionIndex()];
+	}
 }

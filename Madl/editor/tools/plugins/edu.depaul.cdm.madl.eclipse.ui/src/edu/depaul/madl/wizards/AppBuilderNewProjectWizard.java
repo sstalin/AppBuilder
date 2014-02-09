@@ -8,6 +8,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
 
+import edu.depaul.madl.wizards.config.OrgPropertiesFile;
 import edu.depaul.madl.wizards.pages.AppBuilderNewJavaProject;
 import edu.depaul.madl.wizards.pages.PageTwo;
 
@@ -47,6 +48,13 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 //			new AppBuilderNewJavaProject().createJavaProject();
 			firstPage.createJavaProject();
 			AppBuilderConfiguration.getInstance().copyAppBuilderFiles();
+			
+			OrgPropertiesFile orgPropertiesFile = new OrgPropertiesFile(
+					pageTwo.getDeveloperName(), pageTwo.getDeveloperOrg(), 
+					pageTwo.getDeveloperDomain(), pageTwo.isIosEnabled(), pageTwo.getIosVersion(), 
+					pageTwo.isAndroidEnabled(), pageTwo.getAndroidVersion());
+			orgPropertiesFile.generateOrgPropertiesFile();
+			
 			AppBuilderConfiguration.getInstance().getProject().refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
 		} catch (CoreException e) {
 			// TODO Auto-generated catch block
