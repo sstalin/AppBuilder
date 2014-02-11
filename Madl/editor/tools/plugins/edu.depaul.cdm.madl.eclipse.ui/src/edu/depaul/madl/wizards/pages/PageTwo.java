@@ -20,6 +20,7 @@ import org.eclipse.swt.widgets.Text;
 import edu.depaul.cdm.madl.eclipse.ui.Activator;
 import edu.depaul.cdm.madl.eclipse.ui.PreferenceConstants;
 import edu.depaul.madl.wizards.AppBuilderConfiguration;
+import edu.depaul.madl.wizards.constants.AppPlatform;
 
 public class PageTwo extends WizardPage {
 
@@ -106,11 +107,10 @@ public class PageTwo extends WizardPage {
 		Label iosVersionLabel = new Label(container, SWT.BORDER);
 		iosVersionLabel.setText("iOS Version:");
 		
-		// iOS Versions dropdown with 6 selected by default
+		// iOS Versions dropdown with latest selected by default
 		iosVersions = new Combo(container, SWT.READ_ONLY);
-		iosVersions.add("6", 0);
-		iosVersions.add("7", 1);
-		iosVersions.select(0);
+		populateIosVersionsCombo();
+		defaultToLatestIosVersion();
 		
 		// Platform - Android Enabled Radio Buttons
 		Label androidEnabledLabel = new Label(container, SWT.BORDER);
@@ -135,11 +135,8 @@ public class PageTwo extends WizardPage {
 		
 		// Android Versions dropdown with 4 selected by default
 		androidVersions = new Combo(container, SWT.READ_ONLY);
-		androidVersions.add("4", 0);
-		androidVersions.add("4.1", 1);
-		androidVersions.add("4.2", 2);
-		androidVersions.add("4.3", 3);
-		androidVersions.select(0);
+		populateAndroidVersionsCombo();
+		defaultToLatestAndroidVersion();
 		
 		// Required to avoid an error in the system
 		setControl(container);
@@ -193,5 +190,25 @@ public class PageTwo extends WizardPage {
 	public String getAndroidVersion() {
 		System.out.println("getAndroidVersion: " + androidVersions.getItems()[androidVersions.getSelectionIndex()]);
 		return androidVersions.getItems()[androidVersions.getSelectionIndex()];
+	}
+	
+	private void defaultToLatestAndroidVersion() {
+		androidVersions.select(AppPlatform.getAndroidVersions().length - 1);
+	}
+
+	private void populateAndroidVersionsCombo() {
+		for (int i = 0; i < AppPlatform.getAndroidVersions().length; i++) {
+			androidVersions.add(AppPlatform.getAndroidVersions()[i]);
+		}
+	}
+
+	private void defaultToLatestIosVersion() {
+		iosVersions.select(AppPlatform.getIOsVersions().length - 1);
+	}
+
+	private void populateIosVersionsCombo() {
+		for (int i = 0; i < AppPlatform.getIOsVersions().length; i++) {
+			iosVersions.add(AppPlatform.getIOsVersions()[i]);
+		}
 	}
 }
