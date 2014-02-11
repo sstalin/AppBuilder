@@ -1,25 +1,15 @@
 package edu.depaul.madl.wizards.pages;
 
-import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.KeyEvent;
-import org.eclipse.swt.events.KeyListener;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
-import edu.depaul.cdm.madl.eclipse.ui.Activator;
-import edu.depaul.cdm.madl.eclipse.ui.PreferenceConstants;
-import edu.depaul.madl.wizards.AppBuilderConfiguration;
 import edu.depaul.madl.wizards.constants.AppPlatform;
 
 public class PageTwo extends WizardPage {
@@ -145,16 +135,6 @@ public class PageTwo extends WizardPage {
 
 	public String getAppBuilderSourceRootDirectory() {
 		return appBuilderSourceText.getText();
-	}
-	
-	private void openDirectoryDialog() {
-		DirectoryDialog dirDialog = new DirectoryDialog(container.getShell());
-	    dirDialog.setText("Select AppBuilder Home directory");
-	    String selectedDir = dirDialog.open();
-	    System.out.println("Selected directory: " + selectedDir);
-	    appBuilderSourceText.setText(selectedDir);
-	    PreferenceConstants.APP_BUILDER_HOME = selectedDir;
-//	    Activator.getDefault().getPreferenceStore().setDefault("APP_BUILDER_HOME", selectedDir);
 	}
 	
 	public String getDeveloperName() {
