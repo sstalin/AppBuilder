@@ -36,6 +36,8 @@ public class NewProjectWizardPageTwo extends WizardPage {
 	private Button button_2;
 	private Button button_3;
 	private Button btnBrowse;
+	private Button btnYes;
+	private Button button;
 	
 	private String iOsDestinationDir = "";
 	private String androidDestinationDir = "";
@@ -110,10 +112,10 @@ public class NewProjectWizardPageTwo extends WizardPage {
 		
 		text_5 = new Text(grpIos, SWT.BORDER);
 		text_5.setBounds(133, 83, 303, 19);
-		text_5.setText(getDefaultIosAppDestinationDirectory());	// TODO, hard-coded
+		text_5.setText(getDefaultIosAppDestinationDirectory());
 		text_5.setEnabled(false);
 		
-		Button btnYes = new Button(grpIos, SWT.RADIO);
+		btnYes = new Button(grpIos, SWT.RADIO);
 		btnYes.setSelection(true);
 		btnYes.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -159,13 +161,6 @@ public class NewProjectWizardPageTwo extends WizardPage {
 			}
 		});
 		btnBrowse.setEnabled(false);
-//		btnBrowse.addMouseListener(new MouseAdapter() {
-//			@Override
-//			public void mouseUp(MouseEvent e) {
-//				String destination = iosDirDialog.open();
-//				setIosDestinationDir(destination);
-//			}
-//		});
 		btnBrowse.setBounds(442, 79, 94, 28);
 		btnBrowse.setText("Browse");
 		
@@ -213,7 +208,7 @@ public class NewProjectWizardPageTwo extends WizardPage {
 		text_3.setEnabled(false);
 		text_3.setBounds(133, 83, 303, 19);
 		
-		Button button = new Button(grpAndroid, SWT.RADIO);
+		button = new Button(grpAndroid, SWT.RADIO);
 		button.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
@@ -314,6 +309,7 @@ public class NewProjectWizardPageTwo extends WizardPage {
 		combo.select(AppPlatform.getAndroidVersions().length - 1);
 	}
 	
+	// TODO, hard-coded
 	private String getDefaultIosAppDestinationDirectory() {
 		return "gen/Platform.ios";
 	}
@@ -331,8 +327,9 @@ public class NewProjectWizardPageTwo extends WizardPage {
 		return iOsDestinationDir;
 	}
 	
+	// TODO, hard-coded
 	private String getDefaultAndroidAppDestinationDirectory() {
-		return "gen/Platform.Android";	// TODO, hard-coded
+		return "gen/Platform.Android";
 	}
 	
 	private void setAndroidDestinationDir(String destination) {
@@ -346,5 +343,33 @@ public class NewProjectWizardPageTwo extends WizardPage {
 	private String getAndroidDestinationDir() {
 		System.out.println("Getting Android destination dir: " + androidDestinationDir);
 		return androidDestinationDir;
+	}
+
+	public String getDeveloperName() {
+		return text.getText();
+	}
+
+	public String getDeveloperOrg() {
+		return text_1.getText();
+	}
+
+	public String getDeveloperDomain() {
+		return text_2.getText();
+	}
+
+	public boolean isIosEnabled() {
+		return btnYes.getSelection();
+	}
+
+	public String getIosVersion() {
+		return combo.getItems()[combo.getSelectionIndex()];
+	}
+
+	public boolean isAndroidEnabled() {
+		return button.getSelection();
+	}
+
+	public String getAndroidVersion() {
+		return combo_1.getItems()[combo_1.getSelectionIndex()];
 	}
 }

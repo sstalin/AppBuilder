@@ -37,11 +37,11 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 		
 //		firstPage = new AppBuilderProjectPage();
 		firstPage = new AppBuilderNewJavaProject();
-		pageTwo = new PageTwo();
+//		pageTwo = new PageTwo();
 		page2 = new NewProjectWizardPageTwo();
 		
 		addPage(firstPage);
-		addPage(pageTwo);
+//		addPage(pageTwo);
 		addPage(page2);
 		
 	}
@@ -56,9 +56,9 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 			AppBuilderConfiguration.getInstance().copyAppBuilderFiles();
 			
 			OrgPropertiesFile orgPropertiesFile = new OrgPropertiesFile(
-					pageTwo.getDeveloperName(), pageTwo.getDeveloperOrg(), 
-					pageTwo.getDeveloperDomain(), pageTwo.isIosEnabled(), pageTwo.getIosVersion(), 
-					pageTwo.isAndroidEnabled(), pageTwo.getAndroidVersion());
+					page2.getDeveloperName(), page2.getDeveloperOrg(), 
+					page2.getDeveloperDomain(), page2.isIosEnabled(), page2.getIosVersion(), 
+					page2.isAndroidEnabled(), page2.getAndroidVersion());
 			orgPropertiesFile.generateOrgPropertiesFile();
 			
 			AppBuilderConfiguration.getInstance().getProject().refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
