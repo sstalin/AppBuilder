@@ -58,7 +58,9 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 			OrgPropertiesFile orgPropertiesFile = new OrgPropertiesFile(
 					page2.getDeveloperName(), page2.getDeveloperOrg(), 
 					page2.getDeveloperDomain(), page2.isIosEnabled(), page2.getIosVersion(), 
-					page2.isAndroidEnabled(), page2.getAndroidVersion());
+					page2.isAndroidEnabled(), page2.getAndroidVersion(),
+					page2.getIosDestinationDir(), page2.getAndroidDestinationDir(),
+					page2.isDefaultIosOutputDir(), page2.isDefaultAndroidOutputDir());
 			orgPropertiesFile.generateOrgPropertiesFile();
 			
 			AppBuilderConfiguration.getInstance().getProject().refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);

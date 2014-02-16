@@ -24,12 +24,22 @@ public class OrgPropertiesFile {
 	private boolean platformAndroidEnabled;
 	private String platformAndroidVersion;
 	
-	private final String ORG_PROPERTIES_FILENAME = "org.properties";
+	private String iosOutputDir;
+	private String androidOutputDir;
+	
+	private boolean isDefaultIosOutputDir;
+	private boolean isDefaultAndroidOutputDir;
+	
+	private final String ORG_PROPERTIES_FILENAME = "org.conf";
+	
+	public OrgPropertiesFile() {}
 		
 	public OrgPropertiesFile(String developerName, String developerOrg,
 			String developerDomain, boolean platformIosEnabled,
 			String platformIosVersion, boolean platformAndroidEnabled,
-			String platformAndroidVersion) {
+			String platformAndroidVersion, 
+			String iosOutputDir, String androidOutputDir,
+			boolean isDefaultIosOutputDir, boolean isDefaultAndroidOutputDir) {
 		setDeveloperName(developerName);
 		setDeveloperOrg(developerOrg);
 		setDeveloperDomain(developerDomain);
@@ -37,6 +47,10 @@ public class OrgPropertiesFile {
 		setPlatformIosVersion(platformIosVersion);
 		setPlatformAndroidEnabled(platformAndroidEnabled);
 		setPlatformAndroidVersion(platformAndroidVersion);
+		setIosOutputDir(iosOutputDir);
+		setAndroidOutputDir(androidOutputDir);
+		setDefaultIosOutputDir(isDefaultIosOutputDir);
+		setDefaultAndroidOutputDir(isDefaultAndroidOutputDir);
 	}
 	
 	public String getDeveloperName() {
@@ -95,6 +109,38 @@ public class OrgPropertiesFile {
 		this.platformAndroidVersion = platformAndroidVersion;
 	}
 
+	public String getIosOutputDir() {
+		return iosOutputDir;
+	}
+
+	public void setIosOutputDir(String iosOutputDir) {
+		this.iosOutputDir = iosOutputDir;
+	}
+
+	public String getAndroidOutputDir() {
+		return androidOutputDir;
+	}
+
+	public void setAndroidOutputDir(String androidOutputDir) {
+		this.androidOutputDir = androidOutputDir;
+	}
+
+	public boolean isDefaultIosOutputDir() {
+		return isDefaultIosOutputDir;
+	}
+
+	public void setDefaultIosOutputDir(boolean isDefaultIosOutputDir) {
+		this.isDefaultIosOutputDir = isDefaultIosOutputDir;
+	}
+
+	public boolean isDefaultAndroidOutputDir() {
+		return isDefaultAndroidOutputDir;
+	}
+
+	public void setDefaultAndroidOutputDir(boolean isDefaultAndroidOutputDir) {
+		this.isDefaultAndroidOutputDir = isDefaultAndroidOutputDir;
+	}
+
 	public void generateOrgPropertiesFile() {
 		System.out.println("Generating org.properties file from configuration");
 		
@@ -105,25 +151,10 @@ public class OrgPropertiesFile {
 		try {
 			orgPropertiesFile.createNewFile();
 			writer = new FileWriter(orgPropertiesFile);
-			writer.write("\ndeveloper {\n");
-			writer.write("\tname = \"" + getDeveloperName() + "\"\n");
-			writer.write("\torg = \"" + getDeveloperOrg() + "\"\n");
-			writer.write("\tdomain = \"" + getDeveloperDomain() + "\"\n");
-			writer.write("}\n\n");
+			writeDeveloperConfig(writer);
 			writer.write("platform {\n");
-			
-			if (isPlatformIosEnabled()) {
-				writer.write("\tios {\n");
-				writer.write("\t\tversion = " + getPlatformIosVersion() + "\n");
-				writer.write("\t}\n");
-			}
-			
-			if (isPlatformAndroidEnabled()) {
-				writer.write("\tandroid {\n");
-				writer.write("\t\tversion = " + getPlatformAndroidVersion() + "\n");
-				writer.write("\t}\n");
-			}
-			
+			writeIosConfig(writer);
+			writeAndroidConfig(writer);
 			writer.write("}");
 		} catch (Exception ex) {
 			System.err.println("Error writing to org.properties file!");
@@ -135,6 +166,44 @@ public class OrgPropertiesFile {
 				System.err.println("Error closing FileWriter!");
 				ex.printStackTrace();
 			}
+		}
+	}
+
+	private void writeDeveloperConfig(FileWriter writer) throws IOException {
+		writer.write("\ndeveloper {\n");
+		writer.write("\tname = \"" + getDeveloperName() + "\"\n");
+		writer.write("\torg = \"" + getDeveloperOrg() + "\"\n");
+		writer.write("\tdomain = \"" + getDeveloperDomain() + "\"\n");
+		writer.write("}\n\n");
+	}
+	
+	private void writeIosConfig(FileWriter writer) throws IOException {
+		if (isPlatformIosEnabled()) {
+			writer.write("\tios {\n");
+			writer.write("\t\tversion = " + getPlatformIosVersion() + "\n");
+			writeIosOutputDir(writer);
+			writer.write("\t}\n");
+		}
+	}
+
+	private void writeIosOutputDir(FileWriter writer) throws IOException {
+		if (!isDefaultIosOutputDir()) {
+			writer.write("\t\toutput.dir = " + getIosOutputDir() + "\n");
+		}
+	}
+
+	private void writeAndroidConfig(FileWriter writer) throws IOException {
+		if (isPlatformAndroidEnabled()) {
+			writer.write("\tandroid {\n");
+			writer.write("\t\tversion = " + getPlatformAndroidVersion() + "\n");
+			writeAndroidOutputDir(writer);
+			writer.write("\t}\n");
+		}
+	}
+
+	private void writeAndroidOutputDir(FileWriter writer) throws IOException {
+		if (!isDefaultAndroidOutputDir()) {
+			writer.write("\t\toutput.dir = " + getAndroidOutputDir() + "\n");
 		}
 	}
 }

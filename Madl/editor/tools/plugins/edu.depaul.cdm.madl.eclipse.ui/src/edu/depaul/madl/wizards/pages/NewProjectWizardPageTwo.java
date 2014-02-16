@@ -340,7 +340,7 @@ public class NewProjectWizardPageTwo extends WizardPage {
 		System.out.println("iOS dir set to: " + iOsDestinationDir);
 	}
 
-	private String getAndroidDestinationDir() {
+	public String getAndroidDestinationDir() {
 		System.out.println("Getting Android destination dir: " + androidDestinationDir);
 		return androidDestinationDir;
 	}
@@ -371,5 +371,13 @@ public class NewProjectWizardPageTwo extends WizardPage {
 
 	public String getAndroidVersion() {
 		return combo_1.getItems()[combo_1.getSelectionIndex()];
+	}
+	
+	public boolean isDefaultIosOutputDir() {
+		return btnUseDefaultDestination.getSelection();
+	}
+	
+	public boolean isDefaultAndroidOutputDir() {
+		return button_3.getSelection();
 	}
 }
