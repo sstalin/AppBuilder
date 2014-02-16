@@ -1,5 +1,6 @@
 package edu.depaul.madl.wizards.pages;
 
+import org.eclipse.jface.preference.DirectoryFieldEditor;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -7,6 +8,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
@@ -23,6 +25,8 @@ public class PageTwo extends WizardPage {
 	
 	private Button iosEnabledYes;
 	private Combo iosVersions;
+	private Text iosAppDestinationText;
+	
 	private Button androidEnabledYes;
 	private Combo androidVersions;
 	
@@ -101,6 +105,20 @@ public class PageTwo extends WizardPage {
 		iosVersions = new Combo(container, SWT.READ_ONLY);
 		populateIosVersionsCombo();
 		defaultToLatestIosVersion();
+		
+		// Destination where to save the generated iOS app
+		Label iosAppDestinationLabel = new Label(container, SWT.BORDER);
+		iosAppDestinationLabel.setText("iOS App Destination:");
+		
+		iosAppDestinationText = new Text(container, SWT.BORDER);
+		GridData iosAppDestinationGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		iosAppDestinationGridData.horizontalIndent = 8;
+		iosAppDestinationText.setLayoutData(iosAppDestinationGridData);
+		GridData iosAppDestinationData = new GridData(SWT.FILL, SWT.TOP, true, false);
+		iosAppDestinationText.setData(iosAppDestinationData);
+		
+//		DirectoryFieldEditor iosDirFieldEditor = // TODO, this is convenient but breaks layout
+//				new DirectoryFieldEditor("APP_BUILDER_HOME", "iOS App Destination:", container);
 		
 		// Platform - Android Enabled Radio Buttons
 		Label androidEnabledLabel = new Label(container, SWT.BORDER);
