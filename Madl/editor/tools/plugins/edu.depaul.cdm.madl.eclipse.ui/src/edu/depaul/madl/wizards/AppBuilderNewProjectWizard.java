@@ -10,7 +10,6 @@ import org.eclipse.ui.IWorkbenchWizard;
 
 import edu.depaul.madl.wizards.config.OrgPropertiesFile;
 import edu.depaul.madl.wizards.pages.AppBuilderNewJavaProject;
-import edu.depaul.madl.wizards.pages.NewProjectWizardPageTwo;
 import edu.depaul.madl.wizards.pages.PageTwo;
 
 public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWizard {
@@ -18,7 +17,6 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 //	protected AppBuilderProjectPage firstPage;
 	protected AppBuilderNewJavaProject firstPage;
 	protected PageTwo pageTwo;
-	protected NewProjectWizardPageTwo page2;
 	
 	protected IWorkbench workbench;
 	protected IStructuredSelection selection;
@@ -37,12 +35,10 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 		
 //		firstPage = new AppBuilderProjectPage();
 		firstPage = new AppBuilderNewJavaProject();
-//		pageTwo = new PageTwo();
-		page2 = new NewProjectWizardPageTwo();
+		pageTwo = new PageTwo();
 		
 		addPage(firstPage);
-//		addPage(pageTwo);
-		addPage(page2);
+		addPage(pageTwo);
 		
 	}
 
@@ -56,11 +52,11 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 			AppBuilderConfiguration.getInstance().copyAppBuilderFiles();
 			
 			OrgPropertiesFile orgPropertiesFile = new OrgPropertiesFile(
-					page2.getDeveloperName(), page2.getDeveloperOrg(), 
-					page2.getDeveloperDomain(), page2.isIosEnabled(), page2.getIosVersion(), 
-					page2.isAndroidEnabled(), page2.getAndroidVersion(),
-					page2.getIosDestinationDir(), page2.getAndroidDestinationDir(),
-					page2.isDefaultIosOutputDir(), page2.isDefaultAndroidOutputDir());
+					pageTwo.getDeveloperName(), pageTwo.getDeveloperOrg(), 
+					pageTwo.getDeveloperDomain(), pageTwo.isIosEnabled(), pageTwo.getIosVersion(), 
+					pageTwo.isAndroidEnabled(), pageTwo.getAndroidVersion(),
+					pageTwo.getIosDestinationDir(), pageTwo.getAndroidDestinationDir(),
+					pageTwo.isDefaultIosOutputDir(), pageTwo.isDefaultAndroidOutputDir());
 			orgPropertiesFile.generateOrgPropertiesFile();
 			
 			AppBuilderConfiguration.getInstance().getProject().refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
