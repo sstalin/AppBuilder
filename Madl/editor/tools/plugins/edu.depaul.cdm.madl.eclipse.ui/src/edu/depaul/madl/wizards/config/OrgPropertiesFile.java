@@ -111,10 +111,19 @@ public class OrgPropertiesFile {
 			writer.write("\tdomain = \"" + getDeveloperDomain() + "\"\n");
 			writer.write("}\n\n");
 			writer.write("platform {\n");
-			writer.write("\tios = " + isPlatformIosEnabled() + "\n");
-			writer.write("\tios_version = " + getPlatformIosVersion() + "\n\n");
-			writer.write("\tandroid = " + isPlatformAndroidEnabled() + "\n");
-			writer.write("\tandroid_version = " + getPlatformAndroidVersion() + "\n");
+			
+			if (isPlatformIosEnabled()) {
+				writer.write("\tios {\n");
+				writer.write("\t\tversion = " + getPlatformIosVersion() + "\n");
+				writer.write("\t}\n");
+			}
+			
+			if (isPlatformAndroidEnabled()) {
+				writer.write("\tandroid {\n");
+				writer.write("\t\tversion = " + getPlatformAndroidVersion() + "\n");
+				writer.write("\t}\n");
+			}
+			
 			writer.write("}");
 		} catch (Exception ex) {
 			System.err.println("Error writing to org.properties file!");
