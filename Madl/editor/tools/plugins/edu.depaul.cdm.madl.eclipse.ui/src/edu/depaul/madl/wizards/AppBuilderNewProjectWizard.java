@@ -11,12 +11,14 @@ import org.eclipse.ui.IWorkbenchWizard;
 import edu.depaul.madl.wizards.config.OrgPropertiesFile;
 import edu.depaul.madl.wizards.pages.AppBuilderNewJavaProject;
 import edu.depaul.madl.wizards.pages.PageTwo;
+import edu.depaul.madl.wizards.pages.TemplateSelectionPage;
 
 public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWizard {
 	
 //	protected AppBuilderProjectPage firstPage;
 	protected AppBuilderNewJavaProject firstPage;
 	protected PageTwo pageTwo;
+	protected TemplateSelectionPage templateSelectionPage;
 	
 	protected IWorkbench workbench;
 	protected IStructuredSelection selection;
@@ -36,10 +38,11 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 //		firstPage = new AppBuilderProjectPage();
 		firstPage = new AppBuilderNewJavaProject();
 		pageTwo = new PageTwo();
+		templateSelectionPage = new TemplateSelectionPage();
 		
 		addPage(firstPage);
 		addPage(pageTwo);
-		
+		addPage(templateSelectionPage);
 	}
 
 	@Override
