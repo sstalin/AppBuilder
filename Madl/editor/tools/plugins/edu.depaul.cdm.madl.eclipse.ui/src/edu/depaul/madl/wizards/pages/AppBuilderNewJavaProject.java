@@ -77,8 +77,8 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage {
 		AppBuilderConfiguration.getInstance().setProject(getProjectHandle());
 		
 		// Get the folders of the external jar files
-		File libFolder = new File(PreferenceConstants.APP_BUILDER_HOME + "/lib/");
-		File extFolder = new File(PreferenceConstants.APP_BUILDER_HOME + "/lib/ext/");
+		File libFolder = new File(PreferenceConstants.APP_BUILDER_HOME + File.separator + "lib" + File.separator);
+		File extFolder = new File(PreferenceConstants.APP_BUILDER_HOME + File.separator + "lib" + File.separator + "ext" + File.separator);
 		
 		// Get all the files from the external jar folders
 		File[] libFiles = libFolder.listFiles();

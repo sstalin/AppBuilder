@@ -42,7 +42,7 @@ public class PageTwo extends WizardPage {
 	private String iOsDestinationDir = "";
 	private String androidDestinationDir = "";
 	
-	private Text text_3;
+	private Text txtGenplatformandroid;
 
 	/**
 	 * Create the wizard.
@@ -203,10 +203,10 @@ public class PageTwo extends WizardPage {
 		label_2.setText("Destination:");
 		label_2.setBounds(10, 86, 87, 14);
 		
-		text_3 = new Text(grpAndroid, SWT.BORDER);
-		text_3.setText("gen/Platform.ios");
-		text_3.setEnabled(false);
-		text_3.setBounds(133, 83, 303, 19);
+		txtGenplatformandroid = new Text(grpAndroid, SWT.BORDER);
+		txtGenplatformandroid.setText("gen/Platform.Android");
+		txtGenplatformandroid.setEnabled(false);
+		txtGenplatformandroid.setBounds(133, 83, 303, 19);
 		
 		button = new Button(grpAndroid, SWT.RADIO);
 		button.addSelectionListener(new SelectionAdapter() {
@@ -216,7 +216,7 @@ public class PageTwo extends WizardPage {
 				button_3.setEnabled(true);
 				
 				if (!button_3.getSelection()) {
-					text_3.setEnabled(true);
+					txtGenplatformandroid.setEnabled(true);
 					button_2.setEnabled(true);
 				}
 			}
@@ -240,7 +240,7 @@ public class PageTwo extends WizardPage {
 			public void widgetSelected(SelectionEvent e) {
 				combo_1.setEnabled(false);
 				button_3.setEnabled(false);
-				text_3.setEnabled(false);
+				txtGenplatformandroid.setEnabled(false);
 				button_2.setEnabled(false);
 			}
 		});
@@ -272,13 +272,13 @@ public class PageTwo extends WizardPage {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				// Toggle directory text between enabled/disabled
-				text_3.setEnabled(!text_3.getEnabled());
+				txtGenplatformandroid.setEnabled(!txtGenplatformandroid.getEnabled());
 				
-				if (text_3.isEnabled()) {	// If text became enabled, reset text to what user entered previously (or blank)
-					text_3.setText(getAndroidDestinationDir());					
+				if (txtGenplatformandroid.isEnabled()) {	// If text became enabled, reset text to what user entered previously (or blank)
+					txtGenplatformandroid.setText(getAndroidDestinationDir());					
 				} else {					// If text became disabled, reset text to the default destination directory
-					setAndroidDestinationDir(text_3.getText());
-					text_3.setText(getDefaultAndroidAppDestinationDirectory());					
+					setAndroidDestinationDir(txtGenplatformandroid.getText());
+					txtGenplatformandroid.setText(getDefaultAndroidAppDestinationDirectory());					
 				}
 				
 				button_2.setEnabled(!button_2.getEnabled());
@@ -335,8 +335,8 @@ public class PageTwo extends WizardPage {
 	private void setAndroidDestinationDir(String destination) {
 		System.out.println("Setting Android dir to: " + destination);
 		androidDestinationDir = destination;
-		text_3.setText(destination);
-		text_3.setFocus();
+		txtGenplatformandroid.setText(destination);
+		txtGenplatformandroid.setFocus();
 		System.out.println("iOS dir set to: " + iOsDestinationDir);
 	}
 
