@@ -64,7 +64,7 @@ public class TemplateSelectionPage extends WizardPage {
 		GridData gd_list = new GridData(SWT.LEFT, SWT.TOP, false, false, 1, 1);
 		gd_list.widthHint = 176;
 		list.setLayoutData(gd_list);
-		list.setItems(new String[] {"Name Input Screen", "Colored Name and Address Input", "Shopping List"});
+		list.setItems(new String[] {"Name Input Screen", "Colored Name & Address Input", "Shopping List"});
 		
 		final CLabel lblNewLabel = new CLabel(container, SWT.BORDER | SWT.SHADOW_IN);
 		lblNewLabel.setTopMargin(0);
