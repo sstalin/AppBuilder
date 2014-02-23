@@ -87,17 +87,8 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage {
 		File[] extFiles = extFolder.listFiles();
 		
 		// Put files excluding directories into lists
-		List<File> libFileList = null;
-		List<File> extFileList = null;
-		try {
-			libFileList = getFilesExcludingDirectories(libFiles);
-			extFileList = getFilesExcludingDirectories(extFiles);
-		} catch (Exception e) {
-			System.err.println("Error excluding directories from external jars to be added to build path");
-			System.err.println("libFolder: " + libFolder.getAbsolutePath());
-			System.err.println("extFolder: " + extFolder.getAbsolutePath());
-			e.printStackTrace();
-		}
+		List<File> libFileList = getFilesExcludingDirectories(libFiles);
+		List<File> extFileList = getFilesExcludingDirectories(extFiles);
 		
 		// Classpath entries need to be in an array
 		IClasspathEntry[] libEntries = new IClasspathEntry[2 + libFileList.size() + extFileList.size()];
