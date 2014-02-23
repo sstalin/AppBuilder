@@ -10,6 +10,10 @@ public class PreferenceConstants {
     }
 
     public static String APP_BUILDER_HOME = 
-    		Activator.getDefault().getPreferenceStore().getString("APP_BUILDER_HOME");
+//    		Activator.getDefault().getPreferenceStore().getString("APP_BUILDER_HOME");
+    		getAppBuilderHome();
     
+    public static String getAppBuilderHome() {
+    	return Activator.getDefault().getPreferenceStore().getString("APP_BUILDER_HOME");
+    }
 }

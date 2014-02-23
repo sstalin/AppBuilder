@@ -48,9 +48,9 @@ public class AppBuilderConfiguration {
 		
 		try {
 			// Local AppBuilder files and directories
-			File localConfDir = new File(PreferenceConstants.APP_BUILDER_HOME + "/conf");
-			File localLibApiDir = new File(PreferenceConstants.APP_BUILDER_HOME + "/lib/api");
-			File localTemplateDir = new File(PreferenceConstants.APP_BUILDER_HOME + "/templates");
+			File localConfDir = new File(PreferenceConstants.getAppBuilderHome() + "/conf");
+			File localLibApiDir = new File(PreferenceConstants.getAppBuilderHome() + "/lib/api");
+			File localTemplateDir = new File(PreferenceConstants.getAppBuilderHome() + "/templates");
 //			File localOrgPropertiesFile = new File(PreferenceConstants.APP_BUILDER_HOME + "/test/org.properties");
 			
 			// Copy AppBuilder from local location to the Eclipse project
