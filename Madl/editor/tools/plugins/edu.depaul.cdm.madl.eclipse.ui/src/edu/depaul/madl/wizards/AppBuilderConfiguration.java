@@ -6,6 +6,12 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.ui.console.ConsolePlugin;
+import org.eclipse.ui.console.IConsole;
+import org.eclipse.ui.console.IConsoleConstants;
+import org.eclipse.ui.console.IConsoleManager;
+import org.eclipse.ui.console.IConsoleView;
+import org.eclipse.ui.console.MessageConsole;
 
 import edu.depaul.cdm.madl.eclipse.ui.PreferenceConstants;
 
@@ -56,4 +62,5 @@ public class AppBuilderConfiguration {
 			ex.printStackTrace();
 		}
 	}
+
 }

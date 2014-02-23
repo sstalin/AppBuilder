@@ -20,6 +20,8 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.launching.JavaRuntime;
+import org.eclipse.ui.console.MessageConsole;
+import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 
 import edu.depaul.cdm.madl.eclipse.ui.PreferenceConstants;
@@ -85,8 +87,17 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage {
 		File[] extFiles = extFolder.listFiles();
 		
 		// Put files excluding directories into lists
-		List<File> libFileList = getFilesExcludingDirectories(libFiles);
-		List<File> extFileList = getFilesExcludingDirectories(extFiles);
+		List<File> libFileList = null;
+		List<File> extFileList = null;
+		try {
+			libFileList = getFilesExcludingDirectories(libFiles);
+			extFileList = getFilesExcludingDirectories(extFiles);
+		} catch (Exception e) {
+			System.err.println("Error excluding directories from external jars to be added to build path");
+			System.err.println("libFolder: " + libFolder.getAbsolutePath());
+			System.err.println("extFolder: " + extFolder.getAbsolutePath());
+			e.printStackTrace();
+		}
 		
 		// Classpath entries need to be in an array
 		IClasspathEntry[] libEntries = new IClasspathEntry[2 + libFileList.size() + extFileList.size()];
@@ -120,24 +131,25 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage {
 
 	private List<File> getFilesExcludingDirectories(File[] files) {
 		List<File> libFileList = new ArrayList<File>();
+		
 		for (int i = 0; i < files.length; i++) {
 			if (files[i].isFile()) {
 				libFileList.add(files[i]);
 			}
 		}
+		
 		return libFileList;
 	}
 
 	private void insertSampleApp(IFile file) {
+		
 		URL url;
 		try {
 			// Get the input from the template file
 		    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/templates/enter_name_app");
 		    InputStream inputStream = url.openConnection().getInputStream();
-		    
 		    System.out.println("Inserting sample app...");		    		    
 		    file.create(inputStream, true, null);
-		 
 		} catch (IOException e) {
 	        System.err.println("Error in insertSampleApp method while opening template");
 		    e.printStackTrace();
