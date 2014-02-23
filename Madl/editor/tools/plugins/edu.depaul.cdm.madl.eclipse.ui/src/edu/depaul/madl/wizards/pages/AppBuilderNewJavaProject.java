@@ -20,8 +20,6 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.launching.JavaRuntime;
-import org.eclipse.ui.console.MessageConsole;
-import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 
 import edu.depaul.cdm.madl.eclipse.ui.PreferenceConstants;
@@ -71,9 +69,6 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage {
 		//create folder by using resources package
 		IFolder folder = project.getFolder("src");
 		folder.create(true, true, null);
-		
-		IFile file = folder.getFile(ProjectFilenames.MADL_FILE);		
-		insertSampleApp(file);
 		
 		// Set a reference to the IProject so that we can later use it to create AppBuilder files and directories
 		AppBuilderConfiguration.getInstance().setProject(getProjectHandle());

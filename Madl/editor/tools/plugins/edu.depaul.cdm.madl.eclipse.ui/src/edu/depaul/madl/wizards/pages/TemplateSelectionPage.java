@@ -13,17 +13,22 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.custom.CLabel;
 
+import edu.depaul.madl.wizards.constants.TemplateConfig;
+import org.eclipse.wb.swt.SWTResourceManager;
+
 public class TemplateSelectionPage extends WizardPage {
 	
 	private CLabel templateDescriptionLabel;
+	private List list;
+	private boolean isTemplateSelected;
 
 	/**
 	 * Create the wizard.
 	 */
 	public TemplateSelectionPage() {
 		super("wizardPage");
-		setTitle("Wizard Page title");
-		setDescription("Wizard Page description");
+		setTitle("Templates");
+		setDescription("Optionally select a starter template for your project");
 	}
 
 	/**
@@ -31,17 +36,27 @@ public class TemplateSelectionPage extends WizardPage {
 	 * @param parent
 	 */
 	public void createControl(Composite parent) {
-		Composite container = new Composite(parent, SWT.NULL);
+		Composite container = new Composite(parent, SWT.NONE);
 
 		setControl(container);
-		container.setLayout(new GridLayout(2, false));
+		GridLayout gl_container = new GridLayout(2, false);
+		container.setLayout(gl_container);
 		
-		final List list = new List(container, SWT.BORDER);
+		Label lblTemplate = new Label(container, SWT.NONE);
+		lblTemplate.setFont(SWTResourceManager.getFont("Lucida Grande", 13, SWT.BOLD));
+		lblTemplate.setText("Template");
+		
+		Label lblDescription = new Label(container, SWT.NONE);
+		lblDescription.setFont(SWTResourceManager.getFont("Lucida Grande", 13, SWT.BOLD));
+		lblDescription.setText("Description");
+		
+		list = new List(container, SWT.BORDER);
 		list.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				list.getSelection();
-				getTemplateDescriptionLabel().setText(list.getItems()[list.getSelectionIndex()]);
+				getTemplateDescriptionLabel().setText(TemplateConfig.getDescription(list.getSelectionIndex()));
+				isTemplateSelected = true;
 				System.out.println("Label selected");
 			}
 		});
@@ -49,15 +64,16 @@ public class TemplateSelectionPage extends WizardPage {
 		GridData gd_list = new GridData(SWT.LEFT, SWT.TOP, false, false, 1, 1);
 		gd_list.widthHint = 176;
 		list.setLayoutData(gd_list);
-		list.setItems(new String[] {"Text input app", "Hello world app"});
+		list.setItems(new String[] {"Name Input Screen", "Colored Name and Address Input", "Shopping List"});
 		
 		final CLabel lblNewLabel = new CLabel(container, SWT.BORDER | SWT.SHADOW_IN);
+		lblNewLabel.setTopMargin(0);
 		setTemplateDescriptionLabel(lblNewLabel);
 		GridData gd_lblNewLabel = new GridData(SWT.LEFT, SWT.TOP, false, false, 1, 1);
-		gd_lblNewLabel.heightHint = 268;
+		gd_lblNewLabel.heightHint = 107;
 		gd_lblNewLabel.widthHint = 393;
 		lblNewLabel.setLayoutData(gd_lblNewLabel);
-		lblNewLabel.setText("Template Description");
+		lblNewLabel.setText("Choose a template on the left");
 	}
 	
 	private void setTemplateDescriptionLabel(CLabel label) {
@@ -66,6 +82,14 @@ public class TemplateSelectionPage extends WizardPage {
 	
 	private CLabel getTemplateDescriptionLabel() {
 		return templateDescriptionLabel;
+	}
+	
+	public boolean isTemplateSelected() {
+		return isTemplateSelected;
+	}
+	
+	public int getSelectedTemplateIndex() {
+		return list.getSelectionIndex();
 	}
 
 }
