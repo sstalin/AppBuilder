@@ -119,12 +119,20 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage {
 		List<File> libFileList = new ArrayList<File>();
 		
 		for (int i = 0; i < files.length; i++) {
-			if (files[i].isFile()) {
+			if (files[i].isFile() && !isDsStore(files[i])) {
 				libFileList.add(files[i]);
 			}
 		}
 		
 		return libFileList;
+	}
+
+	private boolean isDsStore(File file) {
+		if (file.getName().equals(".DS_Store")) {
+			System.out.println("Filtered out .DS_Store file");
+			return true;
+		}
+		return false;
 	}
 
 	private void insertSampleApp(IFile file) {
