@@ -1,5 +1,7 @@
 package edu.depaul.madl.wizards;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -15,6 +17,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
 
 import edu.depaul.madl.wizards.config.OrgPropertiesFile;
+import edu.depaul.madl.wizards.constants.ProjectFilenames;
 import edu.depaul.madl.wizards.constants.TemplateConfig;
 import edu.depaul.madl.wizards.pages.AppBuilderNewJavaProject;
 import edu.depaul.madl.wizards.pages.PageTwo;
@@ -88,9 +91,11 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 	}
 	
 	private void addTemplate() {
+		IFolder folder = AppBuilderConfiguration.getInstance().getProject().getFolder("src");
+		
+		// If a template was selected, put it in the src directory
 		if (templateSelectionPage.isTemplateSelected()) {
 			URL url;
-			IFolder folder = AppBuilderConfiguration.getInstance().getProject().getFolder("src");
 			IFile file = folder.getFile(TemplateConfig.getFilename(templateSelectionPage.getSelectedTemplateIndex()));		
 			try {
 				// Get the input from the template file
@@ -103,6 +108,13 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 		        System.err.println("Error in addTemplate method while opening template");
 			    e.printStackTrace();
 			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+		} else {	// Otherwise, create an empty app.madl source file
+			try {
+				folder.getFile(ProjectFilenames.MADL_FILE).create(new ByteArrayInputStream(new byte[0]), true, null);
+			} catch (CoreException e) {
+				System.err.println("Error creating an empty app.madl file");
 				e.printStackTrace();
 			}
 		}
