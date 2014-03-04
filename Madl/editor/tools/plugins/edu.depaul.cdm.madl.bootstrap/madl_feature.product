@@ -49,7 +49,6 @@
       <plugin id="edu.depaul.cdm.madl.eclipse.preferences"/>
       <plugin id="edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard"/>
       <plugin id="edu.depaul.cdm.madl.launcher"/>
-      <plugin id="edu.depaul.cdm.madl.tools.ui"/>
    </plugins>
 
    <configurations>

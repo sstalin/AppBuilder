@@ -7,12 +7,13 @@
       <editor
             name="Madl Editor"
             extensions="madl"
-            icon="icons/sample.gif"
+            icon="$nl$/icons/full/madl16/madl.png"
             contributorClass="edu.depaul.cdm.madl.tools.multipage.MadlEditorContributor"
             class="edu.depaul.cdm.madl.tools.multipage.MultiPageMadlEditor"
             id="edu.depaul.cdm.cpdt.editor.multipage.MadlEditor">
       </editor>
    </extension>
+   <!--
    <extension
          point="org.eclipse.ui.newWizards">
       <category
@@ -21,12 +22,13 @@
       </category>
       <wizard
             name="Multi-page Madl Editor file"
-            icon="icons/sample.gif"
+            icon="$nl$/icons/full/madl16/madl.png"
             category="edu.depaul.cdm.cpdt.editor"
             class="edu.depaul.cdm.madl.editor.wizards.MadlNewWizard"
             id="edu.depaul.cdm.cpdt.editor.wizards.MadlNewWizard">
       </wizard>
-   </extension>
+   </extension>-->
+   
    <extension
          id="edu.depaul.cdm.madl.editor.ui.text.editor.MadlDocumentSetupParticipant"
 	     name="MadlDocumentSetupParticipant"

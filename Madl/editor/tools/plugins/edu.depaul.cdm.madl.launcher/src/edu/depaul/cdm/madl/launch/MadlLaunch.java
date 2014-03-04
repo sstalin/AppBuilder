@@ -15,7 +15,7 @@ import edu.depaul.madl.wizards.AppBuilderConfiguration;
 public class MadlLaunch extends AbstractJavaLaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 
 //	AppBuilderConfiguration config;
-	
+
 	@Override
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
