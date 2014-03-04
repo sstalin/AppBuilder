@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Groovy Editor extension"
+            extensions="madl"
+            icon="$nl$/icons/full/madl16/madl.png"
+            class="org.codehaus.groovy.eclipse.editor.GroovyEditor"
+            id="GroovyEditorExt">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.core.contenttype.contentTypes"> 
+      <file-association 
+       content-type="org.eclipse.jdt.groovy.core.groovySource"
+       file-extensions="madl"/>
+   </extension> 
+    <extension point="org.codehaus.groovy.eclipse.ui.syntaxHighlightingExtension">
+     <highlightingExtender 
+        extender="edu.depaul.cdm.madl.groovy.editor.MadlSyntaxHighlighting" 
+        natureID="org.eclipse.jdt.groovy.core.groovyNature">
+     </highlightingExtender>
+  </extension>
+  <extension point="org.eclipse.jdt.groovy.core.typeLookup">
+      <lookup lookup="edu.depaul.cdm.madl.groovy.model.MadlTypeLookup">
+        <appliesTo projectNature="org.eclipse.jdt.groovy.core.groovyNature"/>
+      </lookup>
+  </extension>
+</plugin>

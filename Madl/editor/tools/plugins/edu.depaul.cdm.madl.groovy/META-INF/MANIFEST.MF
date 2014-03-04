@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: edu.depaul.cdm.madl.groovy;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: edu.depaul.cdm.madl.groovy.Activator
+Bundle-Vendor: %pluginProvider
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui.editors,
+ org.codehaus.groovy.eclipse.ui,
+ org.eclipse.jdt.groovy.core,
+ org.eclipse.jface.text,
+ org.codehaus.groovy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
