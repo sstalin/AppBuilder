@@ -19,6 +19,7 @@ Require-Bundle: org.eclipse.core.runtime,
  edu.depaul.cdm.madl.eclipse.preferences;bundle-version="1.0.0",
  edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard;bundle-version="1.0.0",
  edu.depaul.cdm.madl.launcher;bundle-version="1.0.0",
- edu.depaul.cdm.madl.tools.ui;bundle-version="1.0.0"
+ edu.depaul.cdm.madl.tools.ui;bundle-version="1.0.0",
+ org.codehaus.groovy.eclipse.ant;bundle-version="2.9.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy

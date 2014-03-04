@@ -16,11 +16,11 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application="org.eclipse.ui.ide.workbench"
-            name="%productName">
+            application="edu.depaul.cdm.madl.bootstrap.application"
+            name="Madl Editor">
          <property
                name="windowImages"
-               value="icons/madl_16_16.gif,icons/madl_32_32.gif,icons/madl_48_48.gif,icons/madl_64_64.gif,icons/madl_128_128.gif">
+               value="icons/dart_16_16.gif,icons/dart_32_32.gif,icons/dart_48_48.gif,icons/dart_64_64.gif,icons/dart_128_128.gif">
          </property>
          <property
                name="aboutText"
@@ -28,7 +28,7 @@
          </property>
          <property
                name="aboutImage"
-               value="icons/madl_116_116.gif">
+               value="icons/dart_116_116.gif">
          </property>
          <property
                name="appName"
@@ -36,7 +36,7 @@
          </property>
          <property
                name="startupProgressRect"
-               value="100,310,400,15">
+               value="100,350,400,15">
          </property>
          <property
                name="preferenceCustomization"
@@ -44,7 +44,7 @@
          </property>
          <property
                name="startupForegroundColor"
-               value="B3B3B3">
+               value="9F9F9F">
          </property>
          <property
                name="startupMessageRect"
