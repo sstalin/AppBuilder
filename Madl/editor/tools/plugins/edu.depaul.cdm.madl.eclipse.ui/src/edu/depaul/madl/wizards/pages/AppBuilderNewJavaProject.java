@@ -47,7 +47,7 @@ public class AppBuilderNewJavaProject extends WizardNewProjectCreationPage {
 				 
 		//set the Java nature
 		IProjectDescription description = project.getDescription();
-		description.setNatureIds(new String[] { JavaCore.NATURE_ID });
+		description.setNatureIds(new String[] { JavaCore.NATURE_ID, "org.eclipse.jdt.groovy.core.groovyNature" });
 		 
 		//create the project
 		project.setDescription(description, null);
