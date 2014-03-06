@@ -135,7 +135,6 @@ public class ContentTypeUtils {
 			if (contentTypeManager == null) {
 				// batch
 				GROOVY_LIKE_EXTENSIONS = new char[][] { "groovy".toCharArray() };
-				// GROOVY_LIKE_EXTENSIONS = new char[][] { "madl".toCharArray() };
 				return GROOVY_LIKE_EXTENSIONS;
 			}
 			IContentType groovyContentType = contentTypeManager.getContentType(GROOVY_SOURCE_CONTENT_TYPE);
@@ -154,15 +153,12 @@ public class ContentTypeUtils {
 			int length = fileExtensions.size();
 			char[][] extensions = new char[length][];
 			extensions[0] = "groovy".toCharArray(); // ensure that "groovy" is first //$NON-NLS-1$
-			// extensions[0] = "madl".toCharArray();
 			int index = 1;
 			Iterator<String> iterator = fileExtensions.iterator();
 			while (iterator.hasNext()) {
 				String fileExtension = iterator.next();
 				if ("groovy".equals(fileExtension)) //$NON-NLS-1$
 					continue;
-				//				if ("madl".equals(fileExtension)) //$NON-NLS-1$
-				// continue;
 				extensions[index++] = fileExtension.toCharArray();
 			}
 			GROOVY_LIKE_EXTENSIONS = extensions;

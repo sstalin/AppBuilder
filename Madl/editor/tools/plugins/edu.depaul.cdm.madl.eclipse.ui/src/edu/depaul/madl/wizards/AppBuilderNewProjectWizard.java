@@ -118,14 +118,6 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 				e.printStackTrace();
 			}
 		}
-		
-		try {
-			IFile groovyFile = folder.getFile("groovy_hidden.groovy");
-			groovyFile.create(new ByteArrayInputStream(new byte[0]), true, null);
-			groovyFile.setHidden(true);
-		} catch (CoreException e) {
-			e.printStackTrace();
-		}
 	}
 
 }
