@@ -65,6 +65,7 @@ public class TemplateSelectionPage extends WizardPage {
 		gd_list.widthHint = 176;
 		list.setLayoutData(gd_list);
 		list.setItems(new String[] {"Name Input Screen", "Colored Name & Address Input", "Shopping List"});
+		TemplateConfig.getTemplateDisplayNames();
 		
 		final CLabel lblNewLabel = new CLabel(container, SWT.BORDER | SWT.SHADOW_IN);
 		lblNewLabel.setTopMargin(0);

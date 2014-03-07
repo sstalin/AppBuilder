@@ -1,5 +1,15 @@
 package edu.depaul.madl.wizards.constants;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.Properties;
+
+import org.eclipse.core.runtime.CoreException;
+
 /**
  * Template names and descriptions. 
  * 
@@ -31,5 +41,22 @@ public class TemplateConfig {
 	
 	public static String getFilename(int index) {
 		return templateFilename[index];
+	}
+	
+	public static void getTemplateDisplayNames() {
+		Properties templateProperties = new Properties();		
+		URL url;
+		
+		try {
+		    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/templates/templates.properties");
+		    InputStream inputStream = url.openConnection().getInputStream();
+		    templateProperties.load(inputStream);
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+		
+		for ( Enumeration<?> e = templateProperties.propertyNames(); e.hasMoreElements(); ) {
+			System.out.println(e.nextElement());
+		}
 	}
 }
