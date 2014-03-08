@@ -3,6 +3,7 @@
 	<name>edu.depaul.cdm.madl.eclipse.feature</name>
 	<comment></comment>
 	<projects>
+		<project>org.codehaus.groovy.eclipse.ant</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

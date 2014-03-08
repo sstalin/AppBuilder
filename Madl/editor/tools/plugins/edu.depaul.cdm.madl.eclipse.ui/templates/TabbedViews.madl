@@ -1,0 +1,24 @@
+/*
+ *  Template for MADL Plugin 
+ *  
+ *    A tabbed view app with a three tabs  
+ */
+app(name : 'Template: Tabbed Views') { 
+
+  TabbedView { 
+
+    View(title: 'One') { 
+      Label(text: 'First View')
+    }
+
+    View(title: 'Two') { 
+      Label(text: 'Second View')
+    }
+
+    View(title: 'Three') { 
+      Label(text: 'Third View')
+    }
+    
+  }
+
+} 

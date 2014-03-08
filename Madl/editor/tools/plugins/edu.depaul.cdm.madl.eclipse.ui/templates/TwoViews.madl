@@ -1,0 +1,18 @@
+/*
+ *  Template for MADL Plugin 
+ *  
+ *    A simple app with two views and buttons to navigate back and forth 
+ */
+app(name : 'Template: Two Views') { 
+
+  View(id: v1) { 
+	Label(text: 'First View')
+    Button(text: 'To the Second View', next: v2 )
+  }
+
+  View(id: v2) { 
+    Label(text: 'Second View')
+	Button(text: 'Back to the First View', next: Previous)
+  }
+
+}

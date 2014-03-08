@@ -7,13 +7,12 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.jface.viewers.ListViewer;
-import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.custom.CLabel;
 
-import edu.depaul.madl.wizards.constants.TemplateConfig;
+import edu.depaul.madl.wizards.template.TemplateConfig;
+
 import org.eclipse.wb.swt.SWTResourceManager;
 
 public class TemplateSelectionPage extends WizardPage {
@@ -55,16 +54,15 @@ public class TemplateSelectionPage extends WizardPage {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				list.getSelection();
-				getTemplateDescriptionLabel().setText(TemplateConfig.getDescription(list.getSelectionIndex()));
+				getTemplateDescriptionLabel().setText(TemplateConfig.getTemplateDescriptions()[list.getSelectionIndex()]);
 				isTemplateSelected = true;
-				System.out.println("Label selected");
 			}
 		});
 		
 		GridData gd_list = new GridData(SWT.LEFT, SWT.TOP, false, false, 1, 1);
 		gd_list.widthHint = 176;
 		list.setLayoutData(gd_list);
-		list.setItems(new String[] {"Name Input Screen", "Colored Name & Address Input", "Shopping List"});
+		list.setItems(TemplateConfig.getTemplateDisplayNames());
 		
 		final CLabel lblNewLabel = new CLabel(container, SWT.BORDER | SWT.SHADOW_IN);
 		lblNewLabel.setTopMargin(0);
@@ -76,14 +74,6 @@ public class TemplateSelectionPage extends WizardPage {
 		lblNewLabel.setText("Choose a template on the left");
 	}
 	
-	private void setTemplateDescriptionLabel(CLabel label) {
-		templateDescriptionLabel = label;
-	}
-	
-	private CLabel getTemplateDescriptionLabel() {
-		return templateDescriptionLabel;
-	}
-	
 	public boolean isTemplateSelected() {
 		return isTemplateSelected;
 	}
@@ -91,5 +81,12 @@ public class TemplateSelectionPage extends WizardPage {
 	public int getSelectedTemplateIndex() {
 		return list.getSelectionIndex();
 	}
-
+	
+	private void setTemplateDescriptionLabel(CLabel label) {
+		templateDescriptionLabel = label;
+	}
+	
+	private CLabel getTemplateDescriptionLabel() {
+		return templateDescriptionLabel;
+	}
 }

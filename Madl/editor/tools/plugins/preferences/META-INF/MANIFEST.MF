@@ -5,7 +5,8 @@ Bundle-SymbolicName: edu.depaul.cdm.madl.eclipse.preferences;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: edu.depaul.cdm.madl.eclipse.ui.Activator
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.codehaus.groovy.eclipse.ant
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: edu.depaul.cdm.madl.eclipse.ui

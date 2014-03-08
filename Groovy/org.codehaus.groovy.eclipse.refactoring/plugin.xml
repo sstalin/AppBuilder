@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?><!--
+    Copyright 2003-2009 the original author or authors.
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+        http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="Refactorings"
+            id="org.codehaus.groovy.eclipse.refactoring.commands.refactoring"
+            name="Groovy Refactoring Commands">
+      </category>
+      <category
+            description="Source"
+            id="org.codehaus.groovy.eclipse.editor.category.source"
+            name="Groovy Source Commands">
+      </category>
+      <command
+            categoryId="org.codehaus.groovy.eclipse.refactoring.commands.refactoring"
+            id="org.codehaus.groovy.eclipse.refactoring.command.extractMethod"
+            name="Extract Method...">
+      </command>
+      <command
+            categoryId="org.codehaus.groovy.eclipse.refactoring.commands.refactoring"
+            id="org.codehaus.groovy.eclipse.refactoring.command.inlineMethod"
+            name="Inline Method...">
+      </command>
+      <command
+            categoryId="org.codehaus.groovy.eclipse.refactoring.commands.refactoring"
+            id="org.codehaus.groovy.eclipse.refactoring.command.rename"
+            name="Rename - Refactoring">
+      </command>
+      <command
+            categoryId="org.codehaus.groovy.eclipse.editor.category.source"
+            description="Format the current Groovy File or the Source in the current selection"
+            id="org.codehaus.groovy.eclipse.editor.commands.Format"
+            name="Format">
+      </command>
+      <command
+            categoryId="org.codehaus.groovy.eclipse.editor.category.source"
+            description="Correct the indentation of code"
+            id="org.codehaus.groovy.eclipse.editor.commands.Indentation"
+            name="Correct Indentation">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="org.codehaus.groovy.eclipse.refactoring.command.inlineMethod"
+            contextId="org.codehaus.groovy.eclipse.editor.groovyEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M2+M3+I"/>
+      <!--Undefine and redefine for carbon so as not to compete with special characters -->
+      <key
+            platform="carbon"
+            sequence="M2+M3+I"
+            contextId="org.codehaus.groovy.eclipse.editor.groovyEditorScope"
+            commandId=""
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            platform="carbon"
+            sequence="COMMAND+ALT+I"
+            contextId="org.codehaus.groovy.eclipse.editor.groovyEditorScope"
+            commandId="org.codehaus.groovy.eclipse.refactoring.command.inlineMethod"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+
+      <key
+            commandId="org.codehaus.groovy.eclipse.refactoring.command.rename"
+            contextId="org.codehaus.groovy.eclipse.editor.groovyEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M2+M3+R"/>
+      <!--Undefine and redefine for carbon so as not to compete with special characters -->
+      <key
+            platform="carbon"
+            sequence="M2+M3+R"
+            contextId="org.codehaus.groovy.eclipse.editor.groovyEditorScope"
+            commandId=""
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            platform="carbon"
+            sequence="COMMAND+ALT+R"
+            contextId="org.codehaus.groovy.eclipse.editor.groovyEditorScope"
+            commandId="org.codehaus.groovy.eclipse.refactoring.command.rename"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+
+      <!-- 
+      		We don't need the formatting and indentation commands since they are provided by the GroovyEditor
+      		and use the commandId for the Java Editor variants of the command
+       -->
+			<!--
+       <key
+            commandId="org.codehaus.groovy.eclipse.editor.commands.Format"
+            contextId="org.codehaus.groovy.eclipse.editor.groovyEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+M2+F">
+      </key>
+      <key
+            commandId="org.codehaus.groovy.eclipse.editor.commands.Indentation"
+            contextId="org.codehaus.groovy.eclipse.editor.groovyEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+I">
+      </key>
+      -->
+   </extension>
+      <extension
+            point="org.eclipse.ltk.core.refactoring.refactoringContributions">
+         <contribution
+               class="org.codehaus.groovy.eclipse.refactoring.core.rename.renameLocal.RenameLocalGroovyVariableContribution"
+               id="org.codehaus.groovy.eclipse.refactoring.renameLocal">
+         </contribution>
+         <contribution
+               class="org.codehaus.groovy.eclipse.refactoring.core.extract.ExtractGroovyConstantRefactoringContribution"
+               id="org.codehaus.groovy.eclipse.refactoring.extractConstant">
+         </contribution>
+         <contribution
+               class="org.codehaus.groovy.eclipse.refactoring.core.extract.ExtractGroovyLocalRefactoringContribution"
+               id="org.codehaus.groovy.eclipse.refactoring.extractLocal">
+         </contribution>
+         <contribution
+               class="org.codehaus.groovy.eclipse.refactoring.core.extract.ExtractGroovyMethodRefactoringContribution"
+               id="org.codehaus.groovy.eclipse.refactoring.extractMethod">
+         </contribution>
+      </extension>
+      <extension
+            point="org.eclipse.ltk.core.refactoring.renameParticipants">
+         <renameParticipant
+               class="org.codehaus.groovy.eclipse.refactoring.core.rename.SyntheticAccessorsRenameParticipant"
+               id="org.codehaus.groovy.eclipse.refactoring.syntheticAccessorsRenameParticipant"
+               name="Groovy Synthetic Accessors participant">
+                        <enablement>
+           <with variable="affectedNatures">
+             <iterate operator="or">
+               <equals value="org.eclipse.jdt.groovy.core.groovyNature"/>
+             </iterate>
+           </with>
+           <with variable="element">
+   	         <instanceof value="org.eclipse.jdt.core.IMember"/>
+           </with>
+         </enablement>
+         </renameParticipant>
+      </extension>
+</plugin>

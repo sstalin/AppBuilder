@@ -6,10 +6,10 @@
          point="org.eclipse.ui.editors">
       <editor
             name="Madl Editor"
-            extensions="madl"
             icon="$nl$/icons/full/madl16/madl.png"
+            class="edu.depaul.cdm.madl.tools.ui.internal.text.editor.MadlEditor"
             contributorClass="edu.depaul.cdm.madl.tools.multipage.MadlEditorContributor"
-            class="edu.depaul.cdm.madl.tools.multipage.MultiPageMadlEditor"
+            extensions="madl_old"
             id="edu.depaul.cdm.cpdt.editor.multipage.MadlEditor">
       </editor>
    </extension>
