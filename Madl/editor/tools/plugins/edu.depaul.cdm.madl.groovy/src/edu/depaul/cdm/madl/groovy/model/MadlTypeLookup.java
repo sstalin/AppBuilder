@@ -6,18 +6,28 @@ import org.eclipse.jdt.groovy.search.AbstractSimplifiedTypeLookup;
 import org.eclipse.jdt.groovy.search.ITypeLookup;
 import org.eclipse.jdt.groovy.search.VariableScope;
 
+
 public class MadlTypeLookup extends AbstractSimplifiedTypeLookup implements ITypeLookup {
 
   @Override
-  public void initialize(GroovyCompilationUnit arg0, VariableScope arg1) {
+  public void initialize(GroovyCompilationUnit unit, VariableScope scope) {
     // TODO Auto-generated method stub
 
   }
 
   @Override
-  protected TypeAndDeclaration lookupTypeAndDeclaration(ClassNode arg0, String arg1,
-      VariableScope arg2) {
+  protected TypeAndDeclaration lookupTypeAndDeclaration(ClassNode declaringType, String name,
+      VariableScope scope) {
     // TODO Auto-generated method stub
+    if (name.equals("app")) {
+      TypeAndDeclaration td = new TypeAndDeclaration(VariableScope.CLOSURE_CLASS, declaringType);
+      return td;
+    }
+    if (name.equals("ListView")) {
+      TypeAndDeclaration td = new TypeAndDeclaration(VariableScope.CLOSURE_CLASS, declaringType);
+      return td;
+    }
+
     return null;
   }
 
