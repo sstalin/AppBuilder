@@ -57,19 +57,27 @@ public class TemplateConfig {
 		}
 		
 		// Get a list of template display names and sort them
+		List<TemplateDisplayName> templateDisplayNames = sortedTemplateDisplayNames(templateProperties);
+		
+		// Return the template display names as an array as required by the SWT List widget
+		return templateDisplayNamesArray(templateDisplayNames);
+	}
+
+	private static List<TemplateDisplayName> sortedTemplateDisplayNames(Properties templateProperties) {
 		List<TemplateDisplayName> templateDisplayNames = new ArrayList<TemplateDisplayName>();
+		
 		for (String property : templateProperties.stringPropertyNames()) {
 			templateDisplayNames.add(new TemplateDisplayName(
 										getDisplayName(templateProperties.getProperty(property)), 
 										getOrder(templateProperties.getProperty(property))));
 		}
+		
 		Collections.sort(templateDisplayNames);
 		
-		// Return the template display names as an array as required by the SWT List widget
-		return getTemplateDisplayNamesArray(templateDisplayNames);
+		return templateDisplayNames;
 	}
 	
-	private static String[] getTemplateDisplayNamesArray(
+	private static String[] templateDisplayNamesArray(
 			List<TemplateDisplayName> templateDisplayNames) {
 		
 		String[] displayNames = new String[templateDisplayNames.size()];
