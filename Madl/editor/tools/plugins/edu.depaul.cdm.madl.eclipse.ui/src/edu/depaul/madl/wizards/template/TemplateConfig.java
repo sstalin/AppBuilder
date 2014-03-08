@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.Properties;
 
@@ -48,6 +47,7 @@ public class TemplateConfig {
 		Properties templateProperties = new Properties();		
 		URL url;
 		
+		// Open the properties file
 		try {
 		    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/templates/templates.properties");
 		    InputStream inputStream = url.openConnection().getInputStream();
@@ -56,6 +56,7 @@ public class TemplateConfig {
 		    e.printStackTrace();
 		}
 		
+		// Get a list of template display names and sort them
 		List<TemplateDisplayName> templateDisplayNames = new ArrayList<TemplateDisplayName>();
 		for (String property : templateProperties.stringPropertyNames()) {
 			templateDisplayNames.add(new TemplateDisplayName(
@@ -64,9 +65,7 @@ public class TemplateConfig {
 		}
 		Collections.sort(templateDisplayNames);
 		
-		System.out.println("Template display names:");
-		System.out.println(templateDisplayNames);
-		
+		// Return the template display names as an array as required by the SWT List widget
 		return getTemplateDisplayNamesArray(templateDisplayNames);
 	}
 	
