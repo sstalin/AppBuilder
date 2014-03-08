@@ -2,16 +2,26 @@ package edu.depaul.madl.wizards.template;
 
 public class Template implements Comparable<Template> {
 
+	private String filename;
 	private String displayName;
 	private int order;
 	private String description;
 	
-	public Template(String displayName, int order, String description) {
+	public Template(String filename, String displayName, int order, String description) {
+		this.setFilename(filename);
 		this.displayName = displayName;
 		this.order = order;
 		this.description = description;
 	}
 	
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
 	public String getDisplayName() {
 		return displayName;
 	}
@@ -38,8 +48,9 @@ public class Template implements Comparable<Template> {
 
 	@Override
 	public String toString() {
-		return "Template [displayName=" + displayName + ", order=" + order
-				+ ", description=" + description + "]";
+		return "Template [filename=" + filename + ", displayName="
+				+ displayName + ", order=" + order + ", description="
+				+ description + "]";
 	}
 	
 	@Override

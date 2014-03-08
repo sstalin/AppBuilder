@@ -1,0 +1,13 @@
+/*
+ *  Template for MADL Plugin 
+ *  
+ *    A single view app with an empty screen 
+ */
+app(name: 'Template: Empty') { 
+  
+  View { 
+	// add your contents
+
+  }
+
+}

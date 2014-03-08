@@ -96,11 +96,12 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 		// If a template was selected, put it in the src directory
 		if (templateSelectionPage.isTemplateSelected()) {
 			URL url;
-			IFile file = folder.getFile(TemplateConfig.getFilename(templateSelectionPage.getSelectedTemplateIndex()));		
+//			IFile file = folder.getFile(TemplateConfig.getFilename(templateSelectionPage.getSelectedTemplateIndex()));
+			IFile file = folder.getFile(TemplateConfig.getTemplates().get(templateSelectionPage.getSelectedTemplateIndex()).getFilename());
 			try {
 				// Get the input from the template file
 			    url = new URL("platform:/plugin/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/templates/" + 
-			    					TemplateConfig.getFilename(templateSelectionPage.getSelectedTemplateIndex()));
+			    		TemplateConfig.getTemplates().get(templateSelectionPage.getSelectedTemplateIndex()).getFilename());
 			    InputStream inputStream = url.openConnection().getInputStream();
 			    System.out.println("Adding template app...");		    		    
 			    file.create(inputStream, true, null);

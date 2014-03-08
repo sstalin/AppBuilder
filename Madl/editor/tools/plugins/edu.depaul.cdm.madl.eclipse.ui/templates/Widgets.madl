@@ -1,0 +1,23 @@
+/*
+ *  Template for MADL Plugin 
+ *  
+ *    A single view app with a screenful of widgets  
+ */
+app(name: 'Template: Widgets') { 
+  
+  View { 
+	// replace these widgets with your onw contents 
+    Label(text: 'Hello') 
+    Button(text: 'Press')
+    Button(text: 'Exit')
+    Slider()
+    Switch()
+    Selection(options : [ 'One', 'Two', 'Three' ])
+    Row { 
+      Label(text : 'Name') 
+      Text(prompt: 'Your name')
+    }
+
+  }
+
+}

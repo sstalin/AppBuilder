@@ -35,6 +35,7 @@ public class TemplateConfig {
 		"shopping_list.madl"
 	};
 	
+	private static List<Template> templates;
 	private static String[] templateDescriptions;
 	
 //	public static String getDescription(int index) {
@@ -66,8 +67,8 @@ public class TemplateConfig {
 		    e.printStackTrace();
 		}
 		
-		// Get a list of templates sort them
-		List<Template> templates = sortedTemplates(templateProperties);
+		// Get a list of templates and sort them
+		templates = sortedTemplates(templateProperties);
 		
 		// As a side-effect, create an array of descriptions for the SWT Label
 		setTemplateDescriptions(templateDescriptionsArray(templates));
@@ -75,12 +76,16 @@ public class TemplateConfig {
 		// Return the template display names as an array as required by the SWT List widget
 		return templateDisplayNamesArray(templates);
 	}
+	
+	public static List<Template> getTemplates() {
+		return templates;
+	}
 
 	private static List<Template> sortedTemplates(Properties templateProperties) {
 		List<Template> templates = new ArrayList<Template>();
 		
 		for (String property : templateProperties.stringPropertyNames()) {
-			templates.add(new Template(
+			templates.add(new Template(	property,
 										getDisplayName(templateProperties.getProperty(property)), 
 										getOrder(templateProperties.getProperty(property)),
 										getDescription(templateProperties.getProperty(property))));
