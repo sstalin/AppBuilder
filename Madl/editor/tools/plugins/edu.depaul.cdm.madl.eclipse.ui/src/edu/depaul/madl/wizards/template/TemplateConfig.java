@@ -1,14 +1,15 @@
-package edu.depaul.madl.wizards.constants;
+package edu.depaul.madl.wizards.template;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Enumeration;
+import java.util.List;
 import java.util.Properties;
 
-import org.eclipse.core.runtime.CoreException;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Template names and descriptions. 
@@ -43,7 +44,7 @@ public class TemplateConfig {
 		return templateFilename[index];
 	}
 	
-	public static void getTemplateDisplayNames() {
+	public static String[] getTemplateDisplayNames() {
 		Properties templateProperties = new Properties();		
 		URL url;
 		
@@ -55,8 +56,39 @@ public class TemplateConfig {
 		    e.printStackTrace();
 		}
 		
-		for ( Enumeration<?> e = templateProperties.propertyNames(); e.hasMoreElements(); ) {
-			System.out.println(e.nextElement());
+		List<TemplateDisplayName> templateDisplayNames = new ArrayList<TemplateDisplayName>();
+		for (String property : templateProperties.stringPropertyNames()) {
+			templateDisplayNames.add(new TemplateDisplayName(
+										getDisplayName(templateProperties.getProperty(property)), 
+										getOrder(templateProperties.getProperty(property))));
 		}
+		Collections.sort(templateDisplayNames);
+		
+		System.out.println("Template display names:");
+		System.out.println(templateDisplayNames);
+		
+		return getTemplateDisplayNamesArray(templateDisplayNames);
+	}
+	
+	private static String[] getTemplateDisplayNamesArray(
+			List<TemplateDisplayName> templateDisplayNames) {
+		
+		String[] displayNames = new String[templateDisplayNames.size()];
+		
+		for (int i = 0; i < templateDisplayNames.size(); i++) {
+			displayNames[i] = templateDisplayNames.get(i).getDisplayName();
+		}
+		
+		return displayNames;
+	}
+
+	private static String getDisplayName(String value) {
+		int firstSemicolon = value.indexOf(';');
+		int secondSemicolon = StringUtils.ordinalIndexOf(value, ";", 2);
+		return value.substring(firstSemicolon + 1, secondSemicolon);
+	}
+
+	private static int getOrder(String value) {
+		return Integer.parseInt(value.substring(0, value.indexOf(';')));
 	}
 }

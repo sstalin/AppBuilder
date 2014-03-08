@@ -18,10 +18,10 @@ import org.eclipse.ui.IWorkbenchWizard;
 
 import edu.depaul.madl.wizards.config.OrgPropertiesFile;
 import edu.depaul.madl.wizards.constants.ProjectFilenames;
-import edu.depaul.madl.wizards.constants.TemplateConfig;
 import edu.depaul.madl.wizards.pages.AppBuilderNewJavaProject;
 import edu.depaul.madl.wizards.pages.PageTwo;
 import edu.depaul.madl.wizards.pages.TemplateSelectionPage;
+import edu.depaul.madl.wizards.template.TemplateConfig;
 
 public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWizard {
 	

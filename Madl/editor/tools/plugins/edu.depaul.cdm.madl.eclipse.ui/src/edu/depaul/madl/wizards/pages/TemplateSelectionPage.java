@@ -13,7 +13,8 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.custom.CLabel;
 
-import edu.depaul.madl.wizards.constants.TemplateConfig;
+import edu.depaul.madl.wizards.template.TemplateConfig;
+
 import org.eclipse.wb.swt.SWTResourceManager;
 
 public class TemplateSelectionPage extends WizardPage {
@@ -57,7 +58,6 @@ public class TemplateSelectionPage extends WizardPage {
 				list.getSelection();
 				getTemplateDescriptionLabel().setText(TemplateConfig.getDescription(list.getSelectionIndex()));
 				isTemplateSelected = true;
-				System.out.println("Label selected");
 			}
 		});
 		
@@ -65,7 +65,7 @@ public class TemplateSelectionPage extends WizardPage {
 		gd_list.widthHint = 176;
 		list.setLayoutData(gd_list);
 		list.setItems(new String[] {"Name Input Screen", "Colored Name & Address Input", "Shopping List"});
-		TemplateConfig.getTemplateDisplayNames();
+		list.setItems(TemplateConfig.getTemplateDisplayNames());
 		
 		final CLabel lblNewLabel = new CLabel(container, SWT.BORDER | SWT.SHADOW_IN);
 		lblNewLabel.setTopMargin(0);

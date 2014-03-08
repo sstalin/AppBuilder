@@ -10,5 +10,7 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard/lib/commons-io-2.4-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
