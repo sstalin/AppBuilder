@@ -1,13 +1,15 @@
 package edu.depaul.madl.wizards.template;
 
-public class TemplateDisplayName implements Comparable<TemplateDisplayName> {
+public class Template implements Comparable<Template> {
 
 	private String displayName;
 	private int order;
+	private String description;
 	
-	public TemplateDisplayName(String displayName, int order) {
+	public Template(String displayName, int order, String description) {
 		this.displayName = displayName;
 		this.order = order;
+		this.description = description;
 	}
 	
 	public String getDisplayName() {
@@ -26,14 +28,22 @@ public class TemplateDisplayName implements Comparable<TemplateDisplayName> {
 		this.order = order;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	@Override
 	public String toString() {
-		return "TemplateDisplayName [displayName=" + displayName + ", order=" + order
-				+ "]";
+		return "Template [displayName=" + displayName + ", order=" + order
+				+ ", description=" + description + "]";
 	}
 	
 	@Override
-	public int compareTo(TemplateDisplayName displayName) {
+	public int compareTo(Template displayName) {
 		if (getOrder() < displayName.getOrder()) {
 			return -1;
 		} else if (getOrder() > displayName.getOrder()) {

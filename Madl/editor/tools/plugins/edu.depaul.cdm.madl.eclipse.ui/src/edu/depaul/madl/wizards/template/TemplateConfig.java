@@ -20,14 +20,14 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class TemplateConfig {
 
-	private static String[] templateDescriptions = {
-		"An app with one screen showing a label, two buttons, and a \n"
-				+ "text input labeled with Name.",
-		"An app with a yellow background, buttons, and name and address \n"
-				+ "input fields.",
-		"A shopping list app where the user can manage quantities and add, \n"
-				+ "edit, and delete items."
-	};
+//	private static String[] templateDescriptions = {
+//		"An app with one screen showing a label, two buttons, and a \n"
+//				+ "text input labeled with Name.",
+//		"An app with a yellow background, buttons, and name and address \n"
+//				+ "input fields.",
+//		"A shopping list app where the user can manage quantities and add, \n"
+//				+ "edit, and delete items."
+//	};
 	
 	private static String[] templateFilename = {
 		"enter_name_app.madl",
@@ -35,10 +35,20 @@ public class TemplateConfig {
 		"shopping_list.madl"
 	};
 	
-	public static String getDescription(int index) {
-		return templateDescriptions[index];
-	}
+	private static String[] templateDescriptions;
 	
+//	public static String getDescription(int index) {
+//		return templateDescriptions[index];
+//	}
+	
+	public static String[] getTemplateDescriptions() {
+		return templateDescriptions;
+	}
+
+	public static void setTemplateDescriptions(String[] templateDescriptions) {
+		TemplateConfig.templateDescriptions = templateDescriptions;
+	}
+
 	public static String getFilename(int index) {
 		return templateFilename[index];
 	}
@@ -56,37 +66,49 @@ public class TemplateConfig {
 		    e.printStackTrace();
 		}
 		
-		// Get a list of template display names and sort them
-		List<TemplateDisplayName> templateDisplayNames = sortedTemplateDisplayNames(templateProperties);
+		// Get a list of templates sort them
+		List<Template> templates = sortedTemplates(templateProperties);
+		
+		// As a side-effect, create an array of descriptions for the SWT Label
+		setTemplateDescriptions(templateDescriptionsArray(templates));
 		
 		// Return the template display names as an array as required by the SWT List widget
-		return templateDisplayNamesArray(templateDisplayNames);
+		return templateDisplayNamesArray(templates);
 	}
 
-	private static List<TemplateDisplayName> sortedTemplateDisplayNames(Properties templateProperties) {
-		List<TemplateDisplayName> templateDisplayNames = new ArrayList<TemplateDisplayName>();
+	private static List<Template> sortedTemplates(Properties templateProperties) {
+		List<Template> templates = new ArrayList<Template>();
 		
 		for (String property : templateProperties.stringPropertyNames()) {
-			templateDisplayNames.add(new TemplateDisplayName(
+			templates.add(new Template(
 										getDisplayName(templateProperties.getProperty(property)), 
-										getOrder(templateProperties.getProperty(property))));
+										getOrder(templateProperties.getProperty(property)),
+										getDescription(templateProperties.getProperty(property))));
 		}
 		
-		Collections.sort(templateDisplayNames);
+		Collections.sort(templates);
 		
-		return templateDisplayNames;
+		return templates;
 	}
-	
-	private static String[] templateDisplayNamesArray(
-			List<TemplateDisplayName> templateDisplayNames) {
+
+	private static String[] templateDisplayNamesArray(List<Template> templates) {	
+		String[] displayNames = new String[templates.size()];
 		
-		String[] displayNames = new String[templateDisplayNames.size()];
-		
-		for (int i = 0; i < templateDisplayNames.size(); i++) {
-			displayNames[i] = templateDisplayNames.get(i).getDisplayName();
+		for (int i = 0; i < templates.size(); i++) {
+			displayNames[i] = templates.get(i).getDisplayName();
 		}
 		
 		return displayNames;
+	}
+	
+	private static String[] templateDescriptionsArray(List<Template> templates) {
+		String[] descriptions = new String[templates.size()];
+		
+		for (int i = 0; i < descriptions.length; i++) {
+			descriptions[i] = templates.get(i).getDescription();
+		} 
+		
+		return descriptions;
 	}
 
 	private static String getDisplayName(String value) {
@@ -97,5 +119,10 @@ public class TemplateConfig {
 
 	private static int getOrder(String value) {
 		return Integer.parseInt(value.substring(0, value.indexOf(';')));
+	}
+	
+	private static String getDescription(String value) {
+		int secondSemicolon = StringUtils.ordinalIndexOf(value, ";", 2);
+		return value.substring(secondSemicolon + 1);
 	}
 }
