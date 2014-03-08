@@ -96,7 +96,6 @@ public class AppBuilderNewProjectWizard extends Wizard implements IWorkbenchWiza
 		// If a template was selected, put it in the src directory
 		if (templateSelectionPage.isTemplateSelected()) {
 			URL url;
-//			IFile file = folder.getFile(TemplateConfig.getFilename(templateSelectionPage.getSelectedTemplateIndex()));
 			IFile file = folder.getFile(TemplateConfig.getTemplates().get(templateSelectionPage.getSelectedTemplateIndex()).getFilename());
 			try {
 				// Get the input from the template file

@@ -20,8 +20,6 @@ public class TemplateSelectionPage extends WizardPage {
 	private CLabel templateDescriptionLabel;
 	private List list;
 	private boolean isTemplateSelected;
-	
-	private String[] templates;
 
 	/**
 	 * Create the wizard.
@@ -90,9 +88,5 @@ public class TemplateSelectionPage extends WizardPage {
 	
 	private CLabel getTemplateDescriptionLabel() {
 		return templateDescriptionLabel;
-	}
-
-	private void setTemplates(String[] templates) {
-		this.templates = templates;
 	}
 }

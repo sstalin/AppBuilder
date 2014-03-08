@@ -11,36 +11,14 @@ import java.util.Properties;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Template names and descriptions. 
- * 
- * The index here should match the index in the template list on the TemplateSelectionPage
- * of the New Project Wizard in order for the correct display of the description
- * and correct addition of the template to the project.
+ * Templates can be added by putting them in the madlprojectwizard templates directory
+ * and configuring the filename, order, display name, and description the templates.properties file
  *
  */
 public class TemplateConfig {
-
-//	private static String[] templateDescriptions = {
-//		"An app with one screen showing a label, two buttons, and a \n"
-//				+ "text input labeled with Name.",
-//		"An app with a yellow background, buttons, and name and address \n"
-//				+ "input fields.",
-//		"A shopping list app where the user can manage quantities and add, \n"
-//				+ "edit, and delete items."
-//	};
-	
-	private static String[] templateFilename = {
-		"enter_name_app.madl",
-		"name_address_input.madl",
-		"shopping_list.madl"
-	};
 	
 	private static List<Template> templates;
 	private static String[] templateDescriptions;
-	
-//	public static String getDescription(int index) {
-//		return templateDescriptions[index];
-//	}
 	
 	public static String[] getTemplateDescriptions() {
 		return templateDescriptions;
@@ -48,10 +26,6 @@ public class TemplateConfig {
 
 	public static void setTemplateDescriptions(String[] templateDescriptions) {
 		TemplateConfig.templateDescriptions = templateDescriptions;
-	}
-
-	public static String getFilename(int index) {
-		return templateFilename[index];
 	}
 	
 	public static String[] getTemplateDisplayNames() {
