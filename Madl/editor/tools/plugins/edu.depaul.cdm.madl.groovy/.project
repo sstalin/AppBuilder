@@ -29,7 +29,7 @@
 		<link>
 			<name>lib</name>
 			<type>2</type>
-			<location>/Users/sstalin/AppBuilder/classes</location>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/AppBuilderResources/classes</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
