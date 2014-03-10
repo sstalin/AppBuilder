@@ -22,7 +22,7 @@ public class MadlLaunch extends AbstractJavaLaunchConfigurationDelegate implemen
 		// TODO Auto-generated method stub
 		JavaLaunchDelegate javaLauncher = new JavaLaunchDelegate();
 		javaLauncher.launch(configuration, mode, launch, monitor);
-		AppBuilderConfiguration.getInstance().getProject().getProject().refreshLocal(IResource.DEPTH_INFINITE, null);
+		//AppBuilderConfiguration.getInstance().getProject().getProject().refreshLocal(IResource.DEPTH_INFINITE, null);
 	}
 
 }
