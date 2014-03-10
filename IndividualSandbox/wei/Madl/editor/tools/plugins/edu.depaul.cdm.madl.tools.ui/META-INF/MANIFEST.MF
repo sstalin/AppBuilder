@@ -1,10 +1,14 @@
 Manifest-Version: 1.0
-Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.jf
- ace.text,org.eclipse.core.resources,org.eclipse.ui.editors,org.eclips
- e.ui.ide
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.core.resources,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.ide,
+ edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard;bundle-version="1.0.0"
 Bundle-Vendor: DePaul
 Bundle-ActivationPolicy: lazy
-Bundle-Version: 1.0.0.201311061029
+Bundle-Version: 1.0.0.qualifier
 Bundle-Name: Madl Editor Tool
 Bundle-Activator: edu.depaul.cdm.madl.tools.ui.Activator
 Bundle-ManifestVersion: 2
