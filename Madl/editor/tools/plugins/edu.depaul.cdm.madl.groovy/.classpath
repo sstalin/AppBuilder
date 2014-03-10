@@ -5,6 +5,5 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MADL_LIB"/>
-	<classpathentry kind="lib" path="/Users/sstalin/AppBuilder/lib/appbuilder.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
