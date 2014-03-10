@@ -12,4 +12,5 @@ public class ProjectFilenames {
 	public static final String GEN_DIRECTORY = ".gen";
 	public static final String IOS_DIRECTORY = "platform.ios";
 	public static final String ANDROID_DIRECTORY = "platform.android";
+	public static final String ORG_PROPERTIES_FILE = "org.properties";
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="edu.depaul.cdm.madl.eclipse.ui.AppBuilderPreferencesPage"
+            id="edu.depaul.cdm.madl.eclipse.ui.page1"
+            name="App Builder Preferences">
+      </page>
+   </extension>
+
+</plugin>

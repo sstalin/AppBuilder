@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/edu.depaul.cdm.madl.eclipse.feature_1.0.0.qualifier.jar" id="edu.depaul.cdm.madl.eclipse.feature" version="1.0.0.qualifier">
+      <category name="madl-ide-category"/>
+   </feature>
+   <category-def name="madl-ide-category" label="MADL IDE">
+      <description>
+         An IDE for developing iOS and Android applications using Mobile Application Definition Language.
+      </description>
+   </category-def>
+</site>
