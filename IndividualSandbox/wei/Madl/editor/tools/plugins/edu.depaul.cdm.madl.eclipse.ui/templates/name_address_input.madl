@@ -1,0 +1,26 @@
+
+/* Mobile Application Definition Language */
+
+app(name : 'First App 2') { 
+
+  View(id: top, 
+       background : yellow) {
+    Label(id: l1, text: 'Hello') 
+    Button(id: b1, text: 'Press')
+    Button(id: b2, text: 'Exit')
+    Panel(id: row3, orientation: 'horizontal') { 
+      Label(id: l2, text : 'First Name') 
+      Text(id: t1, text : 'Enter text')
+    }
+    Panel(id: row4, orientation: 'horizontal') { 
+      Label(id: l3, text : 'Last Name') 
+      Text(id: t3, text : 'Enter text')
+    }
+    Panel(id: row5) { 
+      Label(id: l4, text : 'Address') 
+      Text(id: t4, text : 'type')
+    }
+    Button(id: b3, text: 'More')
+  }
+
+}

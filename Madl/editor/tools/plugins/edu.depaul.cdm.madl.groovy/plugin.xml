@@ -27,4 +27,9 @@
         <appliesTo projectNature="org.eclipse.jdt.groovy.core.groovyNature"/>
       </lookup>
   </extension>
+   <extension point="org.codehaus.groovy.eclipse.codeassist.completion.completionProposalProvider">   
+    <proposalProvider proposalProvider="edu.depaul.cdm.madl.groovy.model.MadlProposalProvider">
+      <appliesTo projectNature="org.eclipse.jdt.groovy.core.groovyNature"/>
+    </proposalProvider>
+  </extension>
 </plugin>

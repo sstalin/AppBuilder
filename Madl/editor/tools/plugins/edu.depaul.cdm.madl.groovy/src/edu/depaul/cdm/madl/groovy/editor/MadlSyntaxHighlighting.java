@@ -10,7 +10,7 @@ public class MadlSyntaxHighlighting implements IHighlightingExtender{
 
   @Override
   public List<String> getAdditionalGJDKKeywords() {
-    return Arrays.asList("app", "View", "Label", "Button");
+    return Arrays.asList("app");
   }
 
   @Override

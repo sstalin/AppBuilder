@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Madl Editor" uid="edu.depaul.cdm.madl.bootstrap.product" id="edu.depaul.cdm.madl.bootstrap.product" application="edu.depaul.cdm.madl.bootstrap.application" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/edu.depaul.cdm.madl.bootstrap/icons/dart_116_116.gif"/>
+      <text>
+         An awesome editor for Madl programming.
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgsLin>-consoleLog -data @user.home/.dartEditor</programArgsLin>
+      <programArgsMac>-consoleLog -data &quot;@user.home/Library/Application Support/DartEditor&quot;</programArgsMac>
+      <programArgsWin>-data @user.home\DartEditor</programArgsWin>
+      <vmArgs>-Dosgi.requiredJavaVersion=1.6 -XX:MaxPermSize=128m -Xms40m -Xmx1000m</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -Declipse.vm=/System/Library/Frameworks/JavaVM.framework -Xdock:icon=../Resources/Eclipse.icns</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/edu.depaul.cdm.madl.bootstrap/icons/dart_16_16.gif" i32="/edu.depaul.cdm.madl.bootstrap/icons/dart_32_32.gif" i48="/edu.depaul.cdm.madl.bootstrap/icons/dart_48_48.gif" i64="/edu.depaul.cdm.madl.bootstrap/icons/dart_64_64.gif" i128="/edu.depaul.cdm.madl.bootstrap/icons/dart_128_128.gif"/>
+
+   <splash
+      location="edu.depaul.cdm.madl.bootstrap"
+      startupProgressRect="100,350,400,15"
+      startupMessageRect="100,330,400,15"
+      startupForegroundColor="9F9F9F" />
+   <launcher name="MadlEditor">
+      <linux icon="/com.google.dart.tools.deploy/icons/dart_48_48.xpm"/>
+      <macosx icon="/edu.depaul.cdm.madl.bootstrap/icons/white.icns"/>
+      <solaris/>
+      <win useIco="true">
+         <ico path="/com.google.dart.tools.deploy/icons/dart.ico"/>
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</linux>
+      <macos include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7</macos>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</windows>
+   </vm>
+
+   <plugins>
+      <plugin id="edu.depaul.cdm.madl.bootstrap"/>
+      <plugin id="edu.depaul.cdm.madl.eclipse.preferences"/>
+      <plugin id="edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard"/>
+      <plugin id="edu.depaul.cdm.madl.launcher"/>
+      <plugin id="edu.depaul.cdm.madl.tools.ui"/>
+   </plugins>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
+      <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="3" />
+      <property name="org.eclipse.update.reconcile" value="false" />
+   </configurations>
+
+</product>

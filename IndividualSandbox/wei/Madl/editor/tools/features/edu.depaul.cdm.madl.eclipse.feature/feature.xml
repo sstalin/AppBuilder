@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="edu.depaul.cdm.madl.eclipse.feature"
-      label="Feature"
+      label="MADL IDE"
       version="1.0.0.qualifier"
       provider-name="DePaul">
 
    <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+      A plug-in for developing Mobile Application Definition Language applications for iOS and Android
    </description>
 
    <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+      In development, no copyright notice yet!
    </copyright>
 
    <license url="http://www.example.com/license">
-      [Enter License Description here.]
+      In development, no license yet!
    </license>
 
    <plugin
-         id="edu.depaul.cdm.madl.eclipse.ui"
+         id="MADLFileWizard"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="edu.depaul.cdm.madl.launcher"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="edu.depaul.cdm.madl.eclipse.ui.madlprojectwizard"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="edu.depaul.cdm.madl.eclipse.preferences"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -32,14 +53,89 @@
          unpack="false"/>
 
    <plugin
-         id="MADLFileWizard"
+         id="org.codehaus.groovy"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.codehaus.groovy.eclipse"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.codehaus.groovy.eclipse.astviews"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="edu.depaul.cdm.madl.launcher"
+         id="org.codehaus.groovy.eclipse.codeassist.completion"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.codehaus.groovy.eclipse.codebrowsing"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.codehaus.groovy.eclipse.compilerResolver"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.codehaus.groovy.eclipse.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.codehaus.groovy.eclipse.dsl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.codehaus.groovy.eclipse.quickfix"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.codehaus.groovy.eclipse.refactoring"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.codehaus.groovy.eclipse.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jdt.groovy.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.codehaus.groovy.eclipse.ant"
          download-size="0"
          install-size="0"
          version="0.0.0"

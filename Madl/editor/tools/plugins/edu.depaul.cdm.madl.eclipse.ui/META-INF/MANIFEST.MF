@@ -21,7 +21,10 @@ Import-Package: org.codehaus.groovy.eclipse.core,
  org.eclipse.core.filesystem,
  org.eclipse.core.resources,
  org.eclipse.ui.dialogs
-Export-Package: edu.depaul.madl.wizards
+Export-Package: edu.depaul.madl.wizards,
+ edu.depaul.madl.wizards.config,
+ edu.depaul.madl.wizards.constants,
+ edu.depaul.madl.wizards.pages
 Bundle-ClassPath: .,
  lib/commons-io-2.4-javadoc.jar,
  lib/commons-io-2.4-sources.jar,

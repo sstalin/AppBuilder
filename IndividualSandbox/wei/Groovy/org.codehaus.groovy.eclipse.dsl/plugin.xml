@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2011 Codehaus.org, SpringSource, and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+         Andrew Eisenberg - Initial implemenation
+ -->
+<plugin>
+   <extension
+         point="org.eclipse.jdt.groovy.core.typeLookup">
+      <lookup
+            lookup="org.codehaus.groovy.eclipse.dsl.lookup.DSLDTypeLookup">
+         <appliesTo
+               projectNature="org.eclipse.jdt.groovy.core.groovyNature">
+         </appliesTo>
+      </lookup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.codehaus.groovy.eclipse.dsl.command.category"
+            description="Refresh DSLD files for the given project"
+            id="org.codehaus.groovy.eclipse.dsl.command.refresh"
+            name="Refresh DSLDs">
+      </command>
+      <category
+            description="Commands related to DSLD management"
+            id="org.codehaus.groovy.eclipse.dsl.command.category"
+            name="DSLD-related commands">
+      </category>
+      <command
+            categoryId="org.codehaus.groovy.eclipse.dsl.command.category"
+            description="Perform static type checking on selected resources"
+            id="org.codehaus.groovy.eclipse.dsl.command.type_check"
+            name="Type check">
+      </command>
+      <command
+            categoryId="org.codehaus.groovy.eclipse.dsl.command.category"
+            description="Removes type checking annotations from selected resources"
+            id="org.codehaus.groovy.eclipse.dsl.command.type_check.remove"
+            name="Remove type checking annotations">
+      </command>
+   </extension>
+      <extension
+         point="org.eclipse.ui.decorators">
+      <decorator
+            adaptable="true"
+            class="org.codehaus.groovy.eclipse.dsl.classpath.DSLDClasspathContainerDecorator"
+            id="org.codehaus.groovy.eclipse.dsl.dsldClasspathContainerDecorator"
+            label="DSLD Enablement Decorator"
+            lightweight="true"
+            state="true">
+         <enablement>
+            	<objectClass name="org.eclipse.jdt.internal.ui.packageview.ClassPathContainer" />
+         </enablement>
+      </decorator>
+   </extension>
+   <extension
+         point="org.codehaus.groovy.eclipse.codeassist.completion.completionProposalProvider">
+      <proposalProvider
+            description="Provides Groovy proposals generated from .dsld files"
+            name="Groovy DSL Proposal Provider"
+            proposalProvider="org.codehaus.groovy.eclipse.dsl.proposals.DSLDProposalProvider">
+         <appliesTo
+               projectNature="org.eclipse.jdt.groovy.core.groovyNature">
+         </appliesTo>
+      </proposalProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="org.codehaus.groovy.eclipse.dsl.objectContribution"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="org.codehaus.groovy.eclipse.dsl.ui.RefreshDSLDFilesActionDelegate"
+               definitionId="org.codehaus.groovy.eclipse.dsl.command.refresh"
+               enablesFor="+"
+               id="org.codehaus.groovy.eclipse.dsl.action.refresh"
+               label="Refresh DSLD files"
+               menubarPath="groovy/dsl"
+               tooltip="Refresh Groovy DSLs for currentl selected Groovy Project(s)">
+         </action>
+         <action
+               class="org.codehaus.groovy.eclipse.dsl.ui.AddDSLDContainerActtion"
+               enablesFor="1"
+               id="org.codehaus.groovy.eclipse.importlibs.action"
+               label="Add DSL support"
+               menubarPath="groovy/dsl"
+               tooltip="Add or remove DSL support for this project">
+         </action>
+          <visibility>
+             <objectState
+                   name="nature"
+                   value="org.eclipse.jdt.groovy.core.groovyNature">
+             </objectState>
+          </visibility>
+      </objectContribution>
+      <objectContribution
+            adaptable="true"
+            id="org.codehaus.groovy.eclipse.dsl.objectContribution1"
+            objectClass="org.eclipse.core.resources.IResource">
+         <action
+               class="org.codehaus.groovy.eclipse.dsl.ui.StaticTypeCheckAction"
+               definitionId="org.codehaus.groovy.eclipse.dsl.command.type_check"
+               enablesFor="+"
+               id="org.codehaus.groovy.eclipse.dsl.action.type_check"
+               label="Type check"
+               menubarPath="groovyresource/dsl1"
+               tooltip="Perform static type checking of selected resources.">
+         </action>
+         <action
+               class="org.codehaus.groovy.eclipse.dsl.ui.RemoveCheckerWarnings"
+               definitionId="org.codehaus.groovy.eclipse.dsl.command.type_check.remove"
+               enablesFor="+"
+               id="org.codehaus.groovy.eclipse.dsl.action.type_check.remove"
+               label="Remove checks"
+               menubarPath="groovyresource/dsl2"
+               tooltip="Perform static type checking of selected resources.">
+         </action>
+         <menu
+               id="groovyresource"
+               label="Groovy Type Checking"
+               path="additions">
+            <separator
+                  name="defaultGroup">
+            </separator>
+         </menu>
+         <visibility>
+            <objectState
+                  name="projectNature"
+                  value="org.eclipse.jdt.groovy.core.groovyNature">
+            </objectState>
+         </visibility>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.jdt.groovy.core.groovySource"
+            file-extensions="dsld"
+            id="org.codehaus.groovy.eclipse.dsl.dsld"
+            name="Groovy DSL Descriptor file"
+            priority="high">
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.codehaus.groovy.eclipse.preferences"
+            class="org.codehaus.groovy.eclipse.dsl.ui.DSLPreferencesPage"
+            id="org.codehaus.groovy.eclipse.dsl.preferences"
+            name="DSLD">
+         <keywordReference
+               id="org.codehaus.groovy.eclipse.dsl.keywords">
+         </keywordReference>
+      </page>
+      <page
+            category="org.codehaus.groovy.eclipse.preferences"
+            class="org.codehaus.groovy.eclipse.dsl.inferencing.suggestions.preferencepage.InferencingPreferencesPage"
+            id="org.codehaus.groovy.eclipse.dsl.inferencing.preferences"
+            name="Inferencing Suggestions">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.codehaus.groovy.eclipse"
+            class="org.codehaus.groovy.eclipse.dsl.ui.NewDSLDWizard"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            icon="icons/GROOVY.png"
+            id="org.codehaus.groovy.eclipse.dsld.newDsldWizard"
+            name="Groovy DSL Descriptor"
+            preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,com.springsource.sts.grails.perspective,org.grails.ide.eclipse.perspective">
+         <description>
+            Create a new DSL descriptor file.
+         </description>
+         <keywordReference
+               id="org.codehaus.groovy.eclipse.dsl.keywords">
+         </keywordReference>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.keywords">
+      <keyword
+            id="org.codehaus.groovy.eclipse.dsl.keywords"
+            label="groovy dsld dsl descriptor">
+      </keyword>
+   </extension>
+   <extension
+         point="org.eclipse.jdt.core.classpathContainerInitializer">
+      <classpathContainerInitializer
+            class="org.codehaus.groovy.eclipse.dsl.classpath.DSLDContainerInitializer"
+            id="GROOVY_DSL_SUPPORT">
+      </classpathContainerInitializer>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.codehaus.groovy.eclipse.dsl.DSLPreferencesInitializer">
+      </initializer>
+   </extension>
+   <extension
+         id="inferencing_problem"
+         name="Groovy type checking problem"
+         point="org.eclipse.core.resources.markers">
+      <super type="org.eclipse.core.resources.textmarker"/>
+			<super type="org.eclipse.core.resources.problemmarker"/>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors.markerAnnotationSpecification">
+      <specification
+            annotationType="org.codehaus.groovy.eclipse.dsl.annotation.inferencing"
+            colorPreferenceKey="typeCheckIndicationColor"
+            colorPreferenceValue="191,171,95"
+            contributesToHeader="true"
+            highlightPreferenceKey="typeCheckIndicationHighlighting"
+            highlightPreferenceValue="false"
+            icon="icons/warn_type_check.gif"
+            isGoToNextNavigationTarget="true"
+            isGoToNextNavigationTargetKey="istypeCheckGoToNextNavigationTarget"
+            isGoToPreviousNavigationTarget="true"
+            isGoToPreviousNavigationTargetKey="istypeCheckGoToPreviousNavigationTarget"
+            label="Groovy type check problem"
+            overviewRulerPreferenceKey="typeCheckIndicationInOverviewRuler"
+            overviewRulerPreferenceValue="true"
+            presentationLayer="6"
+            showInNextPrevDropdownToolbarAction="true"
+            showInNextPrevDropdownToolbarActionKey="showtypeCheckInNextPrevDropdownToolbarAction"
+            symbolicIcon="warning"
+            textPreferenceKey="typeCheckIndication"
+            textPreferenceValue="true"
+            textStylePreferenceKey="typeCheckTextStyle"
+            textStylePreferenceValue="DASHED_BOX"
+            verticalRulerPreferenceKey="typeCheckIndicationInVerticalRuler"
+            verticalRulerPreferenceValue="true">
+      </specification>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors.annotationTypes">
+      <type
+            markerSeverity="1"
+            markerType="org.codehaus.groovy.eclipse.dsl.inferencing_problem"
+            name="org.codehaus.groovy.eclipse.dsl.annotation.inferencing"
+            super="org.eclipse.jdt.ui.warning">
+      </type>
+   </extension>
+   <extension
+         id="staticCheck"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            icon="icons/GROOVY.png"
+            thread="main"
+            visible="true">
+         <run
+               class="org.codehaus.groovy.eclipse.dsl.checker.StaticCheckerApplication">
+         </run>
+      </application>
+   </extension>
+</plugin>
