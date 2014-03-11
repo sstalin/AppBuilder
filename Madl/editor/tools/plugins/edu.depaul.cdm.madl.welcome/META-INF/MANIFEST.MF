@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Intro
+Bundle-SymbolicName: edu.depaul.cdm.madl.welcome;singleton:=true
+Bundle-Version: 1
+Bundle-Activator: edu.depaul.cdm.madl.welcome.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.intro.universal,
+ org.eclipse.ui.intro
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
