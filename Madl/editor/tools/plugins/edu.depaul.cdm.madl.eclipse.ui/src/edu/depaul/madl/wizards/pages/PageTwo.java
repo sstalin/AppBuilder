@@ -66,52 +66,53 @@ public class PageTwo extends WizardPage {
 		Group grpDeveloper = new Group(container, SWT.NONE);
 		grpDeveloper.setText("Developer");
 		GridData gd_grpDeveloper = new GridData(SWT.LEFT, SWT.CENTER, true, false, 1, 1);
-		gd_grpDeveloper.heightHint = 78;
-		gd_grpDeveloper.widthHint = 567;
+		gd_grpDeveloper.heightHint = 100;
+		gd_grpDeveloper.widthHint = 580;
 		grpDeveloper.setLayoutData(gd_grpDeveloper);
 		
 		Label lblName = new Label(grpDeveloper, SWT.NONE);
-		lblName.setBounds(10, 7, 59, 14);
+		lblName.setBounds(10, 20, 70, 22);
 		lblName.setText("Name:");
 		
 		text = new Text(grpDeveloper, SWT.BORDER);
-		text.setBounds(133, 7, 433, 19);
+		text.setBounds(135, 20, 440, 22);
 		
 		Label lblOrganization = new Label(grpDeveloper, SWT.NONE);
-		lblOrganization.setBounds(10, 35, 87, 14);
+		lblOrganization.setBounds(10, 47, 100, 22);
 		lblOrganization.setText("Organization:");
 		
 		Label lblDomain = new Label(grpDeveloper, SWT.NONE);
-		lblDomain.setBounds(10, 63, 59, 14);
+		lblDomain.setBounds(10, 75, 59, 22);
 		lblDomain.setText("Domain:");
 		
 		text_1 = new Text(grpDeveloper, SWT.BORDER);
-		text_1.setBounds(133, 32, 433, 19);
+		text_1.setBounds(135, 47, 440, 22);
 		
 		text_2 = new Text(grpDeveloper, SWT.BORDER);
-		text_2.setBounds(133, 60, 433, 19);
+		text_2.setBounds(135, 75, 440, 22);
 		
 		Group grpIos = new Group(container, SWT.NONE);
 		GridData gd_grpIos = new GridData(SWT.LEFT, SWT.CENTER, true, false, 1, 1);
-		gd_grpIos.heightHint = 103;
-		gd_grpIos.widthHint = 571;
+		gd_grpIos.heightHint = 130;
+		gd_grpIos.widthHint = 580;
 		grpIos.setLayoutData(gd_grpIos);
-		grpIos.setText("iOs");
+		grpIos.setText("iOS");
 		
 		Label lblCreateIosApp = new Label(grpIos, SWT.NONE);
 		lblCreateIosApp.setText("Create iOS App:");
-		lblCreateIosApp.setBounds(10, 7, 87, 14);
+		lblCreateIosApp.setBounds(10, 20, 85, 22);
 		
 		Label lblVersion = new Label(grpIos, SWT.NONE);
 		lblVersion.setText("Version:");
-		lblVersion.setBounds(10, 31, 87, 14);
+		lblVersion.setBounds(10, 55, 100, 22);
 		
 		Label lblDestination = new Label(grpIos, SWT.NONE);
 		lblDestination.setText("Destination:");
-		lblDestination.setBounds(10, 86, 87, 14);
+		lblDestination.setBounds(10, 115, 100, 22);
 		
+		//Gan/IOSplatform 
 		text_5 = new Text(grpIos, SWT.BORDER);
-		text_5.setBounds(133, 83, 303, 19);
+		text_5.setBounds(135, 115, 300, 22);
 		text_5.setText(getDefaultIosAppDestinationDirectory());
 		text_5.setEnabled(false);
 		
@@ -129,7 +130,7 @@ public class PageTwo extends WizardPage {
 				}
 			}
 		});
-		btnYes.setBounds(133, 3, 50, 18);
+		btnYes.setBounds(135, 15, 50, 22);
 		btnYes.setText("Yes");
 		
 		Button btnNo = new Button(grpIos, SWT.RADIO);
@@ -142,11 +143,11 @@ public class PageTwo extends WizardPage {
 				btnBrowse.setEnabled(false);
 			}
 		});
-		btnNo.setBounds(189, 3, 50, 18);
+		btnNo.setBounds(195, 15, 50, 22);
 		btnNo.setText("No");
 		
 		combo = new Combo(grpIos, SWT.READ_ONLY);
-		combo.setBounds(133, 27, 95, 22);
+		combo.setBounds(135, 55, 70, 22);
 		populateIosVersionsCombo(combo);
 		defaultToLatestIosVersion(combo);
 		
@@ -161,7 +162,7 @@ public class PageTwo extends WizardPage {
 			}
 		});
 		btnBrowse.setEnabled(false);
-		btnBrowse.setBounds(442, 79, 94, 28);
+		btnBrowse.setBounds(442, 115, 100, 24);
 		btnBrowse.setText("Browse");
 		
 		btnUseDefaultDestination = new Button(grpIos, SWT.CHECK);
@@ -182,31 +183,35 @@ public class PageTwo extends WizardPage {
 				btnBrowse.setEnabled(!btnBrowse.getEnabled());
 			}
 		});
-		btnUseDefaultDestination.setBounds(133, 59, 162, 18);
+		
+		btnUseDefaultDestination.setBounds(135, 90, 160, 22);
 		btnUseDefaultDestination.setText("Use default destination");
 		
 		Group grpAndroid = new Group(container, SWT.NONE);
 		GridData gd_grpAndroid = new GridData(SWT.LEFT, SWT.CENTER, true, false, 1, 1);
+		gd_grpAndroid.heightHint = 130;
 		gd_grpAndroid.widthHint = 580;
 		grpAndroid.setLayoutData(gd_grpAndroid);
 		grpAndroid.setText("Android");
 		
 		Label lblCreateAndroidApp = new Label(grpAndroid, SWT.NONE);
 		lblCreateAndroidApp.setText("Create Android App:");
-		lblCreateAndroidApp.setBounds(10, 7, 117, 14);
+		lblCreateAndroidApp.setBounds(10, 20, 110, 22);
 		
 		Label label_1 = new Label(grpAndroid, SWT.NONE);
 		label_1.setText("Version:");
-		label_1.setBounds(10, 31, 87, 14);
+		label_1.setBounds(10, 55, 100, 22);
 		
 		Label label_2 = new Label(grpAndroid, SWT.NONE);
 		label_2.setText("Destination:");
-		label_2.setBounds(10, 86, 87, 14);
+		label_2.setBounds(10, 115, 100, 22);
+		
 		
 		txtGenplatformandroid = new Text(grpAndroid, SWT.BORDER);
 		txtGenplatformandroid.setText("gen/Platform.Android");
 		txtGenplatformandroid.setEnabled(false);
-		txtGenplatformandroid.setBounds(133, 83, 303, 19);
+		
+		txtGenplatformandroid.setBounds(135, 115, 300, 22);
 		
 		button = new Button(grpAndroid, SWT.RADIO);
 		button.addSelectionListener(new SelectionAdapter() {
@@ -232,7 +237,8 @@ public class PageTwo extends WizardPage {
 		
 		button.setSelection(true);
 		button.setText("Yes");
-		button.setBounds(133, 4, 50, 18);
+		button.setBounds(135, 15, 50, 22);
+		
 		
 		Button button_1 = new Button(grpAndroid, SWT.RADIO);
 		button_1.addSelectionListener(new SelectionAdapter() {
@@ -245,10 +251,10 @@ public class PageTwo extends WizardPage {
 			}
 		});
 		button_1.setText("No");
-		button_1.setBounds(189, 4, 50, 18);
+		button_1.setBounds(195, 15, 50, 22);
 		
 		combo_1 = new Combo(grpAndroid, SWT.READ_ONLY);
-		combo_1.setBounds(133, 28, 95, 22);
+		combo_1.setBounds(135, 55, 70, 22);
 		combo_1.select(-1);
 		populateAndroidVersionsCombo(combo_1);
 		defaultToLatestAndroidVersion(combo_1);
@@ -263,9 +269,13 @@ public class PageTwo extends WizardPage {
 				setAndroidDestinationDir(destination);
 			}
 		});
+		
+		
+		// Browse for and android
+		
 		button_2.setText("Browse");
 		button_2.setEnabled(false);
-		button_2.setBounds(442, 79, 94, 28);
+		button_2.setBounds(442, 115, 100, 24);
 		
 		button_3 = new Button(grpAndroid, SWT.CHECK);
 		button_3.addSelectionListener(new SelectionAdapter() {
@@ -286,7 +296,7 @@ public class PageTwo extends WizardPage {
 		});
 		button_3.setText("Use default destination");
 		button_3.setSelection(true);
-		button_3.setBounds(133, 59, 162, 18);
+		button_3.setBounds(135, 90, 160, 22);
 	}
 	
 	private void populateIosVersionsCombo(Combo combo) {
