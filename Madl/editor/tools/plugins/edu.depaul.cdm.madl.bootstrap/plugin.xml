@@ -17,7 +17,7 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.ui.ide.workbench"
-            name="%productName">
+            name="Madl Editor">
          <property
                name="windowImages"
                value="icons/madl_16_16.gif,icons/madl_32_32.gif,icons/madl_48_48.gif,icons/madl_64_64.gif,icons/madl_128_128.gif">
@@ -35,19 +35,19 @@
                value="Madl Editor">
          </property>
          <property
-               name="startupProgressRect"
-               value="100,310,400,15">
-         </property>
-         <property
                name="preferenceCustomization"
                value="plugin_customization.ini">
          </property>
          <property
                name="startupForegroundColor"
-               value="B3B3B3">
+               value="9F9F9F">
          </property>
          <property
                name="startupMessageRect"
+               value="100,310,400,15">
+         </property>
+         <property
+               name="startupProgressRect"
                value="100,330,400,15">
          </property>
       </product>
