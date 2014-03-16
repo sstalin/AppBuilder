@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <introContent>
+<page >
+</page>
   	<extensionContent id="edudepaulcdmmadlwelcome-introExtension" style="css/sample.css" name="Sample Extension" path="webresources/@">
 		<group style-id="content-group" id="edudepaulcdmmadlwelcome-introLink-group">
 		    

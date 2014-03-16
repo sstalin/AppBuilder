@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+    <page
+        id="welcome-page"
+        style="content/basic.css"
+        style-id="page">
+        <title id="title">Welcome to MADL Editor!</title>
+        <link
+            id="madl_definiton_link"
+            url="http://selab.cdm.depaul.edu/AppBuilder/MADL/">
+            <img
+                id="img_language"
+                src="icons/sample-code.png"></img>
+            <text id="more_about_txt">Get to know more about MADL language.</text>
+        </link>
+        <link
+            id="examples_link"
+            url="http://selab.cdm.depaul.edu/AppBuilder/Examples/">
+            <img
+                id="img_samples"
+                src="http://selab.cdm.depaul.edu/axiom/Screenshots/iOS/Hello02.png"></img>
+            <text id="examples_txt">See more examples of MADL projects.</text>
+        </link>
+        <link
+            id="new_proj_wizard_link"
+            url="http://org.eclipse.ui.intro/close">
+            <text id="goToWizard"> or simply start new App ... </text>
+        </link>
+    </page>
+</introContent>

@@ -1,0 +1,125 @@
+body{
+    width:80%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+}
+
+#welcome-page{
+    width:80%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+}
+
+#title{
+ color:#666;
+    text-align: center;
+}
+#madl_definiton_link{
+    width:100%;
+    text-decoration: none;
+    color:#333;
+    margin-bottom: 2%;
+    float:left;
+    clear:both;
+}
+
+#examples_link{
+    width:100%;
+    text-decoration: none;
+    color:#333;
+    margin-bottom: 2%;
+    float:left;
+    clear:both;
+}
+#new_proj_wizard_link{
+    width:100%;
+    text-align: center;
+    text-decoration: none;
+    color:#333;
+    margin-bottom: 2%;
+    float:left;
+    clear:both;
+}
+
+#more_about_txt{
+    color:#333;
+    float:left;
+    text-indent:2%;
+    line-height: 200px;
+    margin: 0;
+}
+
+#examples_txt{
+  color:#333;
+    float:left;
+    text-indent:2%;
+    line-height: 200px;
+    margin: 0;
+}
+
+#goToWizard{
+  color:cornflowerblue;
+  font-size:2em;
+}
+
+#img_language{
+ float:left;
+    height: 200px;
+    width:auto;
+}
+
+#img_samples{
+ float:left;
+    height: 200px;
+    width:auto;
+}
+
+#img_examples{
+ float:left;
+    height: 200px;
+    width:auto;
+}
+
+
+#welcome a{
+    width:100%;
+    text-decoration: none;
+    color:#333;
+    margin-bottom: 2%;
+    float:left;
+    clear:both;
+}
+#welcome a:hover{
+    color:cornflowerblue;
+}
+
+#welcome h2{
+    color:#666;
+    text-align: center;
+}
+#welcome img{
+    float:left;
+    height: 200px;
+    width:auto;
+}
+
+#welcome h4{
+    float:left;
+    text-indent:2%;
+    text-align: center;
+    line-height: 200px;
+    margin: 0;
+}
+
+link{
+  width:100%;
+    text-decoration: none;
+    color:#333;
+    margin-bottom: 2%;
+    float:left;
+    clear:both;
+}
+
+link:hoover{
+color:cornflowerblue;
+}

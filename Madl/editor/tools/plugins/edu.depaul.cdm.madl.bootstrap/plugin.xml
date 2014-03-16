@@ -52,4 +52,34 @@
          </property>
       </product>
    </extension>
+   
+      <!-- The following extension is to enable welcome page  -->
+   <extension
+         point="org.eclipse.ui.intro">
+         <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            id="edu.depaul.cdm.madl.bootstrap.intro">
+      </intro>
+      <introProductBinding
+            introId="edu.depaul.cdm.madl.bootstrap.intro"
+            productId="edu.depaul.cdm.madl.bootstrap.product">
+      </introProductBinding>
+   </extension>
+   
+   <!-- The following extension is to enable welcome page  -->
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            content="introContent.xml"
+            id="configId"
+            introId="edu.depaul.cdm.madl.bootstrap.intro">
+            <presentation
+               home-page-id="welcome-page">
+            <implementation
+                  kind="html"
+                  os="win32,linux,macosx">
+            </implementation>
+         </presentation>
+         </config>
+   </extension>
 </plugin>
