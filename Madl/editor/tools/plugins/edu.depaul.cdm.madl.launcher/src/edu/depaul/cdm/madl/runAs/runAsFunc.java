@@ -49,38 +49,21 @@ public class runAsFunc implements IHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		// TODO Auto-generated method stub
 		
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		File workspaceDirectory = workspace.getRoot().getLocation().toFile();
+		IPath currentProjectPath = getCurrentProjectPath();
 		
-		ILaunchManager mgr = DebugPlugin.getDefault().getLaunchManager();
-		
-		String projectName = "";
-		try {
-			ILaunchConfiguration[] conf = mgr.getLaunchConfigurations();
-			projectName = conf[0].toString();
-		} catch (CoreException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		System.out.println(projectName);
-		
-		File path1 = new File(workspaceDirectory.getPath() + File.separator + projectName + "/gen/Platform.iOS");
+		File path1 = new File(currentProjectPath.toString() + "/gen/Platform.iOS");
 		File[] fileList1 = path1.listFiles();
 		String iosPath = "";
 		if(fileList1.length == 1){
 			iosPath = fileList1[0].toString();
-//			iosPath = fileList1[0].toString() + "/First App.xcodeproj";
 			File path2 = new File(iosPath);
 			File[] fileList2 = path2.listFiles();
-//			String appName = fileList2[0].toString();
 			iosPath = fileList2[1].getAbsolutePath();
 		}
 		else{
-//			iosPath = fileList1[1].toString() + "/First App.xcodeproj";
 			iosPath = fileList1[1].toString();
 			File path2 = new File(iosPath);
 			File[] fileList2 = path2.listFiles();
-//			String appName = fileList2[0].toString();
 			iosPath = fileList2[1].getAbsolutePath();
 		}
 		
@@ -94,6 +77,23 @@ public class runAsFunc implements IHandler {
 			System.out.println(e.getMessage());
 		}
 		return null;
+	}
+	
+	public IPath getCurrentProjectPath(){
+		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+	    if (window != null)
+	    {
+	        IStructuredSelection selection = (IStructuredSelection) window.getSelectionService().getSelection();
+	        Object firstElement = selection.getFirstElement();
+	        if (firstElement instanceof IAdaptable)
+	        {
+	            IProject project = (IProject)((IAdaptable)firstElement).getAdapter(IProject.class);
+	            IPath path = project.getLocation();
+	            return path;
+	        }
+	    }
+	    return null;
+	    
 	}
 	
 
