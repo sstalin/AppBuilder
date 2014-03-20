@@ -1,4 +1,4 @@
 AppBuilder
 ==========
 
-Cross Platform Mobile Builder Tool 
+Cross Platform Mobile Dev Tool 
