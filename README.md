@@ -85,3 +85,9 @@ $ scp -r * madl@selab.cdm.depaul.edu:/var/www/html/SEStudio/madl
 ```
 
 Note: The ```feature``` includes a ```category.xml```. To change the name of the plugin displayed to the user on install, edit the ```category.xml``` Name field. Currently, it's "MADL IDE."  
+
+### 9. Package the RCP Product as a Downloadable Distribution
+- Expand the ```edu.depaul.cdm.madl.bootstrap``` plug-in project
+- Right click ```plugin.xml``` and select Export
+- Choose Plug-in Development -> Eclipse product
+- Select a Destination directory and click Finish
