@@ -15,6 +15,10 @@ Open the [Eclipse Download Page](https://www.eclipse.org/downloads/) and choose 
 
 Via the Eclipse menu, choose File -> Import -> General -> Existing Projects into Workspace. Navigate to the ```Madl``` folder, select all of the plugins, and click Finish.
 
+### 3.1. Import all Groovy projects into Eclipse
+
+Via the Eclipse menu, choose File -> Import -> General -> Existing Projects into Workspace. Navigate to the ```Groovy``` top-level folder, select all of the plugins, and click Finish.
+
 ### 4. Install Groovy/Grails plugin
 
 There will be a build error in the ```org.codehaus.groovy.eclipse.astviews``` project if the Groovy/Grails plugin is not installed because Groovy classes in that project will not be recognized by Eclipse. 
