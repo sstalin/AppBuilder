@@ -1,4 +1,6 @@
 AppBuilder
 ==========
 
-Cross Platform Mobile Dev Tool 
+## 1. Clone the repository
+
+```$ git clone https://github.com/sstalin/AppBuilder.git```
