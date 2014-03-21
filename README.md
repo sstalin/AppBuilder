@@ -64,3 +64,25 @@ Note: Eclipse will need to be restarted for the installation to finish.
 - Configure Location as http://selab.cdm.depaul.edu/SEStudio/madl
 - Select MADL IDE from the list of plugins and click Next to proceed with the installation
 - As before, set the AppBuilder Home directory before creating a new project
+- 
+
+### 8. Package the MADL plugin to an Update Site for Distribution
+- Right-click on the `edu.depaul.cdm.madl.eclipse.feature` project and choose ```Export```
+- Choose Plug-in Development -> Deployable features and click Next
+- Choose a location under the ```Directory``` field 
+
+This will package and export all of the necessary files as jar libraries. 
+
+Lastly, copy the exact file and folder structure to an update site, i.e.:
+
+```
+# Copy everything from the current directory excluding shell scripts to the update site
+$ rsync -r --exclude=*.sh * madl@selab.cdm.depaul.edu:/var/www/html/SEStudio/madl
+```
+
+```
+# Or, simply copy everything from the current directory to the update site
+$ scp -r * madl@selab.cdm.depaul.edu:/var/www/html/SEStudio/madl
+```
+
+This example copies all necessary files from the current directory to the update site, excluding all shell scripts. If there are no files to exclude, ```scp``` would work just fine as well.
