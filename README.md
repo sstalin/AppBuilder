@@ -3,7 +3,7 @@ AppBuilder
 
 ### 1. Clone the entire repository
 
-Not everything is needed to build and run the plugins and RCP version, so don't import into Eclipse yet.
+Not everything is needed to build and run the plugins and RCP version, so only import the plugins into Eclipse as described below.
 
 ```$ git clone https://github.com/sstalin/AppBuilder.git```
 
