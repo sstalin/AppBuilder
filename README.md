@@ -44,6 +44,7 @@ Note: Eclipse will need to be restarted for the installation to finish.
 - The default can be left for all other settings
 - Click Run
 - The MADL splash screen will display and a runtime instance of Eclipse will open the RCP version
+- As before, set the AppBuilder Home directory before creating a new project
 
 ### 7. Install the MADL plugin from the Update Site
 
@@ -51,3 +52,11 @@ Note: Eclipse will need to be restarted for the installation to finish.
 - **Important:** First install the ```JDT Core patch for Groovy-Eclipse plugin```. This is required, otherwise the MADL plugin will throw runtime errors once installed. To install this patch, navigate to Help -> Eclipse Marketplace and search "groovy". Choose only the ```JDT Core patch for Groovy-Eclipse plugin```:
 
 ![JDT Core patch for Groovy-Eclipse plugin](http://3.bp.blogspot.com/-iNkXCKxtGbY/UySkrb6E56I/AAAAAAAACnI/LdQogTfys8A/s1600/groovy_install.jpg)
+
+- Confirm the installation and restart Eclipse
+- Once Eclipse restarts, navigate to Help -> Install New Software
+- Click ```Add``` to setup the MADL update site
+- Configure Name as "MADL Update Site"
+- Configure Location as http://selab.cdm.depaul.edu/SEStudio/madl
+- Select MADL IDE from the list of plugins and click Next to proceed with the installation
+- As before, set the AppBuilder Home directory before creating a new project
