@@ -11,7 +11,7 @@ Not everything is needed to build and run the plugins and RCP version, so only i
 
 Open the [Eclipse Download Page](https://www.eclipse.org/downloads/) and choose "Eclipse for RCP and RAP Developers"
 
-### 3. Import the plugins into Eclipse
+### 3. Import MADL the plugins into Eclipse
 
 Via the Eclipse menu, choose File -> Import -> General -> Existing Projects into Workspace. Navigate to the ```Madl``` folder, select all of the plugins, and click Finish.
 
