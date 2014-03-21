@@ -65,7 +65,7 @@ Note: Eclipse will need to be restarted for the installation to finish.
 - Select MADL IDE from the list of plugins and click Next to proceed with the installation
 - As before, set the AppBuilder Home directory before creating a new project
 
-### 8. Package the MADL plugin to an Update Site for Distribution
+### 8. Package the MADL plugin and Export to an Update Site for Distribution
 - Right-click on the `edu.depaul.cdm.madl.eclipse.feature` project and choose ```Export```
 - Choose Plug-in Development -> Deployable features and click Next
 - Choose a location under the ```Directory``` field 
